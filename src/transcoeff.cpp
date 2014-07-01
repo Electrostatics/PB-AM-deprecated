@@ -1,36 +1,65 @@
 #include "shcoeff.h"
 #include "transcoeff.h"
 
+/******************************************************************//**
+* # File: transcoeff.cpp
+* #
+* # Date: June 2014
+* #
+* # Description: This file contains the class TransCoeff and its functions
+* #								TransCoeff = translation coefficients
+* #
+* # Author: Lotan, Felberg
+* #
+* # Copyright ( c )
+* #
+******************************************************************/
+
+
 REAL CTransCoeff::m_alpha[N_POLES*2][N_POLES];
 REAL CTransCoeff::m_beta[N_POLES*2][N_POLES];
 REAL CTransCoeff::m_gamma[N_POLES*2][2*N_POLES-1];
 REAL CTransCoeff::m_delta[N_POLES*2][2*N_POLES-1];
 bool CTransCoeff::m_even[4*N_POLES];
 
+/******************************************************************/
+/******************************************************************//**
+* Initialize the rotation coefficients (includes coeff equs from 
+* 2006 paper
+******************************************************************/
+
+
 void
 CTransCoeff::initConstants()
 {
-  REAL kapsqr = CMCoeff::KAPPA*CMCoeff::KAPPA*CMCoeff::RS*CMCoeff::RS;
+  REAL kapsqr = CMCoeff::KAPPA*CMCoeff::KAPPA*CMCoeff::RS*CMCoeff::RS;  //!< K^2 * RS^2
 
   for (int n = 0; n < 2*N_POLES; n++)
     for (int m = 0; m < N_POLES; m++)
-      {
-	ALPHA(n,m) = sqrt((REAL)(n+m+1)*(n-m+1));
-	BETA(n,m)  = kapsqr*ALPHA(n,m)/((2*n+1)*(2*n+3));
+		{
+			ALPHA(n,m) = sqrt((REAL)(n+m+1)*(n-m+1));						//!< Given as alpha(n,m) in Lotan, 2006 (eq 1.9)
+			BETA(n,m)  = kapsqr*ALPHA(n,m)/((2*n+1)*(2*n+3));		//!< Given as beta(n,m) in Lotan, 2006 (eq 1.9)
 
-	GAMMA(n,m) = sqrt((REAL)(n-m-1)*(n-m));
-	DELTA(n,m) = kapsqr*GAMMA(n,m)/((2*n+1)*(2*n-1));
-	if (m != 0)
-	  {
-	    GAMMA(n,-m) = -sqrt((REAL)(n+m-1)*(n+m));
-	    DELTA(n,-m) = kapsqr*GAMMA(n,-m)/((2*n+1)*(2*n-1));
-	  }
-      }
+			GAMMA(n,m) = sqrt((REAL)(n-m-1)*(n-m));							//!< Given as eta(n,m) in Lotan, 2006 (eq 1.9)
+			DELTA(n,m) = kapsqr*GAMMA(n,m)/((2*n+1)*(2*n-1));		//!< Given as mu(n,m) in Lotan, 2006 (eq 1.9)
+			if (m != 0)
+			{
+				GAMMA(n,-m) = -sqrt((REAL)(n+m-1)*(n+m));					//!< Given as eta(n,m) in Lotan, 2006 (eq 1.9)
+				DELTA(n,-m) = kapsqr*GAMMA(n,-m)/((2*n+1)*(2*n-1));//!< Given as mu(n,m) in Lotan, 2006 (eq 1.9)
+			}
+		}
 
+	
   EVEN(0) = true;
   for (int n = 1; n < 4*N_POLES; n++)
-    EVEN(n) = !EVEN(n-1);
+    EVEN(n) = !EVEN(n-1);								//<! determining whether each n is even or not
 }
+
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
+
 
 CTransCoeff::CTransCoeff(bool bGrad) : m_bGrad(bGrad), m_p(1)
 {
@@ -45,6 +74,11 @@ CTransCoeff::CTransCoeff(bool bGrad) : m_bGrad(bGrad), m_p(1)
       m_dT[0][0] = new REAL[1];
     }
 }
+
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
 
 void
 CTransCoeff::allocate()
@@ -72,6 +106,11 @@ CTransCoeff::allocate()
     }
 }
 
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
+
 void 
 CTransCoeff::deallocate()
 {
@@ -98,6 +137,11 @@ CTransCoeff::deallocate()
     }
 }
 
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
+
 void
 CTransCoeff::reallocate(int p)
 {
@@ -109,6 +153,11 @@ CTransCoeff::reallocate(int p)
     for (int i = m_p; i > p; i--)
       deallocate();
 }
+
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
 
 void
 CTransCoeff::initParams(REAL d)
@@ -125,6 +174,11 @@ CTransCoeff::initParams(REAL d)
   CSHCoeff::besselk(m_K, 2*m_p, m_kd);
 }
 
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
+
 void 
 CTransCoeff::reset(REAL rho, int p)
 {
@@ -136,6 +190,11 @@ CTransCoeff::reset(REAL rho, int p)
   initParams(rho);  
   computeCoeff();
 }
+
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
 
 // Apply the translation operator to the MP coeffs
 void
@@ -174,6 +233,11 @@ CTransCoeff::translate(const CMCoeff & Min, CMCoeff & Mout, int p, bool tpose)
 	}
     }
 }
+
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
 
 // Apply the derivative of the translation operator 
 void
@@ -215,6 +279,11 @@ CTransCoeff::dTranslate(const CMCoeff & Min, CMCoeff & Mout, int p, bool tpose)
     }
 }
 
+
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
 // Apply the translation operator to transform the top level of MP coeeffs 
 // Assuming translation based upon p-1 levels already done.
 void
@@ -266,6 +335,11 @@ CTransCoeff::incTranslate(const CMCoeff & Min, CMCoeff & Mout, bool tpose)
     }  
 }
 
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
+
 void
 CTransCoeff::computeCoeff()
 {
@@ -289,6 +363,11 @@ CTransCoeff::computeCoeff()
   if (m_bGrad)
     computeCoeff_(m_dT);
 }
+
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
 
 void
 CTransCoeff::computeCoeff_(vector<REAL**> & U)
@@ -316,6 +395,11 @@ CTransCoeff::computeCoeff_(vector<REAL**> & U)
     }
 }
 
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
+
 void
 CTransCoeff::computeIncCoeff()
 {
@@ -333,6 +417,11 @@ CTransCoeff::computeIncCoeff()
   if (m_bGrad)
     computeIncCoeff_(m_dT);
 }
+
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
 
 void
 CTransCoeff::computeIncCoeff_(vector<REAL**> & U)
@@ -387,6 +476,11 @@ CTransCoeff::computeIncCoeff_(vector<REAL**> & U)
 		       ALPHA(l,m)*U[l+1][n][m])/ALPHA(n,m);
 }
 
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
+
 REAL
 CTransCoeff::computeError(const CMCoeff & tM1, const CMCoeff & tM2, int p)
 {
@@ -422,6 +516,11 @@ CTransCoeff::computeError(const CMCoeff & tM1, const CMCoeff & tM2, int p)
   return err;
 }
 
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
+
 void
 CTransCoeff::outputTrans(int p) const
 {
@@ -441,6 +540,11 @@ CTransCoeff::outputTrans(int p) const
     }
 }
 
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
+
 void
 CTransCoeff::outputdTrans(int p) const
 {
@@ -459,6 +563,11 @@ CTransCoeff::outputdTrans(int p) const
 	}
     }
 }
+
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
 
 void
 CTransCoeff::exportMat(double ** T)

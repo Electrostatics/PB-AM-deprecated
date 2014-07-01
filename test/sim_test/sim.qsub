@@ -1,0 +1,9 @@
+#!/bin/bash
+#$ -cwd
+#$ -o bd_sim.out
+#$ -j y
+
+EXEC="../bin/mpe"
+
+$EXEC sim 0.05 1  
+

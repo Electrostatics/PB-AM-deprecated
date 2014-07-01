@@ -1,5 +1,19 @@
 #include "shcoeff.h"
 
+/******************************************************************//**
+* # File: shcoeff.cpp
+* #
+* # Date: June 2014
+* #
+* # Description: This file contains the class SHCoeff and its functions
+* #								SH = spherical harmonics
+* #
+* # Author: Lotan, Felberg
+* #
+* # Copyright ( c )
+* #
+******************************************************************/
+
 REAL CSHCoeff::CONST1[2*N_POLES][2*N_POLES];
 REAL CSHCoeff::CONST2[2*N_POLES][2*N_POLES];
 REAL CSHCoeff::CONST3[2*N_POLES][2*N_POLES];
@@ -7,10 +21,17 @@ REAL CSHCoeff::CONST4[2*N_POLES];
 REAL CSHCoeff::CONST5[2*N_POLES];
 REAL CSHCoeff::CONST6[2*N_POLES];
 
+/******************************************************************/
+/******************************************************************//**
+* Initialize the spherical harmonics coefficients
+* Inputs:   rs = scaling factor ~ avg mol radius in system
+*						kappa = inverse debye length
+******************************************************************/
+
 void
 CSHCoeff::init(REAL rs, REAL kappa)
 {
-  REAL temp[4*N_POLES];
+  REAL temp[4*N_POLES];									//<! temp vector used to calculate sqrt((n-m)!/(n+m)!)
   temp[0] = 1.0;
   for (int i = 1; i < 4*N_POLES; i++)
     temp[i] = temp[i-1]*sqrt((REAL)i);
@@ -21,7 +42,7 @@ CSHCoeff::init(REAL rs, REAL kappa)
 	{
 	  CONST1[n][m] = (2*n-1)/(REAL)(n-m);
 	  CONST2[n][m] = (n+m-1)/(REAL)(n-m);
-	  CONST3[n][m] = temp[n-m]/temp[n+m];
+	  CONST3[n][m] = temp[n-m]/temp[n+m];	//<! sqrt((n-m)!/(n+m)!) in EQ1, Lotan 2006
 	}
 
       CONST4[n] = 1.0/((2*n-1)*(2*n-3));
@@ -41,6 +62,11 @@ CSHCoeff::init(REAL rs, REAL kappa)
   KAPPA = kappa;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 CSHCoeff::CSHCoeff(int p, int res) : CMCoeff(p,res)
 { 
   assert(p <= res);
@@ -50,6 +76,11 @@ CSHCoeff::CSHCoeff(int p, int res) : CMCoeff(p,res)
   m_P.resize(IDX[p]); 
   m_cis.resize(p); 
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CSHCoeff::reset(REAL theta, REAL phi, int p) 
@@ -71,6 +102,11 @@ CSHCoeff::reset(REAL theta, REAL phi, int p)
       m_M[IDX[n]+m] = (s*m_P[IDX[n]+m]*CONST3[n][m])*m_cis[m];
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 void
 CSHCoeff::inc()
 {
@@ -88,6 +124,11 @@ CSHCoeff::inc()
   for (int m = 0, s = 1; m < m_p; m++, s = -s)
     m_M[IDX[m_p-1]+m] = (s*m_P[IDX[m_p-1]+m]*CONST3[m_p-1][m])*m_cis[m];
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void 
 CSHCoeff::legendre() 
@@ -110,6 +151,11 @@ CSHCoeff::legendre()
     }                                                                
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 void 
 CSHCoeff::specialSH(REAL SH[], int n, REAL val)
 {
@@ -125,6 +171,12 @@ CSHCoeff::specialSH(REAL SH[], int n, REAL val)
     SH[l] *= (-CONST3[l][1]);
 }
 
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 void 
 CSHCoeff::incLegendre() 
 {                         
@@ -139,6 +191,11 @@ CSHCoeff::incLegendre()
     m_P[IDX[n]+m] = m_xval*CONST1[n][m]*m_P[IDX[n-1]+m] - 
       CONST2[n][m]*m_P[IDX[n-2]+m];
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void 
 CSHCoeff::besselk(REAL K[], int p, REAL val) 
@@ -167,6 +224,11 @@ CSHCoeff::incBesselk(REAL K[], int p, REAL val)
       K[p-1] = K[p-2] + valsqr*K[p-3]*CONST4[p-1];
     }
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void 
 CSHCoeff::besseli(REAL * I, int p, REAL val) 

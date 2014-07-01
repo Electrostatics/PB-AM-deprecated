@@ -4,9 +4,23 @@
 #include "pdb.h"
 #include "protein.h"
 
-const char CAtom::ELEMSYM[NUM_ELEM] = {'H', 'C', 'N', 'O', 'S'};
+/******************************************************************//**
+ * #
+ * # File: pdb.cpp
+ * #
+ * # Date: June 2014
+ * #
+ * # Description: This file details the class Atom and its functions
+ * #
+ * # Author: Lotan, Felberg
+ * #
+ * # Copyright ( c )
+ * #
+******************************************************************/
+
+const char CAtom::ELEMSYM[NUM_ELEM] = {'H', 'C', 'N', 'O', 'S'};					//!< Atomic symbols
 const char CAtom::PLACESYM[NUM_PLACES] = {' ', 'A', 'B', 'G', 'D', 'E', 
-					     'Z', 'H', 'N', 'T'};
+					     'Z', 'H', 'N', 'T'};																				//!< Letter codes for location of atoms
 
 const int CAtom::ELEM_SHIFT = 8;
 const int CAtom::PLACE_SHIFT = 4;
@@ -21,10 +35,15 @@ const int CAtom::BRANCH2_MASK = (3 << CAtom::BRANCH2_SHIFT);
 const char AA::AANAME[NUM_AAS][4] = {"ALA", "ARG", "ASN", "ASP", "CYS", "GLN", 
 				 "GLU", "GLY", "HIS", "ILE", "LEU", "LYS", 
 				 "MET", "PHE", "PRO", "SER", "THR", "TRP", 
-				 "TYR", "VAL", "NTR", "CTR"};
+				 "TYR", "VAL", "NTR", "CTR"};																//!< 3 Letter codes for each amino acid
 const char AA::AALETTER[NUM_AAS][2] = {"A", "R", "N", "D", "C", "Q", "E", "G", 
 				   "H", "I", "L", "K", "M", "F", "P", "S", 
-				   "T", "W", "Y", "V", "X", "Z"};
+				   "T", "W", "Y", "V", "X", "Z"};														//!< 1 Letter codes for each amino acid
+					 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 CAtom::CAtom(int acode_, int rcode_, int resnum_, REAL x, REAL y, REAL z) :
   m_acode(acode_), m_rcode(rcode_), m_resnum(resnum_), m_pos(x, y, z), 
@@ -36,6 +55,11 @@ CAtom::CAtom(int acode_, int rcode_, int resnum_, REAL x, REAL y, REAL z) :
 
   m_rad = 2.0;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void 
 CAtom::generateName(int acode, char * aname)
@@ -57,6 +81,11 @@ CAtom::generateName(int acode, char * aname)
 
   aname[4] = '\0';
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 int 
 CAtom::getAtomCode(const char * aname)
@@ -128,6 +157,11 @@ CAtom::getAtomCode(const char * aname)
 	  (branch2 << BRANCH2_SHIFT));
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 const CAtom *
 AA::operator[](const char * aname) const
 {
@@ -140,12 +174,18 @@ AA::operator[](const char * aname) const
   return NULL;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* loadFromPDB
+* Inputs: pdb filename for protein, empty vector for amino acid seq
+******************************************************************/
+
 void CPDB::loadFromPDB(const char * fname, vector<AA> & aas)
 {
   aas.clear();
 
   ifstream fin(fname);
-  if (!fin.is_open())
+  if (!fin.is_open())		//!< Checking for file
     {
       cout << "Could not open input file " << fname << endl;
       exit(0);
@@ -153,7 +193,7 @@ void CPDB::loadFromPDB(const char * fname, vector<AA> & aas)
 
   char buf[200];
   char aname[5], rname[5];
-  int curr_res = -1;;
+  int curr_res = -1;
   float x,y,z;
   int i = 0;
   AA aa;
@@ -161,22 +201,23 @@ void CPDB::loadFromPDB(const char * fname, vector<AA> & aas)
   while (!fin.eof())
     {
       fin.getline(buf, 199);
-      if (strncmp(buf, "ATOM", 4) != 0)
-	continue;
+			
+			if (strncmp(buf, "ATOM", 4) != 0)  //<! If there is an atom in the current line
+				continue;
 
-      CAtom a = readline(buf);
+      CAtom a = readline(buf);					//<! read it in with readLine function, return atom class with name, xyz etc
      
       if (a.getResNum() != curr_res)
-	{
-	  if (!first)
-	    aas.push_back(aa);
-	  else 
-	    first = false;
+			{
+				if (!first)
+					aas.push_back(aa);
+				else 
+					first = false;
 
-	  aa.clear();
-	  aa.setType((AA::AACODE) a.getResCode());
-	  curr_res = a.getResNum();
-	}
+				aa.clear();
+				aa.setType((AA::AACODE) a.getResCode());
+				curr_res = a.getResNum();
+			}
 
       aa.insertAtom(a);
     }
@@ -197,6 +238,12 @@ void CPDB::loadFromPDB(const char * fname, vector<AA> & aas)
     }
   */
 }
+
+/******************************************************************/
+/******************************************************************//**
+* readLine: read a line from a pdb file to obtain information about 
+* an atom
+******************************************************************/
 
 CAtom
 CPDB::readline(const char * buf)
@@ -242,6 +289,10 @@ CPDB::readline(const char * buf)
   return CAtom(acode, rcode, resnum, x, y, z);
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 void CPDB::writeToPDB(const char * fname, const vector<AA> & aas)
 {
   ofstream fout(fname);
@@ -259,6 +310,11 @@ void CPDB::writeToPDB(const char * fname, const vector<AA> & aas)
   sprintf(buf, "%-80s", "SOURCE");
   fout << buf << endl;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 		   
 void 
 CPDB::writeLine(ostream & fout, int index, const char * chainid,
@@ -293,14 +349,20 @@ CPDB::writeLine(ostream & fout, int index, const char * chainid,
   fout << buf << endl;;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* Using the amino acid code name (3 or 1 letter), identify the given
+* amino acid 
+******************************************************************/
+
 AA::AACODE 
 AA::getAACode(const char * aa)
 {
   for (int i = 0; i < NUM_AAS; i++)
     {
       if (strcmp(aa, AANAME[i]) == 0 ||
-	  strcmp(aa, AALETTER[i]) == 0)
-	return (AACODE) i;
+						strcmp(aa, AALETTER[i]) == 0)
+				return (AACODE) i;
     }
 
   cout << "bad AA name " << aa << endl;

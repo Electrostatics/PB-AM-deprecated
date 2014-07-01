@@ -5,30 +5,48 @@
 #include "protein.h"
 #include "mcoeff.h"
 
-#define b_DIST 100.0
+/******************************************************************//**
+ * # File: BD.cpp
+ * #
+ * # Date: June 2014
+ * #
+ * # Description: This file runs a system in the BD PB-SAM simulation
+ * #
+ * # Author: Lotan, Felberg
+ * #
+ * # Copyright ( c )
+ * #
+******************************************************************/
+
+/******************************************************************/
+/******************************************************************//**
+* Initializing constants
+******************************************************************/
+
+
+#define b_DIST 100.0											//!< Initial distance between 2 proteins for BD run
 #define q_DIST 500.0
-#define f_DIST 100.0
+#define f_DIST 100.0											//!< Cutoff for protein force interactions
 
 #define DIELECTRIC_WATER 78.0
 #define DIELECTRIC_PROT 4.0
 
-#define SALT_CONCENTRATION  0.0500
-#define KAPPA (sqrt(SALT_CONCENTRATION)/3.04)
+#define SALT_CONCENTRATION  0.0500				//!< Molar
+#define KAPPA (sqrt(SALT_CONCENTRATION)/3.04)	
 
-#define COULOMB_CONSTANT (8.988e9)
-#define ELECTRON_CHARGE (1.60217733e-19)
-#define AVOGADRO_NUM (6.02209e23)
-#define KCAL 4186.0 
-#define ANGSTROM (1e-10)
-#define PICO_SEC (1e-12)
-//#define COUL_K 332.058
+#define COULOMB_CONSTANT (8.988e9)				//!< [ N*m^2/C^2 ]
+#define ELECTRON_CHARGE (1.60217733e-19)		//!<  [ coulombs ]
+#define AVOGADRO_NUM (6.02209e23)				
+#define KCAL 4184.0								//!<  [ 1 kCal = 4184 Joules ]
+#define ANGSTROM (1e-10)						//!<  [ 1A = 1e-10 Meters ]
+#define PICO_SEC (1e-12)						//!<  [ 1 ps = 1e-12 s ]	
 #define COUL_K 332.141144
 
 #define GAMMA (0.01*100/1000*ANGSTROM*PICO_SEC)
-#define Kb (1.380658e-23)
-#define TEMP 298.0
-#define KbT (1.98718E-03*TEMP) //    (TEMP*Kb*AVOGADRO_NUM/KCAL)
-#define IKbT (1.0/KbT)
+#define Kb (1.380658e-23)						//!<  [ m^2 kg/ s^2 / K ] 
+#define TEMP 298.0								//!<  [ Kelvin ]
+#define KbT (1.98718E-03*TEMP)					//!<     (TEMP*Kb*AVOGADRO_NUM/KCAL)
+#define IKbT (1.0/KbT)							//!<  1/KbT
 
 #define TOL 2.5
 
@@ -42,38 +60,38 @@ const char CBD::STATUS_STRING[3][10] = {"ESCAPED", "DOCKED", "RUNNING"};
 int scount;
 char temp_file[100];
 
+
+/******************************************************************/
+/******************************************************************//**
+* Initialize CBD class
+*****************************************************************/
+
+
 CBD::CBD(const char * fname1, const char * fname2, REAL kappa) : m_fcnt(0)
 {
   if (!CProtein::isInitialized())
+		//!< Initialize the system parameters, w/ 2 molecules, and RS=lambda in paper=30
     CProtein::initParameters(kappa, DIELECTRIC_PROT, DIELECTRIC_WATER, 2, 30);
 
-  m_mol1 = new CProtein(fname1); 
-  m_mol2 = new CProtein(fname2);
-    //saveState();
-  m_maxContDist = m_mol1->getRadius() + m_mol2->getRadius() + 1.0;
+  m_mol1 = new CProtein(fname1); //!< MOLECULE 1 = Barnase
+  m_mol2 = new CProtein(fname2); //!< MOLECULE 2 = Barstar
+  m_maxContDist = m_mol1->getRadius() + m_mol2->getRadius() + 1.0;	//!< Closest distance that the proteins may be to each other
  
-  m_Dtr = 0.030;
-  m_Dr1 = 4e-5; m_Dr2 = 4.5e-5;
+  m_Dtr = 0.030;												//!< Translational diffusion coefficient
+  m_Dr1 = 4e-5; 												//!< Rotational diffusion coefficient barnase
+	m_Dr2 = 4.5e-5;												//!< Rotational diffusion coefficient barstar
 
   computeInterfaceVectors(fname1, fname2);
-  /*
-  CPnt dir = (m_mol2->getPosition() - m_mol1->getPosition()).normalize();
-  dir *= (m_maxContDist-0.3);
-  cout << dir << " " << dir.norm() << endl;
-  m_mol2->setPos(dir);
- m_mol1->setPos(CPnt());
- CQuat Q(CPnt(-1,1,-1), M_PI/33);
- m_orth2 = Q * m_orth2;
- m_patch2 = Q * m_patch2;
 
-  if (isDocked())
-    cout << "docked" << endl;
-  else
-    cout << "not docked" << endl;
-
-  exit(0);
-  */
 }
+
+/******************************************************************/
+/******************************************************************//**
+* run: Runs a BD simulation for 2 proteins.  Initializes one 
+*			at the origin and the other at some distance b_DIST away with
+*			random orientation.  
+******************************************************************/
+
 
 CBD::STATUS
 CBD::run()
@@ -86,46 +104,51 @@ CBD::run()
   
   vector<CPnt> force(2), torque(2);
   vector<REAL> pot;
-  REAL fact = IKbT*COUL_K/DIELECTRIC_WATER;
-  REAL srad = m_mol1->getRadius() + m_mol2->getRadius();
+  REAL fact = IKbT*COUL_K/DIELECTRIC_WATER;										//!< Conversion from internal units
+  REAL srad = m_mol1->getRadius() + m_mol2->getRadius();			//!< Sum of protein radii
   STATUS status = RUNNING;
   scount = 0;
   CPnt dR2, dO1, dO2; 
-  while (status == RUNNING)
+  while (status == RUNNING)																		//!< 2 steps to BD run, compute dt and force computation
     {
       REAL dt = compute_dt();     
       REAL dist = CProtein::computeDistance(*m_mol1, *m_mol2);
-      if (dist < f_DIST)
-	{
-	  CProtein::computeForces(force, torque);
+      if (dist < f_DIST)																		 //!< If two proteins are within cutoff, compute forces
+			{
+				CProtein::computeForces(force, torque);
 	  
-	  dR2 = (m_Dtr*dt*fact)*force[1];
-	  dO1 = (m_Dr1*dt*IKbT*COUL_K)*torque[0];
-	  dO2 = (m_Dr2*dt*IKbT*COUL_K)*torque[1];
-	}
-      else
-	{
-	  dR2.zero();
-	  dO1.zero();
-	  dO2.zero();
-	}
+				dR2 = (m_Dtr*dt*fact)*force[1];											//!< Move 2nd protein
+				dO1 = (m_Dr1*dt*IKbT*COUL_K)*torque[0];							//!< Rotate both proteins
+				dO2 = (m_Dr2*dt*IKbT*COUL_K)*torque[1];
+		}
+    else
+		{
+			dR2.zero();
+			dO1.zero();
+			dO2.zero();
+		}
 
-      if (scount % 1000 == 0)
-	{
-	  CPnt t =  m_mol2->getPosition() - m_mol1->getPosition();
-	  fout << scount << ") " << m_mol1->getPosition() 
-	       << m_mol2->getPosition()	<< "-> " << dist << endl;
-	  fout << force[1] << " " << torque[1] << endl;
-	  //saveState();
-	}
+    if (scount % 1000 == 0)																	//!< Print out details every 1000 steps
+		{
+			CPnt t =  m_mol2->getPosition() - m_mol1->getPosition();
+			fout << scount << ") " << m_mol1->getPosition() 
+					<< m_mol2->getPosition()	<< "-> " << dist << endl;
+			fout << force[1] << " " << torque[1] << endl;
+		}
 
-      status = makeMove(dR2, dO1, dO2, dt);
-      scount++;
-    }
+    status = makeMove(dR2, dO1, dO2, dt);										//<! Move system with given dr, d angle and dt
+    scount++;
+	}
 
   fout << CBD::STATUS_STRING[status] << endl;
   return status;
 }
+
+/******************************************************************/
+/******************************************************************//**
+** makeMove
+******************************************************************/
+
 
 CBD::STATUS
 CBD::makeMove(const CPnt & dR2, const CPnt & dO1, 
@@ -195,6 +218,12 @@ CBD::makeMove(const CPnt & dR2, const CPnt & dO1,
     return RUNNING;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* isDocked
+******************************************************************/
+
+
 bool 
 CBD::isDocked() const
 {
@@ -222,6 +251,12 @@ CBD::isDocked() const
   return true;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* saveState
+******************************************************************/
+
+
 void CBD::saveState()
 {
   char fname[100];
@@ -236,25 +271,31 @@ void CBD::saveState()
   m_mol2->PDBoutput(fout, 1+m_mol1->getAtoms().size(), "B", rot, trans);  
 }
 
+/******************************************************************/
+/******************************************************************//**
+* computeInterfaceVectors: compute patches - vector between proteins
+* and compute orthogonal vectors to the two vectors
+******************************************************************/
+
 void 
 CBD::computeInterfaceVectors(const char * fname1, const char * fname2)
 {
   CPnt mean;
   vector<CPnt> pnts;
   
-  // CProtein::getInterfaceAtoms(*m_mol1, *m_mol2, pnts);
-
-  //  for (int i = 0; i < pnts.size(); i++)
-  //  mean += pnts[i];
-  
-  //mean *= 1.0/pnts.size();
-  CPnt d = (m_mol2->getPosition() - m_mol1->getPosition()).normalize();
-  m_patch1 = d; //(mean - m_mol1->getPosition()).normalize();
-  m_patch2 = -d; //(mean - m_mol2->getPosition()).normalize();   
+  CPnt d = (m_mol2->getPosition() - m_mol1->getPosition()).normalize();  //<! Normalized vector between 2 mols
+  m_patch1 = d; 
+  m_patch2 = -d;   
   m_orth1 = (CPnt(-d.z(), 0.0, d.x())).normalize(); // (cross(m_patch1, m_patch2)).normalize();
   m_orth2 = m_orth1;
-  //cout << m_patch2 << m_orth1 << m_orth2 << endl;
+
 }
+
+/******************************************************************/
+/******************************************************************//**
+* computeRate
+******************************************************************/
+
 
 REAL
 CBD::computeRate(int numTraj, int nDocked)
@@ -262,33 +303,6 @@ CBD::computeRate(int numTraj, int nDocked)
   REAL cnst = 4.0*M_PI*m_Dtr; 
   REAL maxR = q_DIST;
   REAL dR = 10.0;
-  
-  /*
-  REAL CONST = m_mol1->getSumCharge()*m_mol2->getSumCharge() * 
-    COUL_K*IKbT/DIELECTRIC_WATER;
-  
-  REAL val = exp(CONST/maxR)/(maxR*maxR);
-  while (val > 1e-10)
-    {
-      maxR += dR;
-      val = exp(CONST/maxR)/(maxR*maxR);
-    }
-  REAL R = b_DIST;
-  dR = (maxR - R)*0.000001;
-  val = 0.0;
-  for (; R <= maxR; R += dR)
-    val += exp(CONST/R)*(dR/(R*R));      
-
-  double k_b = cnst/val;
-
-  R = q_DIST;
-  dR = (maxR - R)*0.000001;
-  val = 0.0;
-  for (; R <= maxR; R += dR)
-    val += exp(CONST/R)*(dR/(R*R));  
-  
-  REAL k_q = cnst/val;
-  */
 
   REAL k_b = 4*M_PI*m_Dtr*b_DIST ;
   REAL k_q = 4*M_PI*m_Dtr*q_DIST;
@@ -302,6 +316,12 @@ CBD::computeRate(int numTraj, int nDocked)
   cout << "The relative rate is: " << K << endl;
   return K;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* approxBBall
+******************************************************************/
+
 
 void 
 approxBBall(const vector<CPnt> & V, CPnt & cen, REAL & rad)
@@ -380,6 +400,12 @@ approxBBall(const vector<CPnt> & V, CPnt & cen, REAL & rad)
   return;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* readqcd
+******************************************************************/
+
+
 void readqcd(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch, 
 	     REAL & rad)
 {
@@ -414,6 +440,12 @@ void readqcd(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch,
   cout << fname << ": charges: " << ch.size() << ", net charge: " 
        << sum << ", radius: " << rad << endl; 
 }
+
+/******************************************************************/
+/******************************************************************//**
+* writemdp
+******************************************************************/
+
 
 void writemdp(const char * ifname, const char * ofname, 
 	      const vector<CPnt> & pnt, const CPnt& cen, bool sp,
@@ -465,6 +497,12 @@ void writemdp(const char * ifname, const char * ofname,
     }
 }
 
+/******************************************************************/
+/******************************************************************//**
+* readmdp
+******************************************************************/
+
+
 void readmdp(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch, 
 	     REAL & rad, CPnt & cen)
 {
@@ -515,6 +553,12 @@ void readmdp(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch,
   cout << fname << ": charges: " << ch.size() << ", net charge: " 
        << sum << ", radius: " << rad << ", cen: " << cen << endl; 
 }
+
+/******************************************************************/
+/******************************************************************//**
+* buildUnitCell
+******************************************************************/
+
 
 void 
 buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe, 
@@ -623,6 +667,13 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
   cen.push_back(new CPnt(stretch*cn2));
 }
 
+
+/******************************************************************/
+/******************************************************************//**
+* buildSystem
+******************************************************************/
+
+
 REAL buildSystem(const char * ifname, int num, REAL dist, bool bSave, int ver, 
 		 vector<CMPE*> & mpe, vector<CPnt*> & cen)
 {
@@ -725,6 +776,12 @@ REAL buildSystem(const char * ifname, int num, REAL dist, bool bSave, int ver,
    return rad1;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* Building a grid
+******************************************************************/
+
+
 void buildGrid(const char * ifname, int num, REAL dist, int ver, REAL rad,
 	       const vector<CMPE*> & mpe, const vector<CPnt*> & cen, REAL fact)
 {
@@ -781,6 +838,12 @@ void buildGrid(const char * ifname, int num, REAL dist, int ver, REAL rad,
   fwrite(V, sizeof(float), gsize*gsize*gsize, fd);
 }
 
+/******************************************************************/
+/******************************************************************//**
+* Computing the perturbation
+******************************************************************/
+
+
 void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 	     vector<CMPE*> & mpe, vector<CPnt*> & cen)
 {
@@ -826,14 +889,19 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
     }
 }
 
-// param 2: salt concentration
-// param 3: output file
-// param 4: temporary file index
+/******************************************************************/
+/******************************************************************//**
+* Main for BD simulation of Barnase/Barstar
+* param 2: salt concentration
+* param 3: output file
+* param 4: temporary file index
+******************************************************************/
+
 int main1(int argc, char ** argv)
 {
   seedRand(-1);
 
-  REAL kappa = sqrt(atof(argv[2]))/3.04;
+  REAL kappa = sqrt(atof(argv[2]))/3.04;				// Inverse debye length
   CBD bd("barnaseh.pdb", "barstarh.pdb",kappa);
   
   ofstream fout(argv[3]);
@@ -844,7 +912,7 @@ int main1(int argc, char ** argv)
     {
       CBD::STATUS status = bd.run();
       if (status == CBD::DOCKED)
-	cdock++;
+				cdock++;
 
       fout << CBD::STATUS_STRING[status] << " " << (int)status 
 	   << " " << scount << endl;
@@ -853,14 +921,22 @@ int main1(int argc, char ** argv)
   return 0;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* Main for 
+* param 2: input file name
+* param 3: Number of iterations to run force calculations
+* param 4: Distance for molecule placement
+******************************************************************/
+
 int main2(int argc, char ** argv)
 {
   cout << "SOLVE" << endl;
   seedRand(-1);
   cout.precision(5);
  
-  int num = atoi(argv[3]);
   const char * ifname = argv[2];
+  int num = atoi(argv[3]);
   int dist = atoi(argv[4]);
   
   vector<CMPE*> mpe;
@@ -892,19 +968,30 @@ int main2(int argc, char ** argv)
   return 0;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* Main for perturbation run
+* param 2: input file name
+* param 3: Number of iterations to run force calculations
+* param 4: Distance for molecule placement
+* param 5: 
+* param 6: Translation diffusion coefficient 
+* param 7: Rotation diffusion coefficient 
+* param 8: Perturbation file name 
+******************************************************************/
+
 int main3(int argc, char ** argv)
 {
   cout.precision(5);
   cout << "PERTURB" << endl;
-
-  int num = atoi(argv[3]);
+  
   const char * ifname = argv[2];
+  int num = atoi(argv[3]);
   int dist = atoi(argv[4]);
   int ver = atoi(argv[5]);
   REAL Dtr = atof(argv[6]);
   REAL Dr = atof(argv[7]);
 
-  //seedRand(dist+num*100+ver*10000);
   seedRand(-1);
 
   vector<CMPE*> mpe;
@@ -916,7 +1003,7 @@ int main3(int argc, char ** argv)
   cout << endl;
 
   char fn[100];
-  sprintf(fn, "../../Documents/JCTC/res/perturb/perturb_%s_%d_%d.txt", 
+  sprintf(fn, "perturb_%s_%d_%d.txt", 
 	  argv[8], num, dist);
   cout << fn << endl;
   ofstream fout(fn);
@@ -937,21 +1024,27 @@ int main3(int argc, char ** argv)
     }
   cout << endl;
 
-  //buildGrid(ifname, num, dist, ver, mpe[0]->getRad(), mpe, cen);
-
   return 0;;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* Main for Computing the polarization forces
+* param 2: input file name
+* param 3: Number of iterations to run force calculations
+* param 4: Distance for molecule placement
+* param 5: 
+******************************************************************/
 
 int main4(int argc, char ** argv)
 {
   cout.precision(5);
 
-  int num = atoi(argv[3]);
   const char * ifname = argv[2];
+  int num = atoi(argv[3]);
   int dist = atoi(argv[4]);
   int ver = atoi(argv[5]);
 
-  //seedRand(dist+num*100+ver*10000);
   seedRand(-1);
 
   vector<CMPE*> mpe;
@@ -963,9 +1056,9 @@ int main4(int argc, char ** argv)
   cout << endl;
 
   char fn1[100], fn2[100];
-  sprintf(fn1, "../../Documents/JCTC/res/polar/polar_force_%s_%d_%d.txt", 
+  sprintf(fn1, "polar_force_%s_%d_%d.txt", 
 	  argv[6], num, dist);
-  sprintf(fn2, "../../Documents/JCTC/res/polar/polar_torque_%s_%d_%d.txt", 
+  sprintf(fn2, "polar_torque_%s_%d_%d.txt", 
 	  argv[6], num, dist);
   ofstream fout1(fn1);
   ofstream fout2(fn2);
@@ -1020,6 +1113,15 @@ int main4(int argc, char ** argv)
   return 0;;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* Main for computing diffusion
+* param 2: input file name
+* param 3: Number of iterations to run force calculations
+* param 4: Distance for molecule placement
+* param 5: 
+******************************************************************/
+
 int main5(int argc, char ** argv)
 {
   cout.precision(5);
@@ -1054,6 +1156,13 @@ int main5(int argc, char ** argv)
 
   return 0;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* Main for computing diffusion
+* param 2: input file name
+* param 3: 
+******************************************************************/
 
 int main6(int argc, char ** argv)
 {
@@ -1114,6 +1223,15 @@ int main6(int argc, char ** argv)
   return 0;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* Main for 
+* param 2: input file name
+* param 3: 
+* param 4: Input for charge distribution name
+******************************************************************/
+
+
 int main7(int argc, char ** argv)
 {
   cout.precision(5);
@@ -1154,7 +1272,7 @@ int main7(int argc, char ** argv)
   REAL pi, pj;
 
   char fn[100];
-  sprintf(fn,"../../Documents/JCTC/res/change/%s_%dA.txt", argv[4], 
+  sprintf(fn,"%s_%dA.txt", argv[4], 
 	  (int)floor(10*dist)); 
   ofstream fout(fn);
   REAL c = 2.0/sqrt(3.0);
@@ -1215,6 +1333,16 @@ int main7(int argc, char ** argv)
   cout << endl;
   return 0;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* Main for makin an infinte grid
+* param 2: input file name
+* param 3: 
+* param 4: 
+* param 5: 
+******************************************************************/
+
 
 int main8(int argc, char ** argv)
 {
@@ -1298,29 +1426,14 @@ int main8(int argc, char ** argv)
   for (int n = 0; n < 8; n++)
     cout << k*pot[n] << " " << k*force[n] << " " << k*torque[n] << endl;
 
-  /*
-  char fn[100];
-  sprintf(fn,"../../Documents/JCTC/res/infgrid/%s_%dA_%dL.txt", 
-	  argv[5], dist, layer);
-  ofstream fout(fn);
- 
-  
-  for (int i = 0; i < fs.size(); i++)
-    {
-      CQuat Qt(CPnt(0,1,0),ts[i]);
-      CQuat Qf(CPnt(0,0,1),fs[i]);
-      pm->reset(12, Qf*Qt);
-
-      CMPE::solve(mpe,cen,false);
-      CMPE::computeForce(mpe, cen, pot, force, torque);
-
-      fout << k*pot[0] << " " << k*force[0].x() << " " << k*force[0].y() << " "
-	 << k*force[0].z() << " " << k*torque[0].x() << " " << k*torque[0].y() 
-	 << " " << k*torque[0].z() << endl;
-    }
-  */
  return 0;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* Main!
+******************************************************************/
+
 
 int main(int argc, char ** argv)
 {

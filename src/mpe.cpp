@@ -7,6 +7,19 @@
 #include "mpe.h"
 #include "protein.h"
 
+/******************************************************************//**
+* # File: mpe.cpp
+* #
+* # Date: June 2014
+* #
+* # Description: This file contains the class MPE and its functions
+* #
+* # Author: Lotan, Felberg
+* #
+* # Copyright ( c )
+* #
+******************************************************************/
+
 #define MAX_POLAR_DEV (1e-2)
 #define MAX_POLAR_DEV_SQR (MAX_POLAR_DEV*MAX_POLAR_DEV) 
 #define MAX_POL_ROUNDS 20
@@ -22,21 +35,30 @@ CGradCoeff CMPE::m_tG1, CMPE::m_tG2, *CMPE::m_tG;
 CXForm ** CMPE::m_xfs;
 int * CMPE::IDX, CMPE::m_total, CMPE::npol;
 REAL CMPE::npol_t;
-bool CMPE::m_bInfinite = false;
-int CMPE::m_unit = 1;
+bool CMPE::m_bInfinite = false;		//<! Indicates whether simulation for an infinite grid is being performed
+int CMPE::m_unit = 1;							//<! 
+
+/******************************************************************/
+/******************************************************************//**
+* Initializing parameters for multipole expansion
+* Inputs:  kappa, dielectric of the protein, water 
+*				dielectric, the nummber of molecules, average scaling factor
+* 
+******************************************************************/
 
 void
 CMPE::initConstants(REAL kappa, REAL dielp, REAL diels, int nmol, REAL rs)
 {
-  DIEL_P = dielp;
-  DIEL_S = diels;
-  N_MOL = nmol;
+  DIEL_P = dielp;		//!< Dielectric of protein
+  DIEL_S = diels;		//!< Dielectric of solvent
+  N_MOL = nmol;		//!< Number of molecules 
   
+	//<! Initializing other classes: SHCoeff and Transform
   CSHCoeff::init(rs, kappa);
   CXForm::initConstants();
 
-  IDX = new int[N_MOL];
-  IDX[0] = 0;
+  IDX = new int[N_MOL];		//!< Create vector of size(number of molecules)
+  IDX[0] = 0;							//!< List starts with 0 to (nmols-1)
   for (int i = N_MOL-1; i > 0; i--)
     IDX[N_MOL-i] = IDX[N_MOL-i-1] + i;
 
@@ -47,15 +69,25 @@ CMPE::initConstants(REAL kappa, REAL dielp, REAL diels, int nmol, REAL rs)
   m_tG = new CGradCoeff[N_MOL];
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 void
 CMPE::initXForms(const vector<CMPE*> & mpe)
 {
-  int i_max = (m_bInfinite ? m_unit : N_MOL);
+  int i_max = (m_bInfinite ? m_unit : N_MOL);		
 
   for (int i = 0; i < i_max; i++)
     for (int j = i+1; j < N_MOL; j++)
       m_xfs[IDX[i]+(j-i)-1] = new CXForm(mpe[j]->m_pM, mpe[i]->m_pM);
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CMPE::setOrient(const CQuat & rot)
@@ -68,7 +100,12 @@ CMPE::setOrient(const CQuat & rot)
   m_orient = rot;
 }
 
-// Rotate the top level of the expansions associated with this molecule.
+
+/******************************************************************/
+/******************************************************************//**
+* Rotate the top level of the expansions associated with this molecule.
+******************************************************************/
+
 void
 CMPE::incRotate()
 {
@@ -76,7 +113,14 @@ CMPE::incRotate()
  
   m_rot.rotate(m_M, m_rM, m_p, m_p, true);
   m_rot.rotate(m_T, m_rT, m_p, m_p, true);
-  m_rT.incRotate(m_orient);}
+  m_rT.incRotate(m_orient);
+}
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 
 CMPE::CMPE(const CProtein & mol) : m_pM(0, N_POLES), m_rot(false) 
 {
@@ -97,6 +141,11 @@ CMPE::CMPE(const CProtein & mol) : m_pM(0, N_POLES), m_rot(false)
   reset(1);
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 CMPE::CMPE(const vector<REAL> & charges, const vector<CPnt> & pos, 
 	   REAL rad, int id, int p) : 
   m_rad(rad),  m_id(id), m_pM(0, N_POLES), m_rot(false)
@@ -105,6 +154,11 @@ CMPE::CMPE(const vector<REAL> & charges, const vector<CPnt> & pos,
   initialize(charges, pos, p); 
   reset(p); 
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CMPE::initialize(const vector<REAL> & charges, const vector<CPnt> & pos,
@@ -117,6 +171,11 @@ CMPE::initialize(const vector<REAL> & charges, const vector<CPnt> & pos,
   m_T = CTorqCoeff(charges, pos, N_POLES, m_rad);  
   m_T *= m_C;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CMPE::reset(int p, const CQuat & Q)
@@ -132,6 +191,11 @@ CMPE::reset(int p, const CQuat & Q)
     for (int j = 0; j < N_MOL; j++)
       m_pG[j].reset(p);
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CMPE::initCD()
@@ -167,6 +231,11 @@ CMPE::initCD()
 	}
     }
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void 
 CMPE::updateXForms(const vector<CPnt*> & cen, vector<CMPE*> & mpe)
@@ -224,6 +293,11 @@ CMPE::updateXForms(const vector<CPnt*> & cen, vector<CMPE*> & mpe)
   else
     m_total = mpe[0]->getOrder()*(mpe[0]->getOrder()+1)/2;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CMPE::polarize(vector<CMPE*> & mpe, bool bPot)
@@ -318,6 +392,11 @@ CMPE::polarize(vector<CMPE*> & mpe, bool bPot)
     }
 }  
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 void
 CMPE::reexpand(const vector<CMPE*> & mpe, int i)
 {
@@ -335,8 +414,11 @@ CMPE::reexpand(const vector<CMPE*> & mpe, int i)
     }
 }
 
+/******************************************************************/
+/******************************************************************//**
+* Recompute the MP coeffs at mol i
+******************************************************************/
 
-// Recompute the MP coeffs at mol i
 REAL
 CMPE::recompute(const vector<CMPE*> & mpe, int i)
 {
@@ -382,8 +464,12 @@ CMPE::reexpandGrad(const vector<CMPE*> & mpe, int i)
     }
 }
 
-// Recompute the gradient of the MP coeffs at mol i respect to the position
-// of mol j.
+/******************************************************************/
+/******************************************************************//**
+* Recompute the gradient of the MP coeffs at mol i respect to the position
+* of mol j.
+******************************************************************/
+
 REAL
 CMPE::recomputeGrad(const vector<CMPE*> & mpe, int i, int j)
 {
@@ -413,7 +499,11 @@ CMPE::recomputeGrad(const vector<CMPE*> & mpe, int i, int j)
   return dev;
 }
 
-// Precompute the sum of the products of dT(i,j)*A(i)
+/******************************************************************/
+/******************************************************************//**
+* Precompute the sum of the products of dT(i,j)*A(i)
+******************************************************************/
+
 void
 CMPE::prepareDTA(const vector<CMPE*> & mpe, int j)
 {
@@ -446,6 +536,11 @@ CMPE::prepareDTA(const vector<CMPE*> & mpe, int j)
 	}
     }
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CMPE::computeForceOn(vector<CMPE*> & mpe, CPnt & force, CPnt & torque, int i)
@@ -496,6 +591,11 @@ CMPE::computeForce(vector<CMPE*> & mpe, const vector<CPnt*> & cen,
     }
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 
 REAL
 CMPE::computeForceAt(const vector<CMPE*> & mpe, const vector<CPnt*> & cen,
@@ -523,6 +623,11 @@ CMPE::computeForceAt(const vector<CMPE*> & mpe, const vector<CPnt*> & cen,
   return pot;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 REAL
 CMPE::computePotAt(const vector<CMPE*> & mpe, const vector<CPnt*> & cen,
 		   const CPnt & P)
@@ -538,6 +643,12 @@ CMPE::computePotAt(const vector<CMPE*> & mpe, const vector<CPnt*> & cen,
   return pot;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
+
 void 
 CMPE::solve(vector<CMPE*> & mpe, const vector<CPnt*> & cen, bool bPot)
 { 
@@ -546,6 +657,11 @@ CMPE::solve(vector<CMPE*> & mpe, const vector<CPnt*> & cen, bool bPot)
   updateXForms(cen, mpe); 
   polarize(mpe, bPot);
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CMPE::reexpand(const vector<CMPE*> & mpe)
@@ -557,6 +673,11 @@ CMPE::reexpand(const vector<CMPE*> & mpe)
       mpe[i]->reexpandGrad(mpe, i);
     }
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CMPE::updateSolve(vector<CMPE*> & mpe, const vector<CPnt*> & cen)

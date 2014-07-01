@@ -4,6 +4,20 @@
 #include "protein.h"
 #include "pdb.h"
 
+/******************************************************************//**
+ * #
+ * # File: protein.cpp
+ * #
+ * # Date: June 2014
+ * #
+ * # Description: This file creates the protein system for BD
+ * #
+ * # Author: Lotan, Felberg
+ * #
+ * # Copyright ( c )
+ * #
+******************************************************************/
+
 #define PARAM_FILE "charges_OPLS"
 #define MAX_MPE_ERROR 0.02
 
@@ -12,16 +26,32 @@ bool CProtein::m_initialized = false;
 vector<CMPE*> CProtein::m_exps;
 vector<CPnt*> CProtein::m_cens;
 vector<CProtein*> CProtein::m_mols;
-bool CProtein::m_bFirst = true;
+bool CProtein::m_bFirst = true;							//!< Operator that designates whether a force calc has been performed or not (true=no)
+
+/******************************************************************/
+/******************************************************************//**
+* Initializing parameters for protein file
+* Inputs:  kappa, dielectric of the protein, water 
+*				dielectric, the nummber of molecules, average scaling factor
+*				RS~avg molecular radius
+******************************************************************/
 
 void
 CProtein::initParameters(REAL kappa, REAL dielp, REAL diels, int nmol, REAL rs)
 {
+	// Loading charge map for barnase and barstar
   loadChargeMap();
+	// Initialize constants for the multipole expansions
   CMPE::initConstants(kappa, dielp, diels, nmol, rs);
 
-   m_initialized = true;
+	// Now the system is initialized
+  m_initialized = true;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* Function for loading the charge map
+******************************************************************/
 
 void
 CProtein::loadChargeMap()
@@ -51,34 +81,40 @@ CProtein::loadChargeMap()
 	  exit(0);
 	}
 
+			// Load charges for each amino acid type
       CHARGES[AA::getAACode(rname)][CAtom::getAtomCode(aname)] = (REAL)ch;
     }
 }
+
+/******************************************************************/
+/******************************************************************//**
+* Initializing protein class
+******************************************************************/
 
 CProtein::CProtein(const char * fname)
 {
   vector<AA> aas;
   CPDB::loadFromPDB(fname, aas);
 
-  for (int i = 0; i < aas.size(); i++)
+  for (int i = 0; i < aas.size(); i++)							//!< Add each atom in each amino acid of protein to matrix of atoms
     for (int j = 0; j < aas[i].getNumAtoms(); j++)
       m_atoms.push_back(aas[i][j]);
 
-  for (int i = 0; i < m_atoms.size(); i++)
+  for (int i = 0; i < m_atoms.size(); i++)				//!< Add charge on atom in each amino acid to vector of charges
     if (m_atoms[i].getCharge() != 0.0)
       m_chargedAtoms.push_back(&(m_atoms[i]));
 
-  m_center = computeCenter();
-  for (int i = 0; i < m_atoms.size(); i++)
+  m_center = computeCenter();											//!< compute center of geometry if the atom
+  for (int i = 0; i < m_atoms.size(); i++)				//!< reposition each atom WRT to the center of mass of protein
     m_atoms[i].setPos(m_atoms[i].getPos() - m_center);
 
   computeRadius();
 
-  m_sumCharge = 0.0;
-  for (int i = 0; i < getNumCharges(); i++)
+  m_sumCharge = 0.0;															//!< Total charge of protein
+  for (int i = 0; i < getNumCharges(); i++)			
     m_sumCharge += getCharge(i);
 
-  REAL s = 0.0;
+  REAL s = 0.0;																		//!< Total charge of protein to print as output
   for (int i = 0; i < getNumCharges(); i++)
     s += (getCharge(i));
   cout << "sum = " << s <<  " rad = " << m_rad << endl;
@@ -89,6 +125,11 @@ CProtein::CProtein(const char * fname)
   m_cens.push_back(&m_center);
   m_mols.push_back(this);
 }
+
+/******************************************************************/
+/******************************************************************//**
+* Compute center of geometry of the protein of interest
+******************************************************************/
 
 CPnt
 CProtein::computeCenter()
@@ -101,6 +142,11 @@ CProtein::computeCenter()
   p *= 1.0/m_atoms.size();
   return p;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* Calculate radius of protein
+******************************************************************/
 
 void
 CProtein::computeRadius()
@@ -116,15 +162,10 @@ CProtein::computeRadius()
   m_rad = max;
 }
 
-
-// never used.
-void 
-CProtein::computeTransformTo(const CProtein & target, CQuat & q, 
-			     CPnt & trans) const
-{
-  trans = conj(getOrientation())*(target.getPosition() - getPosition());
-  q =  conj(getOrientation()) * target.getOrientation();
-}
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 bool 
 CProtein::inCollision(const CProtein & mol)
@@ -135,6 +176,11 @@ CProtein::inCollision(const CProtein & mol)
   else
     return true;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 REAL 
 CProtein::getMaxAtomRad()
@@ -147,6 +193,11 @@ CProtein::getMaxAtomRad()
   return max;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 void
 CProtein::PDBoutput(ostream & fout, int sindex, const char * chainid,
 		    const CQuat & rot, const CPnt & trans)
@@ -154,6 +205,11 @@ CProtein::PDBoutput(ostream & fout, int sindex, const char * chainid,
   for (int i = 0; i < m_atoms.size(); i++)
     CPDB::writeLine(fout, sindex+i, chainid, m_atoms[i], rot, trans);
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CProtein::QCDoutput(ostream & fout)
@@ -174,6 +230,12 @@ CProtein::QCDoutput(ostream & fout)
     }
 }
 
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 const CAtom *
 CProtein::getAtom(int resnum, int acode) const
 {
@@ -183,6 +245,11 @@ CProtein::getAtom(int resnum, int acode) const
 
   return NULL;
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CProtein::getInterfaceAtoms(const CProtein & P1, const CProtein & P2,
@@ -236,6 +303,11 @@ CProtein::getInterfaceAtoms(const CProtein & P1, const CProtein & P2,
     }
 }
 
+/******************************************************************/
+/******************************************************************//**
+* Compute forces between molecules
+******************************************************************/
+
 void
 CProtein::computeForces(vector<CPnt> & force, vector<CPnt> & torque) 
 {
@@ -243,7 +315,7 @@ CProtein::computeForces(vector<CPnt> & force, vector<CPnt> & torque)
 
   if (m_bFirst)
     {
-      CMPE::initXForms(m_exps);
+      CMPE::initXForms(m_exps);						//!< Initialize transforms if this is the first force calc of the simulation
       m_bFirst = false;
     }
 

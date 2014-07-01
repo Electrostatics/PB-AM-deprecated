@@ -2,6 +2,26 @@
 #include "xform.h"
 #include "gradcoeff.h"
 
+/******************************************************************//**
+* # File: xform.cpp
+* #
+* # Date: June 2014
+* #
+* # Description: This file contains the class XForm and its functions
+* #								Xform = transform
+* #
+* # Author: Lotan, Felberg
+* #
+* # Copyright ( c )
+* #
+******************************************************************/
+
+/******************************************************************/
+/******************************************************************//**
+* Initialize the rotation coefficients and 
+* the translation coefficients
+******************************************************************/
+
 void
 CXForm::initConstants()
 {
@@ -9,7 +29,11 @@ CXForm::initConstants()
   CTransCoeff::initConstants();
 }
 
-// Initialize to a MtoL transform by the vector P.
+/******************************************************************/
+/******************************************************************//**
+* Initialize to a MtoL transform by the vector P.
+******************************************************************/
+
 void 
 CXForm::reset(const CPnt & P, int p)
 {
@@ -49,7 +73,11 @@ CXForm::reset(const CPnt & P, int p)
     }
 }
 
-// Compute the derivatives of the transformed MP coeffs
+/******************************************************************/
+/******************************************************************//**
+* Compute the derivatives of the transformed MP coeffs
+******************************************************************/
+
 void 
 CXForm::xform(const CMCoeff & Min, CGradCoeff & Gout, bool bFor)
 {
@@ -80,6 +108,10 @@ CXForm::xform(const CMCoeff & Min, CGradCoeff & Gout, bool bFor)
   sphToCart(Gout);
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 // Transform the MP coeffs
 void 
 CXForm::xform(const CMCoeff & Min, CMCoeff & Mout, bool bFor)
@@ -91,6 +123,10 @@ CXForm::xform(const CMCoeff & Min, CMCoeff & Mout, bool bFor)
   m_rot.rotate(m_tM2, Mout, false);
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 // Transform the MP coeff triplet.
 void 
 CXForm::xform(const CTriCoeff & Gin, CTriCoeff & Gout, bool bFor)
@@ -123,6 +159,10 @@ CXForm::incOrder()
   return m_relError;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 REAL
 CXForm::decOrder()
 {
@@ -141,6 +181,10 @@ CXForm::decOrder()
   return m_relError;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 void
 CXForm::sphToCart(CPnt & p)
 {
