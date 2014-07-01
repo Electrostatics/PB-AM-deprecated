@@ -105,28 +105,6 @@ CMCoeff::besselk(REAL K[], int p, REAL val) const
     K[n] = K[n-1] + valsqr*K[n-2]*CONST4;
 }
 
-/*
-static void 
-CMCoeff::besseli(REAL I[], int p, REAL val) const
-{
-  for (int n = 0; n < p; n++)
-     I[n] = 1.0;
-  
-  if (val != 0.0)
-    {
-      REAL z = 0.5*val*val;
-      for (int n = 0; n < p; n++)
-	{
-	  REAL t = z/(2*n+3);
-	  for (int j = 1; j <= 20; j++)
-	    {
-	      I[n] += t;
-	      t *= (z/((j+1)*(2*(n+j)+3)));
-	    }
-        }
-    }
-}
-*/
 
 static void 
 CMCoeff::besseli(REAL I[], int p, REAL val) const

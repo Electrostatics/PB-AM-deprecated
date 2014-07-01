@@ -3,49 +3,72 @@
 #include "mcoeff.h"
 #include "shcoeff.h"
 
+/******************************************************************//**
+* # File: mcoeff.cpp
+* #
+* # Date: June 2014
+* #
+* # Description: This file contains the class MCoeff and its functions
+* #								MCoeff = matrix coefficient
+* # Author: Lotan, Felberg
+* #
+* # Copyright ( c )
+* #
+******************************************************************/
+
 REAL CMCoeff::RS = 1.0;
 REAL CMCoeff::IRS = 1.0;
 REAL CMCoeff::KAPPA = 0.0;
 int CMCoeff::IDX[2*N_POLES+1];
 
+/******************************************************************/
+/******************************************************************//**
+* Initialize matrix expansion coefficients
+******************************************************************/
+
 CMCoeff::CMCoeff(const vector<REAL> & charges, const vector<CPnt> & pos, 
-		 int p, REAL rad) : m_p(p)
+								 int p, REAL rad) : m_p(p)
 {
   assert(p > 0);
   m_M.reserve(IDX[N_POLES]);
   m_M.resize(IDX[p]);
-
+	
   if (rad == 0.0)
     m_type= MPOLE_K;
   else
     m_type = MPOLE;
-
+	
   REAL I[p];
   CSHCoeff SH(p);
   for (int i = 0; i < pos.size(); i++)
-    {
-      if (charges[i] == 0.0)
-	continue;
-
-      CSpPnt spos = CartToSph(pos[i]);
-      SH.reset(spos.theta(), spos.phi(), p);
-
-      if (m_type == MPOLE_K)
-	CSHCoeff::besseli(I, p, KAPPA*spos.rho());
-      else
-	CSHCoeff::besseli(I, p, 0.0);
-
-      REAL k = charges[i];   
-      REAL r = spos.rho()*IRS;
-      for (int n = 0; n < p; n++)
 	{
-	  I[n] *= k;
-	  k *= r;
+		if (charges[i] == 0.0)
+			continue;
+		
+		CSpPnt spos = CartToSph(pos[i]);
+		SH.reset(spos.theta(), spos.phi(), p);
+		
+		if (m_type == MPOLE_K)
+			CSHCoeff::besseli(I, p, KAPPA*spos.rho());
+		else
+			CSHCoeff::besseli(I, p, 0.0);
+		
+		REAL k = charges[i];   
+		REAL r = spos.rho()*IRS;
+		for (int n = 0; n < p; n++)
+		{
+			I[n] *= k;
+			k *= r;
+		}
+		
+		(*this) += (SH * I);
 	}
-      
-      (*this) += (SH * I);
-    }
 }
+
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 CMCoeff::CMCoeff(REAL ch, const CPnt & pos, int p, TYPE type) 
   : m_p(p), m_type(type)
@@ -97,6 +120,11 @@ CMCoeff::CMCoeff(REAL ch, const CPnt & pos, int p, TYPE type)
   (*this) += (SH * C);
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 CMCoeff
 CMCoeff::dMdr(REAL r) const
 {
@@ -135,6 +163,11 @@ CMCoeff::dMdr(REAL r) const
   return M;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 CMCoeff
 CMCoeff::dMdt(REAL theta, REAL phi) const
 {
@@ -168,6 +201,11 @@ CMCoeff::dMdp() const
   return M;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
+
 ostream & 
 operator<<(ostream & out, const CMCoeff & M)
 {
@@ -186,6 +224,10 @@ operator<<(ostream & out, const CMCoeff & M)
   return out;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 
 void
 CMCoeff::output(int p)

@@ -28,11 +28,11 @@
 #define q_DIST 500.0
 #define f_DIST 100.0											//!< Cutoff for protein force interactions
 
-#define DIELECTRIC_WATER 78.0
-#define DIELECTRIC_PROT 4.0
+#define DIELECTRIC_WATER 78.0							//!< The dielectric constant of water
+#define DIELECTRIC_PROT 4.0								//!< Dielectric constant of the protein
 
-#define SALT_CONCENTRATION  0.0500				//!< Molar
-#define KAPPA (sqrt(SALT_CONCENTRATION)/3.04)	
+#define SALT_CONCENTRATION  0.0500				//!< [ Molar ]  
+#define KAPPA (sqrt(SALT_CONCENTRATION)/3.04)	//!< Inverse debye length 
 
 #define COULOMB_CONSTANT (8.988e9)				//!< [ N*m^2/C^2 ]
 #define ELECTRON_CHARGE (1.60217733e-19)		//!<  [ coulombs ]
@@ -45,7 +45,7 @@
 #define GAMMA (0.01*100/1000*ANGSTROM*PICO_SEC)
 #define Kb (1.380658e-23)						//!<  [ m^2 kg/ s^2 / K ] 
 #define TEMP 298.0								//!<  [ Kelvin ]
-#define KbT (1.98718E-03*TEMP)					//!<     (TEMP*Kb*AVOGADRO_NUM/KCAL)
+#define KbT (1.98718E-03*TEMP)					//!< (TEMP*Kb*AVOGADRO_NUM/KCAL)
 #define IKbT (1.0/KbT)							//!<  1/KbT
 
 #define TOL 2.5
@@ -89,7 +89,11 @@ CBD::CBD(const char * fname1, const char * fname2, REAL kappa) : m_fcnt(0)
 /******************************************************************//**
 * run: Runs a BD simulation for 2 proteins.  Initializes one 
 *			at the origin and the other at some distance b_DIST away with
-*			random orientation.  
+*			random orientation. While the status is RUNNING, the system
+*			computes forces and then moves the 2nd protein and rotates 
+*     both while keeping the first fixed at the origin.  It prints 
+*			out the position of each molecule, their distance and the 
+*     force and torques of the system every 1000 steps.  
 ******************************************************************/
 
 
@@ -104,21 +108,21 @@ CBD::run()
   
   vector<CPnt> force(2), torque(2);
   vector<REAL> pot;
-  REAL fact = IKbT*COUL_K/DIELECTRIC_WATER;										//!< Conversion from internal units
-  REAL srad = m_mol1->getRadius() + m_mol2->getRadius();			//!< Sum of protein radii
+  REAL fact = IKbT*COUL_K/DIELECTRIC_WATER;										// Conversion from internal units
+  REAL srad = m_mol1->getRadius() + m_mol2->getRadius();			// Sum of protein radii
   STATUS status = RUNNING;
   scount = 0;
   CPnt dR2, dO1, dO2; 
-  while (status == RUNNING)																		//!< 2 steps to BD run, compute dt and force computation
+  while (status == RUNNING)																		// 2 steps to BD run, compute dt and force computation
     {
       REAL dt = compute_dt();     
       REAL dist = CProtein::computeDistance(*m_mol1, *m_mol2);
-      if (dist < f_DIST)																		 //!< If two proteins are within cutoff, compute forces
+      if (dist < f_DIST)																		 // If two proteins are within cutoff, compute forces
 			{
 				CProtein::computeForces(force, torque);
 	  
-				dR2 = (m_Dtr*dt*fact)*force[1];											//!< Move 2nd protein
-				dO1 = (m_Dr1*dt*IKbT*COUL_K)*torque[0];							//!< Rotate both proteins
+				dR2 = (m_Dtr*dt*fact)*force[1];											// Move 2nd protein
+				dO1 = (m_Dr1*dt*IKbT*COUL_K)*torque[0];							// Rotate both proteins
 				dO2 = (m_Dr2*dt*IKbT*COUL_K)*torque[1];
 		}
     else
@@ -128,7 +132,7 @@ CBD::run()
 			dO2.zero();
 		}
 
-    if (scount % 1000 == 0)																	//!< Print out details every 1000 steps
+    if (scount % 1000 == 0)																	// Print out details every 1000 steps
 		{
 			CPnt t =  m_mol2->getPosition() - m_mol1->getPosition();
 			fout << scount << ") " << m_mol1->getPosition() 
@@ -136,7 +140,7 @@ CBD::run()
 			fout << force[1] << " " << torque[1] << endl;
 		}
 
-    status = makeMove(dR2, dO1, dO2, dt);										//<! Move system with given dr, d angle and dt
+    status = makeMove(dR2, dO1, dO2, dt);										// Move system with given dr, d angle and dt
     scount++;
 	}
 

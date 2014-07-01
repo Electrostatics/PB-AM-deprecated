@@ -110,9 +110,8 @@ CXForm::xform(const CMCoeff & Min, CGradCoeff & Gout, bool bFor)
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Transform the MP coeffs
 ******************************************************************/
-// Transform the MP coeffs
 void 
 CXForm::xform(const CMCoeff & Min, CMCoeff & Mout, bool bFor)
 {
@@ -125,9 +124,9 @@ CXForm::xform(const CMCoeff & Min, CMCoeff & Mout, bool bFor)
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Transform the MP coeff triplet.
 ******************************************************************/
-// Transform the MP coeff triplet.
+
 void 
 CXForm::xform(const CTriCoeff & Gin, CTriCoeff & Gout, bool bFor)
 {

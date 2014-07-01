@@ -20,9 +20,9 @@
 * #
 ******************************************************************/
 
-#define MAX_POLAR_DEV (1e-2)
-#define MAX_POLAR_DEV_SQR (MAX_POLAR_DEV*MAX_POLAR_DEV) 
-#define MAX_POL_ROUNDS 20
+#define MAX_POLAR_DEV (1e-2)															//!< Max polarization error desired
+#define MAX_POLAR_DEV_SQR (MAX_POLAR_DEV*MAX_POLAR_DEV)		//!< Square of max polarization error
+#define MAX_POL_ROUNDS 20																	//!< Maximum desired polarization rounds
 
 #define CLKS_PER_MSEC (0.001*CLOCKS_PER_SEC)
 
@@ -71,7 +71,8 @@ CMPE::initConstants(REAL kappa, REAL dielp, REAL diels, int nmol, REAL rs)
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Initialize transforms.  Create a transform for each pair of proteins
+*   in the system, using their matrix coefficients.
 ******************************************************************/
 
 void
@@ -81,7 +82,7 @@ CMPE::initXForms(const vector<CMPE*> & mpe)
 
   for (int i = 0; i < i_max; i++)
     for (int j = i+1; j < N_MOL; j++)
-      m_xfs[IDX[i]+(j-i)-1] = new CXForm(mpe[j]->m_pM, mpe[i]->m_pM);
+      m_xfs[IDX[i]+(j-i)-1] = new CXForm(mpe[j]->m_pM, mpe[i]->m_pM); 
 }
 
 /******************************************************************/
@@ -118,7 +119,7 @@ CMPE::incRotate()
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Initialize a multipole expansion with a protein object
 ******************************************************************/
 
 
@@ -126,7 +127,7 @@ CMPE::CMPE(const CProtein & mol) : m_pM(0, N_POLES), m_rot(false)
 {
   m_rad = mol.getRadius();
   m_id = mol.getID();
-  initCD(); 
+  initCD();													// Initializing conformational constants for the given protein
 
   int num = mol.getNumCharges();
   vector<CPnt> pos(num);
@@ -143,7 +144,7 @@ CMPE::CMPE(const CProtein & mol) : m_pM(0, N_POLES), m_rot(false)
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Create a multipole expansion from a collection of charges.
 ******************************************************************/
 
 CMPE::CMPE(const vector<REAL> & charges, const vector<CPnt> & pos, 
@@ -157,19 +158,19 @@ CMPE::CMPE(const vector<REAL> & charges, const vector<CPnt> & pos,
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Initialize many multipole expansion coefficients
 ******************************************************************/
 
 void
 CMPE::initialize(const vector<REAL> & charges, const vector<CPnt> & pos,
 		 int p)
 {
-  m_M = CMCoeff(charges, pos, N_POLES, m_rad);
-  m_M *= m_C;
+  m_M = CMCoeff(charges, pos, N_POLES, m_rad);			// Create matrix expansion coeff object
+  m_M *= m_C;																				// Transform MCoeff by the Gamma operator
 
-  m_pG = new CGradCoeff[N_MOL];
-  m_T = CTorqCoeff(charges, pos, N_POLES, m_rad);  
-  m_T *= m_C;
+  m_pG = new CGradCoeff[N_MOL];											// Create gradient coefficients for 0-N_POLES
+  m_T = CTorqCoeff(charges, pos, N_POLES, m_rad);		// Create torque coefficients
+  m_T *= m_C;																				// Transform torque coeffs by the Gamma operator
 }
 
 /******************************************************************/
@@ -194,47 +195,49 @@ CMPE::reset(int p, const CQuat & Q)
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Initializing the surface charge distribution, using equations
+*			(19) and (20) from the 2006 paper.
 ******************************************************************/
 
 void
 CMPE::initCD()
 {
   if (m_rad == 0.0)
-    {
-      for (int n = 0; n < N_POLES; n++)
 	{
-	  m_C[n] = 1.0;
-	  m_CD[n] = 0.0;
+		for (int n = 0; n < N_POLES; n++)
+		{
+			m_C[n] = 1.0;
+			m_CD[n] = 0.0;
+		}
 	}
-    }
-  else
-    {
-      REAL K[N_POLES+1], I[N_POLES+1];
-      CSHCoeff::besselk(K, N_POLES+1, CMCoeff::KAPPA * m_rad);
-      CSHCoeff::besseli(I, N_POLES+1, CMCoeff::KAPPA * m_rad);
-      
-      REAL eps = DIEL_P/DIEL_S - 1;
-      REAL ex = exp(CMCoeff::KAPPA * m_rad);
-      REAL r = m_rad;
-      REAL k = CMCoeff::KAPPA*CMCoeff::KAPPA*m_rad*m_rad;
-
-      m_C[0] = ex/K[1];
-      m_CD[0] = (r*ex)/K[1] * k*I[1]/3;
-
-      for (int n = 1; n < N_POLES; n++)
+	else
 	{
-	  r *= (m_rad*m_rad*CMCoeff::IRS*CMCoeff::IRS);
-	  m_C[n] = ex*(2*n+1)/((2*n+1)*K[n+1] + n*K[n]*eps);
-	  m_CD[n] = (r*ex)/((2*n+1)*K[n+1] + n*K[n]*eps) *
-	    (k*I[n+1]/(2*n+3) - n*I[n]*eps);
+		REAL K[N_POLES+1], I[N_POLES+1];
+		CSHCoeff::besselk(K, N_POLES+1, CMCoeff::KAPPA * m_rad);
+		CSHCoeff::besseli(I, N_POLES+1, CMCoeff::KAPPA * m_rad);
+		
+		REAL eps = DIEL_P/DIEL_S - 1;
+		REAL ex = exp(CMCoeff::KAPPA * m_rad);
+		REAL r = m_rad;
+		REAL k = CMCoeff::KAPPA*CMCoeff::KAPPA*m_rad*m_rad;
+		
+		m_C[0] = ex/K[1];															// Coefficients for eq(19) in paper
+		m_CD[0] = (r*ex)/K[1] * k*I[1]/3;							// Coefficients for eq(20) in paper
+		
+		for (int n = 1; n < N_POLES; n++)
+		{
+			r *= (m_rad*m_rad*CMCoeff::IRS*CMCoeff::IRS);
+			m_C[n] = ex*(2*n+1)/((2*n+1)*K[n+1] + n*K[n]*eps);
+			m_CD[n] = (r*ex)/((2*n+1)*K[n+1] + n*K[n]*eps) *
+			(k*I[n+1]/(2*n+3) - n*I[n]*eps);
+		}
 	}
-    }
 }
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Function to update transforms.  Inputs are protein centers and 
+* multipole expansions for each protein.  
 ******************************************************************/
 
 void 
@@ -243,60 +246,63 @@ CMPE::updateXForms(const vector<CPnt*> & cen, vector<CMPE*> & mpe)
   int max[N_MOL];
   for (int i = 0; i < N_MOL; i++)
     max[i] = 0;
-
+	
   int i_max = (m_bInfinite ? m_unit : N_MOL);
   for (int i = 0; i < i_max; i++)
     for (int j = i+1; j < N_MOL; j++)
-      {
-	int minp = (mpe[i]->getOrder() > mpe[j]->getOrder() ?
-		    mpe[j]->getOrder() : mpe[i]->getOrder());
-
-	XFS(i,j).init(*(cen[i]) - *(cen[j]), minp);
-       
-	while (XFS(i,j).isDec() && XFS(i,j).getOrder() > 1)
-	  XFS(i,j).decOrder();
-	  
-	while (XFS(i,j).isInc() && XFS(i,j).getOrder() < N_POLES)
-	  {
-	    assert(mpe[i]->getOrder() >= XFS(i,j).getOrder());
-	    if (mpe[i]->getOrder() == XFS(i,j).getOrder())
-	      mpe[i]->incOrder();
-
-	    assert(mpe[j]->getOrder() >= XFS(i,j).getOrder());
-	    if (mpe[j]->getOrder() == XFS(i,j).getOrder())
-	      mpe[j]->incOrder();
-
-	    XFS(i,j).incOrder();
-	  } 
-	  
-	int p = XFS(i,j).getOrder();
-	assert(p <= mpe[i]->getOrder() && p <= mpe[j]->getOrder());
+		{
+			int minp = (mpe[i]->getOrder() > mpe[j]->getOrder() ?			// Find the lowest pole order of
+									mpe[j]->getOrder() : mpe[i]->getOrder());			// the two proteins
+			
+			XFS(i,j).init(*(cen[i]) - *(cen[j]), minp);								// reset the dist from 1 to 2 and the min # of poles
+			
+			while (XFS(i,j).isDec() && XFS(i,j).getOrder() > 1)				// If there is less than the tolerated error in the mut
+				XFS(i,j).decOrder();																		// polarization, reduce the number of poles for many factors
+			
+			while (XFS(i,j).isInc() && XFS(i,j).getOrder() < N_POLES)	// Increase number of poles if needed
+			{
+				assert(mpe[i]->getOrder() >= XFS(i,j).getOrder());
+				if (mpe[i]->getOrder() == XFS(i,j).getOrder())
+					mpe[i]->incOrder();
+				
+				assert(mpe[j]->getOrder() >= XFS(i,j).getOrder());
+				if (mpe[j]->getOrder() == XFS(i,j).getOrder())
+					mpe[j]->incOrder();
+				
+				XFS(i,j).incOrder();
+			} 
+			
+			int p = XFS(i,j).getOrder();																// Set number of poles
+			assert(p <= mpe[i]->getOrder() && p <= mpe[j]->getOrder());	// make sure it is less than or 
+			//equal to the poles set for the MPE of each prot
+			
+			if (p > max[i])
+				max[i] = p;
+			if (p > max[j])
+				max[j] = p;
+			
+			//	cout << "(" << i << "," << j << "): " << p << " poles, dev = " 
+			//     << XFS(i,j).getError() << " " << *(cen[j]) << endl;
+		}
 	
-	if (p > max[i])
-	  max[i] = p;
-	if (p > max[j])
-	  max[j] = p;
-	
-	//	cout << "(" << i << "," << j << "): " << p << " poles, dev = " 
-	//     << XFS(i,j).getError() << " " << *(cen[j]) << endl;
-      }
-
   m_total = 0;
-  if (N_MOL > 1)
-    {
-      for (int i = 0; i < i_max; i++)
+  if (N_MOL > 1)																						//With more than one molecule
 	{
-	  mpe[i]->setOrder(max[i]);
-	  m_total += max[i]*(max[i]+1)/2;
+		for (int i = 0; i < i_max; i++)
+		{
+			mpe[i]->setOrder(max[i]);															// Reset the pole order
+			m_total += max[i]*(max[i]+1)/2;												// Create a count of total poles
+		}
 	}
-    }
   else
     m_total = mpe[0]->getOrder()*(mpe[0]->getOrder()+1)/2;
-}
+} // end updateXForms
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Routine for mutual polarization.  First computes the total number
+* of molecules in the system, then computes the initial mutual 
+* polarization and its error.
 ******************************************************************/
 
 void
@@ -304,92 +310,68 @@ CMPE::polarize(vector<CMPE*> & mpe, bool bPot)
 {
   if (N_MOL == 1)
     return;
-
+	
   int i_max = (m_bInfinite ? m_unit : N_MOL);
-  REAL itot = 1.0/m_total;
+  REAL itot = 1.0/m_total;												// 1/(N_POLES^2), weighting factor for mutual polarization
   REAL d[i_max], dev = 0.0;
   timeval t1, t2;
-
-  //gettimeofday(&t1, NULL);
-  for (int i = 0; i < i_max; i++)
-    {
-      d[i] = mpe[i]->recompute(mpe, i);
-      dev += d[i];
-    }
- 
+	
+  for (int i = 0; i < i_max; i++)							
+	{
+		d[i] = mpe[i]->recompute(mpe, i);
+		dev += d[i];
+	}
+	
   int ct = i_max;
   int i = 0;
-  while (dev*itot > MAX_POLAR_DEV_SQR)
-    {
-      dev -= d[i];
-      d[i] = mpe[i]->recompute(mpe, i);
-      dev += d[i];
-  
-      i = (i+1) % i_max;
-      if (ct > MAX_POL_ROUNDS*i_max)
+  while (dev*itot > MAX_POLAR_DEV_SQR)				// While the mutual polarization error is greater than tol.
 	{
- 	  cout << "Polarization does not converge!!! dev=" 
-	       << dev << " " << ct << endl;
-	  exit(0);
+		dev -= d[i];
+		d[i] = mpe[i]->recompute(mpe, i);
+		dev += d[i];
+		
+		i = (i+1) % i_max;
+		if (ct > MAX_POL_ROUNDS*i_max)
+		{
+			cout << "Polarization does not converge!!! dev=" 
+			<< dev << " " << ct << endl;
+			exit(0);
+		}
+		ct++;
 	}
-      ct++;
-    }
-
-  //gettimeofday(&t2, NULL);
-  //long sdiff = t2.tv_sec - t1.tv_sec;
-  //long mdiff = t2.tv_usec - t1.tv_usec;
-  //if (mdiff < 0) {
-  //  sdiff--;
-  //  mdiff = 1000000 + mdiff;
-  //}
-  
-  //CMPE::npol_t = 1000000*sdiff + mdiff;
-  //cout << "pol: " << ct << " evals, " << sqrt(dev*itot) << " dev" << endl;
-  //CMPE::npol = ct;
-
-  if (bPot)
+	
+  if (bPot)																	// If we only want to compute potential, exit
     return;
-
-  for (int j = 0; j < i_max; j++)
-    {
-      dev = 0.0;
-      //gettimeofday(&t1, NULL);
-      prepareDTA(mpe, j);
-      for (int i = 0; i < i_max; i++)
+	
+  for (int j = 0; j < i_max; j++)						// Else, compute the gradient for force, torque computations
 	{
-	  d[i] = mpe[i]->recomputeGrad(mpe, i, j);
-	  dev += d[i];
-	}
-
-      ct = i_max;
-      int i = 0;
-      while (dev*((1.0/3.0)*itot) > MAX_POLAR_DEV_SQR)
-	{
-	  dev -= d[i];
-	  d[i] = mpe[i]->recomputeGrad(mpe, i, j);
-	  dev += d[i];
-
-	  i = (i+1) % i_max;
-	  if (ct > MAX_POL_ROUNDS*i_max)
+		dev = 0.0;
+		prepareDTA(mpe, j);
+		for (int i = 0; i < i_max; i++)
+		{
+			d[i] = mpe[i]->recomputeGrad(mpe, i, j);
+			dev += d[i];
+		}
+		
+		ct = i_max;
+		int i = 0;
+		while (dev*((1.0/3.0)*itot) > MAX_POLAR_DEV_SQR)
+		{
+			dev -= d[i];
+			d[i] = mpe[i]->recomputeGrad(mpe, i, j);
+			dev += d[i];
+			
+			i = (i+1) % i_max;
+			if (ct > MAX_POL_ROUNDS*i_max)
 	    {
 	      cout << "Gradient polarization does not converge!!! dev=" 
-		   << dev << " (wrt " << j << ")" << endl;
+				<< dev << " (wrt " << j << ")" << endl;
 	      exit(0);
 	    }
-	  ct++;
+			ct++;
+		}
+		
 	}
-      //cout << "grad pol(" << j << "): " << ct << " evals, " 
-      //	   << sqrt(dev*((1.0/3.0)*itot)) << " dev" << endl;
-      //mpe[j]->ngpol = ct;
-      //gettimeofday(&t2, NULL);
-      //sdiff = t2.tv_sec - t1.tv_sec;
-      //mdiff = t2.tv_usec - t1.tv_usec;
-      //if (mdiff < 0) {
-      //	sdiff--;
-      //	mdiff = 1000000 + mdiff;
-      //}
-      //mpe[j]->ngpol_t = 1000000*sdiff + mdiff;
-    }
 }  
 
 /******************************************************************/
@@ -436,6 +418,10 @@ CMPE::recompute(const vector<CMPE*> & mpe, int i)
   return dev;
 }
 
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 void
 CMPE::reexpandGrad(const vector<CMPE*> & mpe, int i)
 {
@@ -676,7 +662,8 @@ CMPE::reexpand(const vector<CMPE*> & mpe)
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Update solution to multipole expansion.  Calls Transforms and 
+*   polarize schemes.  
 ******************************************************************/
 
 void

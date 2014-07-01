@@ -25,14 +25,13 @@
 ******************************************************************/
 
 
-#define MAX_REL_ERROR 1e-3
-#define MIN_REL_ERROR (MAX_REL_ERROR)
+#define MAX_REL_ERROR 1e-3							//!< The maximum relative order allowed for mutual polarization
+#define MIN_REL_ERROR (MAX_REL_ERROR)		//!< The minimum relative order desired for mutual polarization
 
-/******************************************************************/
-/******************************************************************//**
-* Tbe class XForm that
-******************************************************************/
-
+//!  The XForm class
+/*!
+		The class that contains all details for a transform ??  
+*/
 class CXForm
 {
  public:

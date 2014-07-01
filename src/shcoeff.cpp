@@ -42,7 +42,7 @@ CSHCoeff::init(REAL rs, REAL kappa)
 	{
 	  CONST1[n][m] = (2*n-1)/(REAL)(n-m);
 	  CONST2[n][m] = (n+m-1)/(REAL)(n-m);
-	  CONST3[n][m] = temp[n-m]/temp[n+m];	//<! sqrt((n-m)!/(n+m)!) in EQ1, Lotan 2006
+	  CONST3[n][m] = temp[n-m]/temp[n+m];	// sqrt((n-m)!/(n+m)!) in EQ1, Lotan 2006
 	}
 
       CONST4[n] = 1.0/((2*n-1)*(2*n-3));
@@ -64,7 +64,7 @@ CSHCoeff::init(REAL rs, REAL kappa)
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Initialize SHCoeff class
 ******************************************************************/
 
 CSHCoeff::CSHCoeff(int p, int res) : CMCoeff(p,res)

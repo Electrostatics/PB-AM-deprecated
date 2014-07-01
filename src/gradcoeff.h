@@ -26,6 +26,10 @@
 
 using namespace std;
 
+//!  The GradCoeff expansion class
+/*!
+		The class that contains all details for gradient coefficients.  
+*/
 class CGradCoeff : public CTriCoeff
 {
  public: 

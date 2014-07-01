@@ -18,14 +18,14 @@
  * #
 ******************************************************************/
 
-#define PARAM_FILE "charges_OPLS"
-#define MAX_MPE_ERROR 0.02
+#define PARAM_FILE "charges_OPLS"				//<! Hard link to the file that contains a list of all OPLS charges for each amino acid
+#define MAX_MPE_ERROR 0.02							//!< Maximum error allowed for the multipole expansions
 
-map<int, REAL> CProtein::CHARGES[NUM_AAS];
-bool CProtein::m_initialized = false;
-vector<CMPE*> CProtein::m_exps;
-vector<CPnt*> CProtein::m_cens;
-vector<CProtein*> CProtein::m_mols;
+map<int, REAL> CProtein::CHARGES[NUM_AAS];	//!< Array of charges for each amino acid in the protein.
+bool CProtein::m_initialized = false;				//!< Operator that indicates whether the protein constants are initialized
+vector<CMPE*> CProtein::m_exps;							//!< A vector of expansions that are kept for each protein in the system
+vector<CPnt*> CProtein::m_cens;							//!< A vector of positions for each protein in the system
+vector<CProtein*> CProtein::m_mols;					//!< A vector of protein classes, one for each protein in the system.
 bool CProtein::m_bFirst = true;							//!< Operator that designates whether a force calc has been performed or not (true=no)
 
 /******************************************************************/
@@ -96,34 +96,34 @@ CProtein::CProtein(const char * fname)
   vector<AA> aas;
   CPDB::loadFromPDB(fname, aas);
 
-  for (int i = 0; i < aas.size(); i++)							//!< Add each atom in each amino acid of protein to matrix of atoms
+  for (int i = 0; i < aas.size(); i++)							// Add each atom in each amino acid of protein to matrix of atoms
     for (int j = 0; j < aas[i].getNumAtoms(); j++)
       m_atoms.push_back(aas[i][j]);
 
-  for (int i = 0; i < m_atoms.size(); i++)				//!< Add charge on atom in each amino acid to vector of charges
+  for (int i = 0; i < m_atoms.size(); i++)				// Add charge on atom in each amino acid to vector of charges
     if (m_atoms[i].getCharge() != 0.0)
       m_chargedAtoms.push_back(&(m_atoms[i]));
 
-  m_center = computeCenter();											//!< compute center of geometry if the atom
-  for (int i = 0; i < m_atoms.size(); i++)				//!< reposition each atom WRT to the center of mass of protein
+  m_center = computeCenter();											// compute center of geometry if the atom
+  for (int i = 0; i < m_atoms.size(); i++)				// reposition each atom WRT to the center of mass of protein
     m_atoms[i].setPos(m_atoms[i].getPos() - m_center);
 
   computeRadius();
 
-  m_sumCharge = 0.0;															//!< Total charge of protein
+  m_sumCharge = 0.0;															// Total charge of protein
   for (int i = 0; i < getNumCharges(); i++)			
     m_sumCharge += getCharge(i);
 
-  REAL s = 0.0;																		//!< Total charge of protein to print as output
+  REAL s = 0.0;																		// Total charge of protein to print as output
   for (int i = 0; i < getNumCharges(); i++)
     s += (getCharge(i));
   cout << "sum = " << s <<  " rad = " << m_rad << endl;
 
-  m_mpe = new CMPE(*this);
+  m_mpe = new CMPE(*this);														// Creating a multipole expansion class for the protein
 
-  m_exps.push_back(m_mpe);
-  m_cens.push_back(&m_center);
-  m_mols.push_back(this);
+  m_exps.push_back(m_mpe);														// Pushing the MPE to an array
+  m_cens.push_back(&m_center);												// Adding the protein center to an array of centers
+  m_mols.push_back(this);															// Adding the protein to an array of proteins
 }
 
 /******************************************************************/
@@ -305,7 +305,9 @@ CProtein::getInterfaceAtoms(const CProtein & P1, const CProtein & P2,
 
 /******************************************************************/
 /******************************************************************//**
-* Compute forces between molecules
+* Compute forces between molecules.
+* Input: vector of forces and torques acting on each molecule in the 
+*					system
 ******************************************************************/
 
 void
@@ -315,10 +317,10 @@ CProtein::computeForces(vector<CPnt> & force, vector<CPnt> & torque)
 
   if (m_bFirst)
     {
-      CMPE::initXForms(m_exps);						//!< Initialize transforms if this is the first force calc of the simulation
+      CMPE::initXForms(m_exps);						// Initialize transforms if this is the first force calc of the simulation
       m_bFirst = false;
     }
 
-  CMPE::updateSolve(m_exps, m_cens);
+  CMPE::updateSolve(m_exps, m_cens);			// Update the solution to mutual polarization.
   CMPE::computeForce(m_exps, m_cens, pot, force, torque); 
 }
