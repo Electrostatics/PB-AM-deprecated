@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPDB.html#a3033b818c15dea1b6df7c3b354a8d044" title="CPDB::loadFromPDB" alt="" coords="199,157,350,184"/>
+<area shape="rect" id="node21" href="$classCProtein.html#a199bba5ba36900bdad8fd34bc0cc5342" title="CProtein::getCharge" alt="" coords="204,208,345,235"/>
+<area shape="rect" id="node23" href="$classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb" title="CProtein::setPos" alt="" coords="213,259,336,285"/>
+<area shape="rect" id="node25" href="$classCProtein.html#a8d680f9e8b07520eedfe5b43f50d1c03" title="CProtein::getNumCharges" alt="" coords="187,309,363,336"/>
+<area shape="rect" id="node5" href="$classCPDB.html#acdc2ba2ed5bb4dc8701577e29c0f4bf9" title="CPDB::readline" alt="" coords="426,31,539,57"/>
+<area shape="rect" id="node11" href="$classCAtom.html#a6af9e202834bac9613129184d62e1c19" title="CAtom::getResNum" alt="" coords="412,81,553,108"/>
+<area shape="rect" id="node13" href="$classAA.html#a77290c917ac630708465bb700c9a1d91" title="AA::clear" alt="" coords="445,132,521,159"/>
+<area shape="rect" id="node15" href="$classAA.html#a111b14b73321f7fbd0e910fe7377d3e2" title="AA::setType" alt="" coords="435,183,530,209"/>
+<area shape="rect" id="node17" href="$classCAtom.html#a02f2c6f689a978639b239f0b17ccdf1e" title="CAtom::getResCode" alt="" coords="411,233,555,260"/>
+<area shape="rect" id="node19" href="$classAA.html#ae0851c13f0b0aee431c4b90a17a58c7a" title="AA::insertAtom" alt="" coords="427,284,538,311"/>
+<area shape="rect" id="node7" href="$classCAtom.html#a5208b057db97f1c98b3b8fd973a95412" title="CAtom::getAtomCode" alt="" coords="603,5,754,32"/>
+<area shape="rect" id="node9" href="$classAA.html#a4586e72f7a09f932e29188a5098f124f" title="AA::getAACode" alt="" coords="621,56,736,83"/>
+</map>

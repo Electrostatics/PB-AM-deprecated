@@ -3,7 +3,7 @@
 #$ -o bd_sim.out
 #$ -j y
 
-EXEC="../bin/mpe"
+EXEC="../../bin/mpe"
 
-$EXEC sim 0.05 1  
+$EXEC sim 0.05 out.test 1  
 

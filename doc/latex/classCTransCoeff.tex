@@ -1,0 +1,289 @@
+\hypertarget{classCTransCoeff}{\section{C\-Trans\-Coeff Class Reference}
+\label{classCTransCoeff}\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}}
+}
+
+
+{\ttfamily \#include $<$transcoeff.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCTransCoeff_a1b4eb40fb4a4d8efb14ad684c1a169d4}{C\-Trans\-Coeff} (bool b\-Grad=true)
+\item 
+void \hyperlink{classCTransCoeff_ade17444acf44e5c80f8caa9a593f03ee}{reset} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} rho, int p)
+\item 
+void \hyperlink{classCTransCoeff_a0152b91eec8d84278e6432019ce4ef91}{translate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, bool tpose)
+\item 
+void \hyperlink{classCTransCoeff_a15c1d9affb86e989dc0beefa0683effb}{translate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, int p, bool tpose)
+\item 
+void \hyperlink{classCTransCoeff_a909121581454680f2b50f797f22715f0}{d\-Translate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, bool tpose)
+\item 
+void \hyperlink{classCTransCoeff_af1e5496a4734710f04841a202346aefb}{d\-Translate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, int p, bool tpose)
+\item 
+void \hyperlink{classCTransCoeff_a0b68420a4ae33fc1e8fa3dd00daf413c}{inc\-Translate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, bool tpose)
+\item 
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCTransCoeff_a9fb52e0afd88150756506af029f86611}{compute\-Error} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&t\-M1, const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&t\-M2, int p)
+\item 
+int \hyperlink{classCTransCoeff_a3c10d7ee9ead85dab5c5d2301cb6bb81}{get\-Order} () const 
+\item 
+void \hyperlink{classCTransCoeff_a4148a93440f4f011c4fb8cb26667707e}{inc\-Order} ()
+\item 
+void \hyperlink{classCTransCoeff_a79b28e19c6f8c4a028296b351eb4a30a}{dec\-Order} ()
+\item 
+void \hyperlink{classCTransCoeff_a100c9adb6d3476193842504ddf0a1e99}{output\-Trans} (int p) const 
+\item 
+void \hyperlink{classCTransCoeff_af80128c89b9785e7d4a0e93702ac523f}{outputd\-Trans} (int p) const 
+\item 
+void \hyperlink{classCTransCoeff_abdfd0c88d82daed4913df4859087103d}{save\-Undo} ()
+\item 
+void \hyperlink{classCTransCoeff_ac310aa175fd393365941e426e96a290b}{undo} ()
+\item 
+void \hyperlink{classCTransCoeff_a16bd5045a9ba639775224cc7f121f4c6}{export\-Mat} (double $\ast$$\ast$T)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classCTransCoeff_ae4be8ef01d28f5b8d9b4282252575bee}{init\-Constants} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCTransCoeff_a1b4eb40fb4a4d8efb14ad684c1a169d4}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!C\-Trans\-Coeff@{C\-Trans\-Coeff}}
+\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{C\-Trans\-Coeff}]{\setlength{\rightskip}{0pt plus 5cm}C\-Trans\-Coeff\-::\-C\-Trans\-Coeff (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-Grad = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classCTransCoeff_a1b4eb40fb4a4d8efb14ad684c1a169d4}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCTransCoeff_a9fb52e0afd88150756506af029f86611}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!compute\-Error@{compute\-Error}}
+\index{compute\-Error@{compute\-Error}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{compute\-Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} C\-Trans\-Coeff\-::compute\-Error (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-M\-Coeff} \&}]{t\-M1, }
+\item[{const {\bf C\-M\-Coeff} \&}]{t\-M2, }
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)}}\label{classCTransCoeff_a9fb52e0afd88150756506af029f86611}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCTransCoeff_a9fb52e0afd88150756506af029f86611_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCTransCoeff_a79b28e19c6f8c4a028296b351eb4a30a}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!dec\-Order@{dec\-Order}}
+\index{dec\-Order@{dec\-Order}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{dec\-Order}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::dec\-Order (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_a79b28e19c6f8c4a028296b351eb4a30a}
+\hypertarget{classCTransCoeff_a909121581454680f2b50f797f22715f0}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!d\-Translate@{d\-Translate}}
+\index{d\-Translate@{d\-Translate}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{d\-Translate}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::d\-Translate (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-M\-Coeff} \&}]{Min, }
+\item[{{\bf C\-M\-Coeff} \&}]{Mout, }
+\item[{bool}]{tpose}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_a909121581454680f2b50f797f22715f0}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classCTransCoeff_a909121581454680f2b50f797f22715f0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCTransCoeff_af1e5496a4734710f04841a202346aefb}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!d\-Translate@{d\-Translate}}
+\index{d\-Translate@{d\-Translate}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{d\-Translate}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::d\-Translate (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-M\-Coeff} \&}]{Min, }
+\item[{{\bf C\-M\-Coeff} \&}]{Mout, }
+\item[{int}]{p, }
+\item[{bool}]{tpose}
+\end{DoxyParamCaption}
+)}}\label{classCTransCoeff_af1e5496a4734710f04841a202346aefb}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classCTransCoeff_af1e5496a4734710f04841a202346aefb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCTransCoeff_a16bd5045a9ba639775224cc7f121f4c6}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!export\-Mat@{export\-Mat}}
+\index{export\-Mat@{export\-Mat}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{export\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::export\-Mat (
+\begin{DoxyParamCaption}
+\item[{double $\ast$$\ast$}]{T}
+\end{DoxyParamCaption}
+)}}\label{classCTransCoeff_a16bd5045a9ba639775224cc7f121f4c6}
+\hypertarget{classCTransCoeff_a3c10d7ee9ead85dab5c5d2301cb6bb81}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!get\-Order@{get\-Order}}
+\index{get\-Order@{get\-Order}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{get\-Order}]{\setlength{\rightskip}{0pt plus 5cm}int C\-Trans\-Coeff\-::get\-Order (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_a3c10d7ee9ead85dab5c5d2301cb6bb81}
+\hypertarget{classCTransCoeff_a4148a93440f4f011c4fb8cb26667707e}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!inc\-Order@{inc\-Order}}
+\index{inc\-Order@{inc\-Order}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{inc\-Order}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::inc\-Order (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_a4148a93440f4f011c4fb8cb26667707e}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classCTransCoeff_a4148a93440f4f011c4fb8cb26667707e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCTransCoeff_a0b68420a4ae33fc1e8fa3dd00daf413c}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!inc\-Translate@{inc\-Translate}}
+\index{inc\-Translate@{inc\-Translate}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{inc\-Translate}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::inc\-Translate (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-M\-Coeff} \&}]{Min, }
+\item[{{\bf C\-M\-Coeff} \&}]{Mout, }
+\item[{bool}]{tpose}
+\end{DoxyParamCaption}
+)}}\label{classCTransCoeff_a0b68420a4ae33fc1e8fa3dd00daf413c}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classCTransCoeff_a0b68420a4ae33fc1e8fa3dd00daf413c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCTransCoeff_ae4be8ef01d28f5b8d9b4282252575bee}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!init\-Constants@{init\-Constants}}
+\index{init\-Constants@{init\-Constants}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{init\-Constants}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::init\-Constants (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classCTransCoeff_ae4be8ef01d28f5b8d9b4282252575bee}
+Initialize the rotation coefficients (includes coeff equs from 2006 paper $<$ K$^\wedge$2 $\ast$ R\-S$^\wedge$2
+
+$<$ Given as alpha(n,m) in Lotan, 2006 (eq 1.\-9)
+
+$<$ Given as beta(n,m) in Lotan, 2006 (eq 1.\-9)
+
+$<$ Given as eta(n,m) in Lotan, 2006 (eq 1.\-9)
+
+$<$ Given as mu(n,m) in Lotan, 2006 (eq 1.\-9)
+
+$<$ Given as eta(n,m) in Lotan, 2006 (eq 1.\-9)
+
+$<$ Given as mu(n,m) in Lotan, 2006 (eq 1.\-9) \hypertarget{classCTransCoeff_af80128c89b9785e7d4a0e93702ac523f}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!outputd\-Trans@{outputd\-Trans}}
+\index{outputd\-Trans@{outputd\-Trans}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{outputd\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::outputd\-Trans (
+\begin{DoxyParamCaption}
+\item[{int}]{p}
+\end{DoxyParamCaption}
+) const}}\label{classCTransCoeff_af80128c89b9785e7d4a0e93702ac523f}
+\hypertarget{classCTransCoeff_a100c9adb6d3476193842504ddf0a1e99}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!output\-Trans@{output\-Trans}}
+\index{output\-Trans@{output\-Trans}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{output\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::output\-Trans (
+\begin{DoxyParamCaption}
+\item[{int}]{p}
+\end{DoxyParamCaption}
+) const}}\label{classCTransCoeff_a100c9adb6d3476193842504ddf0a1e99}
+\hypertarget{classCTransCoeff_ade17444acf44e5c80f8caa9a593f03ee}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!reset@{reset}}
+\index{reset@{reset}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::reset (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-E\-A\-L}}]{rho, }
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)}}\label{classCTransCoeff_ade17444acf44e5c80f8caa9a593f03ee}
+\hypertarget{classCTransCoeff_abdfd0c88d82daed4913df4859087103d}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!save\-Undo@{save\-Undo}}
+\index{save\-Undo@{save\-Undo}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{save\-Undo}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::save\-Undo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_abdfd0c88d82daed4913df4859087103d}
+\hypertarget{classCTransCoeff_a0152b91eec8d84278e6432019ce4ef91}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!translate@{translate}}
+\index{translate@{translate}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::translate (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-M\-Coeff} \&}]{Min, }
+\item[{{\bf C\-M\-Coeff} \&}]{Mout, }
+\item[{bool}]{tpose}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_a0152b91eec8d84278e6432019ce4ef91}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classCTransCoeff_a0152b91eec8d84278e6432019ce4ef91_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCTransCoeff_a15c1d9affb86e989dc0beefa0683effb}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!translate@{translate}}
+\index{translate@{translate}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::translate (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-M\-Coeff} \&}]{Min, }
+\item[{{\bf C\-M\-Coeff} \&}]{Mout, }
+\item[{int}]{p, }
+\item[{bool}]{tpose}
+\end{DoxyParamCaption}
+)}}\label{classCTransCoeff_a15c1d9affb86e989dc0beefa0683effb}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classCTransCoeff_a15c1d9affb86e989dc0beefa0683effb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCTransCoeff_ac310aa175fd393365941e426e96a290b}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!undo@{undo}}
+\index{undo@{undo}!CTransCoeff@{C\-Trans\-Coeff}}
+\subsubsection[{undo}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::undo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_ac310aa175fd393365941e426e96a290b}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{transcoeff_8h}{transcoeff.\-h}\item 
+\hyperlink{transcoeff_8cpp}{transcoeff.\-cpp}\end{DoxyCompactItemize}

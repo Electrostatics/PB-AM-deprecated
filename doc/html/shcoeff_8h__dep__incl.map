@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$xform_8h.html" title="xform.h" alt="" coords="312,155,379,181"/>
+<area shape="rect" id="node23" href="$rotcoeff_8h.html" title="rotcoeff.h" alt="" coords="231,80,307,107"/>
+<area shape="rect" id="node29" href="$transcoeff_8h.html" title="transcoeff.h" alt="" coords="383,80,473,107"/>
+<area shape="rect" id="node32" href="$transcoeff_8cpp.html" title="transcoeff.cpp" alt="" coords="430,155,535,181"/>
+<area shape="rect" id="node34" href="$mcoeff_8cpp.html" title="mcoeff.cpp" alt="" coords="549,80,635,107"/>
+<area shape="rect" id="node36" href="$shcoeff_8cpp.html" title="shcoeff.cpp" alt="" coords="660,80,751,107"/>
+<area shape="rect" id="node38" href="$torqcoeff_8cpp.html" title="torqcoeff.cpp" alt="" coords="775,80,873,107"/>
+<area shape="rect" id="node5" href="$mpe_8h.html" title="mpe.h" alt="" coords="243,229,300,256"/>
+<area shape="rect" id="node21" href="$xform_8cpp.html" title="xform.cpp" alt="" coords="325,229,404,256"/>
+<area shape="rect" id="node7" href="$protein_8h.html" title="protein.h" alt="" coords="200,304,272,331"/>
+<area shape="rect" id="node14" href="$mpe_8cpp.html" title="mpe.cpp" alt="" coords="335,379,407,405"/>
+<area shape="rect" id="node9" href="$BD_8h.html" title="BD.h" alt="" coords="5,379,56,405"/>
+<area shape="rect" id="node11" href="$BD_8cpp.html" title="BD.cpp" alt="" coords="131,453,197,480"/>
+<area shape="rect" id="node16" href="$pdb_8cpp.html" title="pdb.cpp" alt="" coords="81,379,148,405"/>
+<area shape="rect" id="node18" href="$protein_8cpp.html" title="protein.cpp" alt="" coords="173,379,259,405"/>
+<area shape="rect" id="node27" href="$rotcoeff_8cpp.html" title="rotcoeff.cpp" alt="" coords="144,155,235,181"/>
+</map>

@@ -1,0 +1,603 @@
+\hypertarget{BD_8cpp}{\section{B\-D.\-cpp File Reference}
+\label{BD_8cpp}\index{B\-D.\-cpp@{B\-D.\-cpp}}
+}
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}B\-D.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protein.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mcoeff.\-h\char`\"{}}\\*
+Include dependency graph for B\-D.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{BD_8cpp_aa3ff29c160d7bfbbf442fe19402b1b1d}{b\-\_\-\-D\-I\-S\-T}~100.\-0
+\begin{DoxyCompactList}\small\item\em Initial distance between 2 proteins for B\-D run. \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_aa65e1d68e66a51e68853cc6de4171c27}{q\-\_\-\-D\-I\-S\-T}~500.\-0
+\item 
+\#define \hyperlink{BD_8cpp_a4e97c0aef39d3132a5baf1a3e9c90c07}{f\-\_\-\-D\-I\-S\-T}~100.\-0
+\begin{DoxyCompactList}\small\item\em Cutoff for protein force interactions. \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_aa626bfdad436aec40211bd86e2f1fa2a}{D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-W\-A\-T\-E\-R}~78.\-0
+\item 
+\#define \hyperlink{BD_8cpp_affbf96f1033db7a56dce851819733acf}{D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-P\-R\-O\-T}~4.\-0
+\item 
+\#define \hyperlink{BD_8cpp_a99e0fc778cb2ee0b56ff56186a400889}{S\-A\-L\-T\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N}~0.\-0500
+\begin{DoxyCompactList}\small\item\em Molar. \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_acd1636d4e71f645d469c49a7ba8e18a4}{K\-A\-P\-P\-A}~(sqrt(\hyperlink{BD_8cpp_a99e0fc778cb2ee0b56ff56186a400889}{S\-A\-L\-T\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N})/3.\-04)
+\item 
+\#define \hyperlink{BD_8cpp_a01a47ab37988e52002d412cc17b3e8ce}{C\-O\-U\-L\-O\-M\-B\-\_\-\-C\-O\-N\-S\-T\-A\-N\-T}~(8.\-988e9)
+\begin{DoxyCompactList}\small\item\em \mbox{[} N$\ast$m$^\wedge$2/\-C$^\wedge$2 \mbox{]} \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_a8625d1c803c2ffc12071aa60f0c292e0}{E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E}~(1.\-60217733e-\/19)
+\begin{DoxyCompactList}\small\item\em \mbox{[} coulombs \mbox{]} \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_a19c0428544bfe3bd1d2d8f849252f4ec}{A\-V\-O\-G\-A\-D\-R\-O\-\_\-\-N\-U\-M}~(6.\-02209e23)
+\item 
+\#define \hyperlink{BD_8cpp_a81e9573b67e81c8fa6a25cef4a2891ca}{K\-C\-A\-L}~4184.\-0
+\begin{DoxyCompactList}\small\item\em \mbox{[} 1 k\-Cal = 4184 Joules \mbox{]} \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_a11a2bfccb8dc98a9c504c91cc2029ab3}{A\-N\-G\-S\-T\-R\-O\-M}~(1e-\/10)
+\begin{DoxyCompactList}\small\item\em \mbox{[} 1\-A = 1e-\/10 Meters \mbox{]} \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_a6dbad6534dd9b948dc40bda1f043d333}{P\-I\-C\-O\-\_\-\-S\-E\-C}~(1e-\/12)
+\begin{DoxyCompactList}\small\item\em \mbox{[} 1 ps = 1e-\/12 s \mbox{]} \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_a72e53579b3b8b94f0d5c6b95af3e2ecf}{C\-O\-U\-L\-\_\-\-K}~332.\-141144
+\item 
+\#define \hyperlink{BD_8cpp_a8659b9de3e544ff142b153b076f30fd5}{G\-A\-M\-M\-A}~(0.\-01$\ast$100/1000$\ast$\hyperlink{BD_8cpp_a11a2bfccb8dc98a9c504c91cc2029ab3}{A\-N\-G\-S\-T\-R\-O\-M}$\ast$\hyperlink{BD_8cpp_a6dbad6534dd9b948dc40bda1f043d333}{P\-I\-C\-O\-\_\-\-S\-E\-C})
+\item 
+\#define \hyperlink{BD_8cpp_a7a60ac5c3e0a3cd5c2324fc20420d77b}{Kb}~(1.\-380658e-\/23)
+\begin{DoxyCompactList}\small\item\em \mbox{[} m$^\wedge$2 kg/ s$^\wedge$2 / K \mbox{]} \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_a10bed19ceedeb2c12c5aad6de1d3b1a1}{T\-E\-M\-P}~298.\-0
+\begin{DoxyCompactList}\small\item\em \mbox{[} Kelvin \mbox{]} \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_ab1162ab15647c6526d31e0d38659a5f6}{Kb\-T}~(1.\-98718\-E-\/03$\ast$\-T\-E\-M\-P)
+\begin{DoxyCompactList}\small\item\em (T\-E\-M\-P$\ast$\-Kb$\ast$\-A\-V\-O\-G\-A\-D\-R\-O\-\_\-\-N\-U\-M/\-K\-C\-A\-L) \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_ab4a15e88cb2e262a6c6ecd9bd7bc938d}{I\-Kb\-T}~(1.\-0/\hyperlink{BD_8cpp_ab1162ab15647c6526d31e0d38659a5f6}{Kb\-T})
+\begin{DoxyCompactList}\small\item\em 1/\-Kb\-T \end{DoxyCompactList}\item 
+\#define \hyperlink{BD_8cpp_a156b862ebf6d213f5da19b9e3ccb779e}{T\-O\-L}~2.\-5
+\item 
+\#define \hyperlink{BD_8cpp_aa0aae5a19b7e391d27f3d013a2b90e15}{P\-A\-T\-C\-H\-\_\-\-A\-N\-G\-L\-E}~6.\-0
+\item 
+\#define \hyperlink{BD_8cpp_a2ddbe27ea7114523d2f1d337bab3beda}{R\-O\-T\-A\-T\-E\-\_\-\-A\-N\-G\-L\-E}~20.\-0
+\item 
+\#define \hyperlink{BD_8cpp_a5305ff9e96c04fe567a55b3158cd10f4}{P\-A\-T\-C\-H\-\_\-\-S\-I\-Z\-E}~(cos(\hyperlink{BD_8cpp_aa0aae5a19b7e391d27f3d013a2b90e15}{P\-A\-T\-C\-H\-\_\-\-A\-N\-G\-L\-E}$\ast$M\-\_\-\-P\-I/180.\-0))
+\item 
+\#define \hyperlink{BD_8cpp_a302fbd4b1abceb7f3bba64d73fb801a8}{R\-O\-T\-A\-T\-E\-\_\-\-S\-I\-Z\-E}~(cos(\hyperlink{BD_8cpp_a2ddbe27ea7114523d2f1d337bab3beda}{R\-O\-T\-A\-T\-E\-\_\-\-A\-N\-G\-L\-E}$\ast$M\-\_\-\-P\-I/180.\-0))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{BD_8cpp_a383d01cbd424a11c6571cb85c748a9fb}{approx\-B\-Ball} (const vector$<$ \hyperlink{classCPnt}{C\-Pnt} $>$ \&V, \hyperlink{classCPnt}{C\-Pnt} \&cen, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \&rad)
+\item 
+void \hyperlink{BD_8cpp_aa1cf6c55a4b51fbee1c709ee11ed1f8c}{readqcd} (const char $\ast$fname, vector$<$ \hyperlink{classCPnt}{C\-Pnt} $>$ \&pnt, vector$<$ \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} $>$ \&ch, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \&rad)
+\item 
+void \hyperlink{BD_8cpp_af4a2c988c8f8f7423e6a4c8dd0d6ffef}{writemdp} (const char $\ast$ifname, const char $\ast$ofname, const vector$<$ \hyperlink{classCPnt}{C\-Pnt} $>$ \&pnt, const \hyperlink{classCPnt}{C\-Pnt} \&cen, bool sp, char chid)
+\item 
+void \hyperlink{BD_8cpp_a050f85eeb4bca700634b0c552f7d32e2}{readmdp} (const char $\ast$fname, vector$<$ \hyperlink{classCPnt}{C\-Pnt} $>$ \&pnt, vector$<$ \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} $>$ \&ch, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \&rad, \hyperlink{classCPnt}{C\-Pnt} \&cen)
+\item 
+void \hyperlink{BD_8cpp_abc59e3d5de96d0dbfd2e195fee14e244}{build\-Unit\-Cell} (const char $\ast$ifname, const char $\ast$ofname, vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen, bool b\-Save, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} stretch)
+\item 
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{BD_8cpp_add9f16fa66f1f140387a281f7ac53fd4}{build\-System} (const char $\ast$ifname, int num, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} dist, bool b\-Save, int ver, vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen)
+\item 
+void \hyperlink{BD_8cpp_ad261235621d7c522431468ac50a3c7c3}{build\-Grid} (const char $\ast$ifname, int num, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} dist, int ver, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} rad, const vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, const vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} fact)
+\item 
+void \hyperlink{BD_8cpp_aa47d8f951ab91c51da9b69f787f18030}{perturb} (int ct, int num, ofstream \&fout, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} Dtr, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} Dr, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} dt, vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen)
+\item 
+int \hyperlink{BD_8cpp_add88c94542c667d7c49095a53a53fbc4}{main1} (int argc, char $\ast$$\ast$argv)
+\item 
+int \hyperlink{BD_8cpp_a398405351f04ca4ed39e969ff655925d}{main2} (int argc, char $\ast$$\ast$argv)
+\item 
+int \hyperlink{BD_8cpp_a3dcb9eab839663dc12e81ffe369eb3ef}{main3} (int argc, char $\ast$$\ast$argv)
+\item 
+int \hyperlink{BD_8cpp_a97854abebeb41d867b7fda2e39d0a439}{main4} (int argc, char $\ast$$\ast$argv)
+\item 
+int \hyperlink{BD_8cpp_a0d19adb86436f5ee44d7eee9646b0225}{main5} (int argc, char $\ast$$\ast$argv)
+\item 
+int \hyperlink{BD_8cpp_a40a8450c72f1738cbad72d80b48f4b16}{main6} (int argc, char $\ast$$\ast$argv)
+\item 
+int \hyperlink{BD_8cpp_acbf4599ba222df52cd3247bce0402d79}{main7} (int argc, char $\ast$$\ast$argv)
+\item 
+int \hyperlink{BD_8cpp_a268054c4cc84d387786a1a4d52e90019}{main8} (int argc, char $\ast$$\ast$argv)
+\item 
+int \hyperlink{BD_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{BD_8cpp_a7ad37c8d993b00d12609dd9ae98ec650}{scount}
+\item 
+char \hyperlink{BD_8cpp_a7e84efd058cd9e661c6a3bfdd82cd12d}{temp\-\_\-file} \mbox{[}100\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{BD_8cpp_a11a2bfccb8dc98a9c504c91cc2029ab3}{\index{B\-D.\-cpp@{B\-D.\-cpp}!A\-N\-G\-S\-T\-R\-O\-M@{A\-N\-G\-S\-T\-R\-O\-M}}
+\index{A\-N\-G\-S\-T\-R\-O\-M@{A\-N\-G\-S\-T\-R\-O\-M}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{A\-N\-G\-S\-T\-R\-O\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-G\-S\-T\-R\-O\-M~(1e-\/10)}}\label{BD_8cpp_a11a2bfccb8dc98a9c504c91cc2029ab3}
+
+
+\mbox{[} 1\-A = 1e-\/10 Meters \mbox{]} 
+
+\hypertarget{BD_8cpp_a19c0428544bfe3bd1d2d8f849252f4ec}{\index{B\-D.\-cpp@{B\-D.\-cpp}!A\-V\-O\-G\-A\-D\-R\-O\-\_\-\-N\-U\-M@{A\-V\-O\-G\-A\-D\-R\-O\-\_\-\-N\-U\-M}}
+\index{A\-V\-O\-G\-A\-D\-R\-O\-\_\-\-N\-U\-M@{A\-V\-O\-G\-A\-D\-R\-O\-\_\-\-N\-U\-M}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{A\-V\-O\-G\-A\-D\-R\-O\-\_\-\-N\-U\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-V\-O\-G\-A\-D\-R\-O\-\_\-\-N\-U\-M~(6.\-02209e23)}}\label{BD_8cpp_a19c0428544bfe3bd1d2d8f849252f4ec}
+\hypertarget{BD_8cpp_aa3ff29c160d7bfbbf442fe19402b1b1d}{\index{B\-D.\-cpp@{B\-D.\-cpp}!b\-\_\-\-D\-I\-S\-T@{b\-\_\-\-D\-I\-S\-T}}
+\index{b\-\_\-\-D\-I\-S\-T@{b\-\_\-\-D\-I\-S\-T}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{b\-\_\-\-D\-I\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define b\-\_\-\-D\-I\-S\-T~100.\-0}}\label{BD_8cpp_aa3ff29c160d7bfbbf442fe19402b1b1d}
+
+
+Initial distance between 2 proteins for B\-D run. 
+
+\subsection*{File\-: \hyperlink{BD_8cpp}{B\-D.\-cpp}}
+
+\# \subsection*{Date\-: June 2014}
+
+\# \subsection*{Description\-: This file runs a system in the B\-D P\-B-\/\-S\-A\-M simulation}
+
+\# \subsection*{Author\-: Lotan, Felberg}
+
+\# \subsection*{Copyright ( c )}
+
+\# Initializing constants \hypertarget{BD_8cpp_a72e53579b3b8b94f0d5c6b95af3e2ecf}{\index{B\-D.\-cpp@{B\-D.\-cpp}!C\-O\-U\-L\-\_\-\-K@{C\-O\-U\-L\-\_\-\-K}}
+\index{C\-O\-U\-L\-\_\-\-K@{C\-O\-U\-L\-\_\-\-K}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{C\-O\-U\-L\-\_\-\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-U\-L\-\_\-\-K~332.\-141144}}\label{BD_8cpp_a72e53579b3b8b94f0d5c6b95af3e2ecf}
+\hypertarget{BD_8cpp_a01a47ab37988e52002d412cc17b3e8ce}{\index{B\-D.\-cpp@{B\-D.\-cpp}!C\-O\-U\-L\-O\-M\-B\-\_\-\-C\-O\-N\-S\-T\-A\-N\-T@{C\-O\-U\-L\-O\-M\-B\-\_\-\-C\-O\-N\-S\-T\-A\-N\-T}}
+\index{C\-O\-U\-L\-O\-M\-B\-\_\-\-C\-O\-N\-S\-T\-A\-N\-T@{C\-O\-U\-L\-O\-M\-B\-\_\-\-C\-O\-N\-S\-T\-A\-N\-T}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{C\-O\-U\-L\-O\-M\-B\-\_\-\-C\-O\-N\-S\-T\-A\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-U\-L\-O\-M\-B\-\_\-\-C\-O\-N\-S\-T\-A\-N\-T~(8.\-988e9)}}\label{BD_8cpp_a01a47ab37988e52002d412cc17b3e8ce}
+
+
+\mbox{[} N$\ast$m$^\wedge$2/\-C$^\wedge$2 \mbox{]} 
+
+\hypertarget{BD_8cpp_affbf96f1033db7a56dce851819733acf}{\index{B\-D.\-cpp@{B\-D.\-cpp}!D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-P\-R\-O\-T@{D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-P\-R\-O\-T}}
+\index{D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-P\-R\-O\-T@{D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-P\-R\-O\-T}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-P\-R\-O\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-P\-R\-O\-T~4.\-0}}\label{BD_8cpp_affbf96f1033db7a56dce851819733acf}
+\hypertarget{BD_8cpp_aa626bfdad436aec40211bd86e2f1fa2a}{\index{B\-D.\-cpp@{B\-D.\-cpp}!D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-W\-A\-T\-E\-R@{D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-W\-A\-T\-E\-R}}
+\index{D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-W\-A\-T\-E\-R@{D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-W\-A\-T\-E\-R}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-W\-A\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-E\-L\-E\-C\-T\-R\-I\-C\-\_\-\-W\-A\-T\-E\-R~78.\-0}}\label{BD_8cpp_aa626bfdad436aec40211bd86e2f1fa2a}
+\hypertarget{BD_8cpp_a8625d1c803c2ffc12071aa60f0c292e0}{\index{B\-D.\-cpp@{B\-D.\-cpp}!E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E@{E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E}}
+\index{E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E@{E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E~(1.\-60217733e-\/19)}}\label{BD_8cpp_a8625d1c803c2ffc12071aa60f0c292e0}
+
+
+\mbox{[} coulombs \mbox{]} 
+
+\hypertarget{BD_8cpp_a4e97c0aef39d3132a5baf1a3e9c90c07}{\index{B\-D.\-cpp@{B\-D.\-cpp}!f\-\_\-\-D\-I\-S\-T@{f\-\_\-\-D\-I\-S\-T}}
+\index{f\-\_\-\-D\-I\-S\-T@{f\-\_\-\-D\-I\-S\-T}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{f\-\_\-\-D\-I\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define f\-\_\-\-D\-I\-S\-T~100.\-0}}\label{BD_8cpp_a4e97c0aef39d3132a5baf1a3e9c90c07}
+
+
+Cutoff for protein force interactions. 
+
+\hypertarget{BD_8cpp_a8659b9de3e544ff142b153b076f30fd5}{\index{B\-D.\-cpp@{B\-D.\-cpp}!G\-A\-M\-M\-A@{G\-A\-M\-M\-A}}
+\index{G\-A\-M\-M\-A@{G\-A\-M\-M\-A}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{G\-A\-M\-M\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-A\-M\-M\-A~(0.\-01$\ast$100/1000$\ast${\bf A\-N\-G\-S\-T\-R\-O\-M}$\ast${\bf P\-I\-C\-O\-\_\-\-S\-E\-C})}}\label{BD_8cpp_a8659b9de3e544ff142b153b076f30fd5}
+\hypertarget{BD_8cpp_ab4a15e88cb2e262a6c6ecd9bd7bc938d}{\index{B\-D.\-cpp@{B\-D.\-cpp}!I\-Kb\-T@{I\-Kb\-T}}
+\index{I\-Kb\-T@{I\-Kb\-T}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{I\-Kb\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-Kb\-T~(1.\-0/{\bf Kb\-T})}}\label{BD_8cpp_ab4a15e88cb2e262a6c6ecd9bd7bc938d}
+
+
+1/\-Kb\-T 
+
+\hypertarget{BD_8cpp_acd1636d4e71f645d469c49a7ba8e18a4}{\index{B\-D.\-cpp@{B\-D.\-cpp}!K\-A\-P\-P\-A@{K\-A\-P\-P\-A}}
+\index{K\-A\-P\-P\-A@{K\-A\-P\-P\-A}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{K\-A\-P\-P\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-A\-P\-P\-A~(sqrt({\bf S\-A\-L\-T\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N})/3.\-04)}}\label{BD_8cpp_acd1636d4e71f645d469c49a7ba8e18a4}
+\hypertarget{BD_8cpp_a7a60ac5c3e0a3cd5c2324fc20420d77b}{\index{B\-D.\-cpp@{B\-D.\-cpp}!Kb@{Kb}}
+\index{Kb@{Kb}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{Kb}]{\setlength{\rightskip}{0pt plus 5cm}\#define Kb~(1.\-380658e-\/23)}}\label{BD_8cpp_a7a60ac5c3e0a3cd5c2324fc20420d77b}
+
+
+\mbox{[} m$^\wedge$2 kg/ s$^\wedge$2 / K \mbox{]} 
+
+\hypertarget{BD_8cpp_ab1162ab15647c6526d31e0d38659a5f6}{\index{B\-D.\-cpp@{B\-D.\-cpp}!Kb\-T@{Kb\-T}}
+\index{Kb\-T@{Kb\-T}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{Kb\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Kb\-T~(1.\-98718\-E-\/03$\ast$\-T\-E\-M\-P)}}\label{BD_8cpp_ab1162ab15647c6526d31e0d38659a5f6}
+
+
+(T\-E\-M\-P$\ast$\-Kb$\ast$\-A\-V\-O\-G\-A\-D\-R\-O\-\_\-\-N\-U\-M/\-K\-C\-A\-L) 
+
+\hypertarget{BD_8cpp_a81e9573b67e81c8fa6a25cef4a2891ca}{\index{B\-D.\-cpp@{B\-D.\-cpp}!K\-C\-A\-L@{K\-C\-A\-L}}
+\index{K\-C\-A\-L@{K\-C\-A\-L}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{K\-C\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-C\-A\-L~4184.\-0}}\label{BD_8cpp_a81e9573b67e81c8fa6a25cef4a2891ca}
+
+
+\mbox{[} 1 k\-Cal = 4184 Joules \mbox{]} 
+
+\hypertarget{BD_8cpp_aa0aae5a19b7e391d27f3d013a2b90e15}{\index{B\-D.\-cpp@{B\-D.\-cpp}!P\-A\-T\-C\-H\-\_\-\-A\-N\-G\-L\-E@{P\-A\-T\-C\-H\-\_\-\-A\-N\-G\-L\-E}}
+\index{P\-A\-T\-C\-H\-\_\-\-A\-N\-G\-L\-E@{P\-A\-T\-C\-H\-\_\-\-A\-N\-G\-L\-E}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{P\-A\-T\-C\-H\-\_\-\-A\-N\-G\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-A\-T\-C\-H\-\_\-\-A\-N\-G\-L\-E~6.\-0}}\label{BD_8cpp_aa0aae5a19b7e391d27f3d013a2b90e15}
+\hypertarget{BD_8cpp_a5305ff9e96c04fe567a55b3158cd10f4}{\index{B\-D.\-cpp@{B\-D.\-cpp}!P\-A\-T\-C\-H\-\_\-\-S\-I\-Z\-E@{P\-A\-T\-C\-H\-\_\-\-S\-I\-Z\-E}}
+\index{P\-A\-T\-C\-H\-\_\-\-S\-I\-Z\-E@{P\-A\-T\-C\-H\-\_\-\-S\-I\-Z\-E}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{P\-A\-T\-C\-H\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-A\-T\-C\-H\-\_\-\-S\-I\-Z\-E~(cos({\bf P\-A\-T\-C\-H\-\_\-\-A\-N\-G\-L\-E}$\ast$M\-\_\-\-P\-I/180.\-0))}}\label{BD_8cpp_a5305ff9e96c04fe567a55b3158cd10f4}
+\hypertarget{BD_8cpp_a6dbad6534dd9b948dc40bda1f043d333}{\index{B\-D.\-cpp@{B\-D.\-cpp}!P\-I\-C\-O\-\_\-\-S\-E\-C@{P\-I\-C\-O\-\_\-\-S\-E\-C}}
+\index{P\-I\-C\-O\-\_\-\-S\-E\-C@{P\-I\-C\-O\-\_\-\-S\-E\-C}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{P\-I\-C\-O\-\_\-\-S\-E\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I\-C\-O\-\_\-\-S\-E\-C~(1e-\/12)}}\label{BD_8cpp_a6dbad6534dd9b948dc40bda1f043d333}
+
+
+\mbox{[} 1 ps = 1e-\/12 s \mbox{]} 
+
+\hypertarget{BD_8cpp_aa65e1d68e66a51e68853cc6de4171c27}{\index{B\-D.\-cpp@{B\-D.\-cpp}!q\-\_\-\-D\-I\-S\-T@{q\-\_\-\-D\-I\-S\-T}}
+\index{q\-\_\-\-D\-I\-S\-T@{q\-\_\-\-D\-I\-S\-T}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{q\-\_\-\-D\-I\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define q\-\_\-\-D\-I\-S\-T~500.\-0}}\label{BD_8cpp_aa65e1d68e66a51e68853cc6de4171c27}
+\hypertarget{BD_8cpp_a2ddbe27ea7114523d2f1d337bab3beda}{\index{B\-D.\-cpp@{B\-D.\-cpp}!R\-O\-T\-A\-T\-E\-\_\-\-A\-N\-G\-L\-E@{R\-O\-T\-A\-T\-E\-\_\-\-A\-N\-G\-L\-E}}
+\index{R\-O\-T\-A\-T\-E\-\_\-\-A\-N\-G\-L\-E@{R\-O\-T\-A\-T\-E\-\_\-\-A\-N\-G\-L\-E}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{R\-O\-T\-A\-T\-E\-\_\-\-A\-N\-G\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-O\-T\-A\-T\-E\-\_\-\-A\-N\-G\-L\-E~20.\-0}}\label{BD_8cpp_a2ddbe27ea7114523d2f1d337bab3beda}
+\hypertarget{BD_8cpp_a302fbd4b1abceb7f3bba64d73fb801a8}{\index{B\-D.\-cpp@{B\-D.\-cpp}!R\-O\-T\-A\-T\-E\-\_\-\-S\-I\-Z\-E@{R\-O\-T\-A\-T\-E\-\_\-\-S\-I\-Z\-E}}
+\index{R\-O\-T\-A\-T\-E\-\_\-\-S\-I\-Z\-E@{R\-O\-T\-A\-T\-E\-\_\-\-S\-I\-Z\-E}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{R\-O\-T\-A\-T\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-O\-T\-A\-T\-E\-\_\-\-S\-I\-Z\-E~(cos({\bf R\-O\-T\-A\-T\-E\-\_\-\-A\-N\-G\-L\-E}$\ast$M\-\_\-\-P\-I/180.\-0))}}\label{BD_8cpp_a302fbd4b1abceb7f3bba64d73fb801a8}
+\hypertarget{BD_8cpp_a99e0fc778cb2ee0b56ff56186a400889}{\index{B\-D.\-cpp@{B\-D.\-cpp}!S\-A\-L\-T\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N@{S\-A\-L\-T\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N}}
+\index{S\-A\-L\-T\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N@{S\-A\-L\-T\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{S\-A\-L\-T\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-A\-L\-T\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N~0.\-0500}}\label{BD_8cpp_a99e0fc778cb2ee0b56ff56186a400889}
+
+
+Molar. 
+
+\hypertarget{BD_8cpp_a10bed19ceedeb2c12c5aad6de1d3b1a1}{\index{B\-D.\-cpp@{B\-D.\-cpp}!T\-E\-M\-P@{T\-E\-M\-P}}
+\index{T\-E\-M\-P@{T\-E\-M\-P}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{T\-E\-M\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-E\-M\-P~298.\-0}}\label{BD_8cpp_a10bed19ceedeb2c12c5aad6de1d3b1a1}
+
+
+\mbox{[} Kelvin \mbox{]} 
+
+\hypertarget{BD_8cpp_a156b862ebf6d213f5da19b9e3ccb779e}{\index{B\-D.\-cpp@{B\-D.\-cpp}!T\-O\-L@{T\-O\-L}}
+\index{T\-O\-L@{T\-O\-L}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{T\-O\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-L~2.\-5}}\label{BD_8cpp_a156b862ebf6d213f5da19b9e3ccb779e}
+
+
+\subsection{Function Documentation}
+\hypertarget{BD_8cpp_a383d01cbd424a11c6571cb85c748a9fb}{\index{B\-D.\-cpp@{B\-D.\-cpp}!approx\-B\-Ball@{approx\-B\-Ball}}
+\index{approx\-B\-Ball@{approx\-B\-Ball}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{approx\-B\-Ball}]{\setlength{\rightskip}{0pt plus 5cm}void approx\-B\-Ball (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf C\-Pnt} $>$ \&}]{V, }
+\item[{{\bf C\-Pnt} \&}]{cen, }
+\item[{{\bf R\-E\-A\-L} \&}]{rad}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_a383d01cbd424a11c6571cb85c748a9fb}
+approx\-B\-Ball 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_a383d01cbd424a11c6571cb85c748a9fb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_ad261235621d7c522431468ac50a3c7c3}{\index{B\-D.\-cpp@{B\-D.\-cpp}!build\-Grid@{build\-Grid}}
+\index{build\-Grid@{build\-Grid}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{build\-Grid}]{\setlength{\rightskip}{0pt plus 5cm}void build\-Grid (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ifname, }
+\item[{int}]{num, }
+\item[{{\bf R\-E\-A\-L}}]{dist, }
+\item[{int}]{ver, }
+\item[{{\bf R\-E\-A\-L}}]{rad, }
+\item[{const vector$<$ {\bf C\-M\-P\-E} $\ast$ $>$ \&}]{mpe, }
+\item[{const vector$<$ {\bf C\-Pnt} $\ast$ $>$ \&}]{cen, }
+\item[{{\bf R\-E\-A\-L}}]{fact}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_ad261235621d7c522431468ac50a3c7c3}
+Building a grid 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_ad261235621d7c522431468ac50a3c7c3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_add9f16fa66f1f140387a281f7ac53fd4}{\index{B\-D.\-cpp@{B\-D.\-cpp}!build\-System@{build\-System}}
+\index{build\-System@{build\-System}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{build\-System}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} build\-System (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ifname, }
+\item[{int}]{num, }
+\item[{{\bf R\-E\-A\-L}}]{dist, }
+\item[{bool}]{b\-Save, }
+\item[{int}]{ver, }
+\item[{vector$<$ {\bf C\-M\-P\-E} $\ast$ $>$ \&}]{mpe, }
+\item[{vector$<$ {\bf C\-Pnt} $\ast$ $>$ \&}]{cen}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_add9f16fa66f1f140387a281f7ac53fd4}
+build\-System 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_add9f16fa66f1f140387a281f7ac53fd4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_abc59e3d5de96d0dbfd2e195fee14e244}{\index{B\-D.\-cpp@{B\-D.\-cpp}!build\-Unit\-Cell@{build\-Unit\-Cell}}
+\index{build\-Unit\-Cell@{build\-Unit\-Cell}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{build\-Unit\-Cell}]{\setlength{\rightskip}{0pt plus 5cm}void build\-Unit\-Cell (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ifname, }
+\item[{const char $\ast$}]{ofname, }
+\item[{vector$<$ {\bf C\-M\-P\-E} $\ast$ $>$ \&}]{mpe, }
+\item[{vector$<$ {\bf C\-Pnt} $\ast$ $>$ \&}]{cen, }
+\item[{bool}]{b\-Save, }
+\item[{{\bf R\-E\-A\-L}}]{stretch}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_abc59e3d5de96d0dbfd2e195fee14e244}
+build\-Unit\-Cell 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_abc59e3d5de96d0dbfd2e195fee14e244_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{B\-D.\-cpp@{B\-D.\-cpp}!main@{main}}
+\index{main@{main}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+Main! 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_add88c94542c667d7c49095a53a53fbc4}{\index{B\-D.\-cpp@{B\-D.\-cpp}!main1@{main1}}
+\index{main1@{main1}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{main1}]{\setlength{\rightskip}{0pt plus 5cm}int main1 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_add88c94542c667d7c49095a53a53fbc4}
+Main for B\-D simulation of Barnase/\-Barstar param 2\-: salt concentration param 3\-: output file param 4\-: temporary file index 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_add88c94542c667d7c49095a53a53fbc4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_a398405351f04ca4ed39e969ff655925d}{\index{B\-D.\-cpp@{B\-D.\-cpp}!main2@{main2}}
+\index{main2@{main2}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{main2}]{\setlength{\rightskip}{0pt plus 5cm}int main2 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_a398405351f04ca4ed39e969ff655925d}
+Main for param 2\-: input file name param 3\-: Number of iterations to run force calculations param 4\-: Distance for molecule placement 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_a398405351f04ca4ed39e969ff655925d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_a3dcb9eab839663dc12e81ffe369eb3ef}{\index{B\-D.\-cpp@{B\-D.\-cpp}!main3@{main3}}
+\index{main3@{main3}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{main3}]{\setlength{\rightskip}{0pt plus 5cm}int main3 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_a3dcb9eab839663dc12e81ffe369eb3ef}
+Main for perturbation run param 2\-: input file name param 3\-: Number of iterations to run force calculations param 4\-: Distance for molecule placement param 5\-: param 6\-: Translation diffusion coefficient param 7\-: Rotation diffusion coefficient param 8\-: Perturbation file name 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_a3dcb9eab839663dc12e81ffe369eb3ef_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_a97854abebeb41d867b7fda2e39d0a439}{\index{B\-D.\-cpp@{B\-D.\-cpp}!main4@{main4}}
+\index{main4@{main4}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{main4}]{\setlength{\rightskip}{0pt plus 5cm}int main4 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_a97854abebeb41d867b7fda2e39d0a439}
+Main for Computing the polarization forces param 2\-: input file name param 3\-: Number of iterations to run force calculations param 4\-: Distance for molecule placement param 5\-: 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_a97854abebeb41d867b7fda2e39d0a439_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_a0d19adb86436f5ee44d7eee9646b0225}{\index{B\-D.\-cpp@{B\-D.\-cpp}!main5@{main5}}
+\index{main5@{main5}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{main5}]{\setlength{\rightskip}{0pt plus 5cm}int main5 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_a0d19adb86436f5ee44d7eee9646b0225}
+Main for computing diffusion param 2\-: input file name param 3\-: Number of iterations to run force calculations param 4\-: Distance for molecule placement param 5\-: 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_a0d19adb86436f5ee44d7eee9646b0225_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_a40a8450c72f1738cbad72d80b48f4b16}{\index{B\-D.\-cpp@{B\-D.\-cpp}!main6@{main6}}
+\index{main6@{main6}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{main6}]{\setlength{\rightskip}{0pt plus 5cm}int main6 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_a40a8450c72f1738cbad72d80b48f4b16}
+Main for computing diffusion param 2\-: input file name param 3\-: 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_a40a8450c72f1738cbad72d80b48f4b16_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_acbf4599ba222df52cd3247bce0402d79}{\index{B\-D.\-cpp@{B\-D.\-cpp}!main7@{main7}}
+\index{main7@{main7}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{main7}]{\setlength{\rightskip}{0pt plus 5cm}int main7 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_acbf4599ba222df52cd3247bce0402d79}
+Main for param 2\-: input file name param 3\-: param 4\-: Input for charge distribution name 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_acbf4599ba222df52cd3247bce0402d79_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_a268054c4cc84d387786a1a4d52e90019}{\index{B\-D.\-cpp@{B\-D.\-cpp}!main8@{main8}}
+\index{main8@{main8}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{main8}]{\setlength{\rightskip}{0pt plus 5cm}int main8 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_a268054c4cc84d387786a1a4d52e90019}
+Main for makin an infinte grid param 2\-: input file name param 3\-: param 4\-: param 5\-: 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_a268054c4cc84d387786a1a4d52e90019_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_aa47d8f951ab91c51da9b69f787f18030}{\index{B\-D.\-cpp@{B\-D.\-cpp}!perturb@{perturb}}
+\index{perturb@{perturb}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{perturb}]{\setlength{\rightskip}{0pt plus 5cm}void perturb (
+\begin{DoxyParamCaption}
+\item[{int}]{ct, }
+\item[{int}]{num, }
+\item[{ofstream \&}]{fout, }
+\item[{{\bf R\-E\-A\-L}}]{Dtr, }
+\item[{{\bf R\-E\-A\-L}}]{Dr, }
+\item[{{\bf R\-E\-A\-L}}]{dt, }
+\item[{vector$<$ {\bf C\-M\-P\-E} $\ast$ $>$ \&}]{mpe, }
+\item[{vector$<$ {\bf C\-Pnt} $\ast$ $>$ \&}]{cen}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_aa47d8f951ab91c51da9b69f787f18030}
+Computing the perturbation 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BD_8cpp_aa47d8f951ab91c51da9b69f787f18030_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{BD_8cpp_a050f85eeb4bca700634b0c552f7d32e2}{\index{B\-D.\-cpp@{B\-D.\-cpp}!readmdp@{readmdp}}
+\index{readmdp@{readmdp}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{readmdp}]{\setlength{\rightskip}{0pt plus 5cm}void readmdp (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fname, }
+\item[{vector$<$ {\bf C\-Pnt} $>$ \&}]{pnt, }
+\item[{vector$<$ {\bf R\-E\-A\-L} $>$ \&}]{ch, }
+\item[{{\bf R\-E\-A\-L} \&}]{rad, }
+\item[{{\bf C\-Pnt} \&}]{cen}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_a050f85eeb4bca700634b0c552f7d32e2}
+readmdp \hypertarget{BD_8cpp_aa1cf6c55a4b51fbee1c709ee11ed1f8c}{\index{B\-D.\-cpp@{B\-D.\-cpp}!readqcd@{readqcd}}
+\index{readqcd@{readqcd}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{readqcd}]{\setlength{\rightskip}{0pt plus 5cm}void readqcd (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fname, }
+\item[{vector$<$ {\bf C\-Pnt} $>$ \&}]{pnt, }
+\item[{vector$<$ {\bf R\-E\-A\-L} $>$ \&}]{ch, }
+\item[{{\bf R\-E\-A\-L} \&}]{rad}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_aa1cf6c55a4b51fbee1c709ee11ed1f8c}
+readqcd \hypertarget{BD_8cpp_af4a2c988c8f8f7423e6a4c8dd0d6ffef}{\index{B\-D.\-cpp@{B\-D.\-cpp}!writemdp@{writemdp}}
+\index{writemdp@{writemdp}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{writemdp}]{\setlength{\rightskip}{0pt plus 5cm}void writemdp (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ifname, }
+\item[{const char $\ast$}]{ofname, }
+\item[{const vector$<$ {\bf C\-Pnt} $>$ \&}]{pnt, }
+\item[{const {\bf C\-Pnt} \&}]{cen, }
+\item[{bool}]{sp, }
+\item[{char}]{chid}
+\end{DoxyParamCaption}
+)}}\label{BD_8cpp_af4a2c988c8f8f7423e6a4c8dd0d6ffef}
+writemdp 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{BD_8cpp_af4a2c988c8f8f7423e6a4c8dd0d6ffef_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{BD_8cpp_a7ad37c8d993b00d12609dd9ae98ec650}{\index{B\-D.\-cpp@{B\-D.\-cpp}!scount@{scount}}
+\index{scount@{scount}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{scount}]{\setlength{\rightskip}{0pt plus 5cm}int scount}}\label{BD_8cpp_a7ad37c8d993b00d12609dd9ae98ec650}
+\hypertarget{BD_8cpp_a7e84efd058cd9e661c6a3bfdd82cd12d}{\index{B\-D.\-cpp@{B\-D.\-cpp}!temp\-\_\-file@{temp\-\_\-file}}
+\index{temp\-\_\-file@{temp\-\_\-file}!BD.cpp@{B\-D.\-cpp}}
+\subsubsection[{temp\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}char temp\-\_\-file\mbox{[}100\mbox{]}}}\label{BD_8cpp_a7e84efd058cd9e661c6a3bfdd82cd12d}

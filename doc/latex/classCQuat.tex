@@ -1,0 +1,239 @@
+\hypertarget{classCQuat}{\section{C\-Quat Class Reference}
+\label{classCQuat}\index{C\-Quat@{C\-Quat}}
+}
+
+
+{\ttfamily \#include $<$util.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCQuat_aa8497e624cd8c83814ee708beed80be8}{C\-Quat} ()
+\item 
+\hyperlink{classCQuat_a9e2eb21a9c7ec78d94e0fe38e34b242b}{C\-Quat} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCQuat_a7f18efa604d788a39bb6726de6546ce2}{real}, const \hyperlink{classCPnt}{C\-Pnt} \&\hyperlink{classCQuat_a783b34fbc307fbb00fd112c8441b0f30}{imag})
+\item 
+\hyperlink{classCQuat_a5225432b6d2298207cadd596073a500c}{C\-Quat} (const \hyperlink{classCPnt}{C\-Pnt} \&axis, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} angle)
+\item 
+\hyperlink{classCQuat_acd11b75e7090f6a6992425bcc5416219}{C\-Quat} (const \hyperlink{classCQuat}{C\-Quat} \&q)
+\item 
+\hyperlink{classCQuat}{C\-Quat} \& \hyperlink{classCQuat_ad7a24172721a059adcbf40f6db7584fb}{operator=} (const \hyperlink{classCQuat}{C\-Quat} \&q)
+\item 
+void \hyperlink{classCQuat_a9a0a307a7660ba46e1587b67f5cc35ea}{identity} ()
+\item 
+\hyperlink{classCQuat}{C\-Quat} \& \hyperlink{classCQuat_a91a9f75dd706a025a68121522d30a561}{operator$\ast$=} (const \hyperlink{classCQuat}{C\-Quat} \&q)
+\item 
+void \hyperlink{classCQuat_ab6e67daab741dfb157e3e5562a804706}{normalize} ()
+\item 
+void \hyperlink{classCQuat_a03c7815f439647be9e4cc8f3937cd0d0}{conj} ()
+\item 
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCQuat_a7f18efa604d788a39bb6726de6546ce2}{real} () const 
+\item 
+const \hyperlink{classCPnt}{C\-Pnt} \& \hyperlink{classCQuat_a783b34fbc307fbb00fd112c8441b0f30}{imag} () const 
+\item 
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCQuat_ae6b5a06a27a9253ec3737101ddd02ee5}{x} () const 
+\item 
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCQuat_a01fcb600b793533c9f7554668739ac86}{y} () const 
+\item 
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCQuat_a1d2b9113413336187282a0dffcf5b39b}{z} () const 
+\item 
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCQuat_a8e83cf929e0e4f669482b419b20a096c}{w} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCQuat}{C\-Quat} \hyperlink{classCQuat_a3788f9ce393c8c6e7dc2df6e7675c594}{choose\-Random} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCQuat}{C\-Quat} \hyperlink{classCQuat_a56293e53132060601a281240804d9302}{operator$\ast$} (const \hyperlink{classCQuat}{C\-Quat} \&q1, const \hyperlink{classCQuat}{C\-Quat} \&q2)
+\item 
+\hyperlink{classCPnt}{C\-Pnt} \hyperlink{classCQuat_ac98154ed89178004c9023423651b58a9}{operator$\ast$} (const \hyperlink{classCQuat}{C\-Quat} \&q1, const \hyperlink{classCPnt}{C\-Pnt} \&p1)
+\item 
+\hyperlink{classCQuat}{C\-Quat} \hyperlink{classCQuat_a751f3ac0c157ff6967eaf2673ce1527e}{conj} (const \hyperlink{classCQuat}{C\-Quat} \&q)
+\item 
+ostream \& \hyperlink{classCQuat_afeef42a3ba6ea600e39ee2accca10836}{operator$<$$<$} (ostream \&out, const \hyperlink{classCQuat}{C\-Quat} \&q)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCQuat_aa8497e624cd8c83814ee708beed80be8}{\index{C\-Quat@{C\-Quat}!C\-Quat@{C\-Quat}}
+\index{C\-Quat@{C\-Quat}!CQuat@{C\-Quat}}
+\subsubsection[{C\-Quat}]{\setlength{\rightskip}{0pt plus 5cm}C\-Quat\-::\-C\-Quat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_aa8497e624cd8c83814ee708beed80be8}
+\hypertarget{classCQuat_a9e2eb21a9c7ec78d94e0fe38e34b242b}{\index{C\-Quat@{C\-Quat}!C\-Quat@{C\-Quat}}
+\index{C\-Quat@{C\-Quat}!CQuat@{C\-Quat}}
+\subsubsection[{C\-Quat}]{\setlength{\rightskip}{0pt plus 5cm}C\-Quat\-::\-C\-Quat (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-E\-A\-L}}]{real, }
+\item[{const {\bf C\-Pnt} \&}]{imag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_a9e2eb21a9c7ec78d94e0fe38e34b242b}
+\hypertarget{classCQuat_a5225432b6d2298207cadd596073a500c}{\index{C\-Quat@{C\-Quat}!C\-Quat@{C\-Quat}}
+\index{C\-Quat@{C\-Quat}!CQuat@{C\-Quat}}
+\subsubsection[{C\-Quat}]{\setlength{\rightskip}{0pt plus 5cm}C\-Quat\-::\-C\-Quat (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Pnt} \&}]{axis, }
+\item[{{\bf R\-E\-A\-L}}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_a5225432b6d2298207cadd596073a500c}
+\hypertarget{classCQuat_acd11b75e7090f6a6992425bcc5416219}{\index{C\-Quat@{C\-Quat}!C\-Quat@{C\-Quat}}
+\index{C\-Quat@{C\-Quat}!CQuat@{C\-Quat}}
+\subsubsection[{C\-Quat}]{\setlength{\rightskip}{0pt plus 5cm}C\-Quat\-::\-C\-Quat (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Quat} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_acd11b75e7090f6a6992425bcc5416219}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCQuat_a3788f9ce393c8c6e7dc2df6e7675c594}{\index{C\-Quat@{C\-Quat}!choose\-Random@{choose\-Random}}
+\index{choose\-Random@{choose\-Random}!CQuat@{C\-Quat}}
+\subsubsection[{choose\-Random}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat} C\-Quat\-::choose\-Random (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classCQuat_a3788f9ce393c8c6e7dc2df6e7675c594}
+\hypertarget{classCQuat_a03c7815f439647be9e4cc8f3937cd0d0}{\index{C\-Quat@{C\-Quat}!conj@{conj}}
+\index{conj@{conj}!CQuat@{C\-Quat}}
+\subsubsection[{conj}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Quat\-::conj (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_a03c7815f439647be9e4cc8f3937cd0d0}
+\hypertarget{classCQuat_a9a0a307a7660ba46e1587b67f5cc35ea}{\index{C\-Quat@{C\-Quat}!identity@{identity}}
+\index{identity@{identity}!CQuat@{C\-Quat}}
+\subsubsection[{identity}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Quat\-::identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_a9a0a307a7660ba46e1587b67f5cc35ea}
+\hypertarget{classCQuat_a783b34fbc307fbb00fd112c8441b0f30}{\index{C\-Quat@{C\-Quat}!imag@{imag}}
+\index{imag@{imag}!CQuat@{C\-Quat}}
+\subsubsection[{imag}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Pnt}\& C\-Quat\-::imag (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_a783b34fbc307fbb00fd112c8441b0f30}
+\hypertarget{classCQuat_ab6e67daab741dfb157e3e5562a804706}{\index{C\-Quat@{C\-Quat}!normalize@{normalize}}
+\index{normalize@{normalize}!CQuat@{C\-Quat}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Quat\-::normalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_ab6e67daab741dfb157e3e5562a804706}
+\hypertarget{classCQuat_a91a9f75dd706a025a68121522d30a561}{\index{C\-Quat@{C\-Quat}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!CQuat@{C\-Quat}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat} \& {\bf C\-Quat\-::operator}$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Quat} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_a91a9f75dd706a025a68121522d30a561}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCQuat_a91a9f75dd706a025a68121522d30a561_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCQuat_ad7a24172721a059adcbf40f6db7584fb}{\index{C\-Quat@{C\-Quat}!operator=@{operator=}}
+\index{operator=@{operator=}!CQuat@{C\-Quat}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat}\& {\bf C\-Quat\-::operator}= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Quat} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_ad7a24172721a059adcbf40f6db7584fb}
+\hypertarget{classCQuat_a7f18efa604d788a39bb6726de6546ce2}{\index{C\-Quat@{C\-Quat}!real@{real}}
+\index{real@{real}!CQuat@{C\-Quat}}
+\subsubsection[{real}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} C\-Quat\-::real (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_a7f18efa604d788a39bb6726de6546ce2}
+\hypertarget{classCQuat_a8e83cf929e0e4f669482b419b20a096c}{\index{C\-Quat@{C\-Quat}!w@{w}}
+\index{w@{w}!CQuat@{C\-Quat}}
+\subsubsection[{w}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} C\-Quat\-::w (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_a8e83cf929e0e4f669482b419b20a096c}
+\hypertarget{classCQuat_ae6b5a06a27a9253ec3737101ddd02ee5}{\index{C\-Quat@{C\-Quat}!x@{x}}
+\index{x@{x}!CQuat@{C\-Quat}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} C\-Quat\-::x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_ae6b5a06a27a9253ec3737101ddd02ee5}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classCQuat_ae6b5a06a27a9253ec3737101ddd02ee5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCQuat_a01fcb600b793533c9f7554668739ac86}{\index{C\-Quat@{C\-Quat}!y@{y}}
+\index{y@{y}!CQuat@{C\-Quat}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} C\-Quat\-::y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_a01fcb600b793533c9f7554668739ac86}
+\hypertarget{classCQuat_a1d2b9113413336187282a0dffcf5b39b}{\index{C\-Quat@{C\-Quat}!z@{z}}
+\index{z@{z}!CQuat@{C\-Quat}}
+\subsubsection[{z}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} C\-Quat\-::z (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_a1d2b9113413336187282a0dffcf5b39b}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classCQuat_a751f3ac0c157ff6967eaf2673ce1527e}{\index{C\-Quat@{C\-Quat}!conj@{conj}}
+\index{conj@{conj}!CQuat@{C\-Quat}}
+\subsubsection[{conj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat} conj (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Quat} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCQuat_a751f3ac0c157ff6967eaf2673ce1527e}
+\hypertarget{classCQuat_a56293e53132060601a281240804d9302}{\index{C\-Quat@{C\-Quat}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!CQuat@{C\-Quat}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat} {\bf operator}$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Quat} \&}]{q1, }
+\item[{const {\bf C\-Quat} \&}]{q2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCQuat_a56293e53132060601a281240804d9302}
+\hypertarget{classCQuat_ac98154ed89178004c9023423651b58a9}{\index{C\-Quat@{C\-Quat}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!CQuat@{C\-Quat}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} {\bf operator}$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Quat} \&}]{q1, }
+\item[{const {\bf C\-Pnt} \&}]{p1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCQuat_ac98154ed89178004c9023423651b58a9}
+\hypertarget{classCQuat_afeef42a3ba6ea600e39ee2accca10836}{\index{C\-Quat@{C\-Quat}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!CQuat@{C\-Quat}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& {\bf operator}$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf C\-Quat} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCQuat_afeef42a3ba6ea600e39ee2accca10836}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{util_8h}{util.\-h}\end{DoxyCompactItemize}

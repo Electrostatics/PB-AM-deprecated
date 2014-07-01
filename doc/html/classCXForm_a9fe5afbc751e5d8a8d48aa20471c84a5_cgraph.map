@@ -1,0 +1,21 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCXForm.html#a4e9f8fd4d9fd24150cd357f724fa10c1" title="CXForm::reset" alt="" coords="150,385,258,412"/>
+<area shape="rect" id="node5" href="$util_8h.html#ad05fbf75e7550a927bc817f97115f2fc" title="CartToSph" alt="" coords="356,81,441,108"/>
+<area shape="rect" id="node13" href="$classCRotCoeff.html#aa52111e9c4cb2949dfae960437742536" title="CRotCoeff::reset" alt="" coords="337,157,460,184"/>
+<area shape="rect" id="node19" href="$classCRotCoeff.html#a4668070c3eacacf17be98bc2fb348287" title="CRotCoeff::isSingular" alt="" coords="539,208,690,235"/>
+<area shape="rect" id="node21" href="$classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba" title="CSpPnt::theta" alt="" coords="346,259,451,285"/>
+<area shape="rect" id="node23" href="$classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d" title="CSpPnt::phi" alt="" coords="352,309,445,336"/>
+<area shape="rect" id="node25" href="$classCTransCoeff.html#ade17444acf44e5c80f8caa9a593f03ee" title="CTransCoeff::reset" alt="" coords="331,360,466,387"/>
+<area shape="rect" id="node27" href="$classCSpPnt.html#af6364f003b923aa77c880869d27caa64" title="CSpPnt::rho" alt="" coords="351,411,446,437"/>
+<area shape="rect" id="node29" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff::rotate" alt="" coords="335,485,462,512"/>
+<area shape="rect" id="node32" href="$classCTransCoeff.html#a0152b91eec8d84278e6432019ce4ef91" title="CTransCoeff::translate" alt="" coords="321,560,476,587"/>
+<area shape="rect" id="node35" href="$cmcoeff_8cpp.html#a90c84c259a220e291cebf52d99560c61" title="inprod" alt="" coords="370,611,427,637"/>
+<area shape="rect" id="node37" href="$classCTransCoeff.html#a9fb52e0afd88150756506af029f86611" title="CTransCoeff::computeError" alt="" coords="307,661,490,688"/>
+<area shape="rect" id="node41" href="$classCRotCoeff.html#a27b0198e460737ea20601fa4f0667df5" title="CRotCoeff::getParams" alt="" coords="321,712,477,739"/>
+<area shape="rect" id="node7" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="581,5,648,32"/>
+<area shape="rect" id="node9" href="$classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="581,56,648,83"/>
+<area shape="rect" id="node11" href="$classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="581,107,648,133"/>
+<area shape="rect" id="node15" href="$classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="555,157,675,184"/>
+<area shape="rect" id="node17" href="$classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb" title="CMCoeff::reset" alt="" coords="739,157,851,184"/>
+<area shape="rect" id="node39" href="$classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="CMCoeff::getOrder" alt="" coords="548,661,681,688"/>
+</map>

@@ -63,9 +63,9 @@ CMPE::initConstants(REAL kappa, REAL dielp, REAL diels, int nmol, REAL rs)
     IDX[N_MOL-i] = IDX[N_MOL-i-1] + i;
 
   if (m_bInfinite)
-    m_xfs = new (CXForm*)[m_unit * (N_MOL-1)];
+    m_xfs = new CXForm*[m_unit * (N_MOL-1)];
   else
-    m_xfs = new (CXForm*)[IDX[N_MOL-1]];
+    m_xfs = new CXForm*[IDX[N_MOL-1]];
   m_tG = new CGradCoeff[N_MOL];
 }
 

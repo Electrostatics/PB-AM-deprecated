@@ -1,0 +1,98 @@
+\hypertarget{classCPDB}{\section{C\-P\-D\-B Class Reference}
+\label{classCPDB}\index{C\-P\-D\-B@{C\-P\-D\-B}}
+}
+
+
+{\ttfamily \#include $<$pdb.\-h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classCPDB_a3033b818c15dea1b6df7c3b354a8d044}{load\-From\-P\-D\-B} (const char $\ast$fname, vector$<$ \hyperlink{classAA}{A\-A} $>$ \&aas)
+\item 
+static void \hyperlink{classCPDB_ab30dfa8082d957c7008d2e4a2c56273b}{write\-To\-P\-D\-B} (const char $\ast$fname, const vector$<$ \hyperlink{classAA}{A\-A} $>$ \&aas)
+\item 
+static void \hyperlink{classCPDB_a1c4247e99968afb8266c6cf85d537de6}{write\-Line} (ostream \&fout, int index, const char $\ast$chainid, const \hyperlink{classCAtom}{C\-Atom} \&atom, const \hyperlink{classCQuat}{C\-Quat} \&rot, const \hyperlink{classCPnt}{C\-Pnt} \&trans)
+\item 
+static \hyperlink{classCAtom}{C\-Atom} \hyperlink{classCPDB_acdc2ba2ed5bb4dc8701577e29c0f4bf9}{readline} (const char $\ast$buf)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPDB_a3033b818c15dea1b6df7c3b354a8d044}{\index{C\-P\-D\-B@{C\-P\-D\-B}!load\-From\-P\-D\-B@{load\-From\-P\-D\-B}}
+\index{load\-From\-P\-D\-B@{load\-From\-P\-D\-B}!CPDB@{C\-P\-D\-B}}
+\subsubsection[{load\-From\-P\-D\-B}]{\setlength{\rightskip}{0pt plus 5cm}void C\-P\-D\-B\-::load\-From\-P\-D\-B (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fname, }
+\item[{vector$<$ {\bf A\-A} $>$ \&}]{aas}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classCPDB_a3033b818c15dea1b6df7c3b354a8d044}
+load\-From\-P\-D\-B Inputs\-: pdb filename for protein, empty vector for amino acid seq $<$ Checking for file 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCPDB_a3033b818c15dea1b6df7c3b354a8d044_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPDB_acdc2ba2ed5bb4dc8701577e29c0f4bf9}{\index{C\-P\-D\-B@{C\-P\-D\-B}!readline@{readline}}
+\index{readline@{readline}!CPDB@{C\-P\-D\-B}}
+\subsubsection[{readline}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Atom} C\-P\-D\-B\-::readline (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{buf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classCPDB_acdc2ba2ed5bb4dc8701577e29c0f4bf9}
+read\-Line\-: read a line from a pdb file to obtain information about an atom 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classCPDB_acdc2ba2ed5bb4dc8701577e29c0f4bf9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPDB_a1c4247e99968afb8266c6cf85d537de6}{\index{C\-P\-D\-B@{C\-P\-D\-B}!write\-Line@{write\-Line}}
+\index{write\-Line@{write\-Line}!CPDB@{C\-P\-D\-B}}
+\subsubsection[{write\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void C\-P\-D\-B\-::write\-Line (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{fout, }
+\item[{int}]{index, }
+\item[{const char $\ast$}]{chainid, }
+\item[{const {\bf C\-Atom} \&}]{atom, }
+\item[{const {\bf C\-Quat} \&}]{rot, }
+\item[{const {\bf C\-Pnt} \&}]{trans}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classCPDB_a1c4247e99968afb8266c6cf85d537de6}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classCPDB_a1c4247e99968afb8266c6cf85d537de6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPDB_ab30dfa8082d957c7008d2e4a2c56273b}{\index{C\-P\-D\-B@{C\-P\-D\-B}!write\-To\-P\-D\-B@{write\-To\-P\-D\-B}}
+\index{write\-To\-P\-D\-B@{write\-To\-P\-D\-B}!CPDB@{C\-P\-D\-B}}
+\subsubsection[{write\-To\-P\-D\-B}]{\setlength{\rightskip}{0pt plus 5cm}void C\-P\-D\-B\-::write\-To\-P\-D\-B (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fname, }
+\item[{const vector$<$ {\bf A\-A} $>$ \&}]{aas}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classCPDB_ab30dfa8082d957c7008d2e4a2c56273b}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pdb_8h}{pdb.\-h}\item 
+\hyperlink{pdb_8cpp}{pdb.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCQuat.html#ae6b5a06a27a9253ec3737101ddd02ee5" title="CQuat::x" alt="" coords="200,5,275,32"/>
+<area shape="rect" id="node7" href="$classCQuat.html#a01fcb600b793533c9f7554668739ac86" title="CQuat::y" alt="" coords="200,56,275,83"/>
+<area shape="rect" id="node9" href="$classCQuat.html#a1d2b9113413336187282a0dffcf5b39b" title="CQuat::z" alt="" coords="200,107,275,133"/>
+<area shape="rect" id="node11" href="$classCQuat.html#a8e83cf929e0e4f669482b419b20a096c" title="CQuat::w" alt="" coords="198,157,277,184"/>
+<area shape="rect" id="node13" href="$classCRotCoeff.html#aa52111e9c4cb2949dfae960437742536" title="CRotCoeff::reset" alt="" coords="176,208,299,235"/>
+<area shape="rect" id="node5" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="389,5,456,32"/>
+<area shape="rect" id="node15" href="$classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="363,183,483,209"/>
+<area shape="rect" id="node19" href="$classCRotCoeff.html#a4668070c3eacacf17be98bc2fb348287" title="CRotCoeff::isSingular" alt="" coords="347,233,498,260"/>
+<area shape="rect" id="node17" href="$classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb" title="CMCoeff::reset" alt="" coords="547,183,659,209"/>
+</map>

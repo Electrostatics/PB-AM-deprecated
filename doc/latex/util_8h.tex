@@ -1,0 +1,389 @@
+\hypertarget{util_8h}{\section{util.\-h File Reference}
+\label{util_8h}\index{util.\-h@{util.\-h}}
+}
+{\ttfamily \#include $<$complex$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+Include dependency graph for util.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCSpPnt}{C\-Sp\-Pnt}
+\item 
+class \hyperlink{classCPnt}{C\-Pnt}
+\item 
+class \hyperlink{classCQuat}{C\-Quat}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef double \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L}
+\item 
+typedef complex$<$ \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} $>$ \hyperlink{util_8h_a0ef19d29521fc1e3356ea268ba175cfc}{Complex}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{util_8h_a995a97713975591555fe37b5ad50745a}{dot} (const \hyperlink{classCPnt}{C\-Pnt} \&p1, const \hyperlink{classCPnt}{C\-Pnt} \&p2)
+\item 
+\hyperlink{classCPnt}{C\-Pnt} \hyperlink{util_8h_a491783063d690a2f389e3317f44dd0b7}{rand\-Orient} ()
+\item 
+\hyperlink{classCPnt}{C\-Pnt} \hyperlink{util_8h_a33c07e9b427f6ef2a832f0347547d920}{operator-\/} (const \hyperlink{classCPnt}{C\-Pnt} \&c1, const \hyperlink{classCPnt}{C\-Pnt} \&c2)
+\item 
+\hyperlink{classCPnt}{C\-Pnt} \hyperlink{util_8h_a4edc341b0ad1bcf25527dedebcd50fad}{operator+} (const \hyperlink{classCPnt}{C\-Pnt} \&c1, const \hyperlink{classCPnt}{C\-Pnt} \&c2)
+\item 
+\hyperlink{classCPnt}{C\-Pnt} \hyperlink{util_8h_a6bf4a1152989f36cdb084e617a81214b}{operator$\ast$} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} c, const \hyperlink{classCPnt}{C\-Pnt} \&p1)
+\item 
+\hyperlink{classCPnt}{C\-Pnt} \hyperlink{util_8h_ab4553c75d2ac17d0539471baeb0c0237}{cross} (const \hyperlink{classCPnt}{C\-Pnt} \&p1, const \hyperlink{classCPnt}{C\-Pnt} \&p2)
+\item 
+\hyperlink{classCPnt}{C\-Pnt} \hyperlink{util_8h_a32b27b68f60ea93fc6531a5f3e483cf7}{operator-\/} (const \hyperlink{classCPnt}{C\-Pnt} \&p1)
+\item 
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{util_8h_ac25278586b4a84caf4098513d812d60b}{torsion} (const \hyperlink{classCPnt}{C\-Pnt} \&p1, const \hyperlink{classCPnt}{C\-Pnt} \&p2, const \hyperlink{classCPnt}{C\-Pnt} \&p3, const \hyperlink{classCPnt}{C\-Pnt} \&p4)
+\item 
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{util_8h_a774fe41d28888a078993d8d3384c34d8}{torsion} (const \hyperlink{classCPnt}{C\-Pnt} \&v1, const \hyperlink{classCPnt}{C\-Pnt} \&v2, const \hyperlink{classCPnt}{C\-Pnt} \&v3)
+\item 
+ostream \& \hyperlink{util_8h_a5d9fde839f5480f04e4b64a9621e3370}{operator$<$$<$} (ostream \&out, const \hyperlink{classCPnt}{C\-Pnt} \&p)
+\item 
+ostream \& \hyperlink{util_8h_a53a39a67bc3f52a606be1d4e71085b3f}{operator$<$$<$} (ostream \&out, const \hyperlink{classCSpPnt}{C\-Sp\-Pnt} \&p)
+\item 
+\hyperlink{classCPnt}{C\-Pnt} \hyperlink{util_8h_af8b263bb80bb3a76271a7f57d5057df3}{Sph\-To\-Cart} (const \hyperlink{classCSpPnt}{C\-Sp\-Pnt} \&s)
+\item 
+\hyperlink{classCSpPnt}{C\-Sp\-Pnt} \hyperlink{util_8h_ad05fbf75e7550a927bc817f97115f2fc}{Cart\-To\-Sph} (const \hyperlink{classCPnt}{C\-Pnt} \&c)
+\item 
+\hyperlink{classCQuat}{C\-Quat} \hyperlink{util_8h_a56293e53132060601a281240804d9302}{operator$\ast$} (const \hyperlink{classCQuat}{C\-Quat} \&q1, const \hyperlink{classCQuat}{C\-Quat} \&q2)
+\item 
+\hyperlink{classCPnt}{C\-Pnt} \hyperlink{util_8h_a7069e77a0dcbfde733a88ee5790e71c2}{operator$\ast$} (const \hyperlink{classCQuat}{C\-Quat} \&q, const \hyperlink{classCPnt}{C\-Pnt} \&r)
+\item 
+\hyperlink{classCQuat}{C\-Quat} \hyperlink{util_8h_a751f3ac0c157ff6967eaf2673ce1527e}{conj} (const \hyperlink{classCQuat}{C\-Quat} \&q)
+\item 
+ostream \& \hyperlink{util_8h_afeef42a3ba6ea600e39ee2accca10836}{operator$<$$<$} (ostream \&out, const \hyperlink{classCQuat}{C\-Quat} \&q)
+\item 
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{util_8h_a3daa70c1884dabb0992d5ce98e3f692a}{norm\-Rand} ()
+\item 
+void \hyperlink{util_8h_ad864dc450da6954264580e4318e011eb}{seed\-Rand} (int s)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{util_8h_a0ef19d29521fc1e3356ea268ba175cfc}{\index{util.\-h@{util.\-h}!Complex@{Complex}}
+\index{Complex@{Complex}!util.h@{util.\-h}}
+\subsubsection[{Complex}]{\setlength{\rightskip}{0pt plus 5cm}typedef complex$<${\bf R\-E\-A\-L}$>$ {\bf Complex}}}\label{util_8h_a0ef19d29521fc1e3356ea268ba175cfc}
+\hypertarget{util_8h_a5821460e95a0800cf9f24c38915cbbde}{\index{util.\-h@{util.\-h}!R\-E\-A\-L@{R\-E\-A\-L}}
+\index{R\-E\-A\-L@{R\-E\-A\-L}!util.h@{util.\-h}}
+\subsubsection[{R\-E\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}typedef double {\bf R\-E\-A\-L}}}\label{util_8h_a5821460e95a0800cf9f24c38915cbbde}
+
+
+\subsection{Function Documentation}
+\hypertarget{util_8h_ad05fbf75e7550a927bc817f97115f2fc}{\index{util.\-h@{util.\-h}!Cart\-To\-Sph@{Cart\-To\-Sph}}
+\index{Cart\-To\-Sph@{Cart\-To\-Sph}!util.h@{util.\-h}}
+\subsubsection[{Cart\-To\-Sph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sp\-Pnt} Cart\-To\-Sph (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Pnt} \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_ad05fbf75e7550a927bc817f97115f2fc}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{util_8h_ad05fbf75e7550a927bc817f97115f2fc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{util_8h_a751f3ac0c157ff6967eaf2673ce1527e}{\index{util.\-h@{util.\-h}!conj@{conj}}
+\index{conj@{conj}!util.h@{util.\-h}}
+\subsubsection[{conj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat} conj (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Quat} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a751f3ac0c157ff6967eaf2673ce1527e}
+\hypertarget{util_8h_ab4553c75d2ac17d0539471baeb0c0237}{\index{util.\-h@{util.\-h}!cross@{cross}}
+\index{cross@{cross}!util.h@{util.\-h}}
+\subsubsection[{cross}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} cross (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Pnt} \&}]{p1, }
+\item[{const {\bf C\-Pnt} \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_ab4553c75d2ac17d0539471baeb0c0237}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{util_8h_ab4553c75d2ac17d0539471baeb0c0237_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{util_8h_a995a97713975591555fe37b5ad50745a}{\index{util.\-h@{util.\-h}!dot@{dot}}
+\index{dot@{dot}!util.h@{util.\-h}}
+\subsubsection[{dot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} dot (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Pnt} \&}]{p1, }
+\item[{const {\bf C\-Pnt} \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a995a97713975591555fe37b5ad50745a}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{util_8h_a995a97713975591555fe37b5ad50745a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{util_8h_a3daa70c1884dabb0992d5ce98e3f692a}{\index{util.\-h@{util.\-h}!norm\-Rand@{norm\-Rand}}
+\index{norm\-Rand@{norm\-Rand}!util.h@{util.\-h}}
+\subsubsection[{norm\-Rand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} norm\-Rand (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a3daa70c1884dabb0992d5ce98e3f692a}
+\hypertarget{util_8h_a6bf4a1152989f36cdb084e617a81214b}{\index{util.\-h@{util.\-h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!util.h@{util.\-h}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} {\bf operator}$\ast$ (
+\begin{DoxyParamCaption}
+\item[{{\bf R\-E\-A\-L}}]{c, }
+\item[{const {\bf C\-Pnt} \&}]{p1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a6bf4a1152989f36cdb084e617a81214b}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{util_8h_a6bf4a1152989f36cdb084e617a81214b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{util_8h_a56293e53132060601a281240804d9302}{\index{util.\-h@{util.\-h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!util.h@{util.\-h}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat} {\bf operator}$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Quat} \&}]{q1, }
+\item[{const {\bf C\-Quat} \&}]{q2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a56293e53132060601a281240804d9302}
+\hypertarget{util_8h_a7069e77a0dcbfde733a88ee5790e71c2}{\index{util.\-h@{util.\-h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!util.h@{util.\-h}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} {\bf operator}$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Quat} \&}]{q, }
+\item[{const {\bf C\-Pnt} \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a7069e77a0dcbfde733a88ee5790e71c2}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util_8h_a7069e77a0dcbfde733a88ee5790e71c2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{util_8h_a4edc341b0ad1bcf25527dedebcd50fad}{\index{util.\-h@{util.\-h}!operator+@{operator+}}
+\index{operator+@{operator+}!util.h@{util.\-h}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} {\bf operator}+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Pnt} \&}]{c1, }
+\item[{const {\bf C\-Pnt} \&}]{c2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a4edc341b0ad1bcf25527dedebcd50fad}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{util_8h_a4edc341b0ad1bcf25527dedebcd50fad_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{util_8h_a33c07e9b427f6ef2a832f0347547d920}{\index{util.\-h@{util.\-h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!util.h@{util.\-h}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} {\bf operator}-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Pnt} \&}]{c1, }
+\item[{const {\bf C\-Pnt} \&}]{c2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a33c07e9b427f6ef2a832f0347547d920}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{util_8h_a33c07e9b427f6ef2a832f0347547d920_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{util_8h_a32b27b68f60ea93fc6531a5f3e483cf7}{\index{util.\-h@{util.\-h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!util.h@{util.\-h}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} {\bf operator}-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Pnt} \&}]{p1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a32b27b68f60ea93fc6531a5f3e483cf7}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{util_8h_a32b27b68f60ea93fc6531a5f3e483cf7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{util_8h_a5d9fde839f5480f04e4b64a9621e3370}{\index{util.\-h@{util.\-h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!util.h@{util.\-h}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& {\bf operator}$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf C\-Pnt} \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a5d9fde839f5480f04e4b64a9621e3370}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{util_8h_a5d9fde839f5480f04e4b64a9621e3370_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{util_8h_a53a39a67bc3f52a606be1d4e71085b3f}{\index{util.\-h@{util.\-h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!util.h@{util.\-h}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& {\bf operator}$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf C\-Sp\-Pnt} \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a53a39a67bc3f52a606be1d4e71085b3f}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{util_8h_a53a39a67bc3f52a606be1d4e71085b3f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{util_8h_afeef42a3ba6ea600e39ee2accca10836}{\index{util.\-h@{util.\-h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!util.h@{util.\-h}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& {\bf operator}$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf C\-Quat} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_afeef42a3ba6ea600e39ee2accca10836}
+\hypertarget{util_8h_a491783063d690a2f389e3317f44dd0b7}{\index{util.\-h@{util.\-h}!rand\-Orient@{rand\-Orient}}
+\index{rand\-Orient@{rand\-Orient}!util.h@{util.\-h}}
+\subsubsection[{rand\-Orient}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} rand\-Orient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a491783063d690a2f389e3317f44dd0b7}
+\hypertarget{util_8h_ad864dc450da6954264580e4318e011eb}{\index{util.\-h@{util.\-h}!seed\-Rand@{seed\-Rand}}
+\index{seed\-Rand@{seed\-Rand}!util.h@{util.\-h}}
+\subsubsection[{seed\-Rand}]{\setlength{\rightskip}{0pt plus 5cm}void seed\-Rand (
+\begin{DoxyParamCaption}
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_ad864dc450da6954264580e4318e011eb}
+\hypertarget{util_8h_af8b263bb80bb3a76271a7f57d5057df3}{\index{util.\-h@{util.\-h}!Sph\-To\-Cart@{Sph\-To\-Cart}}
+\index{Sph\-To\-Cart@{Sph\-To\-Cart}!util.h@{util.\-h}}
+\subsubsection[{Sph\-To\-Cart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} Sph\-To\-Cart (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Sp\-Pnt} \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_af8b263bb80bb3a76271a7f57d5057df3}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{util_8h_af8b263bb80bb3a76271a7f57d5057df3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{util_8h_ac25278586b4a84caf4098513d812d60b}{\index{util.\-h@{util.\-h}!torsion@{torsion}}
+\index{torsion@{torsion}!util.h@{util.\-h}}
+\subsubsection[{torsion}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} torsion (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Pnt} \&}]{p1, }
+\item[{const {\bf C\-Pnt} \&}]{p2, }
+\item[{const {\bf C\-Pnt} \&}]{p3, }
+\item[{const {\bf C\-Pnt} \&}]{p4}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_ac25278586b4a84caf4098513d812d60b}
+\hypertarget{util_8h_a774fe41d28888a078993d8d3384c34d8}{\index{util.\-h@{util.\-h}!torsion@{torsion}}
+\index{torsion@{torsion}!util.h@{util.\-h}}
+\subsubsection[{torsion}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} torsion (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Pnt} \&}]{v1, }
+\item[{const {\bf C\-Pnt} \&}]{v2, }
+\item[{const {\bf C\-Pnt} \&}]{v3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a774fe41d28888a078993d8d3384c34d8}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{util_8h_a774fe41d28888a078993d8d3384c34d8_cgraph}
+\end{center}
+\end{figure}
+
+

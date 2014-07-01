@@ -8,6 +8,8 @@
 #include <iostream>
 #include <sys/time.h>
 #include <memory>
+#include <assert.h>
+#include <cstring>
 
 using namespace std;
 

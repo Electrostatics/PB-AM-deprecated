@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCTransCoeff.html#a79b28e19c6f8c4a028296b351eb4a30a" title="CTransCoeff::decOrder" alt="" coords="199,5,358,32"/>
+<area shape="rect" id="node5" href="$classCRotCoeff.html#ae9fa83e941510deeda3aac1b8aecc58b" title="CRotCoeff::decOrder" alt="" coords="205,56,352,83"/>
+<area shape="rect" id="node7" href="$classCTransCoeff.html#a9fb52e0afd88150756506af029f86611" title="CTransCoeff::computeError" alt="" coords="187,107,370,133"/>
+<area shape="rect" id="node9" href="$classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="CMCoeff::getOrder" alt="" coords="419,107,552,133"/>
+</map>

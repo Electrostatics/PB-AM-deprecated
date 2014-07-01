@@ -1,0 +1,364 @@
+\hypertarget{classCTriCoeff}{\section{C\-Tri\-Coeff Class Reference}
+\label{classCTriCoeff}\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}}
+}
+
+
+{\ttfamily \#include $<$tricoeff.\-h$>$}
+
+
+
+Inheritance diagram for C\-Tri\-Coeff\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classCTriCoeff__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\-Tri\-Coeff\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=138pt]{classCTriCoeff__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCTriCoeff_a00b825a596e5f4dd0184a50c53bd5d3c}{C\-Tri\-Coeff} (int p=0, int res=\hyperlink{mcoeff_8h_ac23f9c13c5d07d9ce386f7a830c35e5a}{N\-\_\-\-P\-O\-L\-E\-S})
+\item 
+\hyperlink{classCTriCoeff_ad086149d1a3911a29aeef3dd14ed4042}{C\-Tri\-Coeff} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G)
+\item 
+const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \& \hyperlink{classCTriCoeff_a303a152b75ea66fcd65f5377b317b4d1}{operator=} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G)
+\item 
+void \hyperlink{classCTriCoeff_ae0b9dd50b8bef198ddd02ba8027d11a3}{copy} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G, int p)
+\item 
+void \hyperlink{classCTriCoeff_a6568774c5e5a6fe066c739a718de1ba6}{copy\-\_\-p} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G, int p)
+\item 
+void \hyperlink{classCTriCoeff_aa80c22419286d9fc99daafb90a44d03e}{rotate} (const \hyperlink{classCQuat}{C\-Quat} \&Q, int p)
+\item 
+void \hyperlink{classCTriCoeff_a2c13fdad1377155cfa7123f8bd04a634}{inc\-Rotate} (const \hyperlink{classCQuat}{C\-Quat} \&Q)
+\item 
+void \hyperlink{classCTriCoeff_ada2ca53b0a0e3f6b8c9667fd7984e610}{reset} (int p=0)
+\item 
+void \hyperlink{classCTriCoeff_a0cd79d07cd4eb27e673886611f94f3ab}{recip} ()
+\item 
+\hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \& \hyperlink{classCTriCoeff_aef9fe1d38095a8764a1d65117c1ca10a}{operator+=} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&E)
+\item 
+\hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \& \hyperlink{classCTriCoeff_a6b15143e57034f33f5e1a716d995ff95}{operator-\/=} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&E)
+\item 
+\hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \& \hyperlink{classCTriCoeff_aec9e2fe8be849b6dfbcfd962c45c1695}{operator$\ast$=} (const \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} $\ast$C)
+\item 
+int \hyperlink{classCTriCoeff_a0190ac9feab5bb2cb5e04ea48539b2fe}{get\-Order} () const 
+\item 
+void \hyperlink{classCTriCoeff_a8df569d14c28af368916f6d6258faa35}{set\-Order} (int p)
+\item 
+const \hyperlink{classCMCoeff}{C\-M\-Coeff} \& \hyperlink{classCTriCoeff_ae1643fb9444f997935013aeef30a7c1e}{operator\mbox{[}$\,$\mbox{]}} (int c) const 
+\item 
+\hyperlink{classCMCoeff}{C\-M\-Coeff} \& \hyperlink{classCTriCoeff_ad336c1bb46a865f0543c13ec3bf10557}{operator\mbox{[}$\,$\mbox{]}} (int c)
+\item 
+virtual void \hyperlink{classCTriCoeff_ad4c1064a7de4dd89f81959d842812ee2}{output} () const 
+\item 
+void \hyperlink{classCTriCoeff_a9886af4188561152d331366cfaec1c53}{save\-Undo} ()
+\item 
+void \hyperlink{classCTriCoeff_a8202256093cb071f6ae95887ea1c8dde}{undo} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCTriCoeff_a5966b12dbe81e9e50f5397647cb18044}{compute\-Dev} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G1, const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G2)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCMCoeff}{C\-M\-Coeff} \hyperlink{classCTriCoeff_afac3ecb3b5c965a7ba4cc0409c2100e8}{m\-\_\-\-M} \mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \hyperlink{classCTriCoeff_a8684b78e6ecaae7dfa436ee9f52365dd}{operator$\ast$} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G, const \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} C\mbox{[}\hyperlink{mcoeff_8h_ac23f9c13c5d07d9ce386f7a830c35e5a}{N\-\_\-\-P\-O\-L\-E\-S}\mbox{]})
+\item 
+\hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \hyperlink{classCTriCoeff_a6678a29fe9fa9c5d7616a7151866fd4c}{operator+} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G1, const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G2)
+\item 
+\hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \hyperlink{classCTriCoeff_a6849759bb53453f535b3b2e9379ef7d2}{operator-\/} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G1, const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G2)
+\item 
+\hyperlink{classCPnt}{C\-Pnt} \hyperlink{classCTriCoeff_ab5e8aeefc06a5962699ac639820d77be}{cross} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G1, const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G2)
+\item 
+\hyperlink{classCPnt}{C\-Pnt} \hyperlink{classCTriCoeff_a095588ecdb857546a57e3f8f33ec983d}{inprod} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M1, const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&M2)
+\item 
+ostream \& \hyperlink{classCTriCoeff_a47cfb1958c5a43e847aa4e45e1c2c5d4}{operator$<$$<$} (ostream \&out, const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&exp)
+\item 
+\hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \hyperlink{classCTriCoeff_a66ea424a347d0a78069536bf701393a5}{conj} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCTriCoeff_a00b825a596e5f4dd0184a50c53bd5d3c}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!C\-Tri\-Coeff@{C\-Tri\-Coeff}}
+\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{C\-Tri\-Coeff}]{\setlength{\rightskip}{0pt plus 5cm}C\-Tri\-Coeff\-::\-C\-Tri\-Coeff (
+\begin{DoxyParamCaption}
+\item[{int}]{p = {\ttfamily 0}, }
+\item[{int}]{res = {\ttfamily {\bf N\-\_\-\-P\-O\-L\-E\-S}}}
+\end{DoxyParamCaption}
+)}}\label{classCTriCoeff_a00b825a596e5f4dd0184a50c53bd5d3c}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classCTriCoeff_a00b825a596e5f4dd0184a50c53bd5d3c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCTriCoeff_ad086149d1a3911a29aeef3dd14ed4042}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!C\-Tri\-Coeff@{C\-Tri\-Coeff}}
+\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{C\-Tri\-Coeff}]{\setlength{\rightskip}{0pt plus 5cm}C\-Tri\-Coeff\-::\-C\-Tri\-Coeff (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_ad086149d1a3911a29aeef3dd14ed4042}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCTriCoeff_a5966b12dbe81e9e50f5397647cb18044}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!compute\-Dev@{compute\-Dev}}
+\index{compute\-Dev@{compute\-Dev}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{compute\-Dev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} C\-Tri\-Coeff\-::compute\-Dev (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G1, }
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classCTriCoeff_a5966b12dbe81e9e50f5397647cb18044}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCTriCoeff_a5966b12dbe81e9e50f5397647cb18044_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCTriCoeff_ae0b9dd50b8bef198ddd02ba8027d11a3}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!copy@{copy}}
+\index{copy@{copy}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{copy}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G, }
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_ae0b9dd50b8bef198ddd02ba8027d11a3}
+\hypertarget{classCTriCoeff_a6568774c5e5a6fe066c739a718de1ba6}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!copy\-\_\-p@{copy\-\_\-p}}
+\index{copy\-\_\-p@{copy\-\_\-p}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{copy\-\_\-p}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::copy\-\_\-p (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G, }
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_a6568774c5e5a6fe066c739a718de1ba6}
+\hypertarget{classCTriCoeff_a0190ac9feab5bb2cb5e04ea48539b2fe}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!get\-Order@{get\-Order}}
+\index{get\-Order@{get\-Order}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{get\-Order}]{\setlength{\rightskip}{0pt plus 5cm}int C\-Tri\-Coeff\-::get\-Order (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_a0190ac9feab5bb2cb5e04ea48539b2fe}
+\hypertarget{classCTriCoeff_a2c13fdad1377155cfa7123f8bd04a634}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!inc\-Rotate@{inc\-Rotate}}
+\index{inc\-Rotate@{inc\-Rotate}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{inc\-Rotate}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::inc\-Rotate (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Quat} \&}]{Q}
+\end{DoxyParamCaption}
+)}}\label{classCTriCoeff_a2c13fdad1377155cfa7123f8bd04a634}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classCTriCoeff_a2c13fdad1377155cfa7123f8bd04a634_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCTriCoeff_aec9e2fe8be849b6dfbcfd962c45c1695}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Tri\-Coeff}\& {\bf C\-Tri\-Coeff\-::operator}$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf R\-E\-A\-L} $\ast$}]{C}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_aec9e2fe8be849b6dfbcfd962c45c1695}
+\hypertarget{classCTriCoeff_aef9fe1d38095a8764a1d65117c1ca10a}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Tri\-Coeff}\& {\bf C\-Tri\-Coeff\-::operator}+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{E}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_aef9fe1d38095a8764a1d65117c1ca10a}
+\hypertarget{classCTriCoeff_a6b15143e57034f33f5e1a716d995ff95}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Tri\-Coeff}\& {\bf C\-Tri\-Coeff\-::operator}-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{E}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_a6b15143e57034f33f5e1a716d995ff95}
+\hypertarget{classCTriCoeff_a303a152b75ea66fcd65f5377b317b4d1}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!operator=@{operator=}}
+\index{operator=@{operator=}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Tri\-Coeff}\& {\bf C\-Tri\-Coeff\-::operator}= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_a303a152b75ea66fcd65f5377b317b4d1}
+\hypertarget{classCTriCoeff_ae1643fb9444f997935013aeef30a7c1e}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-M\-Coeff}\& {\bf C\-Tri\-Coeff\-::operator}\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_ae1643fb9444f997935013aeef30a7c1e}
+\hypertarget{classCTriCoeff_ad336c1bb46a865f0543c13ec3bf10557}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-M\-Coeff}\& {\bf C\-Tri\-Coeff\-::operator}\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_ad336c1bb46a865f0543c13ec3bf10557}
+\hypertarget{classCTriCoeff_ad4c1064a7de4dd89f81959d842812ee2}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!output@{output}}
+\index{output@{output}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{output}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCTriCoeff_ad4c1064a7de4dd89f81959d842812ee2}
+\hypertarget{classCTriCoeff_a0cd79d07cd4eb27e673886611f94f3ab}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!recip@{recip}}
+\index{recip@{recip}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{recip}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::recip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_a0cd79d07cd4eb27e673886611f94f3ab}
+\hypertarget{classCTriCoeff_ada2ca53b0a0e3f6b8c9667fd7984e610}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!reset@{reset}}
+\index{reset@{reset}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::reset (
+\begin{DoxyParamCaption}
+\item[{int}]{p = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_ada2ca53b0a0e3f6b8c9667fd7984e610}
+\hypertarget{classCTriCoeff_aa80c22419286d9fc99daafb90a44d03e}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!rotate@{rotate}}
+\index{rotate@{rotate}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::rotate (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Quat} \&}]{Q, }
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)}}\label{classCTriCoeff_aa80c22419286d9fc99daafb90a44d03e}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classCTriCoeff_aa80c22419286d9fc99daafb90a44d03e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCTriCoeff_a9886af4188561152d331366cfaec1c53}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!save\-Undo@{save\-Undo}}
+\index{save\-Undo@{save\-Undo}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{save\-Undo}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::save\-Undo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_a9886af4188561152d331366cfaec1c53}
+\hypertarget{classCTriCoeff_a8df569d14c28af368916f6d6258faa35}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!set\-Order@{set\-Order}}
+\index{set\-Order@{set\-Order}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{set\-Order}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::set\-Order (
+\begin{DoxyParamCaption}
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_a8df569d14c28af368916f6d6258faa35}
+\hypertarget{classCTriCoeff_a8202256093cb071f6ae95887ea1c8dde}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!undo@{undo}}
+\index{undo@{undo}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{undo}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::undo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_a8202256093cb071f6ae95887ea1c8dde}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classCTriCoeff_a66ea424a347d0a78069536bf701393a5}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!conj@{conj}}
+\index{conj@{conj}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{conj}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Tri\-Coeff} conj (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCTriCoeff_a66ea424a347d0a78069536bf701393a5}
+\hypertarget{classCTriCoeff_ab5e8aeefc06a5962699ac639820d77be}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!cross@{cross}}
+\index{cross@{cross}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{cross}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} cross (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G1, }
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCTriCoeff_ab5e8aeefc06a5962699ac639820d77be}
+\hypertarget{classCTriCoeff_a095588ecdb857546a57e3f8f33ec983d}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!inprod@{inprod}}
+\index{inprod@{inprod}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{inprod}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} inprod (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-M\-Coeff} \&}]{M1, }
+\item[{const {\bf C\-Tri\-Coeff} \&}]{M2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCTriCoeff_a095588ecdb857546a57e3f8f33ec983d}
+\hypertarget{classCTriCoeff_a8684b78e6ecaae7dfa436ee9f52365dd}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Tri\-Coeff} {\bf operator}$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G, }
+\item[{const {\bf R\-E\-A\-L}}]{C\mbox{[}\-N\-\_\-\-P\-O\-L\-E\-S\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCTriCoeff_a8684b78e6ecaae7dfa436ee9f52365dd}
+\hypertarget{classCTriCoeff_a6678a29fe9fa9c5d7616a7151866fd4c}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!operator+@{operator+}}
+\index{operator+@{operator+}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Tri\-Coeff} {\bf operator}+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G1, }
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCTriCoeff_a6678a29fe9fa9c5d7616a7151866fd4c}
+\hypertarget{classCTriCoeff_a6849759bb53453f535b3b2e9379ef7d2}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Tri\-Coeff} {\bf operator}-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G1, }
+\item[{const {\bf C\-Tri\-Coeff} \&}]{G2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCTriCoeff_a6849759bb53453f535b3b2e9379ef7d2}
+\hypertarget{classCTriCoeff_a47cfb1958c5a43e847aa4e45e1c2c5d4}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& {\bf operator}$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf C\-Tri\-Coeff} \&}]{exp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCTriCoeff_a47cfb1958c5a43e847aa4e45e1c2c5d4}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCTriCoeff_afac3ecb3b5c965a7ba4cc0409c2100e8}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!m\-\_\-\-M@{m\-\_\-\-M}}
+\index{m\-\_\-\-M@{m\-\_\-\-M}!CTriCoeff@{C\-Tri\-Coeff}}
+\subsubsection[{m\-\_\-\-M}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-M\-Coeff} C\-Tri\-Coeff\-::m\-\_\-\-M\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCTriCoeff_afac3ecb3b5c965a7ba4cc0409c2100e8}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tricoeff_8h}{tricoeff.\-h}\item 
+\hyperlink{tricoeff_8cpp}{tricoeff.\-cpp}\end{DoxyCompactItemize}

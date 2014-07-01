@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCTransCoeff.html#a4148a93440f4f011c4fb8cb26667707e" title="CTransCoeff::incOrder" alt="" coords="196,31,351,57"/>
+<area shape="rect" id="node7" href="$classCRotCoeff.html#a1416603a77ab7c9b7af515a7bad684f1" title="CRotCoeff::incOrder" alt="" coords="202,93,345,120"/>
+<area shape="rect" id="node11" href="$classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="CMCoeff::getOrder" alt="" coords="424,157,557,184"/>
+<area shape="rect" id="node18" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff::rotate" alt="" coords="210,219,337,245"/>
+<area shape="rect" id="node21" href="$classCTransCoeff.html#a9fb52e0afd88150756506af029f86611" title="CTransCoeff::computeError" alt="" coords="182,269,365,296"/>
+<area shape="rect" id="node5" href="$classCSHCoeff.html#a8fd12308d0884731596cc1268b04d232" title="CSHCoeff::incBesselk" alt="" coords="413,5,568,32"/>
+<area shape="rect" id="node9" href="$classCRotCoeff.html#a4668070c3eacacf17be98bc2fb348287" title="CRotCoeff::isSingular" alt="" coords="415,56,566,83"/>
+<area shape="rect" id="node13" href="$classCSHCoeff.html#adf80cf8370b4db9957de7acfe8aa64d6" title="CSHCoeff::inc" alt="" coords="437,107,545,133"/>
+<area shape="rect" id="node15" href="$classCMCoeff.html#a815a4d1f74b217ea54d9f05f6734004f" title="CMCoeff::setOrder" alt="" coords="616,107,749,133"/>
+</map>

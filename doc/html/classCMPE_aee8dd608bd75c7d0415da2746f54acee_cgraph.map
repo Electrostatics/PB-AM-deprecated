@@ -1,0 +1,21 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCProtein.html#aaa51486082bb376c17cf272ed9ef6bca" title="CProtein::getRadius" alt="" coords="181,5,321,32"/>
+<area shape="rect" id="node5" href="$classCProtein.html#aa4cd0f117c25ed7e5a84db8e70147014" title="CProtein::getID" alt="" coords="194,56,307,83"/>
+<area shape="rect" id="node7" href="$classCProtein.html#a8d680f9e8b07520eedfe5b43f50d1c03" title="CProtein::getNumCharges" alt="" coords="163,107,339,133"/>
+<area shape="rect" id="node9" href="$classCProtein.html#af41397ca141fb18b7a39854797e0df6a" title="CProtein::getChargePos" alt="" coords="169,157,333,184"/>
+<area shape="rect" id="node11" href="$classCProtein.html#a199bba5ba36900bdad8fd34bc0cc5342" title="CProtein::getCharge" alt="" coords="180,208,321,235"/>
+<area shape="rect" id="node13" href="$classCMPE.html#ae44b4e76215412230e279f34bd5b9fab" title="CMPE::reset" alt="" coords="201,259,300,285"/>
+<area shape="rect" id="node15" href="$classCMPE.html#a688ea48a4a13e704fc97e27c0f6dc78a" title="CMPE::setOrient" alt="" coords="387,233,509,260"/>
+<area shape="rect" id="node40" href="$classCMCoeff.html#a7010837883b56f9b972888bffb6fbb3d" title="CMCoeff::copy" alt="" coords="393,284,503,311"/>
+<area shape="rect" id="node17" href="$classCRotCoeff.html#aa52111e9c4cb2949dfae960437742536" title="CRotCoeff::reset" alt="" coords="560,145,683,172"/>
+<area shape="rect" id="node25" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff::rotate" alt="" coords="558,233,685,260"/>
+<area shape="rect" id="node28" href="$classCTriCoeff.html#aa80c22419286d9fc99daafb90a44d03e" title="CTriCoeff::rotate" alt="" coords="561,291,681,317"/>
+<area shape="rect" id="node19" href="$classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="749,95,869,121"/>
+<area shape="rect" id="node23" href="$classCRotCoeff.html#a4668070c3eacacf17be98bc2fb348287" title="CRotCoeff::isSingular" alt="" coords="734,145,885,172"/>
+<area shape="rect" id="node21" href="$classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb" title="CMCoeff::reset" alt="" coords="933,95,1045,121"/>
+<area shape="rect" id="node30" href="$classCTriCoeff.html#a0190ac9feab5bb2cb5e04ea48539b2fe" title="CTriCoeff::getOrder" alt="" coords="741,196,878,223"/>
+<area shape="rect" id="node32" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="776,247,843,273"/>
+<area shape="rect" id="node34" href="$classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="776,297,843,324"/>
+<area shape="rect" id="node36" href="$classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="776,348,843,375"/>
+<area shape="rect" id="node38" href="$classCTriCoeff.html#ae0b9dd50b8bef198ddd02ba8027d11a3" title="CTriCoeff::copy" alt="" coords="752,399,867,425"/>
+</map>

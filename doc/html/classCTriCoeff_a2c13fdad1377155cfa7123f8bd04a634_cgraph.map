@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCTriCoeff.html#a0190ac9feab5bb2cb5e04ea48539b2fe" title="CTriCoeff::getOrder" alt="" coords="198,5,335,32"/>
+<area shape="rect" id="node5" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="233,56,300,83"/>
+<area shape="rect" id="node7" href="$classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="233,107,300,133"/>
+<area shape="rect" id="node9" href="$classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="233,157,300,184"/>
+<area shape="rect" id="node11" href="$classCTriCoeff.html#a6568774c5e5a6fe066c739a718de1ba6" title="CTriCoeff::copy_p" alt="" coords="202,208,331,235"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCRotCoeff.html#a4668070c3eacacf17be98bc2fb348287" title="CRotCoeff::isSingular" alt="" coords="198,5,349,32"/>
+<area shape="rect" id="node5" href="$classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="CMCoeff::getOrder" alt="" coords="207,56,340,83"/>
+<area shape="rect" id="node7" href="$classCSHCoeff.html#adf80cf8370b4db9957de7acfe8aa64d6" title="CSHCoeff::inc" alt="" coords="219,107,327,133"/>
+<area shape="rect" id="node9" href="$classCMCoeff.html#a815a4d1f74b217ea54d9f05f6734004f" title="CMCoeff::setOrder" alt="" coords="397,107,531,133"/>
+</map>

@@ -256,7 +256,7 @@ CBD::isDocked() const
 * saveState
 ******************************************************************/
 
-
+/*
 void CBD::saveState()
 {
   char fname[100];
@@ -270,6 +270,9 @@ void CBD::saveState()
   m_mol1->computeTransformTo(*m_mol2, rot, trans);
   m_mol2->PDBoutput(fout, 1+m_mol1->getAtoms().size(), "B", rot, trans);  
 }
+
+*/
+
 
 /******************************************************************/
 /******************************************************************//**

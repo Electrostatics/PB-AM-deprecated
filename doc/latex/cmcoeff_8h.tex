@@ -1,0 +1,135 @@
+\hypertarget{cmcoeff_8h}{\section{cmcoeff.\-h File Reference}
+\label{cmcoeff_8h}\index{cmcoeff.\-h@{cmcoeff.\-h}}
+}
+{\ttfamily \#include $<$complex$>$}\\*
+Include dependency graph for cmcoeff.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=138pt]{cmcoeff_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{cmcoeff_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCMCoeff}{C\-M\-Coeff}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cmcoeff_8h_ac23f9c13c5d07d9ce386f7a830c35e5a}{N\-\_\-\-P\-O\-L\-E\-S}~20
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCMCoeff}{C\-M\-Coeff} \hyperlink{cmcoeff_8h_a1741fc58bd82891d067c412eee74cd43}{operator} ()(int n
+\item 
+\hyperlink{classCMCoeff}{C\-M\-Coeff}(\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} charges\mbox{[}$\,$\mbox{]}, const \\*
+\hyperlink{classCSpPnt}{C\-Sp\-Pnt} pos\mbox{[}$\,$\mbox{]}, int num, int p, \\*
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} kappa) \hyperlink{cmcoeff_8h_a6fe367b52c358d46d32b7cbaac9d9abe}{C\-M\-Coeff} ()
+\item 
+\hyperlink{cmcoeff_8h_a90574ec6b6ce6d2cabd6e67c71e71d5e}{C\-M\-Coeff} (int p) \hyperlink{cmcoeff_8h_a047572e841f376c91ba7926b17e5dcdd}{m\-\_\-p}(p)
+\item 
+\hyperlink{classCMCoeff}{C\-M\-Coeff}(\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} theta, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} phi, \\*
+int p) \hyperlink{classCMCoeff}{C\-M\-Coeff} \& \hyperlink{cmcoeff_8h_ab3c38e92daae1a07894a4779c61225a9}{operator=} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M)
+\item 
+\hyperlink{cmcoeff_8h_a1cceb5d87fbeee804dff287b5d9426cc}{C\-M\-Coeff} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M)
+\item 
+void \hyperlink{cmcoeff_8h_a41fb40e7ef79ec034ce6edaeab70266c}{reset} ()
+\item 
+const \hyperlink{util_8h_a0ef19d29521fc1e3356ea268ba175cfc}{Complex} \& \hyperlink{cmcoeff_8h_a905215ea03a1681a55af9025924cbcb9}{operator()} (int n, int m) const 
+\item 
+\hyperlink{classCMCoeff}{C\-M\-Coeff} \hyperlink{cmcoeff_8h_ad83647309a8d399a51854b4b154e39ef}{operator+} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M1, const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M2)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{util_8h_a0ef19d29521fc1e3356ea268ba175cfc}{Complex} \hyperlink{cmcoeff_8h_a5692204b780a950fcf2769acc31eb84e}{m\-\_\-\-M} \mbox{[}\hyperlink{mcoeff_8h_ac23f9c13c5d07d9ce386f7a830c35e5a}{N\-\_\-\-P\-O\-L\-E\-S}\mbox{]}\mbox{[}\hyperlink{mcoeff_8h_ac23f9c13c5d07d9ce386f7a830c35e5a}{N\-\_\-\-P\-O\-L\-E\-S}\mbox{]}
+\item 
+int \hyperlink{cmcoeff_8h_a047572e841f376c91ba7926b17e5dcdd}{m\-\_\-p}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{cmcoeff_8h_ac23f9c13c5d07d9ce386f7a830c35e5a}{\index{cmcoeff.\-h@{cmcoeff.\-h}!N\-\_\-\-P\-O\-L\-E\-S@{N\-\_\-\-P\-O\-L\-E\-S}}
+\index{N\-\_\-\-P\-O\-L\-E\-S@{N\-\_\-\-P\-O\-L\-E\-S}!cmcoeff.h@{cmcoeff.\-h}}
+\subsubsection[{N\-\_\-\-P\-O\-L\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-\_\-\-P\-O\-L\-E\-S~20}}\label{cmcoeff_8h_ac23f9c13c5d07d9ce386f7a830c35e5a}
+
+
+\subsection{Function Documentation}
+\hypertarget{cmcoeff_8h_a6fe367b52c358d46d32b7cbaac9d9abe}{\index{cmcoeff.\-h@{cmcoeff.\-h}!C\-M\-Coeff@{C\-M\-Coeff}}
+\index{C\-M\-Coeff@{C\-M\-Coeff}!cmcoeff.h@{cmcoeff.\-h}}
+\subsubsection[{C\-M\-Coeff}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-M\-Coeff} ({\bf R\-E\-A\-L} charges\mbox{[}$\,$\mbox{]}, const {\bf C\-Sp\-Pnt} pos\mbox{[}$\,$\mbox{]}, int num, int p, {\bf R\-E\-A\-L} kappa) operator\-::\-C\-M\-Coeff (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{cmcoeff_8h_a6fe367b52c358d46d32b7cbaac9d9abe}
+\hypertarget{cmcoeff_8h_a90574ec6b6ce6d2cabd6e67c71e71d5e}{\index{cmcoeff.\-h@{cmcoeff.\-h}!C\-M\-Coeff@{C\-M\-Coeff}}
+\index{C\-M\-Coeff@{C\-M\-Coeff}!cmcoeff.h@{cmcoeff.\-h}}
+\subsubsection[{C\-M\-Coeff}]{\setlength{\rightskip}{0pt plus 5cm}operator\-::\-C\-M\-Coeff (
+\begin{DoxyParamCaption}
+\item[{int}]{p}
+\end{DoxyParamCaption}
+)}}\label{cmcoeff_8h_a90574ec6b6ce6d2cabd6e67c71e71d5e}
+\hypertarget{cmcoeff_8h_a1cceb5d87fbeee804dff287b5d9426cc}{\index{cmcoeff.\-h@{cmcoeff.\-h}!C\-M\-Coeff@{C\-M\-Coeff}}
+\index{C\-M\-Coeff@{C\-M\-Coeff}!cmcoeff.h@{cmcoeff.\-h}}
+\subsubsection[{C\-M\-Coeff}]{\setlength{\rightskip}{0pt plus 5cm}operator\-::\-C\-M\-Coeff (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-M\-Coeff} \&}]{M}
+\end{DoxyParamCaption}
+)}}\label{cmcoeff_8h_a1cceb5d87fbeee804dff287b5d9426cc}
+\hypertarget{cmcoeff_8h_a1741fc58bd82891d067c412eee74cd43}{\index{cmcoeff.\-h@{cmcoeff.\-h}!operator@{operator}}
+\index{operator@{operator}!cmcoeff.h@{cmcoeff.\-h}}
+\subsubsection[{operator}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf C\-M\-Coeff} operator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{cmcoeff_8h_a1741fc58bd82891d067c412eee74cd43}
+\hypertarget{cmcoeff_8h_a905215ea03a1681a55af9025924cbcb9}{\index{cmcoeff.\-h@{cmcoeff.\-h}!operator()@{operator()}}
+\index{operator()@{operator()}!cmcoeff.h@{cmcoeff.\-h}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Complex}\& {\bf operator\-::operator}() (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{int}]{m}
+\end{DoxyParamCaption}
+) const}}\label{cmcoeff_8h_a905215ea03a1681a55af9025924cbcb9}
+\hypertarget{cmcoeff_8h_ad83647309a8d399a51854b4b154e39ef}{\index{cmcoeff.\-h@{cmcoeff.\-h}!operator+@{operator+}}
+\index{operator+@{operator+}!cmcoeff.h@{cmcoeff.\-h}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}friend {\bf C\-M\-Coeff} {\bf operator}+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-M\-Coeff} \&}]{M1, }
+\item[{const {\bf C\-M\-Coeff} \&}]{M2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{cmcoeff_8h_ad83647309a8d399a51854b4b154e39ef}
+\hypertarget{cmcoeff_8h_ab3c38e92daae1a07894a4779c61225a9}{\index{cmcoeff.\-h@{cmcoeff.\-h}!operator=@{operator=}}
+\index{operator=@{operator=}!cmcoeff.h@{cmcoeff.\-h}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-M\-Coeff} ({\bf R\-E\-A\-L} theta, {\bf R\-E\-A\-L} phi, int p) {\bf C\-M\-Coeff}\& {\bf operator\-::operator}= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-M\-Coeff} \&}]{M}
+\end{DoxyParamCaption}
+)}}\label{cmcoeff_8h_ab3c38e92daae1a07894a4779c61225a9}
+\hypertarget{cmcoeff_8h_a41fb40e7ef79ec034ce6edaeab70266c}{\index{cmcoeff.\-h@{cmcoeff.\-h}!reset@{reset}}
+\index{reset@{reset}!cmcoeff.h@{cmcoeff.\-h}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void operator\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{cmcoeff_8h_a41fb40e7ef79ec034ce6edaeab70266c}
+
+
+\subsection{Variable Documentation}
+\hypertarget{cmcoeff_8h_a5692204b780a950fcf2769acc31eb84e}{\index{cmcoeff.\-h@{cmcoeff.\-h}!m\-\_\-\-M@{m\-\_\-\-M}}
+\index{m\-\_\-\-M@{m\-\_\-\-M}!cmcoeff.h@{cmcoeff.\-h}}
+\subsubsection[{m\-\_\-\-M}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Complex} m\-\_\-\-M\mbox{[}{\bf N\-\_\-\-P\-O\-L\-E\-S}\mbox{]}\mbox{[}{\bf N\-\_\-\-P\-O\-L\-E\-S}\mbox{]}}}\label{cmcoeff_8h_a5692204b780a950fcf2769acc31eb84e}
+\hypertarget{cmcoeff_8h_a047572e841f376c91ba7926b17e5dcdd}{\index{cmcoeff.\-h@{cmcoeff.\-h}!m\-\_\-p@{m\-\_\-p}}
+\index{m\-\_\-p@{m\-\_\-p}!cmcoeff.h@{cmcoeff.\-h}}
+\subsubsection[{m\-\_\-p}]{\setlength{\rightskip}{0pt plus 5cm}int m\-\_\-p}}\label{cmcoeff_8h_a047572e841f376c91ba7926b17e5dcdd}

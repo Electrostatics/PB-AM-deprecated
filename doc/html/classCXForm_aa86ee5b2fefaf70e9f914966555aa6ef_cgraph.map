@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="CMCoeff::getOrder" alt="" coords="183,5,316,32"/>
+<area shape="rect" id="node5" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff::rotate" alt="" coords="186,80,313,107"/>
+<area shape="rect" id="node8" href="$classCTransCoeff.html#a909121581454680f2b50f797f22715f0" title="CTransCoeff::dTranslate" alt="" coords="166,155,333,181"/>
+<area shape="rect" id="node11" href="$classCTransCoeff.html#a0152b91eec8d84278e6432019ce4ef91" title="CTransCoeff::translate" alt="" coords="172,229,327,256"/>
+<area shape="rect" id="node14" href="$classCRotCoeff.html#a73c21837871db96b643b0e9ccf77a6b4" title="CRotCoeff::dRotateT" alt="" coords="176,304,323,331"/>
+<area shape="rect" id="node17" href="$classCRotCoeff.html#a8fc43b5ba7290e8f59fe124105445542" title="CRotCoeff::dRotateP" alt="" coords="175,379,323,405"/>
+<area shape="rect" id="node20" href="$classCXForm.html#a092244b7fc2a15139d8aefac7600c549" title="CXForm::sphToCart" alt="" coords="179,429,319,456"/>
+<area shape="rect" id="node22" href="$util_8h.html#a995a97713975591555fe37b5ad50745a" title="dot" alt="" coords="381,429,421,456"/>
+<area shape="rect" id="node24" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="469,379,536,405"/>
+<area shape="rect" id="node26" href="$classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="469,429,536,456"/>
+<area shape="rect" id="node28" href="$classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="469,480,536,507"/>
+</map>
