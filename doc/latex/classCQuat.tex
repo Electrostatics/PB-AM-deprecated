@@ -3,6 +3,11 @@
 }
 
 
+The quaternion class.  
+
+
+
+
 {\ttfamily \#include $<$util.\-h$>$}
 
 \subsection*{Public Member Functions}
@@ -21,7 +26,7 @@
 void \hyperlink{classCQuat_a9a0a307a7660ba46e1587b67f5cc35ea}{identity} ()
 \item 
 \hyperlink{classCQuat}{C\-Quat} \& \hyperlink{classCQuat_a91a9f75dd706a025a68121522d30a561}{operator$\ast$=} (const \hyperlink{classCQuat}{C\-Quat} \&q)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCQuat}{C\-Quat} $\ast$=. \end{DoxyCompactList}\item 
 void \hyperlink{classCQuat_ab6e67daab741dfb157e3e5562a804706}{normalize} ()
 \item 
 void \hyperlink{classCQuat_a03c7815f439647be9e4cc8f3937cd0d0}{conj} ()
@@ -42,19 +47,24 @@ const \hyperlink{classCPnt}{C\-Pnt} \& \hyperlink{classCQuat_a783b34fbc307fbb00f
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classCQuat}{C\-Quat} \hyperlink{classCQuat_a3788f9ce393c8c6e7dc2df6e7675c594}{choose\-Random} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCQuat}{C\-Quat} choose\-Random. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classCQuat}{C\-Quat} \hyperlink{classCQuat_a56293e53132060601a281240804d9302}{operator$\ast$} (const \hyperlink{classCQuat}{C\-Quat} \&q1, const \hyperlink{classCQuat}{C\-Quat} \&q2)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCQuat}{C\-Quat} $\ast$. \end{DoxyCompactList}\item 
 \hyperlink{classCPnt}{C\-Pnt} \hyperlink{classCQuat_ac98154ed89178004c9023423651b58a9}{operator$\ast$} (const \hyperlink{classCQuat}{C\-Quat} \&q1, const \hyperlink{classCPnt}{C\-Pnt} \&p1)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCQuat}{C\-Quat} $\ast$ \hyperlink{classCPnt}{C\-Pnt}. \end{DoxyCompactList}\item 
 \hyperlink{classCQuat}{C\-Quat} \hyperlink{classCQuat_a751f3ac0c157ff6967eaf2673ce1527e}{conj} (const \hyperlink{classCQuat}{C\-Quat} \&q)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCQuat}{C\-Quat} conj. \end{DoxyCompactList}\item 
 ostream \& \hyperlink{classCQuat_afeef42a3ba6ea600e39ee2accca10836}{operator$<$$<$} (ostream \&out, const \hyperlink{classCQuat}{C\-Quat} \&q)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCQuat}{C\-Quat} $<$$<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The quaternion class. 
+
+The class that contains all details for a quaternion object. Quaterions can be used to describe spatial rotations in space 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classCQuat_aa8497e624cd8c83814ee708beed80be8}{\index{C\-Quat@{C\-Quat}!C\-Quat@{C\-Quat}}
@@ -97,7 +107,11 @@ ostream \& \hyperlink{classCQuat_afeef42a3ba6ea600e39ee2accca10836}{operator$<$$
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classCQuat_a3788f9ce393c8c6e7dc2df6e7675c594}
-\hypertarget{classCQuat_a03c7815f439647be9e4cc8f3937cd0d0}{\index{C\-Quat@{C\-Quat}!conj@{conj}}
+
+
+\hyperlink{classCQuat}{C\-Quat} choose\-Random. 
+
+Choose a random quaternion \hypertarget{classCQuat_a03c7815f439647be9e4cc8f3937cd0d0}{\index{C\-Quat@{C\-Quat}!conj@{conj}}
 \index{conj@{conj}!CQuat@{C\-Quat}}
 \subsubsection[{conj}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Quat\-::conj (
 \begin{DoxyParamCaption}
@@ -127,14 +141,19 @@ ostream \& \hyperlink{classCQuat_afeef42a3ba6ea600e39ee2accca10836}{operator$<$$
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_ab6e67daab741dfb157e3e5562a804706}
 \hypertarget{classCQuat_a91a9f75dd706a025a68121522d30a561}{\index{C\-Quat@{C\-Quat}!operator$\ast$=@{operator$\ast$=}}
 \index{operator$\ast$=@{operator$\ast$=}!CQuat@{C\-Quat}}
-\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat} \& {\bf C\-Quat\-::operator}$\ast$= (
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat} \& C\-Quat\-::operator$\ast$= (
 \begin{DoxyParamCaption}
 \item[{const {\bf C\-Quat} \&}]{q}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCQuat_a91a9f75dd706a025a68121522d30a561}
 
 
-Here is the call graph for this function\-:\nopagebreak
+\hyperlink{classCQuat}{C\-Quat} $\ast$=. 
+
+Multiplying one quaternion by another 
+
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -145,7 +164,7 @@ Here is the call graph for this function\-:\nopagebreak
 
 \hypertarget{classCQuat_ad7a24172721a059adcbf40f6db7584fb}{\index{C\-Quat@{C\-Quat}!operator=@{operator=}}
 \index{operator=@{operator=}!CQuat@{C\-Quat}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat}\& {\bf C\-Quat\-::operator}= (
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat}\& C\-Quat\-::operator= (
 \begin{DoxyParamCaption}
 \item[{const {\bf C\-Quat} \&}]{q}
 \end{DoxyParamCaption}
@@ -206,31 +225,47 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{const {\bf C\-Quat} \&}]{q}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCQuat_a751f3ac0c157ff6967eaf2673ce1527e}
-\hypertarget{classCQuat_a56293e53132060601a281240804d9302}{\index{C\-Quat@{C\-Quat}!operator$\ast$@{operator$\ast$}}
+
+
+\hyperlink{classCQuat}{C\-Quat} conj. 
+
+Return complex conjugate of a quaternion \hypertarget{classCQuat_a56293e53132060601a281240804d9302}{\index{C\-Quat@{C\-Quat}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!CQuat@{C\-Quat}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat} {\bf operator}$\ast$ (
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Quat} operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf C\-Quat} \&}]{q1, }
 \item[{const {\bf C\-Quat} \&}]{q2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCQuat_a56293e53132060601a281240804d9302}
-\hypertarget{classCQuat_ac98154ed89178004c9023423651b58a9}{\index{C\-Quat@{C\-Quat}!operator$\ast$@{operator$\ast$}}
+
+
+\hyperlink{classCQuat}{C\-Quat} $\ast$. 
+
+Multiplying one quaternion by another \hypertarget{classCQuat_ac98154ed89178004c9023423651b58a9}{\index{C\-Quat@{C\-Quat}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!CQuat@{C\-Quat}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} {\bf operator}$\ast$ (
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf C\-Quat} \&}]{q1, }
 \item[{const {\bf C\-Pnt} \&}]{p1}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCQuat_ac98154ed89178004c9023423651b58a9}
-\hypertarget{classCQuat_afeef42a3ba6ea600e39ee2accca10836}{\index{C\-Quat@{C\-Quat}!operator$<$$<$@{operator$<$$<$}}
+
+
+\hyperlink{classCQuat}{C\-Quat} $\ast$ \hyperlink{classCPnt}{C\-Pnt}. 
+
+Multiplying quaternion by cartesian coordinates, for rotation \hypertarget{classCQuat_afeef42a3ba6ea600e39ee2accca10836}{\index{C\-Quat@{C\-Quat}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!CQuat@{C\-Quat}}
-\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& {\bf operator}$<$$<$ (
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{ostream \&}]{out, }
 \item[{const {\bf C\-Quat} \&}]{q}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCQuat_afeef42a3ba6ea600e39ee2accca10836}
 
+
+\hyperlink{classCQuat}{C\-Quat} $<$$<$. 
+
+Print out quaternion 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 

@@ -3,6 +3,11 @@
 }
 
 
+The spherical coordinate class.  
+
+
+
+
 {\ttfamily \#include $<$util.\-h$>$}
 
 \subsection*{Public Member Functions}
@@ -32,12 +37,17 @@ const \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperli
 \begin{DoxyCompactItemize}
 \item 
 ostream \& \hyperlink{classCSpPnt_a53a39a67bc3f52a606be1d4e71085b3f}{operator$<$$<$} (ostream \&out, const \hyperlink{classCSpPnt}{C\-Sp\-Pnt} \&p)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCSpPnt}{C\-Sp\-Pnt} $<$. \end{DoxyCompactList}\item 
 \hyperlink{classCPnt}{C\-Pnt} \hyperlink{classCSpPnt_af8b263bb80bb3a76271a7f57d5057df3}{Sph\-To\-Cart} (const \hyperlink{classCSpPnt}{C\-Sp\-Pnt} \&s)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCSpPnt}{C\-Sp\-Pnt} Sph\-To\-Cart. \end{DoxyCompactList}\item 
 \hyperlink{classCSpPnt}{C\-Sp\-Pnt} \hyperlink{classCSpPnt_ad05fbf75e7550a927bc817f97115f2fc}{Cart\-To\-Sph} (const \hyperlink{classCPnt}{C\-Pnt} \&c)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCSpPnt}{C\-Sp\-Pnt} Cart\-To\-Sph. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The spherical coordinate class. 
+
+The class that contains all details for a spherical coordinate object 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classCSpPnt_ab2366cfde717accefce56fc72aa5a2ed}{\index{C\-Sp\-Pnt@{C\-Sp\-Pnt}!C\-Sp\-Pnt@{C\-Sp\-Pnt}}
@@ -61,7 +71,7 @@ ostream \& \hyperlink{classCSpPnt_a53a39a67bc3f52a606be1d4e71085b3f}{operator$<$
 \subsection{Member Function Documentation}
 \hypertarget{classCSpPnt_aee31a3b97c734fa150f1a33daadd6dfc}{\index{C\-Sp\-Pnt@{C\-Sp\-Pnt}!operator=@{operator=}}
 \index{operator=@{operator=}!CSpPnt@{C\-Sp\-Pnt}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sp\-Pnt}\& {\bf C\-Sp\-Pnt\-::operator}= (
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Sp\-Pnt}\& C\-Sp\-Pnt\-::operator= (
 \begin{DoxyParamCaption}
 \item[{const {\bf C\-Sp\-Pnt} \&}]{s}
 \end{DoxyParamCaption}
@@ -136,15 +146,23 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{const {\bf C\-Pnt} \&}]{c}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSpPnt_ad05fbf75e7550a927bc817f97115f2fc}
-\hypertarget{classCSpPnt_a53a39a67bc3f52a606be1d4e71085b3f}{\index{C\-Sp\-Pnt@{C\-Sp\-Pnt}!operator$<$$<$@{operator$<$$<$}}
+
+
+\hyperlink{classCSpPnt}{C\-Sp\-Pnt} Cart\-To\-Sph. 
+
+Converting from cartesian to spherical coordinates \hypertarget{classCSpPnt_a53a39a67bc3f52a606be1d4e71085b3f}{\index{C\-Sp\-Pnt@{C\-Sp\-Pnt}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!CSpPnt@{C\-Sp\-Pnt}}
-\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& {\bf operator}$<$$<$ (
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{ostream \&}]{out, }
 \item[{const {\bf C\-Sp\-Pnt} \&}]{p}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSpPnt_a53a39a67bc3f52a606be1d4e71085b3f}
-\hypertarget{classCSpPnt_af8b263bb80bb3a76271a7f57d5057df3}{\index{C\-Sp\-Pnt@{C\-Sp\-Pnt}!Sph\-To\-Cart@{Sph\-To\-Cart}}
+
+
+\hyperlink{classCSpPnt}{C\-Sp\-Pnt} $<$. 
+
+Printing out a \hyperlink{classCSpPnt}{C\-Sp\-Pnt} object \hypertarget{classCSpPnt_af8b263bb80bb3a76271a7f57d5057df3}{\index{C\-Sp\-Pnt@{C\-Sp\-Pnt}!Sph\-To\-Cart@{Sph\-To\-Cart}}
 \index{Sph\-To\-Cart@{Sph\-To\-Cart}!CSpPnt@{C\-Sp\-Pnt}}
 \subsubsection[{Sph\-To\-Cart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} Sph\-To\-Cart (
 \begin{DoxyParamCaption}
@@ -152,6 +170,10 @@ Here is the call graph for this function\-:\nopagebreak
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCSpPnt_af8b263bb80bb3a76271a7f57d5057df3}
 
+
+\hyperlink{classCSpPnt}{C\-Sp\-Pnt} Sph\-To\-Cart. 
+
+Converting from spherical to cartesian coordinates 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 

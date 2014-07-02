@@ -61,7 +61,7 @@
 <p>The mcoeff expansion class.  
  <a href="classCMCoeff.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="cmcoeff_8h_source.html">cmcoeff.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="mcoeff_8h_source.html">mcoeff.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CMCoeff:</div>
 <div class="dyncontent">
@@ -83,10 +83,6 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adba776bf8062ab89f60588c138fd562e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMCoeff.html#adba776bf8062ab89f60588c138fd562e">CMCoeff</a> (int p) <a class="el" href="classCMCoeff.html#adf49f0bd55b7c496b887f547695aba38">m_p</a>(p)</td></tr>
-<tr class="memitem:ae5a7fcbb8f989dbbff71d79738fd9356"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMCoeff.html#ae5a7fcbb8f989dbbff71d79738fd9356">CMCoeff</a> (const <a class="el" href="classCMCoeff.html">CMCoeff</a> &amp;M)</td></tr>
-<tr class="memitem:a2cca0942d27c02cf846810bf465f7ebb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb">reset</a> ()</td></tr>
-<tr class="memitem:ae408956538bebea8ad276df0026b2af2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="util_8h.html#a0ef19d29521fc1e3356ea268ba175cfc">Complex</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMCoeff.html#ae408956538bebea8ad276df0026b2af2">operator()</a> (int n, int m) const </td></tr>
 <tr class="memitem:aee6ebc4dd1ad9096babcaba957db66c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMCoeff.html#aee6ebc4dd1ad9096babcaba957db66c7">CMCoeff</a> (const vector&lt; <a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> &gt; &amp;charges, const vector&lt; <a class="el" href="classCPnt.html">CPnt</a> &gt; &amp;pos, int p, <a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> rad=0.0)</td></tr>
 <tr class="memdesc:aee6ebc4dd1ad9096babcaba957db66c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The MCoeff class constructor.  <a href="#aee6ebc4dd1ad9096babcaba957db66c7"></a><br/></td></tr>
 <tr class="memitem:a44f54126d3f90484420f1baf14ed491f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMCoeff.html#a44f54126d3f90484420f1baf14ed491f">CMCoeff</a> (<a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> ch, const <a class="el" href="classCPnt.html">CPnt</a> &amp;pos, int p, <a class="el" href="classCMCoeff.html#a0b490eeb5ba86bc1a95ea1c3b2946478">TYPE</a> type)</td></tr>
@@ -197,54 +193,6 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="adba776bf8062ab89f60588c138fd562e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">CMCoeff::CMCoeff </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>p</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae5a7fcbb8f989dbbff71d79738fd9356"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">CMCoeff::CMCoeff </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classCMCoeff.html">CMCoeff</a> &amp;&#160;</td>
-          <td class="paramname"><em>M</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="aee6ebc4dd1ad9096babcaba957db66c7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -300,7 +248,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCMCoeff_aee6ebc4dd1ad9096babcaba957db66c7_cgraph.png" border="0" usemap="#classCMCoeff_aee6ebc4dd1ad9096babcaba957db66c7_cgraph" alt=""/></div>
 <map name="classCMCoeff_aee6ebc4dd1ad9096babcaba957db66c7_cgraph" id="classCMCoeff_aee6ebc4dd1ad9096babcaba957db66c7_cgraph">
-<area shape="rect" id="node3" href="util_8h.html#ad05fbf75e7550a927bc817f97115f2fc" title="CartToSph" alt="" coords="213,68,299,95"/><area shape="rect" id="node11" href="classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="196,144,316,171"/><area shape="rect" id="node15" href="classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba" title="CSpPnt::theta" alt="" coords="203,195,309,221"/><area shape="rect" id="node17" href="classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d" title="CSpPnt::phi" alt="" coords="209,245,303,272"/><area shape="rect" id="node19" href="classCSHCoeff.html#aa6cc07501f3b8ab8d2f9f32ba5a7b279" title="CSHCoeff::besseli" alt="" coords="190,296,322,323"/><area shape="rect" id="node21" href="classCSpPnt.html#af6364f003b923aa77c880869d27caa64" title="CSpPnt::rho" alt="" coords="209,347,303,373"/><area shape="rect" id="node5" href="classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="393,5,460,32"/><area shape="rect" id="node7" href="classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="393,56,460,83"/><area shape="rect" id="node9" href="classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="393,107,460,133"/><area shape="rect" id="node13" href="classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb" title="CMCoeff::reset" alt="" coords="371,157,483,184"/></map>
+<area shape="rect" id="node3" href="util_8h.html#ad05fbf75e7550a927bc817f97115f2fc" title="CSpPnt CartToSph." alt="" coords="213,56,299,83"/><area shape="rect" id="node11" href="classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="196,107,316,133"/><area shape="rect" id="node13" href="classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba" title="CSpPnt::theta" alt="" coords="203,157,309,184"/><area shape="rect" id="node15" href="classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d" title="CSpPnt::phi" alt="" coords="209,208,303,235"/><area shape="rect" id="node17" href="classCSHCoeff.html#aa6cc07501f3b8ab8d2f9f32ba5a7b279" title="CSHCoeff::besseli" alt="" coords="190,259,322,285"/><area shape="rect" id="node19" href="classCSpPnt.html#af6364f003b923aa77c880869d27caa64" title="CSpPnt::rho" alt="" coords="209,309,303,336"/><area shape="rect" id="node5" href="classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="371,5,437,32"/><area shape="rect" id="node7" href="classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="371,56,437,83"/><area shape="rect" id="node9" href="classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="371,107,437,133"/></map>
 </div>
 </p>
 
@@ -347,7 +295,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCMCoeff_a44f54126d3f90484420f1baf14ed491f_cgraph.png" border="0" usemap="#classCMCoeff_a44f54126d3f90484420f1baf14ed491f_cgraph" alt=""/></div>
 <map name="classCMCoeff_a44f54126d3f90484420f1baf14ed491f_cgraph" id="classCMCoeff_a44f54126d3f90484420f1baf14ed491f_cgraph">
-<area shape="rect" id="node3" href="util_8h.html#ad05fbf75e7550a927bc817f97115f2fc" title="CartToSph" alt="" coords="215,68,300,95"/><area shape="rect" id="node11" href="classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="197,144,317,171"/><area shape="rect" id="node15" href="classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba" title="CSpPnt::theta" alt="" coords="205,195,310,221"/><area shape="rect" id="node17" href="classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d" title="CSpPnt::phi" alt="" coords="211,245,304,272"/><area shape="rect" id="node19" href="classCSHCoeff.html#aa6cc07501f3b8ab8d2f9f32ba5a7b279" title="CSHCoeff::besseli" alt="" coords="191,296,323,323"/><area shape="rect" id="node21" href="classCSpPnt.html#af6364f003b923aa77c880869d27caa64" title="CSpPnt::rho" alt="" coords="210,347,305,373"/><area shape="rect" id="node23" href="classCSHCoeff.html#acd63e5bb85843c08800a83281f3daad9" title="CSHCoeff::besselk" alt="" coords="189,397,325,424"/><area shape="rect" id="node5" href="classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="396,5,463,32"/><area shape="rect" id="node7" href="classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="396,56,463,83"/><area shape="rect" id="node9" href="classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="396,107,463,133"/><area shape="rect" id="node13" href="classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb" title="CMCoeff::reset" alt="" coords="373,157,485,184"/></map>
+<area shape="rect" id="node3" href="util_8h.html#ad05fbf75e7550a927bc817f97115f2fc" title="CSpPnt CartToSph." alt="" coords="215,56,300,83"/><area shape="rect" id="node11" href="classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="197,107,317,133"/><area shape="rect" id="node13" href="classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba" title="CSpPnt::theta" alt="" coords="205,157,310,184"/><area shape="rect" id="node15" href="classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d" title="CSpPnt::phi" alt="" coords="211,208,304,235"/><area shape="rect" id="node17" href="classCSHCoeff.html#aa6cc07501f3b8ab8d2f9f32ba5a7b279" title="CSHCoeff::besseli" alt="" coords="191,259,323,285"/><area shape="rect" id="node19" href="classCSpPnt.html#af6364f003b923aa77c880869d27caa64" title="CSpPnt::rho" alt="" coords="210,309,305,336"/><area shape="rect" id="node21" href="classCSHCoeff.html#acd63e5bb85843c08800a83281f3daad9" title="CSHCoeff::besselk" alt="" coords="189,360,325,387"/><area shape="rect" id="node5" href="classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="373,5,440,32"/><area shape="rect" id="node7" href="classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="373,56,440,83"/><area shape="rect" id="node9" href="classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="373,107,440,133"/></map>
 </div>
 </p>
 
@@ -402,15 +350,6 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns:</dt><dd>an object of the MCoeff class </dd></dl>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classCMCoeff_a52820257419417dd2d18a75e276fd011_cgraph.png" border="0" usemap="#classCMCoeff_a52820257419417dd2d18a75e276fd011_cgraph" alt=""/></div>
-<map name="classCMCoeff_a52820257419417dd2d18a75e276fd011_cgraph" id="classCMCoeff_a52820257419417dd2d18a75e276fd011_cgraph">
-<area shape="rect" id="node3" href="cmcoeff_8h.html#a41fb40e7ef79ec034ce6edaeab70266c" title="reset" alt="" coords="189,5,240,32"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -682,49 +621,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="ae408956538bebea8ad276df0026b2af2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="util_8h.html#a0ef19d29521fc1e3356ea268ba175cfc">Complex</a>&amp; <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">CMCoeff::operator</a>() </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>m</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classCMCoeff_ae408956538bebea8ad276df0026b2af2_cgraph.png" border="0" usemap="#classCMCoeff_ae408956538bebea8ad276df0026b2af2_cgraph" alt=""/></div>
-<map name="classCMCoeff_ae408956538bebea8ad276df0026b2af2_cgraph" id="classCMCoeff_ae408956538bebea8ad276df0026b2af2_cgraph">
-<area shape="rect" id="node3" href="mcoeff_8h.html#a33f855dbf0c86d35853f618e3494db87" title="The mcoeff expansion class." alt="" coords="193,5,239,32"/></map>
-</div>
-</p>
-
-</div>
-</div>
 <a class="anchor" id="a8776dd638fca3d95f813acb93c7896c7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -733,7 +629,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="util_8h.html#a0ef19d29521fc1e3356ea268ba175cfc">Complex</a> <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">CMCoeff::operator</a>() </td>
+          <td class="memname">const <a class="el" href="util_8h.html#a0ef19d29521fc1e3356ea268ba175cfc">Complex</a> CMCoeff::operator() </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>n</em>, </td>
@@ -776,7 +672,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="util_8h.html#a0ef19d29521fc1e3356ea268ba175cfc">Complex</a>&amp; <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">CMCoeff::operator</a>() </td>
+          <td class="memname"><a class="el" href="util_8h.html#a0ef19d29521fc1e3356ea268ba175cfc">Complex</a>&amp; CMCoeff::operator() </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>n</em>, </td>
@@ -810,7 +706,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">CMCoeff::operator</a>*= </td>
+          <td class="memname">void CMCoeff::operator*= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a>&#160;</td>
           <td class="paramname"><em>C</em>[N_POLES]</td><td>)</td>
@@ -837,7 +733,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">CMCoeff::operator</a>+= </td>
+          <td class="memname">void CMCoeff::operator+= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classCMCoeff.html">CMCoeff</a> &amp;&#160;</td>
           <td class="paramname"><em>E</em></td><td>)</td>
@@ -864,7 +760,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">CMCoeff::operator</a>-= </td>
+          <td class="memname">void CMCoeff::operator-= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classCMCoeff.html">CMCoeff</a> &amp;&#160;</td>
           <td class="paramname"><em>E</em></td><td>)</td>
@@ -891,7 +787,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCMCoeff.html">CMCoeff</a>&amp; <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">CMCoeff::operator</a>= </td>
+          <td class="memname"><a class="el" href="classCMCoeff.html">CMCoeff</a>&amp; CMCoeff::operator= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classCMCoeff.html">CMCoeff</a> &amp;&#160;</td>
           <td class="paramname"><em>M</em></td><td>)</td>
@@ -958,29 +854,6 @@ Here is the call graph for this function:</div>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a2cca0942d27c02cf846810bf465f7ebb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMCoeff::reset </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1203,7 +1076,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCMCoeff.html">CMCoeff</a> <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">operator</a>* </td>
+          <td class="memname"><a class="el" href="classCMCoeff.html">CMCoeff</a> operator* </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classCMCoeff.html">CMCoeff</a> &amp;&#160;</td>
           <td class="paramname"><em>M</em>, </td>
@@ -1237,7 +1110,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCMCoeff.html">CMCoeff</a> <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">operator</a>* </td>
+          <td class="memname"><a class="el" href="classCMCoeff.html">CMCoeff</a> operator* </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a>&#160;</td>
           <td class="paramname"><em>s</em>, </td>
@@ -1274,7 +1147,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCMCoeff.html">CMCoeff</a> <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">operator</a>+ </td>
+          <td class="memname"><a class="el" href="classCMCoeff.html">CMCoeff</a> operator+ </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classCMCoeff.html">CMCoeff</a> &amp;&#160;</td>
           <td class="paramname"><em>M1</em>, </td>
@@ -1311,7 +1184,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCMCoeff.html">CMCoeff</a> <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">operator</a>- </td>
+          <td class="memname"><a class="el" href="classCMCoeff.html">CMCoeff</a> operator- </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classCMCoeff.html">CMCoeff</a> &amp;&#160;</td>
           <td class="paramname"><em>M1</em>, </td>
@@ -1348,7 +1221,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ostream&amp; <a class="el" href="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43">operator</a>&lt;&lt; </td>
+          <td class="memname">ostream&amp; operator&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">ostream &amp;&#160;</td>
           <td class="paramname"><em>out</em>, </td>
@@ -1560,28 +1433,17 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Scaling factor for system (~ protein radius) </p>
-<h1>File: <a class="el" href="mcoeff_8cpp.html">mcoeff.cpp</a></h1>
-<p># </p>
-<h1>Date: June 2014</h1>
-<p># </p>
-<h1>Description: This file contains the class MCoeff and its functions</h1>
-<h1>MCoeff = matrix coefficient</h1>
-<h1>Author: Lotan, Felberg</h1>
-<p># </p>
-<h1>Copyright ( c )</h1>
-<p># </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="cmcoeff_8h_source.html">cmcoeff.h</a></li>
 <li><a class="el" href="mcoeff_8h_source.html">mcoeff.h</a></li>
 <li><a class="el" href="mcoeff_8cpp.html">mcoeff.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 1 2014 17:01:57 for PB Analytical by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 2 2014 13:46:56 for PB Analytical by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

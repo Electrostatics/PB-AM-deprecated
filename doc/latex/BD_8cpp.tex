@@ -128,17 +128,7 @@ char \hyperlink{BD_8cpp_a7e84efd058cd9e661c6a3bfdd82cd12d}{temp\-\_\-file} \mbox
 
 Initial distance between 2 proteins for B\-D run. 
 
-\subsection*{File\-: \hyperlink{BD_8cpp}{B\-D.\-cpp}}
-
-\# \subsection*{Date\-: June 2014}
-
-\# \subsection*{Description\-: This file runs a system in the B\-D P\-B-\/\-S\-A\-M simulation}
-
-\# \subsection*{Author\-: Lotan, Felberg}
-
-\# \subsection*{Copyright ( c )}
-
-\# Initializing constants \hypertarget{BD_8cpp_a72e53579b3b8b94f0d5c6b95af3e2ecf}{\index{B\-D.\-cpp@{B\-D.\-cpp}!C\-O\-U\-L\-\_\-\-K@{C\-O\-U\-L\-\_\-\-K}}
+Initializing constants \hypertarget{BD_8cpp_a72e53579b3b8b94f0d5c6b95af3e2ecf}{\index{B\-D.\-cpp@{B\-D.\-cpp}!C\-O\-U\-L\-\_\-\-K@{C\-O\-U\-L\-\_\-\-K}}
 \index{C\-O\-U\-L\-\_\-\-K@{C\-O\-U\-L\-\_\-\-K}!BD.cpp@{B\-D.\-cpp}}
 \subsubsection[{C\-O\-U\-L\-\_\-\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-U\-L\-\_\-\-K~332.\-141144}}\label{BD_8cpp_a72e53579b3b8b94f0d5c6b95af3e2ecf}
 \hypertarget{BD_8cpp_a01a47ab37988e52002d412cc17b3e8ce}{\index{B\-D.\-cpp@{B\-D.\-cpp}!C\-O\-U\-L\-O\-M\-B\-\_\-\-C\-O\-N\-S\-T\-A\-N\-T@{C\-O\-U\-L\-O\-M\-B\-\_\-\-C\-O\-N\-S\-T\-A\-N\-T}}
@@ -267,7 +257,8 @@ Inverse debye length.
 )}}\label{BD_8cpp_a383d01cbd424a11c6571cb85c748a9fb}
 approx\-B\-Ball 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -314,9 +305,30 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{vector$<$ {\bf C\-Pnt} $\ast$ $>$ \&}]{cen}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_add9f16fa66f1f140387a281f7ac53fd4}
-build\-System 
+build\-System\-: a function that builds a system of num molecules separated equidistantly in space 
+\begin{DoxyParams}{Parameters}
+{\em ifname} & a character pointer that has the name of an file of type M\-D\-P \\
+\hline
+{\em num} & an int that details the number of centers to include for a system of multiple molecules \\
+\hline
+{\em dist} & a floating point number, describes the distance desired between molecules \\
+\hline
+{\em b\-Save} & a boolean that indicates whether or not the user desires to save the configuration \\
+\hline
+{\em ver} & an integer that ?? \\
+\hline
+{\em mpe} & a vector of multipole expansion objects for use in mutual polarization \\
+\hline
+{\em cen} & a vector of positions to hold the position of each molecule in the system \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a floating point number that returns the radius of the molecule input into the system 
+\end{DoxyReturn}
 
-Here is the call graph for this function\-:\nopagebreak
+
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -339,7 +351,8 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{BD_8cpp_abc59e3d5de96d0dbfd2e195fee14e244}
 build\-Unit\-Cell 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -376,7 +389,16 @@ Here is the call graph for this function\-:
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_add88c94542c667d7c49095a53a53fbc4}
-Main for B\-D simulation of Barnase/\-Barstar param 2\-: salt concentration param 3\-: output file param 4\-: temporary file index 
+Main for B\-D simulation of Barnase/\-Barstar 
+\begin{DoxyParams}{Parameters}
+{\em a} & floating point number of salt concentration \\
+\hline
+{\em fout} & an output file \\
+\hline
+{\em ind} & an integer for temporary file index \\
+\hline
+\end{DoxyParams}
+
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -396,7 +418,16 @@ Here is the call graph for this function\-:
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_a398405351f04ca4ed39e969ff655925d}
-Main for param 2\-: input file name param 3\-: Number of iterations to run force calculations param 4\-: Distance for molecule placement 
+Main for computing energies, forces and torques on multiple molecules in a system. 
+\begin{DoxyParams}{Parameters}
+{\em ifname} & an input file name \\
+\hline
+{\em num} & an integer number of molecules to include in the system. Values are\-: 2, 4, 6 or 8 \\
+\hline
+{\em dist} & a floating point distance for molecule placement \\
+\hline
+\end{DoxyParams}
+
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -478,7 +509,8 @@ Here is the call graph for this function\-:
 )}}\label{BD_8cpp_a40a8450c72f1738cbad72d80b48f4b16}
 Main for computing diffusion param 2\-: input file name param 3\-: 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -564,7 +596,20 @@ Here is the call graph for this function\-:
 \item[{{\bf C\-Pnt} \&}]{cen}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_a050f85eeb4bca700634b0c552f7d32e2}
-readmdp \hypertarget{BD_8cpp_aa1cf6c55a4b51fbee1c709ee11ed1f8c}{\index{B\-D.\-cpp@{B\-D.\-cpp}!readqcd@{readqcd}}
+readmdp\-: function that reads in an M\-D\-P file for a given molecule. The file should contain the P\-Q\-R data of a molecule and a dummy molecule that approximates the C\-G version of the molecule. 
+\begin{DoxyParams}{Parameters}
+{\em fname} & a character pointer to the filename \\
+\hline
+{\em pnt} & a vector of xyz coordinates for the charges within the molecule \\
+\hline
+{\em ch} & a vector of floating point numbers for the charges \\
+\hline
+{\em rad} & a floating point number that stores the radius of the molecule \\
+\hline
+{\em cen} & a vector of xyz coordinates for the molecule's center of geom \\
+\hline
+\end{DoxyParams}
+\hypertarget{BD_8cpp_aa1cf6c55a4b51fbee1c709ee11ed1f8c}{\index{B\-D.\-cpp@{B\-D.\-cpp}!readqcd@{readqcd}}
 \index{readqcd@{readqcd}!BD.cpp@{B\-D.\-cpp}}
 \subsubsection[{readqcd}]{\setlength{\rightskip}{0pt plus 5cm}void readqcd (
 \begin{DoxyParamCaption}

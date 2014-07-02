@@ -10,7 +10,7 @@
 <area shape="rect" id="node5" href="$util_8h.html#ad864dc450da6954264580e4318e011eb" title="seedRand" alt="" coords="609,1221,690,1248"/>
 <area shape="rect" id="node7" href="$classCBD.html#a0e59f17fc428ea28a8c8b4c9656a3538" title="CBD run function." alt="" coords="211,233,288,260"/>
 <area shape="rect" id="node9" href="$classCProtein.html#a40f7c9e8d7b4717e00027b0c92ad109b" title="CProtein::setOrient" alt="" coords="361,208,495,235"/>
-<area shape="rect" id="node11" href="$classCQuat.html#a3788f9ce393c8c6e7dc2df6e7675c594" title="CQuat::chooseRandom" alt="" coords="782,512,941,539"/>
+<area shape="rect" id="node11" href="$classCQuat.html#a3788f9ce393c8c6e7dc2df6e7675c594" title="CQuat chooseRandom." alt="" coords="782,512,941,539"/>
 <area shape="rect" id="node13" href="$classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb" title="CProtein::setPos" alt="" coords="367,259,489,285"/>
 <area shape="rect" id="node15" href="$util_8h.html#a491783063d690a2f389e3317f44dd0b7" title="randOrient" alt="" coords="387,309,469,336"/>
 <area shape="rect" id="node17" href="$classCProtein.html#aaa51486082bb376c17cf272ed9ef6bca" title="CProtein::getRadius" alt="" coords="358,5,498,32"/>
@@ -28,7 +28,7 @@
 <area shape="rect" id="node35" href="$classCXForm.html#a903c633f1ac0756230bcd383e35a1d85" title="CXForm::decOrder" alt="" coords="999,968,1131,995"/>
 <area shape="rect" id="node37" href="$classCXForm.html#a094937703c2d67ef29f5c12fbc65b438" title="CXForm::incOrder" alt="" coords="1001,816,1129,843"/>
 <area shape="rect" id="node39" href="$classCXForm.html#afb77c0beb4e49769b0eadb717b2d1179" title="CXForm::getOrder" alt="" coords="1001,867,1130,893"/>
-<area shape="rect" id="node45" href="$cmcoeff_8cpp.html#a90c84c259a220e291cebf52d99560c61" title="inprod" alt="" coords="1037,1221,1094,1248"/>
+<area shape="rect" id="node45" href="$mcoeff_8h.html#a90c84c259a220e291cebf52d99560c61" title="The mcoeff expansion class." alt="" coords="1037,1221,1094,1248"/>
 <area shape="rect" id="node53" href="$BD_8cpp.html#add9f16fa66f1f140387a281f7ac53fd4" title="buildSystem" alt="" coords="602,1019,697,1045"/>
 <area shape="rect" id="node55" href="$BD_8cpp.html#a050f85eeb4bca700634b0c552f7d32e2" title="readmdp" alt="" coords="825,1475,897,1501"/>
 <area shape="rect" id="node57" href="$classCProtein.html#aeff60f05cbd42168359f75187b9ac888" title="CProtein::initParameters" alt="" coords="779,1652,944,1679"/>

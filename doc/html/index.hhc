@@ -82,8 +82,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="TYPE"><param name="Local" value="classCMCoeff.html#a0b490eeb5ba86bc1a95ea1c3b2946478"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#adba776bf8062ab89f60588c138fd562e"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#ae5a7fcbb8f989dbbff71d79738fd9356"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#aee6ebc4dd1ad9096babcaba957db66c7"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#a44f54126d3f90484420f1baf14ed491f"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#a52820257419417dd2d18a75e276fd011"><param name="ImageNumber" value="11"></OBJECT>
@@ -96,7 +94,6 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="dMdr"><param name="Local" value="classCMCoeff.html#aab926cdd2ef1a0f188f82603108296a8"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="dMdt"><param name="Local" value="classCMCoeff.html#a2e9e6517ed48d1758af058f95b5af50c"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="getOrder"><param name="Local" value="classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator()"><param name="Local" value="classCMCoeff.html#ae408956538bebea8ad276df0026b2af2"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="operator()"><param name="Local" value="classCMCoeff.html#a8776dd638fca3d95f813acb93c7896c7"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="operator()"><param name="Local" value="classCMCoeff.html#ad6668675df0fa31437bebee2a2b00e0f"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="operator*="><param name="Local" value="classCMCoeff.html#a63d33423be766832461e5e20a0f21f66"><param name="ImageNumber" value="11"></OBJECT>
@@ -106,7 +103,6 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="output"><param name="Local" value="classCMCoeff.html#afe4e3e3719dc0808108353ab20b05c23"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="recip"><param name="Local" value="classCMCoeff.html#a6e7e750022bf6a6f32dff9092881647c"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="reserve"><param name="Local" value="classCMCoeff.html#a10d5db85d700255768d091c10fda818c"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="reset"><param name="Local" value="classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="reset"><param name="Local" value="classCMCoeff.html#a5fc4a2ee0ab437bd601fd67ccc5bd43b"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="saveUndo"><param name="Local" value="classCMCoeff.html#a99771333750460a0ba9c97f03bdaa6b9"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="setOrder"><param name="Local" value="classCMCoeff.html#a815a4d1f74b217ea54d9f05f6734004f"><param name="ImageNumber" value="11"></OBJECT>
@@ -549,79 +545,6 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="STATUS_STRING"><param name="Local" value="classCBD.html#a20beab0b7b100a3d5baf2b3924453641"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       </UL>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="cmcoeff.cpp"><param name="Local" value="cmcoeff_8cpp.html"><param name="ImageNumber" value="1"></OBJECT>
-      <UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="inprod"><param name="Local" value="cmcoeff_8cpp.html#a90c84c259a220e291cebf52d99560c61"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator+"><param name="Local" value="cmcoeff_8cpp.html#ab6e8a538afe3d4f8de9c1fa4904479ec"><param name="ImageNumber" value="11"></OBJECT>
-      </UL>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="cmcoeff.h"><param name="Local" value="cmcoeff_8h.html"><param name="ImageNumber" value="1"></OBJECT>
-      <UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html"><param name="ImageNumber" value="1"></OBJECT>
-        <UL>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="TYPE"><param name="Local" value="classCMCoeff.html#a0b490eeb5ba86bc1a95ea1c3b2946478"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#adba776bf8062ab89f60588c138fd562e"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#ae5a7fcbb8f989dbbff71d79738fd9356"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#aee6ebc4dd1ad9096babcaba957db66c7"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#a44f54126d3f90484420f1baf14ed491f"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#a52820257419417dd2d18a75e276fd011"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#ae5a7fcbb8f989dbbff71d79738fd9356"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="change"><param name="Local" value="classCMCoeff.html#a1bf2b3f4bba7f938a9d9d32855737699"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="computeDev"><param name="Local" value="classCMCoeff.html#af24efe3725c507a1919b043a5335d9ff"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="copy"><param name="Local" value="classCMCoeff.html#a7010837883b56f9b972888bffb6fbb3d"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="copy_p"><param name="Local" value="classCMCoeff.html#aba7b82a12360b0789af87a8dda74863b"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="dMdp"><param name="Local" value="classCMCoeff.html#a3457ae837d9f8d250757fae3fd69c441"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="dMdr"><param name="Local" value="classCMCoeff.html#aab926cdd2ef1a0f188f82603108296a8"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="dMdt"><param name="Local" value="classCMCoeff.html#a2e9e6517ed48d1758af058f95b5af50c"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="getOrder"><param name="Local" value="classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator()"><param name="Local" value="classCMCoeff.html#ae408956538bebea8ad276df0026b2af2"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator()"><param name="Local" value="classCMCoeff.html#a8776dd638fca3d95f813acb93c7896c7"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator()"><param name="Local" value="classCMCoeff.html#ad6668675df0fa31437bebee2a2b00e0f"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator*="><param name="Local" value="classCMCoeff.html#a63d33423be766832461e5e20a0f21f66"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator+="><param name="Local" value="classCMCoeff.html#ac889bdd0230f6c3f11b8af06915410fe"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator-="><param name="Local" value="classCMCoeff.html#a28161819e17994b61395e9ddc8532040"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator="><param name="Local" value="classCMCoeff.html#a92c5e5e988695c301c47e3212930a68f"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="output"><param name="Local" value="classCMCoeff.html#afe4e3e3719dc0808108353ab20b05c23"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="recip"><param name="Local" value="classCMCoeff.html#a6e7e750022bf6a6f32dff9092881647c"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="reserve"><param name="Local" value="classCMCoeff.html#a10d5db85d700255768d091c10fda818c"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="reset"><param name="Local" value="classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="reset"><param name="Local" value="classCMCoeff.html#a5fc4a2ee0ab437bd601fd67ccc5bd43b"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="saveUndo"><param name="Local" value="classCMCoeff.html#a99771333750460a0ba9c97f03bdaa6b9"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="setOrder"><param name="Local" value="classCMCoeff.html#a815a4d1f74b217ea54d9f05f6734004f"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="undo"><param name="Local" value="classCMCoeff.html#ae75856578c3de42f457cc6e2af17d1d4"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="conj"><param name="Local" value="classCMCoeff.html#a33f855dbf0c86d35853f618e3494db87"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="inprod"><param name="Local" value="classCMCoeff.html#a095588ecdb857546a57e3f8f33ec983d"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="inprod"><param name="Local" value="classCMCoeff.html#a90c84c259a220e291cebf52d99560c61"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator*"><param name="Local" value="classCMCoeff.html#a794db3eaa0d9cf84e4c8ca1023e4f54a"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator*"><param name="Local" value="classCMCoeff.html#a4bebac156440468c712dfce37bc9fc7c"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator+"><param name="Local" value="classCMCoeff.html#ab6e8a538afe3d4f8de9c1fa4904479ec"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator-"><param name="Local" value="classCMCoeff.html#a2f5f513c1e1864710b85443edbbc311a"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator<<"><param name="Local" value="classCMCoeff.html#af219e14c617a293aad17ddf8f055db85"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="IDX"><param name="Local" value="classCMCoeff.html#ab1882e6a0df777b1acffadf55844dc92"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="IRS"><param name="Local" value="classCMCoeff.html#a7e893ff6deb29f85472663fffd995f42"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="KAPPA"><param name="Local" value="classCMCoeff.html#a468f6af1ba4ddbe13561217488c87b40"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="m_M"><param name="Local" value="classCMCoeff.html#a15347641cc66b95ff56bea89f4585edf"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="m_MU"><param name="Local" value="classCMCoeff.html#a2fc4617b2a37d2ca033aea2f5e02b5de"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="m_p"><param name="Local" value="classCMCoeff.html#adf49f0bd55b7c496b887f547695aba38"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="m_pU"><param name="Local" value="classCMCoeff.html#ac00d5938d669575bf71826ee725ccf46"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="m_type"><param name="Local" value="classCMCoeff.html#afe0cd2c61d33f32a058302fb53c33ccf"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="RS"><param name="Local" value="classCMCoeff.html#a512caa3ff1994cbde85011489b8f34ce"><param name="ImageNumber" value="11"></OBJECT>
-        </UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="N_POLES"><param name="Local" value="cmcoeff_8h.html#ac23f9c13c5d07d9ce386f7a830c35e5a"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="besseli"><param name="Local" value="cmcoeff_8h.html#a9b22ce6f98b3c8ee8c2d3535796a56c9"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="besselk"><param name="Local" value="cmcoeff_8h.html#a251fbca15904d26b4e7b521b56728cbd"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="cmcoeff_8h.html#a6fe367b52c358d46d32b7cbaac9d9abe"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="cmcoeff_8h.html#a90574ec6b6ce6d2cabd6e67c71e71d5e"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="cmcoeff_8h.html#a1cceb5d87fbeee804dff287b5d9426cc"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="legendre"><param name="Local" value="cmcoeff_8h.html#ac6fd947043adc1e6e01a2ef4800936dc"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator"><param name="Local" value="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator()"><param name="Local" value="cmcoeff_8h.html#a905215ea03a1681a55af9025924cbcb9"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator+"><param name="Local" value="cmcoeff_8h.html#ad83647309a8d399a51854b4b154e39ef"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator="><param name="Local" value="cmcoeff_8h.html#ab3c38e92daae1a07894a4779c61225a9"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="recip"><param name="Local" value="cmcoeff_8h.html#ab6b2ad0beea50ba2c89b718a1c32b6dc"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="reset"><param name="Local" value="cmcoeff_8h.html#a41fb40e7ef79ec034ce6edaeab70266c"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="m_M"><param name="Local" value="cmcoeff_8h.html#a5692204b780a950fcf2769acc31eb84e"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="m_p"><param name="Local" value="cmcoeff_8h.html#a047572e841f376c91ba7926b17e5dcdd"><param name="ImageNumber" value="11"></OBJECT>
-      </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="gradcoeff.cpp"><param name="Local" value="gradcoeff_8cpp.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="operator<<"><param name="Local" value="gradcoeff_8cpp.html#a81f3ceab707183d2313bf86d44b71476"><param name="ImageNumber" value="11"></OBJECT>
@@ -648,7 +571,6 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="dX"><param name="Local" value="gradcoeff_8h.html#a19fb64b809cae8e8fff8b14499ac40fd"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="dY"><param name="Local" value="gradcoeff_8h.html#ade57b50aea122c3678043c5128463494"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="dZ"><param name="Local" value="gradcoeff_8h.html#a623cc45fa8e6a0029b34dffde9fdc7d7"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator"><param name="Local" value="gradcoeff_8h.html#aecba726b125bb9ec3fec2cecf2d04115"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="mcoeff.cpp"><param name="Local" value="mcoeff_8cpp.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
@@ -659,8 +581,6 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="TYPE"><param name="Local" value="classCMCoeff.html#a0b490eeb5ba86bc1a95ea1c3b2946478"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#adba776bf8062ab89f60588c138fd562e"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#ae5a7fcbb8f989dbbff71d79738fd9356"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#aee6ebc4dd1ad9096babcaba957db66c7"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#a44f54126d3f90484420f1baf14ed491f"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="CMCoeff"><param name="Local" value="classCMCoeff.html#a52820257419417dd2d18a75e276fd011"><param name="ImageNumber" value="11"></OBJECT>
@@ -673,7 +593,6 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="dMdr"><param name="Local" value="classCMCoeff.html#aab926cdd2ef1a0f188f82603108296a8"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="dMdt"><param name="Local" value="classCMCoeff.html#a2e9e6517ed48d1758af058f95b5af50c"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="getOrder"><param name="Local" value="classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="operator()"><param name="Local" value="classCMCoeff.html#ae408956538bebea8ad276df0026b2af2"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="operator()"><param name="Local" value="classCMCoeff.html#a8776dd638fca3d95f813acb93c7896c7"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="operator()"><param name="Local" value="classCMCoeff.html#ad6668675df0fa31437bebee2a2b00e0f"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="operator*="><param name="Local" value="classCMCoeff.html#a63d33423be766832461e5e20a0f21f66"><param name="ImageNumber" value="11"></OBJECT>
@@ -683,7 +602,6 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="output"><param name="Local" value="classCMCoeff.html#afe4e3e3719dc0808108353ab20b05c23"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="recip"><param name="Local" value="classCMCoeff.html#a6e7e750022bf6a6f32dff9092881647c"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="reserve"><param name="Local" value="classCMCoeff.html#a10d5db85d700255768d091c10fda818c"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="reset"><param name="Local" value="classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="reset"><param name="Local" value="classCMCoeff.html#a5fc4a2ee0ab437bd601fd67ccc5bd43b"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="saveUndo"><param name="Local" value="classCMCoeff.html#a99771333750460a0ba9c97f03bdaa6b9"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="setOrder"><param name="Local" value="classCMCoeff.html#a815a4d1f74b217ea54d9f05f6734004f"><param name="ImageNumber" value="11"></OBJECT>

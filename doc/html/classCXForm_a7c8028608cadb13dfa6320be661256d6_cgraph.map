@@ -7,7 +7,7 @@
 <area shape="rect" id="node16" href="$classCRotCoeff.html#a73c21837871db96b643b0e9ccf77a6b4" title="CRotCoeff::dRotateT" alt="" coords="336,304,483,331"/>
 <area shape="rect" id="node19" href="$classCRotCoeff.html#a8fc43b5ba7290e8f59fe124105445542" title="CRotCoeff::dRotateP" alt="" coords="335,379,483,405"/>
 <area shape="rect" id="node22" href="$classCXForm.html#a092244b7fc2a15139d8aefac7600c549" title="CXForm::sphToCart" alt="" coords="339,429,479,456"/>
-<area shape="rect" id="node24" href="$util_8h.html#a995a97713975591555fe37b5ad50745a" title="dot" alt="" coords="541,429,581,456"/>
+<area shape="rect" id="node24" href="$util_8h.html#a995a97713975591555fe37b5ad50745a" title="CPnt dot." alt="" coords="541,429,581,456"/>
 <area shape="rect" id="node26" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="629,379,696,405"/>
 <area shape="rect" id="node28" href="$classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="629,429,696,456"/>
 <area shape="rect" id="node30" href="$classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="629,480,696,507"/>

@@ -67,7 +67,7 @@
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="classCAtom.html#a55b4b673562699ae2fa4e3386b8d8a9b">   18</a></span>&#160;  <a class="code" href="classCAtom.html">CAtom</a>(<span class="keyword">const</span> <a class="code" href="classCAtom.html">CAtom</a> &amp; a) :</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    m_acode(a.m_acode), m_rcode(a.m_rcode), m_resnum(a.m_resnum),</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    m_pos(a.m_pos), m_charge(a.m_charge), m_rad(a.m_rad) {}</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classCAtom.html#a52de68ec7c9d0b50599bcb24c05fbc41">   21</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classCAtom.html">CAtom</a> &amp; <a class="code" href="cmcoeff_8h.html#ab3c38e92daae1a07894a4779c61225a9">operator=</a>(<span class="keyword">const</span> <a class="code" href="classCAtom.html">CAtom</a> &amp; a)</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classCAtom.html#a52de68ec7c9d0b50599bcb24c05fbc41">   21</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classCAtom.html">CAtom</a> &amp; operator=(<span class="keyword">const</span> <a class="code" href="classCAtom.html">CAtom</a> &amp; a)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    { </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      m_acode = a.m_acode; m_rcode = a.m_rcode; m_resnum = a.m_resnum;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      m_pos = a.m_pos; m_charge = a.m_charge; m_rad = a.m_rad;</div>
@@ -87,7 +87,7 @@
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> getAtomCode(<span class="keyword">const</span> <span class="keywordtype">char</span> * aname);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> generateName(<span class="keywordtype">int</span> acode, <span class="keywordtype">char</span> * aname);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="classCAtom.html#a214045c9b46083ef550c214d3f1a33bd">   41</a></span>&#160;  <span class="keywordtype">void</span> setPos(<span class="keyword">const</span> <a class="code" href="classCPnt.html">CPnt</a> &amp; p)</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="classCAtom.html#a214045c9b46083ef550c214d3f1a33bd">   41</a></span>&#160;  <span class="keywordtype">void</span> setPos(<span class="keyword">const</span> <a class="code" href="classCPnt.html" title="The cartesian coordinate class.">CPnt</a> &amp; p)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    { m_pos = p; }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="classCAtom.html#a2eaa281b7aa53c83c13a66de07c9e70c">   44</a></span>&#160;  <span class="keywordtype">int</span> getCode()<span class="keyword"> const</span></div>
@@ -98,7 +98,7 @@
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> m_resnum; }</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classCAtom.html#a909e61ce36305e5e923fd75d48ab6cb8">   50</a></span>&#160;  <a class="code" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> getCharge()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> m_charge; }</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="classCAtom.html#ad53ff83c6676d072a06694a4398b257d">   52</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classCPnt.html">CPnt</a> &amp; getPos()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="classCAtom.html#ad53ff83c6676d072a06694a4398b257d">   52</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classCPnt.html" title="The cartesian coordinate class.">CPnt</a> &amp; getPos()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> m_pos; }</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="classCAtom.html#a4c911762af7a8abf5fec08d3a896e5df">   54</a></span>&#160;  <a class="code" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> x()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> m_pos.<a class="code" href="classCPnt.html#a5867d45fc05ae371116367067eb23f48">x</a>(); }</div>
@@ -117,7 +117,7 @@
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">int</span> m_acode;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">int</span> m_rcode;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">int</span> m_resnum;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="classCPnt.html">CPnt</a> m_pos;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="classCPnt.html" title="The cartesian coordinate class.">CPnt</a> m_pos;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> m_charge;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> m_rad;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
@@ -162,7 +162,7 @@
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> writeToPDB(<span class="keyword">const</span> <span class="keywordtype">char</span> * fname, <span class="keyword">const</span> vector&lt;AA&gt; &amp; aas);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> writeLine(ostream &amp; fout, <span class="keywordtype">int</span> index, <span class="keyword">const</span> <span class="keywordtype">char</span> * chainid,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;         <span class="keyword">const</span> <a class="code" href="classCAtom.html">CAtom</a> &amp; atom, <span class="keyword">const</span> <a class="code" href="classCQuat.html">CQuat</a> &amp; rot, <span class="keyword">const</span> <a class="code" href="classCPnt.html">CPnt</a> &amp; trans);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;         <span class="keyword">const</span> <a class="code" href="classCAtom.html">CAtom</a> &amp; atom, <span class="keyword">const</span> <a class="code" href="classCQuat.html" title="The quaternion class.">CQuat</a> &amp; rot, <span class="keyword">const</span> <a class="code" href="classCPnt.html" title="The cartesian coordinate class.">CPnt</a> &amp; trans);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keyword">static</span> <a class="code" href="classCAtom.html">CAtom</a> readline(<span class="keyword">const</span> <span class="keywordtype">char</span> * buf);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;};</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
@@ -172,7 +172,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 1 2014 17:01:01 for PB Analytical by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 2 2014 13:46:50 for PB Analytical by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

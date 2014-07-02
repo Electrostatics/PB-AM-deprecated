@@ -188,28 +188,9 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classAA.html#a77290c917ac630708465bb700c9a1d91"><param name="Name" value="clear"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="mpe_8cpp.html#aeca00b95bf8804bde60532e77433ff18"><param name="Name" value="CLKS_PER_MSEC"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html"><param name="Name" value="CMCoeff"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8cpp.html"><param name="Name" value="cmcoeff.cpp"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8cpp.html#a90c84c259a220e291cebf52d99560c61"><param name="Name" value="inprod"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8cpp.html#ab6e8a538afe3d4f8de9c1fa4904479ec"><param name="Name" value="operator+"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html"><param name="Name" value="cmcoeff.h"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a6fe367b52c358d46d32b7cbaac9d9abe"><param name="Name" value="CMCoeff"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a5692204b780a950fcf2769acc31eb84e"><param name="Name" value="m_M"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a047572e841f376c91ba7926b17e5dcdd"><param name="Name" value="m_p"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#ac23f9c13c5d07d9ce386f7a830c35e5a"><param name="Name" value="N_POLES"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43"><param name="Name" value="operator"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a905215ea03a1681a55af9025924cbcb9"><param name="Name" value="operator()"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#ad83647309a8d399a51854b4b154e39ef"><param name="Name" value="operator+"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#ab3c38e92daae1a07894a4779c61225a9"><param name="Name" value="operator="></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a41fb40e7ef79ec034ce6edaeab70266c"><param name="Name" value="reset"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html"><param name="Name" value="CMCoeff"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a1bf2b3f4bba7f938a9d9d32855737699"><param name="Name" value="change"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#adba776bf8062ab89f60588c138fd562e"><param name="Name" value="CMCoeff"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a6fe367b52c358d46d32b7cbaac9d9abe"><param name="Name" value="cmcoeff.h"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#aee6ebc4dd1ad9096babcaba957db66c7"><param name="Name" value="CMCoeff"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#af24efe3725c507a1919b043a5335d9ff"><param name="Name" value="computeDev"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a33f855dbf0c86d35853f618e3494db87"><param name="Name" value="conj"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a7010837883b56f9b972888bffb6fbb3d"><param name="Name" value="copy"></OBJECT>
@@ -231,7 +212,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#afe0cd2c61d33f32a058302fb53c33ccf"><param name="Name" value="m_type"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a0b490eeb5ba86bc1a95ea1c3b2946478a44c2e68e32e879f210aab9493a0fb48d"><param name="Name" value="MPOLE"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a0b490eeb5ba86bc1a95ea1c3b2946478a7620a298f37501509e3a5fec264f0c4f"><param name="Name" value="MPOLE_K"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#ae408956538bebea8ad276df0026b2af2"><param name="Name" value="operator()"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a8776dd638fca3d95f813acb93c7896c7"><param name="Name" value="operator()"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a794db3eaa0d9cf84e4c8ca1023e4f54a"><param name="Name" value="operator*"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a63d33423be766832461e5e20a0f21f66"><param name="Name" value="operator*="></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#ab6e8a538afe3d4f8de9c1fa4904479ec"><param name="Name" value="operator+"></OBJECT>
@@ -243,7 +224,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#afe4e3e3719dc0808108353ab20b05c23"><param name="Name" value="output"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a6e7e750022bf6a6f32dff9092881647c"><param name="Name" value="recip"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a10d5db85d700255768d091c10fda818c"><param name="Name" value="reserve"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb"><param name="Name" value="reset"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a5fc4a2ee0ab437bd601fd67ccc5bd43b"><param name="Name" value="reset"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a512caa3ff1994cbde85011489b8f34ce"><param name="Name" value="RS"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a99771333750460a0ba9c97f03bdaa6b9"><param name="Name" value="saveUndo"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a815a4d1f74b217ea54d9f05f6734004f"><param name="Name" value="setOrder"></OBJECT>
@@ -607,7 +588,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="gradcoeff_8h.html#a19fb64b809cae8e8fff8b14499ac40fd"><param name="Name" value="dX"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="gradcoeff_8h.html#ade57b50aea122c3678043c5128463494"><param name="Name" value="dY"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="gradcoeff_8h.html#a623cc45fa8e6a0029b34dffde9fdc7d7"><param name="Name" value="dZ"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="gradcoeff_8h.html#aecba726b125bb9ec3fec2cecf2d04115"><param name="Name" value="operator"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCAtom.html#a79e729b143961179c43939392d704848abf99f6f070bd255d3d610b6ec34f13b2"><param name="Name" value="H"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classAA.html#a8717db02e7eeaac316898736843fa600aaf01c20386a10cb2ea5dbbdbca7b583f"><param name="Name" value="HIS"></OBJECT>
@@ -644,7 +624,6 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a095588ecdb857546a57e3f8f33ec983d"><param name="Name" value="inprod"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a095588ecdb857546a57e3f8f33ec983d"><param name="Name" value="CMCoeff"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8cpp.html#a90c84c259a220e291cebf52d99560c61"><param name="Name" value="cmcoeff.cpp"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCTriCoeff.html#a095588ecdb857546a57e3f8f33ec983d"><param name="Name" value="CTriCoeff"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="mcoeff_8h.html#a90c84c259a220e291cebf52d99560c61"><param name="Name" value="mcoeff.h"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="tricoeff_8h.html#a095588ecdb857546a57e3f8f33ec983d"><param name="Name" value="tricoeff.h"></OBJECT>
@@ -673,15 +652,10 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a15347641cc66b95ff56bea89f4585edf"><param name="Name" value="m_M"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a15347641cc66b95ff56bea89f4585edf"><param name="Name" value="CMCoeff"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a5692204b780a950fcf2769acc31eb84e"><param name="Name" value="cmcoeff.h"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCTriCoeff.html#afac3ecb3b5c965a7ba4cc0409c2100e8"><param name="Name" value="CTriCoeff"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a2fc4617b2a37d2ca033aea2f5e02b5de"><param name="Name" value="m_MU"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#adf49f0bd55b7c496b887f547695aba38"><param name="Name" value="m_p"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#adf49f0bd55b7c496b887f547695aba38"><param name="Name" value="CMCoeff"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a047572e841f376c91ba7926b17e5dcdd"><param name="Name" value="cmcoeff.h"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#ac00d5938d669575bf71826ee725ccf46"><param name="Name" value="m_pU"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#afe0cd2c61d33f32a058302fb53c33ccf"><param name="Name" value="m_type"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#adf1757fa41fec1996e7ca1c7fe6fc9e0"><param name="Name" value="m_unit"></OBJECT>
@@ -722,11 +696,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a0b490eeb5ba86bc1a95ea1c3b2946478a44c2e68e32e879f210aab9493a0fb48d"><param name="Name" value="MPOLE"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a0b490eeb5ba86bc1a95ea1c3b2946478a7620a298f37501509e3a5fec264f0c4f"><param name="Name" value="MPOLE_K"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCAtom.html#a79e729b143961179c43939392d704848ad8dcecc0b02940db05ebb15dd382a225"><param name="Name" value="N"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#ac23f9c13c5d07d9ce386f7a830c35e5a"><param name="Name" value="N_POLES"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#ac23f9c13c5d07d9ce386f7a830c35e5a"><param name="Name" value="cmcoeff.h"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="mcoeff_8h.html#ac23f9c13c5d07d9ce386f7a830c35e5a"><param name="Name" value="mcoeff.h"></OBJECT>
-  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mcoeff_8h.html#ac23f9c13c5d07d9ce386f7a830c35e5a"><param name="Name" value="N_POLES"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#a17b9196644f13740f99675a5a0d8ef23"><param name="Name" value="ngpol"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#afc7b0e78e954f7bb1419864a70c4d0b7"><param name="Name" value="ngpol_t"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCAtom.html#a1a65c02a5c158f4de46b2f09aca927d9ab284bdb8f4606f7afd759511b961e3b1"><param name="Name" value="NITRO"></OBJECT>
@@ -745,11 +715,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="pdb_8h.html#a39e506e6b2b0a7caa66b2ad2dba6ef24"><param name="Name" value="NUM_ELEM"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="pdb_8h.html#a97e57794bbd80e909807f0ac940cc4f7"><param name="Name" value="NUM_PLACES"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCAtom.html#a79e729b143961179c43939392d704848a5031f6d781302d5217fa84699f5a6439"><param name="Name" value="O"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#ae408956538bebea8ad276df0026b2af2"><param name="Name" value="operator()"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#ae408956538bebea8ad276df0026b2af2"><param name="Name" value="CMCoeff"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a905215ea03a1681a55af9025924cbcb9"><param name="Name" value="cmcoeff.h"></OBJECT>
-  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a8776dd638fca3d95f813acb93c7896c7"><param name="Name" value="operator()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a63d33423be766832461e5e20a0f21f66"><param name="Name" value="operator*="></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a63d33423be766832461e5e20a0f21f66"><param name="Name" value="CMCoeff"></OBJECT>
@@ -775,8 +741,6 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#ab6e8a538afe3d4f8de9c1fa4904479ec"><param name="Name" value="operator+"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#ab6e8a538afe3d4f8de9c1fa4904479ec"><param name="Name" value="CMCoeff"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8cpp.html#ab6e8a538afe3d4f8de9c1fa4904479ec"><param name="Name" value="cmcoeff.cpp"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#ad83647309a8d399a51854b4b154e39ef"><param name="Name" value="cmcoeff.h"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCPnt.html#a793e034bed9900c45412db255d708e84"><param name="Name" value="CPnt"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCTriCoeff.html#a6678a29fe9fa9c5d7616a7151866fd4c"><param name="Name" value="CTriCoeff"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="mcoeff_8h.html#ab6e8a538afe3d4f8de9c1fa4904479ec"><param name="Name" value="mcoeff.h"></OBJECT>
@@ -816,16 +780,10 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCAtom.html#a52de68ec7c9d0b50599bcb24c05fbc41"><param name="Name" value="CAtom"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a92c5e5e988695c301c47e3212930a68f"><param name="Name" value="CMCoeff"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#ab3c38e92daae1a07894a4779c61225a9"><param name="Name" value="cmcoeff.h"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCPnt.html#abd18aa7c83ac70f5e73847a8cd154e9d"><param name="Name" value="CPnt"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCQuat.html#ad7a24172721a059adcbf40f6db7584fb"><param name="Name" value="CQuat"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCSpPnt.html#aee31a3b97c734fa150f1a33daadd6dfc"><param name="Name" value="CSpPnt"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCTriCoeff.html#a303a152b75ea66fcd65f5377b317b4d1"><param name="Name" value="CTriCoeff"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43"><param name="Name" value="operator"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a1741fc58bd82891d067c412eee74cd43"><param name="Name" value="cmcoeff.h"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="gradcoeff_8h.html#aecba726b125bb9ec3fec2cecf2d04115"><param name="Name" value="gradcoeff.h"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classAA.html#aa271a8269c3a69c795651b87768abd3c"><param name="Name" value="operator[]"></OBJECT>
   <UL>
@@ -881,10 +839,9 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#af10ee159904becb5add924aa48df3c56"><param name="Name" value="reexpand"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a10d5db85d700255768d091c10fda818c"><param name="Name" value="reserve"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb"><param name="Name" value="reset"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a5fc4a2ee0ab437bd601fd67ccc5bd43b"><param name="Name" value="reset"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb"><param name="Name" value="CMCoeff"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="cmcoeff_8h.html#a41fb40e7ef79ec034ce6edaeab70266c"><param name="Name" value="cmcoeff.h"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a5fc4a2ee0ab437bd601fd67ccc5bd43b"><param name="Name" value="CMCoeff"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#ae44b4e76215412230e279f34bd5b9fab"><param name="Name" value="CMPE"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCRotCoeff.html#aa52111e9c4cb2949dfae960437742536"><param name="Name" value="CRotCoeff"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f"><param name="Name" value="CSHCoeff"></OBJECT>

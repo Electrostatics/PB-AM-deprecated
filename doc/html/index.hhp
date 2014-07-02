@@ -13,7 +13,6 @@ main="PB Analytical","index.hhc","index.hhk","index.html","index.html",,,,,0x235
 
 [FILES]
 BD_8h_source.html
-cmcoeff_8h_source.html
 gradcoeff_8h_source.html
 mcoeff_8h_source.html
 mpe_8h_source.html
@@ -28,8 +27,6 @@ util_8h_source.html
 xform_8h_source.html
 BD_8cpp.html
 BD_8h.html
-cmcoeff_8cpp.html
-cmcoeff_8h.html
 gradcoeff_8cpp.html
 gradcoeff_8h.html
 mcoeff_8cpp.html
@@ -209,12 +206,6 @@ BD_8h__incl.png
 BD_8h__incl.png
 BD_8h__dep__incl.png
 BD_8h__dep__incl.png
-cmcoeff_8cpp__incl.png
-cmcoeff_8cpp__incl.png
-cmcoeff_8h__incl.png
-cmcoeff_8h__incl.png
-cmcoeff_8h__dep__incl.png
-cmcoeff_8h__dep__incl.png
 gradcoeff_8cpp__incl.png
 gradcoeff_8cpp__incl.png
 gradcoeff_8h__incl.png
@@ -345,14 +336,10 @@ classCMCoeff_aee6ebc4dd1ad9096babcaba957db66c7_cgraph.png
 classCMCoeff_aee6ebc4dd1ad9096babcaba957db66c7_cgraph.png
 classCMCoeff_a44f54126d3f90484420f1baf14ed491f_cgraph.png
 classCMCoeff_a44f54126d3f90484420f1baf14ed491f_cgraph.png
-classCMCoeff_a52820257419417dd2d18a75e276fd011_cgraph.png
-classCMCoeff_a52820257419417dd2d18a75e276fd011_cgraph.png
 classCMCoeff_a1bf2b3f4bba7f938a9d9d32855737699_cgraph.png
 classCMCoeff_a1bf2b3f4bba7f938a9d9d32855737699_cgraph.png
 classCMCoeff_aab926cdd2ef1a0f188f82603108296a8_cgraph.png
 classCMCoeff_aab926cdd2ef1a0f188f82603108296a8_cgraph.png
-classCMCoeff_ae408956538bebea8ad276df0026b2af2_cgraph.png
-classCMCoeff_ae408956538bebea8ad276df0026b2af2_cgraph.png
 classCMCoeff_a8776dd638fca3d95f813acb93c7896c7_cgraph.png
 classCMCoeff_a8776dd638fca3d95f813acb93c7896c7_cgraph.png
 classCMPE__coll__graph.png
@@ -449,8 +436,6 @@ classCSHCoeff__coll__graph.png
 classCSHCoeff__coll__graph.png
 classCSHCoeff_adf80cf8370b4db9957de7acfe8aa64d6_cgraph.png
 classCSHCoeff_adf80cf8370b4db9957de7acfe8aa64d6_cgraph.png
-classCSHCoeff_a7aa1d16fe8a3e18012f2ccaec89a0a0f_cgraph.png
-classCSHCoeff_a7aa1d16fe8a3e18012f2ccaec89a0a0f_cgraph.png
 classCSpPnt_aee31a3b97c734fa150f1a33daadd6dfc_cgraph.png
 classCSpPnt_aee31a3b97c734fa150f1a33daadd6dfc_cgraph.png
 classCTorqCoeff__inherit__graph.png

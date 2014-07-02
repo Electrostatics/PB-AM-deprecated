@@ -1,12 +1,11 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$util_8h.html#ad05fbf75e7550a927bc817f97115f2fc" title="CartToSph" alt="" coords="213,68,299,95"/>
-<area shape="rect" id="node11" href="$classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="196,144,316,171"/>
-<area shape="rect" id="node15" href="$classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba" title="CSpPnt::theta" alt="" coords="203,195,309,221"/>
-<area shape="rect" id="node17" href="$classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d" title="CSpPnt::phi" alt="" coords="209,245,303,272"/>
-<area shape="rect" id="node19" href="$classCSHCoeff.html#aa6cc07501f3b8ab8d2f9f32ba5a7b279" title="CSHCoeff::besseli" alt="" coords="190,296,322,323"/>
-<area shape="rect" id="node21" href="$classCSpPnt.html#af6364f003b923aa77c880869d27caa64" title="CSpPnt::rho" alt="" coords="209,347,303,373"/>
-<area shape="rect" id="node5" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="393,5,460,32"/>
-<area shape="rect" id="node7" href="$classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="393,56,460,83"/>
-<area shape="rect" id="node9" href="$classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="393,107,460,133"/>
-<area shape="rect" id="node13" href="$classCMCoeff.html#a2cca0942d27c02cf846810bf465f7ebb" title="CMCoeff::reset" alt="" coords="371,157,483,184"/>
+<area shape="rect" id="node3" href="$util_8h.html#ad05fbf75e7550a927bc817f97115f2fc" title="CSpPnt CartToSph." alt="" coords="213,56,299,83"/>
+<area shape="rect" id="node11" href="$classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="196,107,316,133"/>
+<area shape="rect" id="node13" href="$classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba" title="CSpPnt::theta" alt="" coords="203,157,309,184"/>
+<area shape="rect" id="node15" href="$classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d" title="CSpPnt::phi" alt="" coords="209,208,303,235"/>
+<area shape="rect" id="node17" href="$classCSHCoeff.html#aa6cc07501f3b8ab8d2f9f32ba5a7b279" title="CSHCoeff::besseli" alt="" coords="190,259,322,285"/>
+<area shape="rect" id="node19" href="$classCSpPnt.html#af6364f003b923aa77c880869d27caa64" title="CSpPnt::rho" alt="" coords="209,309,303,336"/>
+<area shape="rect" id="node5" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="371,5,437,32"/>
+<area shape="rect" id="node7" href="$classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="371,56,437,83"/>
+<area shape="rect" id="node9" href="$classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="371,107,437,133"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$BD_8cpp.html#a050f85eeb4bca700634b0c552f7d32e2" title="readmdp" alt="" coords="196,5,268,32"/>
 <area shape="rect" id="node5" href="$classCProtein.html#aeff60f05cbd42168359f75187b9ac888" title="CProtein::initParameters" alt="" coords="149,56,315,83"/>
-<area shape="rect" id="node11" href="$classCQuat.html#a3788f9ce393c8c6e7dc2df6e7675c594" title="CQuat::chooseRandom" alt="" coords="153,107,311,133"/>
+<area shape="rect" id="node11" href="$classCQuat.html#a3788f9ce393c8c6e7dc2df6e7675c594" title="CQuat chooseRandom." alt="" coords="153,107,311,133"/>
 <area shape="rect" id="node13" href="$BD_8cpp.html#af4a2c988c8f8f7423e6a4c8dd0d6ffef" title="writemdp" alt="" coords="195,157,269,184"/>
 <area shape="rect" id="node7" href="$classCMPE.html#accac27799cb676fb3160683583a8619e" title="CMPE::initConstants" alt="" coords="363,56,509,83"/>
 <area shape="rect" id="node9" href="$classCSHCoeff.html#ae6ad53fe9a4862de25fe7f2788649a41" title="CSHCoeff::init" alt="" coords="558,56,666,83"/>
