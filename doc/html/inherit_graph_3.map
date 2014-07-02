@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$classCMCoeff.html" title="CMCoeff" alt="" coords="5,5,80,32"/>
-<area shape="rect" id="node3" href="$classCSHCoeff.html" title="CSHCoeff" alt="" coords="128,5,211,32"/>
+<area shape="rect" id="node1" href="$classCMCoeff.html" title="The mcoeff expansion class." alt="" coords="5,5,80,32"/>
+<area shape="rect" id="node3" href="$classCSHCoeff.html" title="The CSHCoeff class." alt="" coords="128,5,211,32"/>
 </map>

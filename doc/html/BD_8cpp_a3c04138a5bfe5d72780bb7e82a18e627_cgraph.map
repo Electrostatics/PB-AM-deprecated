@@ -8,7 +8,7 @@
 <area shape="rect" id="node125" href="$BD_8cpp.html#acbf4599ba222df52cd3247bce0402d79" title="main7" alt="" coords="399,1424,457,1451"/>
 <area shape="rect" id="node137" href="$BD_8cpp.html#a268054c4cc84d387786a1a4d52e90019" title="main8" alt="" coords="399,1323,457,1349"/>
 <area shape="rect" id="node5" href="$util_8h.html#ad864dc450da6954264580e4318e011eb" title="seedRand" alt="" coords="609,1221,690,1248"/>
-<area shape="rect" id="node7" href="$classCBD.html#a0e59f17fc428ea28a8c8b4c9656a3538" title="CBD::run" alt="" coords="211,233,288,260"/>
+<area shape="rect" id="node7" href="$classCBD.html#a0e59f17fc428ea28a8c8b4c9656a3538" title="CBD run function." alt="" coords="211,233,288,260"/>
 <area shape="rect" id="node9" href="$classCProtein.html#a40f7c9e8d7b4717e00027b0c92ad109b" title="CProtein::setOrient" alt="" coords="361,208,495,235"/>
 <area shape="rect" id="node11" href="$classCQuat.html#a3788f9ce393c8c6e7dc2df6e7675c594" title="CQuat::chooseRandom" alt="" coords="782,512,941,539"/>
 <area shape="rect" id="node13" href="$classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb" title="CProtein::setPos" alt="" coords="367,259,489,285"/>
@@ -22,7 +22,7 @@
 <area shape="rect" id="node27" href="$classCMPE.html#a70e20d2a606e1bae88c117b15a511e17" title="CMPE::updateSolve" alt="" coords="579,765,720,792"/>
 <area shape="rect" id="node43" href="$classCMPE.html#ab825df6d8ab377af3715b86e3a495e34" title="CMPE::computeForce" alt="" coords="573,917,725,944"/>
 <area shape="rect" id="node29" href="$classCMPE.html#a65d2f19a87b451dbd84bb4b11cbfd571" title="CMPE::updateXForms" alt="" coords="784,892,939,919"/>
-<area shape="rect" id="node41" href="$classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="CMPE::polarize" alt="" coords="804,968,919,995"/>
+<area shape="rect" id="node41" href="$classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="Function for mutual polarization." alt="" coords="804,968,919,995"/>
 <area shape="rect" id="node31" href="$classCXForm.html#a9fe5afbc751e5d8a8d48aa20471c84a5" title="CXForm::init" alt="" coords="1017,917,1113,944"/>
 <area shape="rect" id="node33" href="$classCMPE.html#a047394488b2ce41894b336b6a1d8e30a" title="CMPE::getOrder" alt="" coords="1006,1081,1125,1108"/>
 <area shape="rect" id="node35" href="$classCXForm.html#a903c633f1ac0756230bcd383e35a1d85" title="CXForm::decOrder" alt="" coords="999,968,1131,995"/>
@@ -39,9 +39,9 @@
 <area shape="rect" id="node68" href="$classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="1032,1335,1099,1361"/>
 <area shape="rect" id="node80" href="$classCMPE.html#a46bad2726842ca10071fd004010a6e1b" title="CMPE::solve" alt="" coords="599,1323,699,1349"/>
 <area shape="rect" id="node84" href="$BD_8cpp.html#aa47d8f951ab91c51da9b69f787f18030" title="perturb" alt="" coords="397,563,459,589"/>
-<area shape="rect" id="node86" href="$classCBD.html#a9ad6f87e7436fa716a470e97f0ec836f" title="CBD::getRandVec" alt="" coords="584,512,715,539"/>
+<area shape="rect" id="node86" href="$classCBD.html#a9ad6f87e7436fa716a470e97f0ec836f" title="CBD getRandVec function." alt="" coords="584,512,715,539"/>
 <area shape="rect" id="node88" href="$classCPnt.html#ab92f2e6cc3891ff6a00eddb483b854ab" title="CPnt::norm" alt="" coords="605,563,694,589"/>
-<area shape="rect" id="node91" href="$classCMPE.html#a61688da6057b840ca71dacb47db0c0ac" title="CMPE::undoXForms" alt="" coords="578,461,721,488"/>
+<area shape="rect" id="node91" href="$classCMPE.html#a61688da6057b840ca71dacb47db0c0ac" title="The MPE undoXForms function." alt="" coords="578,461,721,488"/>
 <area shape="rect" id="node100" href="$classCMPE.html#af10ee159904becb5add924aa48df3c56" title="CMPE::reexpand" alt="" coords="588,664,711,691"/>
 <area shape="rect" id="node111" href="$BD_8cpp.html#ad261235621d7c522431468ac50a3c7c3" title="buildGrid" alt="" coords="613,1272,686,1299"/>
 <area shape="rect" id="node113" href="$classCMPE.html#a8a6b260459ff6af55260e2c7897f3bd0" title="CMPE::computePotAt" alt="" coords="785,1171,937,1197"/>

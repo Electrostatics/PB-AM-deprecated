@@ -16,7 +16,7 @@
 <area shape="rect" id="node17" href="$classCPnt.html#ac4dcf209c35c4ef0c119cd59fbddd18f" title="CPnt::normsq" alt="" coords="738,208,841,235"/>
 <area shape="rect" id="node19" href="$util_8h.html#a995a97713975591555fe37b5ad50745a" title="dot" alt="" coords="989,208,1029,235"/>
 <area shape="rect" id="node39" href="$classCMPE.html#a65d2f19a87b451dbd84bb4b11cbfd571" title="CMPE::updateXForms" alt="" coords="325,597,480,624"/>
-<area shape="rect" id="node109" href="$classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="CMPE::polarize" alt="" coords="345,403,460,429"/>
+<area shape="rect" id="node109" href="$classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="Function for mutual polarization." alt="" coords="345,403,460,429"/>
 <area shape="rect" id="node41" href="$classCXForm.html#a9fe5afbc751e5d8a8d48aa20471c84a5" title="CXForm::init" alt="" coords="547,673,643,700"/>
 <area shape="rect" id="node81" href="$classCMPE.html#a047394488b2ce41894b336b6a1d8e30a" title="CMPE::getOrder" alt="" coords="535,572,654,599"/>
 <area shape="rect" id="node83" href="$classCXForm.html#a903c633f1ac0756230bcd383e35a1d85" title="CXForm::decOrder" alt="" coords="529,521,661,548"/>

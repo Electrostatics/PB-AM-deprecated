@@ -65,7 +65,7 @@ static void \hyperlink{classCProtein_a2e38b7c42c30f967591fafb5060bc4f7}{get\-Int
 \begin{DoxyCompactItemize}
 \item 
 static map$<$ int, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} $>$ \hyperlink{classCProtein_a5999d9758c6552f1c329cb3b5612485d}{C\-H\-A\-R\-G\-E\-S} \mbox{[}\hyperlink{pdb_8h_aaa82008f92b935630ccf49c27a4bcc6e}{N\-U\-M\-\_\-\-A\-A\-S}\mbox{]}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Array of charges for each amino acid in the protein. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -76,20 +76,9 @@ static map$<$ int, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A
 \item[{const char $\ast$}]{fname}
 \end{DoxyParamCaption}
 )}}\label{classCProtein_add7b99ce966900c95f6a0b5ce1d644ac}
-Initializing protein class $<$ Add each atom in each amino acid of protein to matrix of atoms
+Initializing protein class 
 
-$<$ Add charge on atom in each amino acid to vector of charges
-
-$<$ compute center of geometry if the atom
-
-$<$ reposition each atom W\-R\-T to the center of mass of protein
-
-$<$ Total charge of protein
-
-$<$ Total charge of protein to print as output 
-
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -111,8 +100,7 @@ Here is the call graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classCProtein_a3d071c05412cb0f2a423920d5ae000dc}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -129,7 +117,7 @@ Here is the call graph for this function\-:
 \item[{vector$<$ {\bf C\-Pnt} $>$ \&}]{torque}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCProtein_a7d6c3fb53c773ea006d123e35301d9b8}
-Compute forces between molecules $<$ Initialize transforms if this is the first force calc of the simulation 
+Compute forces between molecules. Input\-: vector of forces and torques acting on each molecule in the system 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -197,8 +185,7 @@ Here is the call graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCProtein_a2e38b7c42c30f967591fafb5060bc4f7}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -251,8 +238,7 @@ Here is the call graph for this function\-:
 )}}\label{classCProtein_afb3fe3188e1a61488295b4fcdb3664e6}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -274,8 +260,7 @@ Here is the call graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCProtein_aeff60f05cbd42168359f75187b9ac888}
 Initializing parameters for protein file Inputs\-: kappa, dielectric of the protein, water dielectric, the nummber of molecules, average scaling factor R\-S$\sim$avg molecular radius 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -304,8 +289,7 @@ Here is the call graph for this function\-:
 )}}\label{classCProtein_af6187aab0e8c8d59f60ddfed41ee7bd2}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -323,8 +307,7 @@ Here is the call graph for this function\-:
 )}}\label{classCProtein_a14c964f72704f17611aa0b941ad50ff0}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -374,6 +357,10 @@ Here is the call graph for this function\-:
 \hypertarget{classCProtein_a5999d9758c6552f1c329cb3b5612485d}{\index{C\-Protein@{C\-Protein}!C\-H\-A\-R\-G\-E\-S@{C\-H\-A\-R\-G\-E\-S}}
 \index{C\-H\-A\-R\-G\-E\-S@{C\-H\-A\-R\-G\-E\-S}!CProtein@{C\-Protein}}
 \subsubsection[{C\-H\-A\-R\-G\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}map$<$ int, {\bf R\-E\-A\-L} $>$ C\-Protein\-::\-C\-H\-A\-R\-G\-E\-S\hspace{0.3cm}{\ttfamily [static]}}}\label{classCProtein_a5999d9758c6552f1c329cb3b5612485d}
+
+
+Array of charges for each amino acid in the protein. 
+
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

@@ -1,6 +1,6 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$classCMPE.html#a65d2f19a87b451dbd84bb4b11cbfd571" title="CMPE::updateXForms" alt="" coords="155,560,309,587"/>
-<area shape="rect" id="node76" href="$classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="CMPE::polarize" alt="" coords="175,611,289,637"/>
+<area shape="rect" id="node76" href="$classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="Function for mutual polarization." alt="" coords="175,611,289,637"/>
 <area shape="rect" id="node5" href="$classCXForm.html#a9fe5afbc751e5d8a8d48aa20471c84a5" title="CXForm::init" alt="" coords="376,396,472,423"/>
 <area shape="rect" id="node48" href="$classCMPE.html#a047394488b2ce41894b336b6a1d8e30a" title="CMPE::getOrder" alt="" coords="365,509,483,536"/>
 <area shape="rect" id="node50" href="$classCXForm.html#a903c633f1ac0756230bcd383e35a1d85" title="CXForm::decOrder" alt="" coords="358,560,490,587"/>

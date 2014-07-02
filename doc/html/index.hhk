@@ -4,8 +4,6 @@
 <param name="FrameName" value="right">
 </OBJECT>
 <UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="structCONTACT.html#a6b7ef226a4ad7e6bf1d0d95cc726fedd"><param name="Name" value="a1"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="structCONTACT.html#a1006fbbd65cd81db37727260eea01bb8"><param name="Name" value="a2"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classAA.html"><param name="Name" value="AA"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classAA.html#ad31fab7fcd16661c068535ca46524a6a"><param name="Name" value="AALETTER"></OBJECT>
@@ -306,13 +304,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="tricoeff_8h.html#a66ea424a347d0a78069536bf701393a5"><param name="Name" value="tricoeff.h"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="util_8h.html#a751f3ac0c157ff6967eaf2673ce1527e"><param name="Name" value="util.h"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="structCONTACT.html"><param name="Name" value="CONTACT"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="structCONTACT.html#a6b7ef226a4ad7e6bf1d0d95cc726fedd"><param name="Name" value="a1"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="structCONTACT.html#a1006fbbd65cd81db37727260eea01bb8"><param name="Name" value="a2"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="structCONTACT.html#a226ad59f3e6b9af4f045bddc6bb81850"><param name="Name" value="CONTACT"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="structCONTACT.html#a7d9feeae439550a0337361c7740638ea"><param name="Name" value="dist"></OBJECT>
-  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a7010837883b56f9b972888bffb6fbb3d"><param name="Name" value="copy"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a7010837883b56f9b972888bffb6fbb3d"><param name="Name" value="CMCoeff"></OBJECT>
@@ -529,7 +520,6 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCAtom.html#a1a65c02a5c158f4de46b2f09aca927d9a41e1c786994c3f1bfc8003bab4e3b81c"><param name="Name" value="DELTA"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#affbf96f1033db7a56dce851819733acf"><param name="Name" value="DIELECTRIC_PROT"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#aa626bfdad436aec40211bd86e2f1fa2a"><param name="Name" value="DIELECTRIC_WATER"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="structCONTACT.html#a7d9feeae439550a0337361c7740638ea"><param name="Name" value="dist"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a3457ae837d9f8d250757fae3fd69c441"><param name="Name" value="dMdp"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#aab926cdd2ef1a0f188f82603108296a8"><param name="Name" value="dMdr"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a2e9e6517ed48d1758af058f95b5af50c"><param name="Name" value="dMdt"></OBJECT>

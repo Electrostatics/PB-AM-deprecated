@@ -1,3 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$classCTransCoeff.html" title="CTransCoeff" alt="" coords="6,5,103,32"/>
+<area shape="rect" id="node1" href="$classCTriCoeff.html" title="CTriCoeff" alt="" coords="6,31,85,57"/>
+<area shape="rect" id="node3" href="$classCGradCoeff.html" title="The GradCoeff expansion class." alt="" coords="134,5,226,32"/>
+<area shape="rect" id="node5" href="$classCTorqCoeff.html" title="CTorqCoeff" alt="" coords="135,56,225,83"/>
 </map>

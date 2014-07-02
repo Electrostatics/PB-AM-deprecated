@@ -161,13 +161,6 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="npol_t"><param name="Local" value="classCMPE.html#a4e0a6b27c4cd14dd576fe94854c8d58d"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="tp"><param name="Local" value="classCMPE.html#a0e97f318480ca27d2a7d608379bd2d03"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="CONTACT"><param name="Local" value="structCONTACT.html"><param name="ImageNumber" value="1"></OBJECT>
-      <UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="CONTACT"><param name="Local" value="structCONTACT.html#a226ad59f3e6b9af4f045bddc6bb81850"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="a1"><param name="Local" value="structCONTACT.html#a6b7ef226a4ad7e6bf1d0d95cc726fedd"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="a2"><param name="Local" value="structCONTACT.html#a1006fbbd65cd81db37727260eea01bb8"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="dist"><param name="Local" value="structCONTACT.html#a7d9feeae439550a0337361c7740638ea"><param name="ImageNumber" value="11"></OBJECT>
-      </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="CPDB"><param name="Local" value="classCPDB.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="loadFromPDB"><param name="Local" value="classCPDB.html#a3033b818c15dea1b6df7c3b354a8d044"><param name="ImageNumber" value="11"></OBJECT>
@@ -399,7 +392,6 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="CSHCoeff"><param name="Local" value="classCSHCoeff.html"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="CMPE"><param name="Local" value="classCMPE.html"><param name="ImageNumber" value="11"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="CONTACT"><param name="Local" value="structCONTACT.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="CPDB"><param name="Local" value="classCPDB.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="CPnt"><param name="Local" value="classCPnt.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="CProtein"><param name="Local" value="classCProtein.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -424,7 +416,6 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="CSHCoeff"><param name="Local" value="classCSHCoeff.html"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="CMPE"><param name="Local" value="classCMPE.html"><param name="ImageNumber" value="11"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="CONTACT"><param name="Local" value="structCONTACT.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="CPDB"><param name="Local" value="classCPDB.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="CPnt"><param name="Local" value="classCPnt.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="CProtein"><param name="Local" value="classCProtein.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -548,13 +539,6 @@
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="BD.h"><param name="Local" value="BD_8h.html"><param name="ImageNumber" value="11"></OBJECT>
       <UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="CONTACT"><param name="Local" value="structCONTACT.html"><param name="ImageNumber" value="1"></OBJECT>
-        <UL>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="CONTACT"><param name="Local" value="structCONTACT.html#a226ad59f3e6b9af4f045bddc6bb81850"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="a1"><param name="Local" value="structCONTACT.html#a6b7ef226a4ad7e6bf1d0d95cc726fedd"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="a2"><param name="Local" value="structCONTACT.html#a1006fbbd65cd81db37727260eea01bb8"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="dist"><param name="Local" value="structCONTACT.html#a7d9feeae439550a0337361c7740638ea"><param name="ImageNumber" value="11"></OBJECT>
-        </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="CBD"><param name="Local" value="classCBD.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="STATUS"><param name="Local" value="classCBD.html#ad133262cc326c96e755511655e632e57"><param name="ImageNumber" value="11"></OBJECT>

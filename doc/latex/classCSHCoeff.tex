@@ -3,6 +3,11 @@
 }
 
 
+The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} class.  
+
+
+
+
 {\ttfamily \#include $<$shcoeff.\-h$>$}
 
 
@@ -29,7 +34,7 @@ Collaboration diagram for C\-S\-H\-Coeff\-:
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classCSHCoeff_a286a374e16fd7741f869fe5edb1ef9d4}{C\-S\-H\-Coeff} (int p=0, int res=\hyperlink{mcoeff_8h_ac23f9c13c5d07d9ce386f7a830c35e5a}{N\-\_\-\-P\-O\-L\-E\-S})
-\item 
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} class constructor. \end{DoxyCompactList}\item 
 void \hyperlink{classCSHCoeff_a7aa1d16fe8a3e18012f2ccaec89a0a0f}{reset} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} theta, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} phi, int p)
 \item 
 void \hyperlink{classCSHCoeff_adf80cf8370b4db9957de7acfe8aa64d6}{inc} ()
@@ -50,6 +55,27 @@ static void \hyperlink{classCSHCoeff_ac30535573d45c2da6a424c415967e6f2}{special\
 \subsection*{Additional Inherited Members}
 
 
+\subsection{Detailed Description}
+The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} class. 
+
+\subsection*{File\-: \hyperlink{shcoeff_8h}{shcoeff.\-h}}
+
+\# \subsection*{Date\-: June 2014}
+
+\# \subsection*{Description\-: This is the header file for the class S\-H\-Coeff}
+
+\subsection*{S\-H = spherical harmonics}
+
+\# \subsection*{Author\-: Lotan, Felberg}
+
+\# \subsection*{Copyright ( c )}
+
+\#
+
+\begin{DoxyVerb}    The CSHCoeff class contains information about spherical
+    harmonics.\end{DoxyVerb}
+ 
+
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classCSHCoeff_a286a374e16fd7741f869fe5edb1ef9d4}{\index{C\-S\-H\-Coeff@{C\-S\-H\-Coeff}!C\-S\-H\-Coeff@{C\-S\-H\-Coeff}}
 \index{C\-S\-H\-Coeff@{C\-S\-H\-Coeff}!CSHCoeff@{C\-S\-H\-Coeff}}
@@ -60,6 +86,20 @@ static void \hyperlink{classCSHCoeff_ac30535573d45c2da6a424c415967e6f2}{special\
 \end{DoxyParamCaption}
 )}}\label{classCSHCoeff_a286a374e16fd7741f869fe5edb1ef9d4}
 
+
+The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} class constructor. 
+
+Initialize a \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} object. 
+\begin{DoxyParams}{Parameters}
+{\em p} & is an int that is a minimal number of poles. Default is zero. \\
+\hline
+{\em res} & is an in that describes the total number of residuals (poles) for the expansion. Default is N\-\_\-\-P\-O\-L\-E\-S \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object of the \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} class
+\end{DoxyReturn}
+Initialize S\-H\-Coeff class 
 
 \subsection{Member Function Documentation}
 \hypertarget{classCSHCoeff_aa6cc07501f3b8ab8d2f9f32ba5a7b279}{\index{C\-S\-H\-Coeff@{C\-S\-H\-Coeff}!besseli@{besseli}}
@@ -89,8 +129,7 @@ static void \hyperlink{classCSHCoeff_ac30535573d45c2da6a424c415967e6f2}{special\
 )}}\label{classCSHCoeff_adf80cf8370b4db9957de7acfe8aa64d6}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -127,8 +166,7 @@ Initialize the spherical harmonics coefficients Inputs\-: rs = scaling factor $\
 )}}\label{classCSHCoeff_a7aa1d16fe8a3e18012f2ccaec89a0a0f}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

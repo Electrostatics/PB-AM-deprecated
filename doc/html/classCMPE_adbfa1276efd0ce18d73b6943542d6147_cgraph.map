@@ -1,7 +1,7 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$classCMPE.html#ae44b4e76215412230e279f34bd5b9fab" title="CMPE::reset" alt="" coords="163,169,261,196"/>
 <area shape="rect" id="node5" href="$classCMPE.html#a688ea48a4a13e704fc97e27c0f6dc78a" title="CMPE::setOrient" alt="" coords="309,144,432,171"/>
-<area shape="rect" id="node30" href="$classCMCoeff.html#a7010837883b56f9b972888bffb6fbb3d" title="CMCoeff::copy" alt="" coords="315,195,426,221"/>
+<area shape="rect" id="node30" href="$classCMCoeff.html#a7010837883b56f9b972888bffb6fbb3d" title="The mcoeff expansion class." alt="" coords="315,195,426,221"/>
 <area shape="rect" id="node7" href="$classCRotCoeff.html#aa52111e9c4cb2949dfae960437742536" title="CRotCoeff::reset" alt="" coords="483,56,605,83"/>
 <area shape="rect" id="node15" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff::rotate" alt="" coords="481,144,607,171"/>
 <area shape="rect" id="node18" href="$classCTriCoeff.html#aa80c22419286d9fc99daafb90a44d03e" title="CTriCoeff::rotate" alt="" coords="484,201,604,228"/>

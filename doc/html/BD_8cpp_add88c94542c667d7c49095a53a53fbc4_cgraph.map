@@ -1,6 +1,6 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$util_8h.html#ad864dc450da6954264580e4318e011eb" title="seedRand" alt="" coords="113,175,194,201"/>
-<area shape="rect" id="node5" href="$classCBD.html#a0e59f17fc428ea28a8c8b4c9656a3538" title="CBD::run" alt="" coords="115,225,192,252"/>
+<area shape="rect" id="node5" href="$classCBD.html#a0e59f17fc428ea28a8c8b4c9656a3538" title="CBD run function." alt="" coords="115,225,192,252"/>
 <area shape="rect" id="node7" href="$classCProtein.html#a40f7c9e8d7b4717e00027b0c92ad109b" title="CProtein::setOrient" alt="" coords="267,23,402,49"/>
 <area shape="rect" id="node9" href="$classCQuat.html#a3788f9ce393c8c6e7dc2df6e7675c594" title="CQuat::chooseRandom" alt="" coords="255,73,414,100"/>
 <area shape="rect" id="node11" href="$classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb" title="CProtein::setPos" alt="" coords="273,124,396,151"/>
@@ -14,7 +14,7 @@
 <area shape="rect" id="node25" href="$classCMPE.html#a70e20d2a606e1bae88c117b15a511e17" title="CMPE::updateSolve" alt="" coords="477,453,619,480"/>
 <area shape="rect" id="node102" href="$classCMPE.html#ab825df6d8ab377af3715b86e3a495e34" title="CMPE::computeForce" alt="" coords="671,315,823,341"/>
 <area shape="rect" id="node27" href="$classCMPE.html#a65d2f19a87b451dbd84bb4b11cbfd571" title="CMPE::updateXForms" alt="" coords="669,453,824,480"/>
-<area shape="rect" id="node100" href="$classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="CMPE::polarize" alt="" coords="689,504,804,531"/>
+<area shape="rect" id="node100" href="$classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="Function for mutual polarization." alt="" coords="689,504,804,531"/>
 <area shape="rect" id="node29" href="$classCXForm.html#a9fe5afbc751e5d8a8d48aa20471c84a5" title="CXForm::init" alt="" coords="891,333,987,360"/>
 <area shape="rect" id="node72" href="$classCMPE.html#a047394488b2ce41894b336b6a1d8e30a" title="CMPE::getOrder" alt="" coords="879,409,998,436"/>
 <area shape="rect" id="node74" href="$classCXForm.html#a903c633f1ac0756230bcd383e35a1d85" title="CXForm::decOrder" alt="" coords="873,460,1005,487"/>

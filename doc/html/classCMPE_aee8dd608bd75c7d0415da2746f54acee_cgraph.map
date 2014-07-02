@@ -6,7 +6,7 @@
 <area shape="rect" id="node11" href="$classCProtein.html#a199bba5ba36900bdad8fd34bc0cc5342" title="CProtein::getCharge" alt="" coords="180,208,321,235"/>
 <area shape="rect" id="node13" href="$classCMPE.html#ae44b4e76215412230e279f34bd5b9fab" title="CMPE::reset" alt="" coords="201,259,300,285"/>
 <area shape="rect" id="node15" href="$classCMPE.html#a688ea48a4a13e704fc97e27c0f6dc78a" title="CMPE::setOrient" alt="" coords="387,233,509,260"/>
-<area shape="rect" id="node40" href="$classCMCoeff.html#a7010837883b56f9b972888bffb6fbb3d" title="CMCoeff::copy" alt="" coords="393,284,503,311"/>
+<area shape="rect" id="node40" href="$classCMCoeff.html#a7010837883b56f9b972888bffb6fbb3d" title="The mcoeff expansion class." alt="" coords="393,284,503,311"/>
 <area shape="rect" id="node17" href="$classCRotCoeff.html#aa52111e9c4cb2949dfae960437742536" title="CRotCoeff::reset" alt="" coords="560,145,683,172"/>
 <area shape="rect" id="node25" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff::rotate" alt="" coords="558,233,685,260"/>
 <area shape="rect" id="node28" href="$classCTriCoeff.html#aa80c22419286d9fc99daafb90a44d03e" title="CTriCoeff::rotate" alt="" coords="561,291,681,317"/>

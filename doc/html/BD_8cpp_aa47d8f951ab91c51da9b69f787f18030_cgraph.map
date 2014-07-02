@@ -1,11 +1,11 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classCBD.html#a9ad6f87e7436fa716a470e97f0ec836f" title="CBD::getRandVec" alt="" coords="124,433,255,460"/>
+<area shape="rect" id="node3" href="$classCBD.html#a9ad6f87e7436fa716a470e97f0ec836f" title="CBD getRandVec function." alt="" coords="124,433,255,460"/>
 <area shape="rect" id="node7" href="$classCPnt.html#ab92f2e6cc3891ff6a00eddb483b854ab" title="CPnt::norm" alt="" coords="145,484,234,511"/>
 <area shape="rect" id="node9" href="$classCMPE.html#a70e20d2a606e1bae88c117b15a511e17" title="CMPE::updateSolve" alt="" coords="119,535,260,561"/>
-<area shape="rect" id="node86" href="$classCMPE.html#a61688da6057b840ca71dacb47db0c0ac" title="CMPE::undoXForms" alt="" coords="118,585,261,612"/>
+<area shape="rect" id="node86" href="$classCMPE.html#a61688da6057b840ca71dacb47db0c0ac" title="The MPE undoXForms function." alt="" coords="118,585,261,612"/>
 <area shape="rect" id="node5" href="$util_8h.html#a3daa70c1884dabb0992d5ce98e3f692a" title="normRand" alt="" coords="345,433,428,460"/>
 <area shape="rect" id="node11" href="$classCMPE.html#a65d2f19a87b451dbd84bb4b11cbfd571" title="CMPE::updateXForms" alt="" coords="309,560,464,587"/>
-<area shape="rect" id="node84" href="$classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="CMPE::polarize" alt="" coords="329,509,444,536"/>
+<area shape="rect" id="node84" href="$classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="Function for mutual polarization." alt="" coords="329,509,444,536"/>
 <area shape="rect" id="node13" href="$classCXForm.html#a9fe5afbc751e5d8a8d48aa20471c84a5" title="CXForm::init" alt="" coords="531,396,627,423"/>
 <area shape="rect" id="node56" href="$classCMPE.html#a047394488b2ce41894b336b6a1d8e30a" title="CMPE::getOrder" alt="" coords="519,509,638,536"/>
 <area shape="rect" id="node58" href="$classCXForm.html#a903c633f1ac0756230bcd383e35a1d85" title="CXForm::decOrder" alt="" coords="513,560,645,587"/>

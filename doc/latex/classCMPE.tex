@@ -3,12 +3,16 @@
 }
 
 
+The multipole expansion class.  
+
+
+
+
 {\ttfamily \#include $<$mpe.\-h$>$}
 
 
 
-Collaboration diagram for C\-M\-P\-E\-:
-\nopagebreak
+Collaboration diagram for C\-M\-P\-E\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,9 +23,9 @@ Collaboration diagram for C\-M\-P\-E\-:
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classCMPE_aee8dd608bd75c7d0415da2746f54acee}{C\-M\-P\-E} (const \hyperlink{classCProtein}{C\-Protein} \&mol)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCMPE}{C\-M\-P\-E} class constructor. \end{DoxyCompactList}\item 
 \hyperlink{classCMPE_adbfa1276efd0ce18d73b6943542d6147}{C\-M\-P\-E} (const vector$<$ \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} $>$ \&charges, const vector$<$ \hyperlink{classCPnt}{C\-Pnt} $>$ \&pos, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} rad, int id, int p)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCMPE}{C\-M\-P\-E} class constructor. \end{DoxyCompactList}\item 
 void \hyperlink{classCMPE_ae44b4e76215412230e279f34bd5b9fab}{reset} (int p, const \hyperlink{classCQuat}{C\-Quat} \&Q=\hyperlink{classCQuat}{C\-Quat}())
 \item 
 void \hyperlink{classCMPE_a688ea48a4a13e704fc97e27c0f6dc78a}{set\-Orient} (const \hyperlink{classCQuat}{C\-Quat} \&Q)
@@ -31,20 +35,20 @@ const \hyperlink{classCQuat}{C\-Quat} \& \hyperlink{classCMPE_a30f8be93a38d1e9ea
 int \hyperlink{classCMPE_a047394488b2ce41894b336b6a1d8e30a}{get\-Order} () const 
 \item 
 void \hyperlink{classCMPE_a403e7cea8cfca8cb9e76dff5dc396c10}{set\-Order} (int p)
-\item 
+\begin{DoxyCompactList}\small\item\em The M\-P\-E set\-Order function. \end{DoxyCompactList}\item 
 \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCMPE_aa34361e7b83d5e63f866773e9c745588}{get\-Rad} ()
 \item 
 void \hyperlink{classCMPE_ad67fb6e520dbc05e63152b18a6363014}{save\-Undo} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The M\-P\-E save\-Undo function. \end{DoxyCompactList}\item 
 void \hyperlink{classCMPE_a7033cf96c5b5f6301c6021c97a3f6d36}{undo} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The M\-P\-E undo function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{classCMPE_accac27799cb676fb3160683583a8619e}{init\-Constants} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} kappa, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} dielp, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} diels, int nmol, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} rs)
 \item 
 static void \hyperlink{classCMPE_a61688da6057b840ca71dacb47db0c0ac}{undo\-X\-Forms} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The M\-P\-E undo\-X\-Forms function. \end{DoxyCompactList}\item 
 static void \hyperlink{classCMPE_a56b7e4c76e20d5e34393a72cc31f6bb3}{init\-X\-Forms} (const vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe)
 \item 
 static void \hyperlink{classCMPE_ab825df6d8ab377af3715b86e3a495e34}{compute\-Force} (vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, const vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen, vector$<$ \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} $>$ \&pot, vector$<$ \hyperlink{classCPnt}{C\-Pnt} $>$ \&force, vector$<$ \hyperlink{classCPnt}{C\-Pnt} $>$ \&torque)
@@ -58,7 +62,7 @@ static \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperl
 static \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCMPE_a8a6b260459ff6af55260e2c7897f3bd0}{compute\-Pot\-At} (const vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, const vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen, const \hyperlink{classCPnt}{C\-Pnt} \&P)
 \item 
 static void \hyperlink{classCMPE_ab6f4e1fc5fe634c04841e691903d8029}{polarize} (vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, bool b\-Pot)
-\item 
+\begin{DoxyCompactList}\small\item\em Function for mutual polarization. \end{DoxyCompactList}\item 
 static void \hyperlink{classCMPE_a65d2f19a87b451dbd84bb4b11cbfd571}{update\-X\-Forms} (const vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen, vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe)
 \item 
 static void \hyperlink{classCMPE_af10ee159904becb5add924aa48df3c56}{reexpand} (const vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe)
@@ -87,6 +91,11 @@ static int \hyperlink{classCMPE_adf1757fa41fec1996e7ca1c7fe6fc9e0}{m\-\_\-unit} 
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+The multipole expansion class. 
+
+The class that contains all details for a multipole expansion. 
+
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classCMPE_aee8dd608bd75c7d0415da2746f54acee}{\index{C\-M\-P\-E@{C\-M\-P\-E}!C\-M\-P\-E@{C\-M\-P\-E}}
 \index{C\-M\-P\-E@{C\-M\-P\-E}!CMPE@{C\-M\-P\-E}}
@@ -96,6 +105,18 @@ static int \hyperlink{classCMPE_adf1757fa41fec1996e7ca1c7fe6fc9e0}{m\-\_\-unit} 
 \end{DoxyParamCaption}
 )}}\label{classCMPE_aee8dd608bd75c7d0415da2746f54acee}
 
+
+\hyperlink{classCMPE}{C\-M\-P\-E} class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mol} & a pointer to the protein object for which the M\-P\-E will be created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object of the \hyperlink{classCMPE}{C\-M\-P\-E} class
+\end{DoxyReturn}
+Initialize a multipole expansion with a protein object 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -119,6 +140,26 @@ Here is the call graph for this function\-:
 \end{DoxyParamCaption}
 )}}\label{classCMPE_adbfa1276efd0ce18d73b6943542d6147}
 
+
+\hyperlink{classCMPE}{C\-M\-P\-E} class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em charges} & a pointer to a vector of charges \\
+\hline
+{\em pos} & a pointer to a vector of positions for the aforementioned charges in xyz coords \\
+\hline
+{\em rad} & a floating point number of the radius of the C\-G sphere containing all charges \\
+\hline
+{\em id} & an int with numerical I\-D of the C\-G sphere \\
+\hline
+{\em p} & an int with the number of poles ?? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object of the \hyperlink{classCMPE}{C\-M\-P\-E} class
+\end{DoxyReturn}
+Create a multipole expansion from a collection of charges. 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -146,8 +187,7 @@ Here is the call graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_ab825df6d8ab377af3715b86e3a495e34}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -170,8 +210,7 @@ Here is the call graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_a7724d01cc2dc82b19e90e723ed2ba050}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -193,8 +232,7 @@ Here is the call graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_ab494bf000a7dec9410d23a5f47204baf}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -214,8 +252,7 @@ Here is the call graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_a8a6b260459ff6af55260e2c7897f3bd0}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -266,8 +303,7 @@ $<$ Create vector of size(number of molecules)
 
 $<$ List starts with 0 to (nmols-\/1) 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -283,7 +319,7 @@ Here is the call graph for this function\-:
 \item[{const vector$<$ {\bf C\-M\-P\-E} $\ast$ $>$ \&}]{mpe}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_a56b7e4c76e20d5e34393a72cc31f6bb3}
-\hypertarget{classCMPE_ab6f4e1fc5fe634c04841e691903d8029}{\index{C\-M\-P\-E@{C\-M\-P\-E}!polarize@{polarize}}
+Initialize transforms. Create a transform for each pair of proteins in the system, using their matrix coefficients. \hypertarget{classCMPE_ab6f4e1fc5fe634c04841e691903d8029}{\index{C\-M\-P\-E@{C\-M\-P\-E}!polarize@{polarize}}
 \index{polarize@{polarize}!CMPE@{C\-M\-P\-E}}
 \subsubsection[{polarize}]{\setlength{\rightskip}{0pt plus 5cm}void C\-M\-P\-E\-::polarize (
 \begin{DoxyParamCaption}
@@ -291,7 +327,13 @@ Here is the call graph for this function\-:
 \item[{bool}]{b\-Pot}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_ab6f4e1fc5fe634c04841e691903d8029}
-\hypertarget{classCMPE_af10ee159904becb5add924aa48df3c56}{\index{C\-M\-P\-E@{C\-M\-P\-E}!reexpand@{reexpand}}
+
+
+Function for mutual polarization. 
+
+Function of M\-P\-E class that computes the mutual polarization of many bodies in a
+
+Routine for mutual polarization. First computes the total number of molecules in the system, then computes the initial mutual polarization and its error. \hypertarget{classCMPE_af10ee159904becb5add924aa48df3c56}{\index{C\-M\-P\-E@{C\-M\-P\-E}!reexpand@{reexpand}}
 \index{reexpand@{reexpand}!CMPE@{C\-M\-P\-E}}
 \subsubsection[{reexpand}]{\setlength{\rightskip}{0pt plus 5cm}void C\-M\-P\-E\-::reexpand (
 \begin{DoxyParamCaption}
@@ -325,14 +367,22 @@ Here is the call graph for this function\-:
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCMPE_ad67fb6e520dbc05e63152b18a6363014}
-\hypertarget{classCMPE_a403e7cea8cfca8cb9e76dff5dc396c10}{\index{C\-M\-P\-E@{C\-M\-P\-E}!set\-Order@{set\-Order}}
+
+
+The M\-P\-E save\-Undo function. 
+
+Function ?? \hypertarget{classCMPE_a403e7cea8cfca8cb9e76dff5dc396c10}{\index{C\-M\-P\-E@{C\-M\-P\-E}!set\-Order@{set\-Order}}
 \index{set\-Order@{set\-Order}!CMPE@{C\-M\-P\-E}}
 \subsubsection[{set\-Order}]{\setlength{\rightskip}{0pt plus 5cm}void C\-M\-P\-E\-::set\-Order (
 \begin{DoxyParamCaption}
 \item[{int}]{p}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCMPE_a403e7cea8cfca8cb9e76dff5dc396c10}
-\hypertarget{classCMPE_a688ea48a4a13e704fc97e27c0f6dc78a}{\index{C\-M\-P\-E@{C\-M\-P\-E}!set\-Orient@{set\-Orient}}
+
+
+The M\-P\-E set\-Order function. 
+
+Function that sets the order ?? \hypertarget{classCMPE_a688ea48a4a13e704fc97e27c0f6dc78a}{\index{C\-M\-P\-E@{C\-M\-P\-E}!set\-Orient@{set\-Orient}}
 \index{set\-Orient@{set\-Orient}!CMPE@{C\-M\-P\-E}}
 \subsubsection[{set\-Orient}]{\setlength{\rightskip}{0pt plus 5cm}void C\-M\-P\-E\-::set\-Orient (
 \begin{DoxyParamCaption}
@@ -341,8 +391,7 @@ Here is the call graph for this function\-:
 )}}\label{classCMPE_a688ea48a4a13e704fc97e27c0f6dc78a}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -379,14 +428,22 @@ Here is the call graph for this function\-:
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCMPE_a7033cf96c5b5f6301c6021c97a3f6d36}
-\hypertarget{classCMPE_a61688da6057b840ca71dacb47db0c0ac}{\index{C\-M\-P\-E@{C\-M\-P\-E}!undo\-X\-Forms@{undo\-X\-Forms}}
+
+
+The M\-P\-E undo function. 
+
+Function ?? \hypertarget{classCMPE_a61688da6057b840ca71dacb47db0c0ac}{\index{C\-M\-P\-E@{C\-M\-P\-E}!undo\-X\-Forms@{undo\-X\-Forms}}
 \index{undo\-X\-Forms@{undo\-X\-Forms}!CMPE@{C\-M\-P\-E}}
 \subsubsection[{undo\-X\-Forms}]{\setlength{\rightskip}{0pt plus 5cm}void C\-M\-P\-E\-::undo\-X\-Forms (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classCMPE_a61688da6057b840ca71dacb47db0c0ac}
-\hypertarget{classCMPE_a70e20d2a606e1bae88c117b15a511e17}{\index{C\-M\-P\-E@{C\-M\-P\-E}!update\-Solve@{update\-Solve}}
+
+
+The M\-P\-E undo\-X\-Forms function. 
+
+Function ?? \hypertarget{classCMPE_a70e20d2a606e1bae88c117b15a511e17}{\index{C\-M\-P\-E@{C\-M\-P\-E}!update\-Solve@{update\-Solve}}
 \index{update\-Solve@{update\-Solve}!CMPE@{C\-M\-P\-E}}
 \subsubsection[{update\-Solve}]{\setlength{\rightskip}{0pt plus 5cm}void C\-M\-P\-E\-::update\-Solve (
 \begin{DoxyParamCaption}
@@ -394,7 +451,7 @@ Here is the call graph for this function\-:
 \item[{const vector$<$ {\bf C\-Pnt} $\ast$ $>$ \&}]{cen}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_a70e20d2a606e1bae88c117b15a511e17}
-
+Update solution to multipole expansion. Calls Transforms and polarize schemes. 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -414,10 +471,9 @@ Here is the call graph for this function\-:
 \item[{vector$<$ {\bf C\-M\-P\-E} $\ast$ $>$ \&}]{mpe}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_a65d2f19a87b451dbd84bb4b11cbfd571}
+Function to update transforms. Inputs are protein centers and multipole expansions for each protein. 
 
-
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
