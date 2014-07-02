@@ -8,24 +8,9 @@
 #include <vector>
 #include "util.h"
 
-/******************************************************************//**
- * #
- * # File: mcoeff.h
- * #
- * # Date: June 2014
- * #
- * # Description: This file is the header file for the class CMCoeff
- * #
- * # Author: Lotan, Felberg
- * #
- * # Copyright ( c )
- * #
-******************************************************************/
-
 using namespace std;
 
 class CTriCoeff;
-
 
 //!  The mcoeff expansion class
 /*!

@@ -3,19 +3,6 @@
 #include "mcoeff.h"
 #include "shcoeff.h"
 
-/******************************************************************//**
-* # File: mcoeff.cpp
-* #
-* # Date: June 2014
-* #
-* # Description: This file contains the class MCoeff and its functions
-* #								MCoeff = matrix coefficient
-* # Author: Lotan, Felberg
-* #
-* # Copyright ( c )
-* #
-******************************************************************/
-
 REAL CMCoeff::RS = 1.0;
 REAL CMCoeff::IRS = 1.0;
 REAL CMCoeff::KAPPA = 0.0;

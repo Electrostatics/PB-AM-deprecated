@@ -9,21 +9,6 @@
 
 using namespace std;
 
-/******************************************************************//**
- * #
- * # File: BD.h
- * #
- * # Date: June 2014
- * #
- * # Description: This is the header file for the BD class
- * #
- * # Author: Lotan, Felberg
- * #
- * # Copyright ( c )
- * #
-******************************************************************/
-
-
 //!  The Brownian dynamics class
 /*!
 		The class that contains all details for a BD run, where 1 protein is fixed

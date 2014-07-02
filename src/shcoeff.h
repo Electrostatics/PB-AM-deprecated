@@ -7,20 +7,6 @@
 #include "mcoeff.h"
 
 using namespace std;
-/******************************************************************//**
-* # File: shcoeff.h
-* #
-* # Date: June 2014
-* #
-* # Description: This is the header file for the class SHCoeff
-* #								SH = spherical harmonics
-* #
-* # Author: Lotan, Felberg
-* #
-* # Copyright ( c )
-* #
-******************************************************************/
-
 
 	//!  The CSHCoeff class 
 /*!

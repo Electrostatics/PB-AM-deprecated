@@ -2,20 +2,6 @@
 #include "xform.h"
 #include "gradcoeff.h"
 
-/******************************************************************//**
-* # File: xform.cpp
-* #
-* # Date: June 2014
-* #
-* # Description: This file contains the class XForm and its functions
-* #								Xform = transform
-* #
-* # Author: Lotan, Felberg
-* #
-* # Copyright ( c )
-* #
-******************************************************************/
-
 /******************************************************************/
 /******************************************************************//**
 * Initialize the rotation coefficients and 

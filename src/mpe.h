@@ -11,20 +11,6 @@
 #include "xform.h"
 #include "rotcoeff.h"
 
-/******************************************************************//**
- * #
- * # File: mpe.h
- * #
- * # Date: June 2014
- * #
- * # Description: This file is the header file for the class CMPE
- * #
- * # Author: Lotan, Felberg
- * #
- * # Copyright ( c )
- * #
-******************************************************************/
-
 using namespace std;
 class CProtein;
 

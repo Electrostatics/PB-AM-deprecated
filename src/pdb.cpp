@@ -4,20 +4,6 @@
 #include "pdb.h"
 #include "protein.h"
 
-/******************************************************************//**
- * #
- * # File: pdb.cpp
- * #
- * # Date: June 2014
- * #
- * # Description: This file details the class Atom and its functions
- * #
- * # Author: Lotan, Felberg
- * #
- * # Copyright ( c )
- * #
-******************************************************************/
-
 const char CAtom::ELEMSYM[NUM_ELEM] = {'H', 'C', 'N', 'O', 'S'};					//!< Atomic symbols
 const char CAtom::PLACESYM[NUM_PLACES] = {' ', 'A', 'B', 'G', 'D', 'E', 
 					     'Z', 'H', 'N', 'T'};																				//!< Letter codes for location of atoms

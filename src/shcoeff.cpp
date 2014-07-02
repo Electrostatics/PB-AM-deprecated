@@ -1,19 +1,5 @@
 #include "shcoeff.h"
 
-/******************************************************************//**
-* # File: shcoeff.cpp
-* #
-* # Date: June 2014
-* #
-* # Description: This file contains the class SHCoeff and its functions
-* #								SH = spherical harmonics
-* #
-* # Author: Lotan, Felberg
-* #
-* # Copyright ( c )
-* #
-******************************************************************/
-
 REAL CSHCoeff::CONST1[2*N_POLES][2*N_POLES];
 REAL CSHCoeff::CONST2[2*N_POLES][2*N_POLES];
 REAL CSHCoeff::CONST3[2*N_POLES][2*N_POLES];
@@ -31,7 +17,7 @@ REAL CSHCoeff::CONST6[2*N_POLES];
 void
 CSHCoeff::init(REAL rs, REAL kappa)
 {
-  REAL temp[4*N_POLES];									//<! temp vector used to calculate sqrt((n-m)!/(n+m)!)
+  REAL temp[4*N_POLES];									// temp vector used to calculate sqrt((n-m)!/(n+m)!)
   temp[0] = 1.0;
   for (int i = 1; i < 4*N_POLES; i++)
     temp[i] = temp[i-1]*sqrt((REAL)i);

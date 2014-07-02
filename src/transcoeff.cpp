@@ -1,21 +1,6 @@
 #include "shcoeff.h"
 #include "transcoeff.h"
 
-/******************************************************************//**
-* # File: transcoeff.cpp
-* #
-* # Date: June 2014
-* #
-* # Description: This file contains the class TransCoeff and its functions
-* #								TransCoeff = translation coefficients
-* #
-* # Author: Lotan, Felberg
-* #
-* # Copyright ( c )
-* #
-******************************************************************/
-
-
 REAL CTransCoeff::m_alpha[N_POLES*2][N_POLES];
 REAL CTransCoeff::m_beta[N_POLES*2][N_POLES];
 REAL CTransCoeff::m_gamma[N_POLES*2][2*N_POLES-1];
@@ -37,22 +22,22 @@ CTransCoeff::initConstants()
   for (int n = 0; n < 2*N_POLES; n++)
     for (int m = 0; m < N_POLES; m++)
 		{
-			ALPHA(n,m) = sqrt((REAL)(n+m+1)*(n-m+1));						//!< Given as alpha(n,m) in Lotan, 2006 (eq 1.9)
-			BETA(n,m)  = kapsqr*ALPHA(n,m)/((2*n+1)*(2*n+3));		//!< Given as beta(n,m) in Lotan, 2006 (eq 1.9)
+			ALPHA(n,m) = sqrt((REAL)(n+m+1)*(n-m+1));						// Given as alpha(n,m) in Lotan, 2006 (eq 1.9)
+			BETA(n,m)  = kapsqr*ALPHA(n,m)/((2*n+1)*(2*n+3));		// Given as beta(n,m) in Lotan, 2006 (eq 1.9)
 
-			GAMMA(n,m) = sqrt((REAL)(n-m-1)*(n-m));							//!< Given as eta(n,m) in Lotan, 2006 (eq 1.9)
-			DELTA(n,m) = kapsqr*GAMMA(n,m)/((2*n+1)*(2*n-1));		//!< Given as mu(n,m) in Lotan, 2006 (eq 1.9)
+			GAMMA(n,m) = sqrt((REAL)(n-m-1)*(n-m));							// Given as eta(n,m) in Lotan, 2006 (eq 1.9)
+			DELTA(n,m) = kapsqr*GAMMA(n,m)/((2*n+1)*(2*n-1));		// Given as mu(n,m) in Lotan, 2006 (eq 1.9)
 			if (m != 0)
 			{
-				GAMMA(n,-m) = -sqrt((REAL)(n+m-1)*(n+m));					//!< Given as eta(n,m) in Lotan, 2006 (eq 1.9)
-				DELTA(n,-m) = kapsqr*GAMMA(n,-m)/((2*n+1)*(2*n-1));//!< Given as mu(n,m) in Lotan, 2006 (eq 1.9)
+				GAMMA(n,-m) = -sqrt((REAL)(n+m-1)*(n+m));					// Given as eta(n,m) in Lotan, 2006 (eq 1.9)
+				DELTA(n,-m) = kapsqr*GAMMA(n,-m)/((2*n+1)*(2*n-1));// Given as mu(n,m) in Lotan, 2006 (eq 1.9)
 			}
 		}
 
 	
   EVEN(0) = true;
   for (int n = 1; n < 4*N_POLES; n++)
-    EVEN(n) = !EVEN(n-1);								//<! determining whether each n is even or not
+    EVEN(n) = !EVEN(n-1);								// determining whether each n is even or not
 }
 
 /******************************************************************/

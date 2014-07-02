@@ -2,19 +2,6 @@
 
 #include "gradcoeff.h"
 
-/******************************************************************//**
-* # File: gradcoeff.cpp
-* #
-* # Date: June 2014
-* #
-* # Description: This file contains the class GradCoeff and its functions
-* #
-* # Author: Lotan, Felberg
-* #
-* # Copyright ( c )
-* #
-******************************************************************/
-
 /******************************************************************/
 /******************************************************************//**
 * Creating Grad Coefficent class

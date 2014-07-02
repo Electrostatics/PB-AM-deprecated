@@ -11,19 +11,6 @@
 
 #include "tricoeff.h"
 
-/******************************************************************//**
-* # File: gradcoeff.h
-* #
-* # Date: June 2014
-* #
-* # Description: This file is a header file for the class GradCoeff
-* #
-* # Author: Lotan, Felberg
-* #
-* # Copyright ( c )
-* #
-******************************************************************/
-
 using namespace std;
 
 //!  The GradCoeff expansion class

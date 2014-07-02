@@ -4,20 +4,6 @@
 #include "protein.h"
 #include "pdb.h"
 
-/******************************************************************//**
- * #
- * # File: protein.cpp
- * #
- * # Date: June 2014
- * #
- * # Description: This file creates the protein system for BD
- * #
- * # Author: Lotan, Felberg
- * #
- * # Copyright ( c )
- * #
-******************************************************************/
-
 #define PARAM_FILE "charges_OPLS"				//<! Hard link to the file that contains a list of all OPLS charges for each amino acid
 #define MAX_MPE_ERROR 0.02							//!< Maximum error allowed for the multipole expansions
 

@@ -10,21 +10,6 @@
 #include "transcoeff.h"
 #include "util.h"
 
-/******************************************************************//**
-* # File: xform.h
-* #
-* # Date: June 2014
-* #
-* # Description: This file is the header file for the class XForm
-* #								Xform = transform
-* #
-* # Author: Lotan, Felberg
-* #
-* # Copyright ( c )
-* #
-******************************************************************/
-
-
 #define MAX_REL_ERROR 1e-3							//!< The maximum relative order allowed for mutual polarization
 #define MIN_REL_ERROR (MAX_REL_ERROR)		//!< The minimum relative order desired for mutual polarization
 

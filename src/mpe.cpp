@@ -7,18 +7,6 @@
 #include "mpe.h"
 #include "protein.h"
 
-/******************************************************************//**
-* # File: mpe.cpp
-* #
-* # Date: June 2014
-* #
-* # Description: This file contains the class MPE and its functions
-* #
-* # Author: Lotan, Felberg
-* #
-* # Copyright ( c )
-* #
-******************************************************************/
 
 #define MAX_POLAR_DEV (1e-2)															//!< Max polarization error desired
 #define MAX_POLAR_DEV_SQR (MAX_POLAR_DEV*MAX_POLAR_DEV)		//!< Square of max polarization error
