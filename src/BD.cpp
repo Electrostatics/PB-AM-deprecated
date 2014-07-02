@@ -57,16 +57,16 @@ char temp_file[100];
 CBD::CBD(const char * fname1, const char * fname2, REAL kappa) : m_fcnt(0)
 {
   if (!CProtein::isInitialized())
-		//!< Initialize the system parameters, w/ 2 molecules, and RS=lambda in paper=30
+		// Initialize the system parameters, w/ 2 molecules, and RS=lambda in paper=30
     CProtein::initParameters(kappa, DIELECTRIC_PROT, DIELECTRIC_WATER, 2, 30);
 
-  m_mol1 = new CProtein(fname1); //!< MOLECULE 1 = Barnase
-  m_mol2 = new CProtein(fname2); //!< MOLECULE 2 = Barstar
-  m_maxContDist = m_mol1->getRadius() + m_mol2->getRadius() + 1.0;	//!< Closest distance that the proteins may be to each other
+  m_mol1 = new CProtein(fname1); // MOLECULE 1 = Barnase
+  m_mol2 = new CProtein(fname2); // MOLECULE 2 = Barstar
+  m_maxContDist = m_mol1->getRadius() + m_mol2->getRadius() + 1.0;	// Closest distance that the proteins may be to each other
  
-  m_Dtr = 0.030;												//!< Translational diffusion coefficient
-  m_Dr1 = 4e-5; 												//!< Rotational diffusion coefficient barnase
-	m_Dr2 = 4.5e-5;												//!< Rotational diffusion coefficient barstar
+  m_Dtr = 0.030;												// Translational diffusion coefficient
+  m_Dr1 = 4e-5; 												// Rotational diffusion coefficient barnase
+	m_Dr2 = 4.5e-5;												// Rotational diffusion coefficient barstar
 
   computeInterfaceVectors(fname1, fname2);
 
@@ -680,7 +680,6 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
 							desired between molecules
 			\param bSave a boolean that indicates whether or not the user
 							desires to save the configuration
-			\param ver an integer that ??
 			\param mpe a vector of multipole expansion objects for use
 							in mutual polarization
 			\param cen a vector of positions to hold the position of each
@@ -690,7 +689,7 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
 ******************************************************************/
 
 
-REAL buildSystem(const char * ifname, int num, REAL dist, bool bSave, int ver, 
+REAL buildSystem(const char * ifname, int num, REAL dist, bool bSave,
 								 vector<CMPE*> & mpe, vector<CPnt*> & cen)
 {
   REAL rad1;						// size of the molecule
@@ -796,64 +795,92 @@ REAL buildSystem(const char * ifname, int num, REAL dist, bool bSave, int ver,
 
 /******************************************************************/
 /******************************************************************//**
-* Building a grid
+* Building a grid centered at ( 0, 0, 0 ) of bounded from -bd to +bd.
+	
+	\param ifname a character string of an input filename
+	\param num an integer of the number of molecules in the system
+	\param dist a floating point of the distance between molecules
+	\param rad a floating point of the radius of the molecules
+	\param mpe a vector of multipole expansions, one for each molecule
+	\param cen a vector of molecule positions 
+	\param fact a floating point of the conversion factor for the system
 ******************************************************************/
 
 
-void buildGrid(const char * ifname, int num, REAL dist, int ver, REAL rad,
-	       const vector<CMPE*> & mpe, const vector<CPnt*> & cen, REAL fact)
+void buildGrid(const char * ifname, int num, REAL dist, REAL rad,
+							 const vector<CMPE*> & mpe, const vector<CPnt*> & cen, REAL fact)
 {
   cout << "building grid" << endl;
-  REAL scale = 2.0;
-  int gsize = 301;
+  REAL scale = 2.0;													// Scaling factor
+  int gsize = 301;													// Grid edge length
   int gcen = gsize/2 + 1;
   int bd = gcen-1;
-  float * V = new float[gsize*gsize*gsize];
-
-  REAL iscale = 1.0/scale;
-  REAL r = rad*rad*scale*scale;
-
-  int gsizeq = gsize*gsize;
+  float * V = new float[gsize*gsize*gsize];	// Volume of the grid cell
+	
+  REAL iscale = 1.0/scale;									// 1/Scaling factor
+  REAL r = rad*rad*scale*scale;							// Scaled radius, r = ract^2 / 2^2
+	
+  int gsizeq = gsize*gsize;									
   cout << "here" << endl;
   for (int i = -bd; i <= bd ; i++)
-    {
-      for (int j = -bd; j <= bd ; j++)
-	for (int k = -bd; k <= bd ; k++)
-	  {
-	    bool cont = false;
-
-	    for (int n = 0; n < num; n++)
-	      {
-		REAL dis_sq = (CPnt(i,j,k) -(scale*(*cen[n]))).normsq();
-		if (dis_sq < r)
-		  {
-		    cont = true;
-		    break;
-		  }
+	{
+		for (int j = -bd; j <= bd ; j++)
+			for (int k = -bd; k <= bd ; k++)			// For all 3 Dimensions, i, j and k
+			{
+				bool cont = false;
+				
+				for (int n = 0; n < num; n++)				// for each particle, compute the distance^2 between
+	      {																		// current pos. and 2*center of each particle in the sys
+					REAL dis_sq = (CPnt(i,j,k) -(scale*(*cen[n]))).normsq();
+					if (dis_sq < r)										// If the distance is less that scaled rad^2, then
+					{																	// The point is within the molecule
+						cont = true;
+						break;
+					}
 	      }
-	    
-	    if (cont)
+				
+				if (cont)														// If the point is within the molecule, then the potential there is zero
 	      {
-		V[(k+bd)*gsizeq+(j+bd)*gsize+(i+bd)] = 0.0;
-		continue;
+					V[(k+bd)*gsizeq+(j+bd)*gsize+(i+bd)] = 0.0;
+					continue;
 	      }
-	    
-	    CPnt P(i,j,k);
-	    V[(k+bd)*gsizeq+(j+bd)*gsize+(i+bd)] = 
+																						// otherwise, the potential can be computed and stored
+				CPnt P(i,j,k);
+				V[(k+bd)*gsizeq+(j+bd)*gsize+(i+bd)] = 
 	      (float) CMPE::computePotAt(mpe, cen, iscale*P)*fact;
-	  }
-
-      cout << i << "..";
-      cout.flush();
-    }
-
+			}
+		
+		cout << i << "..";
+		cout.flush();
+	}
+	
   cout << endl << "done" << endl;
   char ofname[100];
   strcpy(ofname,ifname);
   int l = strlen(ifname);
   sprintf(&(ofname[l-7]), "_%dP.gmpe",num);
-  FILE * fd = fopen(ofname, "w+");
-  fwrite(V, sizeof(float), gsize*gsize*gsize, fd);
+
+	ofstream fd;
+	fd.open (ofname);
+	
+	  for (int i = -bd; i <= bd ; i++)
+		{
+			for (int j = -bd; j <= bd ; j++)
+			{
+				for (int k = -bd; k <= bd ; k++)			// For all 3 Dimensions, i, j and k
+				{
+					fd << V[(k+bd)*gsizeq+(j+bd)*gsize+(i+bd)] << "  ";
+				}
+				fd << "\n";
+			}
+			fd << "\n\n";
+		}
+		fd.close();
+		return;
+	
+//  FILE * fd = fopen(ofname, "w+");
+//  fwrite(V, sizeof(float), gsize*gsize*gsize, fd);
+//	fclose( fd );
 }
 
 /******************************************************************/
@@ -915,6 +942,12 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 
 int main1(int argc, char ** argv)
 {
+	if ( argc != 4 )
+	{
+		cout << "Correct input format: " << endl;
+		cout << " ./exec sim [Salt conc] [outfile] [temp file #]" << endl;
+		exit(0);
+	}
   seedRand(-1);
 
   REAL kappa = sqrt(atof(argv[2]))/3.04;				// Inverse debye length
@@ -949,6 +982,13 @@ int main1(int argc, char ** argv)
 
 int main2(int argc, char ** argv)
 {
+	if ( argc != 4 )
+	{
+		cout << "Correct input format: " << endl;
+		cout << " ./exec slv [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules]" << endl;
+		exit(0);
+	}
+	
   cout << "SOLVE" << endl;
   seedRand(-1);
   cout.precision(5);
@@ -993,7 +1033,6 @@ int main2(int argc, char ** argv)
 * \param num an integer describing the number of iterations to 
 						run force calculations
 * \param dist an int describing the distance for molecule placement
-* \param ver 
 * \param Dtr a floating point number containing the translational 
 					diffusion coefficient of input molecule
 * \param Dr a floating point number containing the rotational 
@@ -1003,21 +1042,27 @@ int main2(int argc, char ** argv)
 
 int main3(int argc, char ** argv)
 {
+	if ( argc != 7 )
+	{
+		cout << "Correct input format: " << endl;
+		cout << " ./exec per [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules]
+								[translational diff. coeff] [rotational diff coeff] [runname]" << endl;
+		exit(0);
+	}
   cout.precision(5);
   cout << "PERTURB" << endl;
   
   const char * ifname = argv[2];
   int num = atoi(argv[3]);
   int dist = atoi(argv[4]);
-  int ver = atoi(argv[5]);
-  REAL Dtr = atof(argv[6]);
-  REAL Dr = atof(argv[7]);
+  REAL Dtr = atof(argv[5]);
+  REAL Dr = atof(argv[6]);
 	
   seedRand(-1);
 	
   vector<CMPE*> mpe;
   vector<CPnt*> cen;
-  buildSystem(ifname, num, dist, false, ver, mpe, cen); 
+  buildSystem(ifname, num, dist, false, mpe, cen); 
 	
   for (int i = 0; i < cen.size(); i++)
     cout << *(cen[i]);
@@ -1025,7 +1070,7 @@ int main3(int argc, char ** argv)
 	
   char fn[100];
   sprintf(fn, "perturb_%s_%d_%d.txt", 
-					argv[8], num, dist);
+					argv[7], num, dist);
   cout << fn << endl;
   ofstream fout(fn);
   CMPE::initXForms(mpe);
@@ -1051,114 +1096,133 @@ int main3(int argc, char ** argv)
 
 /******************************************************************/
 /******************************************************************//**
-* Main for Computing the polarization forces
-* param 2: input file name
-* param 3: Number of iterations to run force calculations
-* param 4: Distance for molecule placement
-* param 5: 
+* Main for Computing the polarization forces, used for comparing the
+*			effect of mutual polarization on force and torque.  The output is 
+*			a file named polar_[force/torque]_name_nmol_dist.txt
+*		The first line indicates the force or torque computed per molecule
+*			in the absence of mutual polarization
+*		The next line includes mutual polarization.
+*   These two lines repeat for 1000 iterations.
+* \param ifname is a character pointer for input file name
+* \param num is an int of the number of molecules in the system
+* \param dist is a floating point number indicating the 
+							distance for molecule placement
+*	\param a character string to describe the system
 ******************************************************************/
 
 int main4(int argc, char ** argv)
 {
+	if ( argc != 5 )
+	{
+		cout << "Correct input format: " << endl;
+		cout << " ./exec pol [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules] [runname]" << endl;
+		exit(0);
+	}
   cout.precision(5);
-
+	cout << "POL" << endl;
+	
   const char * ifname = argv[2];
   int num = atoi(argv[3]);
   int dist = atoi(argv[4]);
-  int ver = atoi(argv[5]);
-
+	
   seedRand(-1);
-
+	
   vector<CMPE*> mpe;
   vector<CPnt*> cen;
-  buildSystem(ifname, num, dist, false, ver, mpe, cen); 
-
+  buildSystem(ifname, num, dist, false, mpe, cen); 
+	
   for (int i = 0; i < cen.size(); i++)
     cout << *(cen[i]);
   cout << endl;
-
+	
   char fn1[100], fn2[100];
   sprintf(fn1, "polar_force_%s_%d_%d.txt", 
-	  argv[6], num, dist);
+					argv[5], num, dist);
   sprintf(fn2, "polar_torque_%s_%d_%d.txt", 
-	  argv[6], num, dist);
+					argv[5], num, dist);
   ofstream fout1(fn1);
   ofstream fout2(fn2);
-
+	
   CMPE::initXForms(mpe);
   for (int i = 0; i < 1000; i++)
-    {
-      for (int j = 0; j < num; j++)
 	{
-	  CQuat Q = CQuat::chooseRandom();
-	  mpe[j]->reset(12, Q);
+		for (int j = 0; j < num; j++)
+		{
+			CQuat Q = CQuat::chooseRandom();
+			mpe[j]->reset(12, Q);
+		}
+		
+		vector<CPnt> force, torque;
+		vector<REAL> pot;
+		CMPE::updateXForms(cen, mpe);								// Compute forces and torques ignoring
+		CMPE::reexpand(mpe);												// Mutual polarization effects
+		CMPE::computeForce(mpe, cen, pot, force, torque);
+		for (int j = 0; j < num; j++)
+		{
+			fout1 << mpe[j]->getOrder() << " " << force[j].x() << " " 
+			<< force[j].y() << " " << force[j].z() << " ";
+			fout2 << mpe[j]->getOrder() << " " << torque[j].x() << " " 
+			<< torque[j].y() << " " << torque[j].z() << " ";
+		}
+		
+		fout1 << endl;
+		fout2 << endl;
+		
+		CMPE::polarize(mpe,false); 
+		CMPE::updateXForms(cen, mpe);								// Compute forces and torques with
+		CMPE::polarize(mpe,false); 									// Mutual polarization effects included
+		CMPE::computeForce(mpe, cen, pot, force, torque);
+		
+		for (int j = 0; j < num; j++)
+		{
+			fout1 << mpe[j]->getOrder() << " " << force[j].x() << " " 
+			<< force[j].y() << " " << force[j].z() << " ";
+			fout2 << mpe[j]->getOrder() << " " << torque[j].x() << " " 
+			<< torque[j].y() << " " << torque[j].z() << " ";
+		}
+		
+		fout1 << endl;
+		fout2 << endl;
+		if (i % 20 == 0)
+		{
+			cout << ".." << i;
+			cout.flush();
+		}
 	}
-
-      vector<CPnt> force, torque;
-      vector<REAL> pot;
-      CMPE::updateXForms(cen, mpe);
-      CMPE::reexpand(mpe);
-      CMPE::computeForce(mpe, cen, pot, force, torque);
-      for (int j = 0; j < num; j++)
-	{
-	  fout1 << mpe[j]->getOrder() << " " << force[j].x() << " " 
-		<< force[j].y() << " " << force[j].z() << " ";
-	  fout2 << mpe[j]->getOrder() << " " << torque[j].x() << " " 
-		<< torque[j].y() << " " << torque[j].z() << " ";
-	}
-
-      fout1 << endl;
-      fout2 << endl;
-
-      CMPE::polarize(mpe,false); 
-      CMPE::updateXForms(cen, mpe);
-      CMPE::polarize(mpe,false); 
-      CMPE::computeForce(mpe, cen, pot, force, torque);
-      for (int j = 0; j < num; j++)
-	{
-	  fout1 << mpe[j]->getOrder() << " " << force[j].x() << " " 
-		<< force[j].y() << " " << force[j].z() << " ";
-	  fout2 << mpe[j]->getOrder() << " " << torque[j].x() << " " 
-		<< torque[j].y() << " " << torque[j].z() << " ";
-	}
-
-      fout1 << endl;
-      fout2 << endl;
-      if (i % 20 == 0)
-	{
-	  cout << ".." << i;
-	  cout.flush();
-	}
-    }
-
+	
   cout << endl;
   return 0;;
-}
+} // end main4
 
 /******************************************************************/
 /******************************************************************//**
-* Main for computing diffusion
-* param 2: input file name
-* param 3: Number of iterations to run force calculations
-* param 4: Distance for molecule placement
-* param 5: 
+* Main for computing the potential on a grid, given a number of num 
+* identical molecules placed dist apart in a salt solution.
+* \param ifname a character string containing an input file name
+* \param num an integer number of molecules to introduce into system
+* \param dist a floating point number for distance for molecule placement
 ******************************************************************/
 
 int main5(int argc, char ** argv)
 {
+	if ( argc != 4 )
+	{
+		cout << "Correct input format: " << endl;
+		cout << " ./exec dif [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules]" << endl;
+		exit(0);
+	}
   cout.precision(5);
   cout << "GDIFF" << endl;
-
-  int num = atoi(argv[3]);
+	
   const char * ifname = argv[2];
+  int num = atoi(argv[3]);
   REAL dist = atof(argv[4]);
-  int ver = atoi(argv[5]);
  
-  seedRand(num+ver*100);
+  seedRand(num+int(dist)*100);
   
   vector<CMPE*> mpe;
   vector<CPnt*> cen;
-  REAL rad = buildSystem(ifname, num, dist, true, ver, mpe, cen); 
+  REAL rad = buildSystem(ifname, num, dist, true, mpe, cen);  // Build a system of num molecules
 
   for (int i = 0; i < cen.size(); i++)
     cout << *(cen[i]);
@@ -1174,7 +1238,7 @@ int main5(int argc, char ** argv)
     }
  
   REAL fact = COUL_K/DIELECTRIC_WATER*IKbT;
-  buildGrid(ifname, num, dist, ver, rad, mpe,cen,fact);
+  buildGrid(ifname, num, dist, rad, mpe, cen, fact);
 
   return 0;
 }
@@ -1461,12 +1525,12 @@ int main(int argc, char ** argv)
 {
   if (strncmp(argv[1], "sim", 3) == 0)					// For running 2 molecule BD simulation
     return main1(argc,argv);
-  else if (strncmp(argv[1], "slv", 3) == 0)			// For
-    return main2(argc,argv);
-  else if (strncmp(argv[1], "per", 3) == 0)
-    return main3(argc,argv);
-  else if (strncmp(argv[1], "pol", 3) == 0)
-    return main4(argc, argv);
+  else if (strncmp(argv[1], "slv", 3) == 0)			// For computing energies, torques and forces
+    return main2(argc,argv);										// of many of the same molecules in solution
+  else if (strncmp(argv[1], "per", 3) == 0)			// For computing the energy of many molecules 
+    return main3(argc,argv);										// in solution as their rotations and locations are perturbed
+  else if (strncmp(argv[1], "pol", 3) == 0)			// For computing the forces/torques of many molecules
+    return main4(argc, argv);										// in solution with and without mutual polarization
   else if (strncmp(argv[1], "dif", 3) == 0)
     return main5(argc, argv);
   else if (strncmp(argv[1], "rad", 3) == 0)

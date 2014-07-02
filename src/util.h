@@ -116,7 +116,7 @@ class CPnt
   friend CPnt operator-(const CPnt & p1, const CPnt & p2);
 
   friend CPnt cross(const CPnt & p1, const CPnt & p2);
-  friend  CPnt operator*(REAL c, const CPnt & p1);
+  friend CPnt operator*(REAL c, const CPnt & p1);
   friend CPnt operator-(const CPnt & p);
 
   friend ostream & operator<<(ostream & out, const CPnt & p);
