@@ -860,51 +860,49 @@ void buildGrid(const char * ifname, int num, REAL dist, int ver, REAL rad,
 /******************************************************************//**
 * Computing the perturbation
 ******************************************************************/
-
-
 void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
-	     vector<CMPE*> & mpe, vector<CPnt*> & cen)
+						 vector<CMPE*> & mpe, vector<CPnt*> & cen)
 {
   CPnt per[num], rot;
   CQuat Q0[num];
   for (int j = 0; j < num; j++)
     Q0[j] = mpe[j]->getOrient();
-
+	
   for (int k = 0; k < ct; k++)
-    {
-      // cout << "------ " << k << " -------" << endl;
-      //for (int i = 0; i < cen.size(); i++)
-      //	cout << *(cen[i]);
-      //cout << endl;
-      for (int j = 0; j < num; j++)
 	{
-	  per[j] = CBD::getRandVec(sqrt(2*dt*Dtr));
-	  *(cen[j]) += per[j];
-
-	  rot = CBD::getRandVec(sqrt(2*dt*Dr));
-	  CQuat Q(rot, rot.norm());
-	  mpe[j]->setOrient(Q*Q0[j]);
+		cout << "------ " << k << " -------" << endl;
+		//for (int i = 0; i < cen.size(); i++)
+		//	cout << *(cen[i]);
+		//cout << endl;
+		for (int j = 0; j < num; j++)
+		{
+			per[j] = CBD::getRandVec(sqrt(2*dt*Dtr));
+			*(cen[j]) += per[j];
+			
+			rot = CBD::getRandVec(sqrt(2*dt*Dr));
+			CQuat Q(rot, rot.norm());
+			mpe[j]->setOrient(Q*Q0[j]);
   	}
-
-      //for (int i = 0; i < cen.size(); i++)
-      //	cout << *(cen[i]);
-      //cout << endl;
-
-      CMPE::updateSolve(mpe, cen);
-      //      CMPE::computeForce(mpe, cen, force, torque);
-
-      fout << CMPE::npol << " " << CMPE::npol_t << " ";
-      for (int i = 0; i < num; i++)
-	fout << mpe[i]->ngpol << " " << mpe[i]->ngpol_t << " ";
-      fout << endl;
-
-      CMPE::undoXForms();
-      for (int i = 0; i < num; i++)
-	{
-	  mpe[i]->undo();
-	  *(cen[i]) -= per[i];
+		
+		for (int i = 0; i < cen.size(); i++)
+			cout << *(cen[i]);
+		cout << "  within perturb" << endl;
+		
+		CMPE::updateSolve(mpe, cen);
+		//      CMPE::computeForce(mpe, cen, force, torque);
+		
+		fout << CMPE::npol << " " << CMPE::npol_t << " ";
+		for (int i = 0; i < num; i++)
+			fout << mpe[i]->ngpol << " " << mpe[i]->ngpol_t << " ";
+		fout << endl;
+		
+		CMPE::undoXForms();
+		for (int i = 0; i < num; i++)
+		{
+			mpe[i]->undo();
+			*(cen[i]) -= per[i];
+		}
 	}
-    }
 }
 
 /******************************************************************/
