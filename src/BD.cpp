@@ -941,8 +941,8 @@ int main1(int argc, char ** argv)
 
 /******************************************************************/
 /******************************************************************//**
-* Main for computing energies, forces and torques on multiple molecules
-		in a system.  
+* Main for computing energies, forces and torques on a replication
+		of a single molecule places equidistantly in a system.  
 * \param ifname an input file name
 * \param num an integer number of molecules to include in the system. 
 			Values are: 2, 4, 6 or 8						
@@ -966,8 +966,8 @@ int main2(int argc, char ** argv)
   CMPE::initXForms(mpe);
   CMPE::updateXForms(cen, mpe);
   CMPE::polarize(mpe, false); 
-//  CMPE::updateXForms(cen, mpe);
-//  CMPE::polarize(mpe, false); 
+  CMPE::updateXForms(cen, mpe);
+  CMPE::polarize(mpe, false); 
   
   vector<CPnt> force, torque;
   vector<REAL> pot(num);
@@ -990,14 +990,17 @@ int main2(int argc, char ** argv)
 
 /******************************************************************/
 /******************************************************************//**
-* Main for perturbation run
-* param 2: input file name
-* param 3: Number of iterations to run force calculations
-* param 4: Distance for molecule placement
-* param 5: 
-* param 6: Translation diffusion coefficient 
-* param 7: Rotation diffusion coefficient 
-* param 8: Perturbation file name 
+* Main for perturbation run.
+* \param ifname a character pointer holding input file name
+* \param num an integer describing the number of iterations to 
+						run force calculations
+* \param dist an int describing the distance for molecule placement
+* \param ver 
+* \param Dtr a floating point number containing the translational 
+					diffusion coefficient of input molecule
+* \param Dr a floating point number containing the rotational 
+					diffusion coefficient of input molecule
+* \param a string containing the perturbation file name 
 ******************************************************************/
 
 int main3(int argc, char ** argv)
@@ -1011,39 +1014,40 @@ int main3(int argc, char ** argv)
   int ver = atoi(argv[5]);
   REAL Dtr = atof(argv[6]);
   REAL Dr = atof(argv[7]);
-
+	
   seedRand(-1);
-
+	
   vector<CMPE*> mpe;
   vector<CPnt*> cen;
   buildSystem(ifname, num, dist, false, ver, mpe, cen); 
-
+	
   for (int i = 0; i < cen.size(); i++)
     cout << *(cen[i]);
   cout << endl;
-
+	
   char fn[100];
   sprintf(fn, "perturb_%s_%d_%d.txt", 
-	  argv[8], num, dist);
+					argv[8], num, dist);
   cout << fn << endl;
   ofstream fout(fn);
   CMPE::initXForms(mpe);
   for (int i = 0; i < 200; i++)
-    {
-      for (int j = 0; j < num; j++)
 	{
-	  CQuat Q = CQuat::chooseRandom();
-	  mpe[j]->reset(12, Q);
+		for (int j = 0; j < num; j++)
+		{
+			CQuat Q = CQuat::chooseRandom();
+			mpe[j]->reset(12, Q);
+			cout << "Done reset of iter " << i << " and mol " << j << endl;
+		}
+		
+		CMPE::solve(mpe,cen,false);
+		CMPE::solve(mpe,cen,false);
+		perturb(25, num, fout, Dtr, Dr, dist/2.0, mpe, cen);
+		cout << i << "..";
+		cout.flush();
 	}
-   
-      CMPE::solve(mpe,cen,false);
-      CMPE::solve(mpe,cen,false);
-      perturb(25, num, fout, Dtr, Dr, dist/2.0, mpe, cen);
-      cout << i << "..";
-      cout.flush();
-    }
   cout << endl;
-
+	
   return 0;;
 }
 

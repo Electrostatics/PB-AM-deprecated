@@ -119,7 +119,8 @@ CRotCoeff::deallocate()
 
 /******************************************************************/
 /******************************************************************//**
-*  
+*  a function to reallocate enough space for the coefficient for 
+each pole
 ******************************************************************/
 
 void
@@ -136,7 +137,11 @@ CRotCoeff::reallocate(int p)
 
 /******************************************************************/
 /******************************************************************//**
-*  
+*  reset rotation coefficient given an angle for theta, phi and xi
+		and a number of poles
+		\param theta, a real number of angle theta
+		\param phi, a real number for phi angle in rad
+		\xi a 
 ******************************************************************/
 
 void 
@@ -166,7 +171,7 @@ void
 CRotCoeff::reset(const CPnt & axis, REAL ang, int p)
 {
   assert(p > 0 && p <= N_POLES);
-
+	
   CPnt ax = axis.normalize();
   REAL c = cos(ang);
   REAL s = sin(ang);
@@ -174,57 +179,59 @@ CRotCoeff::reset(const CPnt & axis, REAL ang, int p)
   
   REAL kxkz = ax.x()*ax.z()*v;
   REAL kykz = ax.y()*ax.z()*v;
-
+	
   REAL theta = acos(ax.z()*ax.z()*v + c);
   REAL phi, xi;
   if (fabs(theta) > 1e-12) 
-    { 
-      phi = atan2(kykz + ax.x()*s, kxkz - ax.y()*s);
-      xi = atan2(kykz - ax.x()*s, kxkz + ax.y()*s);
-    }
+	{ 
+		phi = atan2(kykz + ax.x()*s, kxkz - ax.y()*s);
+		xi = atan2(kykz - ax.x()*s, kxkz + ax.y()*s);
+	}
   else
-    { 
-      theta = 0.0;
-      if (fabs(ax.x()) > 1e-12 || fabs(ax.y()) > 1e-12)
-	{
-	  phi = atan2(ax.x(), -ax.y());
-	  xi = atan2(-ax.x(), ax.y());
+	{ 
+		theta = 0.0;
+		if (fabs(ax.x()) > 1e-12 || fabs(ax.y()) > 1e-12)
+		{
+			phi = atan2(ax.x(), -ax.y());
+			xi = atan2(-ax.x(), ax.y());
+		}
+		else
+		{
+			phi = M_PI/2.0;
+			xi = -M_PI/2.0;
+		}
 	}
-      else
-	{
-	  phi = M_PI/2.0;
-	  xi = -M_PI/2.0;
-	}
-    }
-
+	
   reset(theta, phi, xi, p);
   m_Quat = CQuat(ax, ang); 
 }
 
 /******************************************************************/
 /******************************************************************//**
-*  
+*  reset: Resets the rotation coefficients for a given number of poles
+	\param Q a quaternion for rotation
+	\param p an int describing the number of poles
 ******************************************************************/
 
 void
 CRotCoeff::reset(const CQuat & Q, int p)
 {
   assert(p > 0 && p <= N_POLES);
-
+	
   REAL theta = acos(1.0 - 2*Q.x()*Q.x() - 2*Q.y()*Q.y());
   REAL phi, xi;
   if (fabs(theta) > 1e-12) 
-    { 
-      phi = atan2(Q.y()*Q.z() + Q.w()*Q.x(), Q.x()*Q.z() - Q.w()*Q.y());
-      xi = atan2(Q.y()*Q.z() - Q.w()*Q.x(), Q.x()*Q.z() + Q.w()*Q.y());
-    }
+	{ 
+		phi = atan2(Q.y()*Q.z() + Q.w()*Q.x(), Q.x()*Q.z() - Q.w()*Q.y());
+		xi = atan2(Q.y()*Q.z() - Q.w()*Q.x(), Q.x()*Q.z() + Q.w()*Q.y());
+	}
   else
-    {
-      theta = 0.0;
-      phi = M_PI/2.0;
-      xi = -M_PI/2.0;
-    }
-
+	{
+		theta = 0.0;
+		phi = M_PI/2.0;
+		xi = -M_PI/2.0;
+	}
+	
   reset(theta, phi, xi, p);
 }
 
@@ -237,45 +244,44 @@ void
 CRotCoeff::initParams(REAL theta, REAL phi, REAL xi)
 {
   m_theta = theta; m_phi = phi; m_xi = xi;
-    
+	
   m_sint = sin(m_theta);
   if (m_sint < EPS_SIN_THETA)
-    {
-      m_bSing = true;
-      if (m_theta < M_PI/2)
 	{
-	  m_theta = 0.0;
-	  m_phi = 0.0;
-	  m_sint = 0.0;
-	  m_cost = 1.0;
-	  m_exphi = Complex(1.0,0.0);
+		m_bSing = true;
+		if (m_theta < M_PI/2)
+		{
+			m_theta = 0.0;
+			m_phi = 0.0;
+			m_sint = 0.0;
+			m_cost = 1.0;
+			m_exphi = Complex(1.0,0.0);
+		}
+		else
+		{
+			m_theta = M_PI;
+			m_phi = 0.0;
+			m_sint = 0.0;
+			m_cost = -1.0;
+			m_exphi = Complex(1.0,0.0);
+		}
 	}
-      else
-	{
-	  m_theta = M_PI;
-	  m_phi = 0.0;
-	  m_sint = 0.0;
-	  m_cost = -1.0;
-	  m_exphi = Complex(1.0,0.0);
-	}
-    }
   else
-    {
-      m_bSing = false;
-      m_cost = cos(m_theta);
-      m_cott = m_cost/m_sint;
-      m_exphi = Complex(cos(phi),sin(phi));
-    }
-
+	{
+		m_bSing = false;
+		m_cost = cos(m_theta);
+		m_cott = m_cost/m_sint;
+		m_exphi = Complex(cos(phi),sin(phi));
+	}
+	
   m_exiphi = conj(m_exphi);
   m_exxi = Complex(cos(xi),sin(xi));	  
 }
 
 /******************************************************************/
 /******************************************************************//**
-*  
+*  Apply the rotation operator to the MP coeffs
 ******************************************************************/
-// Apply the rotation operator to the MP coeffs
 void
 CRotCoeff::rotate(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2, 
 		  bool bFor)
@@ -333,10 +339,10 @@ CRotCoeff::rotate(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2,
 
 /******************************************************************/
 /******************************************************************//**
-*  
+* Apply the derivative of the rotation operator with respect to THETA
+    to the MP coeffs
 ******************************************************************/
-// Apply the derivative of the rotation operator with respect to THETA
-// to the MP coeffs
+
 void
 CRotCoeff::dRotateT(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2,
 		    bool bFor)
@@ -389,10 +395,9 @@ CRotCoeff::dRotateT(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2,
 
 /******************************************************************/
 /******************************************************************//**
-*  
+*  Apply the derivative of the rotation operator with respect to PHI 
+			to the MP coeffs
 ******************************************************************/
-// Apply the derivative of the rotation operator with respect to PHI 
-// to the MP coeffs
 void
 CRotCoeff::dRotateP(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2,
 		    bool bFor)
@@ -446,10 +451,9 @@ CRotCoeff::dRotateP(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2,
 
 /******************************************************************/
 /******************************************************************//**
-*  
+*  Apply the derivative of the rotation operator with respect to PHI 
+			to the MP coeffs in the singular case sin(theta) = 0.0
 ******************************************************************/
-// Apply the derivative of the rotation operator with respect to PHI 
-// to the MP coeffs in the singular case sin(theta) = 0.0
 void 
 CRotCoeff::dRotateTSing(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2)
 {
@@ -491,10 +495,9 @@ CRotCoeff::dRotateTSing(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2)
 
 /******************************************************************/
 /******************************************************************//**
-*  
+*  Apply the derivative of the rotation operator with respect to PHI 
+			to the MP coeffs in the singular case sin(theta) = 0.0
 ******************************************************************/
-// Apply the derivative of the rotation operator with respect to PHI 
-// to the MP coeffs in the singular case sin(theta) = 0.0
 void 
 CRotCoeff::dRotatePSing(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2)
 {
@@ -535,6 +538,10 @@ CRotCoeff::dRotatePSing(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2)
     }
 }
 
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
 void
 CRotCoeff::computeCoeff()
 {
@@ -570,6 +577,10 @@ CRotCoeff::computeCoeff()
 	}
 }
 
+/******************************************************************/
+/******************************************************************//**
+*  
+******************************************************************/
 void
 CRotCoeff::computeGradCoeff()
 {
@@ -654,7 +665,6 @@ CRotCoeff::computeIncCoeff()
 /******************************************************************//**
 *  
 ******************************************************************/
-
 void
 CRotCoeff::computeIncGradCoeff()
 { 
@@ -700,7 +710,6 @@ CRotCoeff::computeIncGradCoeff()
 /******************************************************************//**
 *  Computing Q coefficients, 
 ******************************************************************/
-
 void
 CRotCoeff::computeQCoeff()
 {
@@ -740,7 +749,6 @@ CRotCoeff::computeQCoeff()
 /******************************************************************//**
 *  
 ******************************************************************/
-
 void
 CRotCoeff::incOrder()
 {
@@ -762,7 +770,6 @@ CRotCoeff::incOrder()
 /******************************************************************//**
 *  
 ******************************************************************/
-
 void
 CRotCoeff::outputRot(int p) const
 {
@@ -792,7 +799,6 @@ CRotCoeff::outputRot(int p) const
 /******************************************************************//**
 *  
 ******************************************************************/
-
 void
 CRotCoeff::outputdRot(int p) const
 {

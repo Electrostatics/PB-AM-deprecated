@@ -5,6 +5,11 @@
 #include "tricoeff.h"
 #include "shcoeff.h"
 
+//!  The rotation coefficient class
+/*!
+		The class that contains all details for rotation coefficients.  
+*/
+
 class CRotCoeff
 {
  public:

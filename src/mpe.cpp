@@ -163,7 +163,10 @@ CMPE::initialize(const vector<REAL> & charges, const vector<CPnt> & pos,
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* CMPE function to reset both the number of poles and 
+		the orientation of the multipole expansion
+		\param p is an integer number of poles
+		\param Q is a CQuat object for rotating the MPE
 ******************************************************************/
 
 void

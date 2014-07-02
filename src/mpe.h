@@ -143,22 +143,23 @@ private:
 	REAL m_CD[N_POLES];						//!< Part of DELTA vector, cavity polarization operator. Coefficients for eq(20) in paper
   REAL m_rad;										//!< Radius of the sphere for this object of CMPE
   CMCoeff m_M;									//!< 									
-	CMCoeff m_rM;									//!< 
+	CMCoeff m_rM;									//!< Coefficients for rotated m_M
 	CMCoeff m_pM;									//!< A coefficient object for the current multipole expansion
 	CMCoeff m_L;									//!< A coefficient object for the local expansion 
   CGradCoeff * m_pG;						//!< A vector of gradient coefficients 
 	CGradCoeff m_dL;
   CTorqCoeff m_T;								//!< A coefficient matrix for torques of system.
-	CTorqCoeff m_rT;
-  CRotCoeff m_rot;
-  CQuat m_orient;
+	CTorqCoeff m_rT;							//!< A rotated coefficient matrix for torques of system.
+  CRotCoeff m_rot;							//!< rotation coefficient object for MPE
+  CQuat m_orient;								//!< A quaternion describing the orientation of the MPE
 	CQuat m_orientU;
   int m_id;											//!< Numerical ID of given MPE
   int m_p;											//!< Has something to do with the poles ??
 	int m_pU; 
 }; //end CMPE
 
-
+///////////////////////////////////////////
+/////// Inline functions
 
 //!  The MPE setOrder function
 /*!
