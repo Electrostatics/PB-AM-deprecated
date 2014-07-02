@@ -493,59 +493,65 @@ void writemdp(const char * ifname, const char * ofname,
 
 /******************************************************************/
 /******************************************************************//**
-* readmdp
+* readmdp: function that reads in an MDP file for a given molecule. 
+The file should contain the PQR data of a molecule and a dummy molecule
+that approximates the CG version of the molecule.
+	\param fname a character pointer to the filename
+	\param pnt a vector of xyz coordinates for the charges within the molecule
+	\param ch a vector of floating point numbers for the charges
+	\param rad a floating point number that stores the radius of the molecule
+	\param cen a vector of xyz coordinates for the molecule's center of geom
 ******************************************************************/
 
-
 void readmdp(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch, 
-	     REAL & rad, CPnt & cen)
+						 REAL & rad, CPnt & cen)
 {
   ifstream fin(fname);
-  if (!fin.is_open())
-    {
-      cout << "Could not open file " << fname << endl;
-      exit(0);
-    }
-
+  if (!fin.is_open())					// Check for file
+	{
+		cout << "Could not open file " << fname << endl;
+		exit(0);
+	}
+	
   char buf[100], temp[10];
-  REAL sum = 0.0;
-
+  REAL sum = 0.0;							// Total charge of the molecule
+	
   pnt.clear();
   ch.clear();
   fin.getline(buf,99);
   
   while (!fin.eof())
-    {
-      double x,y,z,c,r;
-      if (strncmp(&(buf[0]),"ATOM",4) == 0)
 	{
-	  sscanf(&(buf[31]), "%lf %lf %lf", &x, &y, &z);
-	  strncpy(temp, &(buf[55]), 6);
-	  temp[6] = 0;
-	  if (strcmp(temp, "      ") == 0)
-	    r = 0.0;
-	  else
-	    sscanf(temp, "%lf", &r);
-	  sscanf(&(buf[61]), "%lf", &c);
-	  
-	  if (strncmp(&(buf[17]),"DUM",3) == 0)
+		double x,y,z,c,r;
+		if (strncmp(&(buf[0]),"ATOM",4) == 0)
+		{
+			sscanf(&(buf[31]), "%lf %lf %lf", &x, &y, &z);
+			strncpy(temp, &(buf[55]), 6);
+			temp[6] = 0;
+			if (strcmp(temp, "      ") == 0)
+				r = 0.0;
+			else
+				sscanf(temp, "%lf", &r);
+			sscanf(&(buf[63]), "%lf", &c);
+			
+			if (strncmp(&(buf[17]),"DUM",3) == 0)
 	    {
 	      rad = r;
 	      cen = CPnt(x,y,z);
 	    }
-	  else //if (c != 0.0)
+			else //if (c != 0.0)
 	    {
 	      pnt.push_back(CPnt(x,y,z));
 	      ch.push_back(c);
 	      sum += c;
 	    }
+		}
+		
+		fin.getline(buf,99);     
 	}
-
-      fin.getline(buf,99);     
-    }
-
+	
   cout << fname << ": charges: " << ch.size() << ", net charge: " 
-       << sum << ", radius: " << rad << ", cen: " << cen << endl; 
+	<< sum << ", radius: " << rad << ", cen: " << cen << endl; 
 }
 
 /******************************************************************/
@@ -664,17 +670,33 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
 
 /******************************************************************/
 /******************************************************************//**
-* buildSystem
+* buildSystem: a function that builds a system of num molecules 
+								separated equidistantly in space
+*			\param ifname a character pointer that has the name of an
+							file of type MDP
+			\param num an int that details the number of centers to 
+							include for a system of multiple molecules
+			\param dist a floating point number, describes the distance
+							desired between molecules
+			\param bSave a boolean that indicates whether or not the user
+							desires to save the configuration
+			\param ver an integer that ??
+			\param mpe a vector of multipole expansion objects for use
+							in mutual polarization
+			\param cen a vector of positions to hold the position of each
+							molecule in the system
+			\return a floating point number that returns the radius of 
+							the molecule input into the system
 ******************************************************************/
 
 
 REAL buildSystem(const char * ifname, int num, REAL dist, bool bSave, int ver, 
 		 vector<CMPE*> & mpe, vector<CPnt*> & cen)
 {
-  REAL rad1;
-  vector<CPnt> p1;
-  vector<REAL> ch1;
-  CPnt cn;
+  REAL rad1;						// size of the molecule
+  vector<CPnt> p1;			// vector of positions of point charges in the molecule
+  vector<REAL> ch1;			// vector of point charges in the molecule
+  CPnt cn;							// original position of center of geometry of molecule in space
 
   readmdp(ifname, p1,ch1,rad1,cn);
   REAL fact = rad1 + dist/2.0;
@@ -768,7 +790,7 @@ REAL buildSystem(const char * ifname, int num, REAL dist, bool bSave, int ver,
 
    cout << "Building system is complete" << endl;
    return rad1;
-}
+} // end buildSystem
 
 /******************************************************************/
 /******************************************************************//**
@@ -886,9 +908,9 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 /******************************************************************/
 /******************************************************************//**
 * Main for BD simulation of Barnase/Barstar
-* param 2: salt concentration
-* param 3: output file
-* param 4: temporary file index
+* \param a floating point number of salt concentration
+* \param fout an output file
+* \param ind an integer for temporary file index
 ******************************************************************/
 
 int main1(int argc, char ** argv)
@@ -918,9 +940,10 @@ int main1(int argc, char ** argv)
 /******************************************************************/
 /******************************************************************//**
 * Main for 
-* param 2: input file name
-* param 3: Number of iterations to run force calculations
-* param 4: Distance for molecule placement
+* \param ifname an input file name
+* \param num an integer number of molecules to include in the system. 
+			Values are: 1, 2, 4, 6 or 8						
+* \param dist a floating point distance for molecule placement
 ******************************************************************/
 
 int main2(int argc, char ** argv)
@@ -1431,9 +1454,9 @@ int main8(int argc, char ** argv)
 
 int main(int argc, char ** argv)
 {
-  if (strncmp(argv[1], "sim", 3) == 0)
+  if (strncmp(argv[1], "sim", 3) == 0)					// For running 2 molecule BD simulation
     return main1(argc,argv);
-  else if (strncmp(argv[1], "slv", 3) == 0)
+  else if (strncmp(argv[1], "slv", 3) == 0)			// For
     return main2(argc,argv);
   else if (strncmp(argv[1], "per", 3) == 0)
     return main3(argc,argv);
