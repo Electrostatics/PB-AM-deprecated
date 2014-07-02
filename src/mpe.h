@@ -147,7 +147,7 @@ private:
 	CMCoeff m_pM;									//!< A coefficient object for the current multipole expansion
 	CMCoeff m_L;									//!< A coefficient object for the local expansion 
   CGradCoeff * m_pG;						//!< A vector of gradient coefficients 
-	CGradCoeff * m_dL;
+	CGradCoeff m_dL;
   CTorqCoeff m_T;								//!< A coefficient matrix for torques of system.
 	CTorqCoeff m_rT;
   CRotCoeff m_rot;

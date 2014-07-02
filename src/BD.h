@@ -75,6 +75,11 @@ class CBD
   CQuat m_rot1, m_rot2;
 }; // end CBD
 
+
+///////////////////////////////////////////
+///// Inline functions
+
+
 //!  Escaped function
 /*!
 		The function that determines whether the second protein has 
@@ -82,7 +87,6 @@ class CBD
 		\param dist a floating point number for the max distance allowed between two proteins
 		\return bool of whether the protein has escaped or not, true for escaped
 */
-
 inline bool
 CBD::escaped(REAL dist) const
 {
@@ -96,7 +100,6 @@ CBD::escaped(REAL dist) const
 		Calls on the Protein member function computeDistance
 		\return floating point of timestep in picoseconds.
 */
-
 inline REAL 
 CBD::compute_dt() const
 {

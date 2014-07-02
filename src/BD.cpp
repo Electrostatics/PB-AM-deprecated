@@ -526,13 +526,13 @@ void readmdp(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch,
 		if (strncmp(&(buf[0]),"ATOM",4) == 0)
 		{
 			sscanf(&(buf[31]), "%lf %lf %lf", &x, &y, &z);
-			strncpy(temp, &(buf[55]), 6);
+			strncpy(temp, &(buf[63]), 6);
 			temp[6] = 0;
 			if (strcmp(temp, "      ") == 0)
 				r = 0.0;
 			else
 				sscanf(temp, "%lf", &r);
-			sscanf(&(buf[63]), "%lf", &c);
+			sscanf(&(buf[55]), "%lf", &c);
 			
 			if (strncmp(&(buf[17]),"DUM",3) == 0)
 	    {
@@ -691,105 +691,107 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
 
 
 REAL buildSystem(const char * ifname, int num, REAL dist, bool bSave, int ver, 
-		 vector<CMPE*> & mpe, vector<CPnt*> & cen)
+								 vector<CMPE*> & mpe, vector<CPnt*> & cen)
 {
   REAL rad1;						// size of the molecule
   vector<CPnt> p1;			// vector of positions of point charges in the molecule
   vector<REAL> ch1;			// vector of point charges in the molecule
   CPnt cn;							// original position of center of geometry of molecule in space
-
+	
   readmdp(ifname, p1,ch1,rad1,cn);
   REAL fact = rad1 + dist/2.0;
-
-   if (num == 1)
-    {
-      cen.push_back(new CPnt(CPnt(0.0,0.0,0.0)));
-    }
-  else if (num == 2)
-    {
-      cen.push_back(new CPnt(fact*CPnt(0.0,0.0,1.0)));
-      cen.push_back(new CPnt(fact*CPnt(0.0,0.0,-1.0)));
-    }
-  else if (num == 4)
-    {
-      cen.push_back(new CPnt(fact*CPnt(0.0,2/sqrt(3.0),0.0)));
-      cen.push_back(new CPnt(fact*CPnt(-1.0,-1/sqrt(3.0),0.0)));
-      cen.push_back(new CPnt(fact*CPnt(1.0,-1/sqrt(3.0),0.0)));
-      cen.push_back(new CPnt(fact*CPnt(0.0,0.0,sqrt(8.0/3.0))));
-    }
-  else if (num == 6)
-    {
-      cen.push_back(new CPnt(fact*CPnt(sqrt(2.0),0.0,0.0)));
-      cen.push_back(new CPnt(fact*CPnt(-sqrt(2.0),0.0,0.0)));
-      cen.push_back(new CPnt(fact*CPnt(0.0,sqrt(2.0),0.0)));
-      cen.push_back(new CPnt(fact*CPnt(0.0,-sqrt(2.0),0.0)));
-      cen.push_back(new CPnt(fact*CPnt(0.0,0.0,sqrt(2.0))));
-      cen.push_back(new CPnt(fact*CPnt(0.0,0.0,-sqrt(2.0))));
-    }
-   else if (num == 8)
-     {
-       cen.push_back(new CPnt(fact*CPnt(1.0,1.0,1.0)));
-       cen.push_back(new CPnt(fact*CPnt(-1.0,1.0,1.0)));
-       cen.push_back(new CPnt(fact*CPnt(1.0,-1.0,1.0)));
-       cen.push_back(new CPnt(fact*CPnt(-1.0,-1.0,1.0)));
-       cen.push_back(new CPnt(fact*CPnt(1.0,1.0,-1.0)));
-       cen.push_back(new CPnt(fact*CPnt(-1.0,1.0,-1.0)));
-       cen.push_back(new CPnt(fact*CPnt(1.0,-1.0,-1.0)));
-       cen.push_back(new CPnt(fact*CPnt(-1.0,-1.0,-1.0)));
-     }
-   else
-    {
-      cout << "wrong number of molecules: " << num << endl;
-      exit(0);
-    }
-
-   for (int i = 0; i < p1.size(); i++)
-    p1[i] -= cn;
-
-   char ofname[100], ofname_sp[100];
-   if (bSave)
-     {
-       int l = strlen(ifname);
-       
-       strcpy(ofname,ifname);
-       strcpy(ofname_sp,ifname);
-       sprintf(&(ofname[l-7]), "_%dP.mdp",num);
-       sprintf(&(ofname_sp[l-7]), "_%dP_sp.mdp",num);
-       
-       char rm[200];
-       sprintf(rm,"rm -f %s", ofname);
-       system(rm);
-       sprintf(rm,"rm -f %s", ofname_sp);
-       system(rm);
-
-       cout << "saving files:" << endl;
-       cout << "\t" << ofname << endl;
-       cout << "\t" << ofname_sp << endl;
-     }
-
-   CProtein::initParameters(KAPPA, DIELECTRIC_PROT, DIELECTRIC_WATER, num, rad1);
-   for (int n = 0; n < num; n++)
-    {
-      CQuat Q = (num > 2 ? CQuat::chooseRandom() : CQuat());
-      vector<CPnt> pr(p1.size());
-      for (int i = 0; i < p1.size(); i++)
+	
+	if (num == 1)
 	{
-	  pr[i] = Q*p1[i];
-	  if (pr[i].norm() > rad1)
-	    cout << "ERROR" << endl;
+		cen.push_back(new CPnt(CPnt(0.0,0.0,0.0)));
 	}
-
-      CMPE * pm = new CMPE(ch1, pr, rad1, n, 15);
-      mpe.push_back(pm);
-      if (bSave)
-	{	  
-	  writemdp(ifname, ofname, pr, *(cen[n]), false, ' ');
-	  writemdp(ifname, ofname_sp, pr, *(cen[n]), true, ' ');
+  else if (num == 2)
+	{
+		cen.push_back(new CPnt(fact*CPnt(0.0,0.0,1.0)));
+		cen.push_back(new CPnt(fact*CPnt(0.0,0.0,-1.0)));
 	}
-    }
-
-   cout << "Building system is complete" << endl;
-   return rad1;
+  else if (num == 4)
+	{
+		cen.push_back(new CPnt(fact*CPnt(0.0,2/sqrt(3.0),0.0)));
+		cen.push_back(new CPnt(fact*CPnt(-1.0,-1/sqrt(3.0),0.0)));
+		cen.push_back(new CPnt(fact*CPnt(1.0,-1/sqrt(3.0),0.0)));
+		cen.push_back(new CPnt(fact*CPnt(0.0,0.0,sqrt(8.0/3.0))));
+	}
+  else if (num == 6)
+	{
+		cen.push_back(new CPnt(fact*CPnt(sqrt(2.0),0.0,0.0)));
+		cen.push_back(new CPnt(fact*CPnt(-sqrt(2.0),0.0,0.0)));
+		cen.push_back(new CPnt(fact*CPnt(0.0,sqrt(2.0),0.0)));
+		cen.push_back(new CPnt(fact*CPnt(0.0,-sqrt(2.0),0.0)));
+		cen.push_back(new CPnt(fact*CPnt(0.0,0.0,sqrt(2.0))));
+		cen.push_back(new CPnt(fact*CPnt(0.0,0.0,-sqrt(2.0))));
+	}
+	else if (num == 8)
+	{
+		cen.push_back(new CPnt(fact*CPnt(1.0,1.0,1.0)));
+		cen.push_back(new CPnt(fact*CPnt(-1.0,1.0,1.0)));
+		cen.push_back(new CPnt(fact*CPnt(1.0,-1.0,1.0)));
+		cen.push_back(new CPnt(fact*CPnt(-1.0,-1.0,1.0)));
+		cen.push_back(new CPnt(fact*CPnt(1.0,1.0,-1.0)));
+		cen.push_back(new CPnt(fact*CPnt(-1.0,1.0,-1.0)));
+		cen.push_back(new CPnt(fact*CPnt(1.0,-1.0,-1.0)));
+		cen.push_back(new CPnt(fact*CPnt(-1.0,-1.0,-1.0)));
+	}
+	else
+	{
+		cout << "wrong number of molecules: " << num << endl;
+		exit(0);
+	}
+	
+	for (int i = 0; i < p1.size(); i++)			// moving the positions of each charge
+    p1[i] -= cn;																// to be WRT the center of the mol
+	
+	char ofname[100], ofname_sp[100];
+	if (bSave)																// print out molecules positions if desired
+	{
+		int l = strlen(ifname);
+		
+		strcpy(ofname,ifname);
+		strcpy(ofname_sp,ifname);
+		sprintf(&(ofname[l-7]), "_%dP.mdp",num);
+		sprintf(&(ofname_sp[l-7]), "_%dP_sp.mdp",num);
+		
+		char rm[200];
+		sprintf(rm,"rm -f %s", ofname);
+		system(rm);
+		sprintf(rm,"rm -f %s", ofname_sp);
+		system(rm);
+		
+		cout << "saving files:" << endl;
+		cout << "\t" << ofname << endl;
+		cout << "\t" << ofname_sp << endl;
+	}
+	
+	// Initialize parameters for the system, using hard-coded values,
+	// salt conc = 0.05 M, T=298 K, eps_p = 4, eps_s = 78 etc.
+	CProtein::initParameters(KAPPA, DIELECTRIC_PROT, DIELECTRIC_WATER, num, rad1);
+	for (int n = 0; n < num; n++)
+	{
+		CQuat Q = (num > 2 ? CQuat::chooseRandom() : CQuat());		// Chose random orientation if 3+ mol. in system
+		vector<CPnt> pr(p1.size());
+		for (int i = 0; i < p1.size(); i++)
+		{
+			pr[i] = Q*p1[i];																				// Rotate mol i by random orientation
+			if (pr[i].norm() > rad1)
+				cout << "ERROR" << endl;
+		}
+		
+		CMPE * pm = new CMPE(ch1, pr, rad1, n, 15);								// Make MPE for molecule i with 15 poles
+		mpe.push_back(pm);
+		if (bSave)
+		{	  
+			writemdp(ifname, ofname, pr, *(cen[n]), false, ' ');
+			writemdp(ifname, ofname_sp, pr, *(cen[n]), true, ' ');
+		}
+	}
+	
+	cout << "Building system is complete" << endl;
+	return rad1;
 } // end buildSystem
 
 /******************************************************************/
@@ -939,10 +941,11 @@ int main1(int argc, char ** argv)
 
 /******************************************************************/
 /******************************************************************//**
-* Main for 
+* Main for computing energies, forces and torques on multiple molecules
+		in a system.  
 * \param ifname an input file name
 * \param num an integer number of molecules to include in the system. 
-			Values are: 1, 2, 4, 6 or 8						
+			Values are: 2, 4, 6 or 8						
 * \param dist a floating point distance for molecule placement
 ******************************************************************/
 
@@ -958,13 +961,13 @@ int main2(int argc, char ** argv)
   
   vector<CMPE*> mpe;
   vector<CPnt*> cen;
-  buildSystem(ifname, num, dist, false, 0, mpe, cen); 
+  buildSystem(ifname, num, dist, false, 0, mpe, cen);   // building a system of num equidistant mols
 
   CMPE::initXForms(mpe);
   CMPE::updateXForms(cen, mpe);
   CMPE::polarize(mpe, false); 
-  CMPE::updateXForms(cen, mpe);
-  CMPE::polarize(mpe, false); 
+//  CMPE::updateXForms(cen, mpe);
+//  CMPE::polarize(mpe, false); 
   
   vector<CPnt> force, torque;
   vector<REAL> pot(num);

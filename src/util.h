@@ -19,6 +19,12 @@ typedef complex<REAL> Complex;
 class CPnt;
 class CQuat;
 
+
+//!  The spherical coordinate class
+/*!
+		The class that contains all details for a spherical coordinate object
+*/
+
 class CSpPnt
 {
  public:
@@ -56,6 +62,11 @@ class CSpPnt
 
 REAL dot(const CPnt & p1, const CPnt & p2);
 
+
+//!  The cartesian coordinate class
+/*!
+		The class that contains all details for a cartesian coordinate object
+*/
 class CPnt
 {
  public:
@@ -121,6 +132,12 @@ class CPnt
   REAL m_x, m_y, m_z;
 };
 
+//!  The quaternion class
+/*!
+		The class that contains all details for a quaternion object. 
+		Quaterions can be used to describe spatial rotations in space
+*/
+
 class CQuat
 {
  public:
@@ -174,7 +191,13 @@ class CQuat
 
 CPnt randOrient();
 
+/////////////////////////////////////
+////// Inline functions
 
+//!  CPnt -
+/*!
+		Subtracting one xyz coordinate from another
+*/
 inline CPnt 
 operator-(const CPnt & c1, const CPnt & c2)
 {
@@ -182,6 +205,10 @@ operator-(const CPnt & c1, const CPnt & c2)
   return c;
 }
 
+//!  CPnt +
+/*!
+		Adding one xyz coordinate to another
+*/
 inline CPnt
 operator+(const CPnt & c1, const CPnt & c2)
 {
@@ -189,6 +216,10 @@ operator+(const CPnt & c1, const CPnt & c2)
   return c;
 }
 
+//!  CPnt * scalar
+/*!
+		Multiplying xyz coordinate times a scalar
+*/
 inline CPnt 
 operator*(REAL c, const CPnt & p1)
 {
@@ -196,12 +227,20 @@ operator*(REAL c, const CPnt & p1)
   return p;
 }
 
+//!  CPnt dot
+/*!
+		dot product of two vectors
+*/
 inline REAL
 dot(const CPnt & p1, const CPnt & p2)
 {
   return (p1.x()*p2.x() + p1.y()*p2.y() + p1.z()*p2.z());
 }
 
+//!  CPnt cross
+/*!
+		Cross product of two vectors
+*/
 inline CPnt 
 cross(const CPnt & p1, const CPnt & p2)
 {
@@ -212,6 +251,10 @@ cross(const CPnt & p1, const CPnt & p2)
   return p;
 }
 
+//!  CPnt -
+/*!
+		Reversing the direction of a vector
+*/
 inline CPnt 
 operator-(const CPnt & p1)
 {
@@ -220,12 +263,20 @@ operator-(const CPnt & p1)
   return p;
 }
 
+//!  CPnt torsion
+/*!
+		Returning the dihedral angle between 4 points in rad
+*/
 inline REAL
 torsion(const CPnt & p1, const CPnt & p2, const CPnt & p3, const CPnt & p4)
 {
   return torsion(p1 - p2, p3 - p2, p4 - p3);
 }
 
+//!  CPnt torsion
+/*!
+		Returning the dihedral angle between 3 vectors in rad
+*/
 inline REAL
 torsion(const CPnt & v1, const CPnt & v2, const CPnt & v3)
 {
@@ -242,6 +293,11 @@ torsion(const CPnt & v1, const CPnt & v2, const CPnt & v3)
   return atan2(F,T);
 }
 
+
+//!  CPnt <<
+/*!
+		Printing out a CPnt object
+*/
 inline ostream & 
 operator<<(ostream & out, const CPnt & p)
 {
@@ -249,6 +305,10 @@ operator<<(ostream & out, const CPnt & p)
   return out;
 }
 
+//!  CSpPnt <
+/*!
+		Printing out a CSpPnt object
+*/
 inline ostream & 
 operator<<(ostream & out, const CSpPnt & p)
 {
@@ -256,6 +316,10 @@ operator<<(ostream & out, const CSpPnt & p)
   return out;
 }
 
+//!  CSpPnt SphToCart
+/*!
+		Converting from spherical to cartesian coordinates
+*/
 inline CPnt 
 SphToCart(const CSpPnt & s)
 {
@@ -266,6 +330,10 @@ SphToCart(const CSpPnt & s)
   return CPnt(x,y,z);
 }
 
+//!  CSpPnt CartToSph
+/*!
+	Converting from cartesian to spherical coordinates
+	*/
 inline CSpPnt
 CartToSph(const CPnt & c)
 {
@@ -288,6 +356,10 @@ CartToSph(const CPnt & c)
   return CSpPnt(rho, theta, phi);
 }
 
+//!  CQuat *=
+/*!
+		Multiplying one quaternion by another
+*/
 inline CQuat &
 CQuat::operator*=(const CQuat & q)
 {
@@ -298,6 +370,10 @@ CQuat::operator*=(const CQuat & q)
   return *this;
 }
 
+//!  CQuat *
+/*!
+		Multiplying one quaternion by another
+*/
 inline CQuat 
 operator*(const CQuat & q1, const CQuat & q2)
 {
@@ -307,6 +383,10 @@ operator*(const CQuat & q1, const CQuat & q2)
   return q;
 }
 
+//!  CQuat * CPnt
+/*!
+		Multiplying quaternion by cartesian coordinates, for rotation
+*/
 inline CPnt 
 operator*(const CQuat & q, const CPnt & r)
 {
@@ -314,13 +394,20 @@ operator*(const CQuat & q, const CPnt & r)
   return (r + 2*(q.m_real*qr + cross(q.m_imag, qr)));
 }
 
+//!  CQuat conj
+/*!
+		Return complex conjugate of a quaternion
+*/
 inline CQuat 
 conj(const CQuat & q)
 {
   return CQuat(q.m_real, -q.m_imag);
 }
 
-
+//!  CQuat << 
+/*!
+		Print out quaternion
+*/
 inline ostream & 
 operator<<(ostream & out, const CQuat & q)
 {
@@ -328,6 +415,10 @@ operator<<(ostream & out, const CQuat & q)
   return out;
 }
 
+//!  CQuat chooseRandom 
+/*!
+		Choose a random quaternion
+*/
 inline CQuat
 CQuat::chooseRandom()
 {
@@ -341,6 +432,10 @@ CQuat::chooseRandom()
   return Q;
 }
 
+//!  randOrient 
+/*!
+		Choose a random orientation for a vector
+*/
 inline CPnt
 randOrient()
 {
@@ -350,33 +445,41 @@ randOrient()
   return CPnt(sqrt(1 - u*u) * cos(phi), sqrt(1 - u*u) * sin(phi), u);
 }
 
+//!  randOrient 
+/*!
+		
+*/
 inline REAL
 normRand()
 {
   static double saved;
   static bool bSaved = false;
-
+	
   double v1, v2, rsq;
   if (!bSaved)
-    {
-      do {
-        v1 = 2.0 * drand48() - 1.0;
-        v2 = 2.0 * drand48() - 1.0;
-        rsq = v1*v1 + v2*v2;
-      } while (rsq >= 1.0 || rsq == 0.0);
-
-      double fac = sqrt(-2.0*log(rsq)/rsq);
-      saved = v1*fac;
-      bSaved = true;
-      return (REAL) fac*v2;
-    }
+	{
+		do {
+			v1 = 2.0 * drand48() - 1.0;
+			v2 = 2.0 * drand48() - 1.0;
+			rsq = v1*v1 + v2*v2;
+		} while (rsq >= 1.0 || rsq == 0.0);
+		
+		double fac = sqrt(-2.0*log(rsq)/rsq);
+		saved = v1*fac;
+		bSaved = true;
+		return (REAL) fac*v2;
+	}
   else
-    {
-      bSaved = false;
-      return (REAL) saved;
-    }
+	{
+		bSaved = false;
+		return (REAL) saved;
+	}
 }
 
+//!  seedRand 
+/*!
+		Generate a random number for random number seed.
+*/
 inline void
 seedRand(int s)
 {
