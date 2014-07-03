@@ -812,7 +812,8 @@ void buildGrid(const char * ifname, int num, REAL dist, REAL rad,
 {
   cout << "building grid" << endl;
   REAL scale = 2.0;													// Scaling factor
-  int gsize = 301;													// Grid edge length
+//  int gsize = 301;													// Grid edge length
+  int gsize = 51;													// Grid edge length
   int gcen = gsize/2 + 1;
   int bd = gcen-1;
   float * V = new float[gsize*gsize*gsize];	// Volume of the grid cell
@@ -871,7 +872,7 @@ void buildGrid(const char * ifname, int num, REAL dist, REAL rad,
 				{
 					fd << V[(k+bd)*gsizeq+(j+bd)*gsize+(i+bd)] << "  ";
 				}
-				fd << "\n";
+				fd << endl;
 			}
 			fd << "\n\n";
 		}
@@ -942,7 +943,7 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 
 int main1(int argc, char ** argv)
 {
-	if ( argc != 4 )
+	if ( argc != 5 )
 	{
 		cout << "Correct input format: " << endl;
 		cout << " ./exec sim [Salt conc] [outfile] [temp file #]" << endl;
@@ -982,7 +983,7 @@ int main1(int argc, char ** argv)
 
 int main2(int argc, char ** argv)
 {
-	if ( argc != 4 )
+	if ( argc != 5 )
 	{
 		cout << "Correct input format: " << endl;
 		cout << " ./exec slv [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules]" << endl;
@@ -999,7 +1000,7 @@ int main2(int argc, char ** argv)
   
   vector<CMPE*> mpe;
   vector<CPnt*> cen;
-  buildSystem(ifname, num, dist, false, 0, mpe, cen);   // building a system of num equidistant mols
+  buildSystem(ifname, num, dist, false, mpe, cen);   // building a system of num equidistant mols
 
   CMPE::initXForms(mpe);
   CMPE::updateXForms(cen, mpe);
@@ -1042,11 +1043,11 @@ int main2(int argc, char ** argv)
 
 int main3(int argc, char ** argv)
 {
-	if ( argc != 7 )
+	if ( argc != 8 )
 	{
 		cout << "Correct input format: " << endl;
-		cout << " ./exec per [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules]
-								[translational diff. coeff] [rotational diff coeff] [runname]" << endl;
+		cout << " ./exec per [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules]" <<
+							"	[translational diff. coeff] [rotational diff coeff] [runname]" << endl;
 		exit(0);
 	}
   cout.precision(5);
@@ -1112,7 +1113,7 @@ int main3(int argc, char ** argv)
 
 int main4(int argc, char ** argv)
 {
-	if ( argc != 5 )
+	if ( argc != 6 )
 	{
 		cout << "Correct input format: " << endl;
 		cout << " ./exec pol [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules] [runname]" << endl;
@@ -1205,7 +1206,7 @@ int main4(int argc, char ** argv)
 
 int main5(int argc, char ** argv)
 {
-	if ( argc != 4 )
+	if ( argc != 5 )
 	{
 		cout << "Correct input format: " << endl;
 		cout << " ./exec dif [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules]" << endl;
@@ -1304,7 +1305,7 @@ int main6(int argc, char ** argv)
 
   CMPE::initXForms(mpe);
   int f = (int) (fact*100);
-  buildGrid(ifname, 1, f, 0, rad1, mpe,cen,1.0);
+  buildGrid(ifname, 1, f, rad1, mpe,cen,1.0);
 
   return 0;
 }
@@ -1515,31 +1516,36 @@ int main8(int argc, char ** argv)
  return 0;
 }
 
-/******************************************************************/
 /******************************************************************//**
 * Main!
 ******************************************************************/
-
-
 int main(int argc, char ** argv)
 {
   if (strncmp(argv[1], "sim", 3) == 0)					// For running 2 molecule BD simulation
     return main1(argc,argv);
+
   else if (strncmp(argv[1], "slv", 3) == 0)			// For computing energies, torques and forces
     return main2(argc,argv);										// of many of the same molecules in solution
+
   else if (strncmp(argv[1], "per", 3) == 0)			// For computing the energy of many molecules 
     return main3(argc,argv);										// in solution as their rotations and locations are perturbed
+
   else if (strncmp(argv[1], "pol", 3) == 0)			// For computing the forces/torques of many molecules
     return main4(argc, argv);										// in solution with and without mutual polarization
-  else if (strncmp(argv[1], "dif", 3) == 0)
-    return main5(argc, argv);
+
+  else if (strncmp(argv[1], "dif", 3) == 0)			// For computing a grid of potentials due to many molecules
+    return main5(argc, argv);										// fixed in solution
+
   else if (strncmp(argv[1], "rad", 3) == 0)
     return main6(argc, argv);
+
   else if (strncmp(argv[1], "cng", 3) == 0)
     return main7(argc, argv);
+
   else if (strncmp(argv[1], "inf", 3) == 0)
     return main8(argc, argv);
-  else
+
+  else		// else, bad option
     {
       cout << "bad option!!! " << argv[1] << endl;
       exit(0);

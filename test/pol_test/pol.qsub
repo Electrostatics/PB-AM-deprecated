@@ -1,0 +1,8 @@
+#!/bin/bash
+#$ -cwd
+#$ -o pol.out
+#$ -j y
+
+EXEC="../../bin/mpe"
+
+$EXEC pol barnaseh.pqr 2 15.0 barnase

@@ -1,0 +1,9 @@
+#!/bin/bash
+#$ -cwd
+#$ -o per.out 
+#$ -j y
+
+EXEC="../../bin/mpe"
+
+$EXEC per barnaseh.pqr 2 55 2 0.03 4e-5 barnase
+
