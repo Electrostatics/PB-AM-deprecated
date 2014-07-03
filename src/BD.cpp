@@ -52,8 +52,6 @@ char temp_file[100];
 /******************************************************************//**
 * Initialize CBD class
 *****************************************************************/
-
-
 CBD::CBD(const char * fname1, const char * fname2, REAL kappa) : m_fcnt(0)
 {
   if (!CProtein::isInitialized())
@@ -82,8 +80,6 @@ CBD::CBD(const char * fname1, const char * fname2, REAL kappa) : m_fcnt(0)
 *			out the position of each molecule, their distance and the 
 *     force and torques of the system every 1000 steps.  
 ******************************************************************/
-
-
 CBD::STATUS
 CBD::run()
 {
@@ -133,14 +129,12 @@ CBD::run()
 
   fout << CBD::STATUS_STRING[status] << endl;
   return status;
-}
+} // end CBD::run
 
 /******************************************************************/
 /******************************************************************//**
-** makeMove
+* makeMove
 ******************************************************************/
-
-
 CBD::STATUS
 CBD::makeMove(const CPnt & dR2, const CPnt & dO1, 
 	      const CPnt & dO2, REAL dt) 
@@ -213,8 +207,6 @@ CBD::makeMove(const CPnt & dR2, const CPnt & dO1,
 /******************************************************************//**
 * isDocked
 ******************************************************************/
-
-
 bool 
 CBD::isDocked() const
 {
@@ -242,35 +234,12 @@ CBD::isDocked() const
   return true;
 }
 
-/******************************************************************/
-/******************************************************************//**
-* saveState
-******************************************************************/
-
-/*
-void CBD::saveState()
-{
-  char fname[100];
-  sprintf(fname, "out/output%0.3d.pdb", m_fcnt++);
-  ofstream fout(fname);
-
-  m_mol1->PDBoutput(fout, 1, "A", CQuat(), CPnt());
-
-  CQuat rot;
-  CPnt trans;
-  m_mol1->computeTransformTo(*m_mol2, rot, trans);
-  m_mol2->PDBoutput(fout, 1+m_mol1->getAtoms().size(), "B", rot, trans);  
-}
-
-*/
-
 
 /******************************************************************/
 /******************************************************************//**
 * computeInterfaceVectors: compute patches - vector between proteins
 * and compute orthogonal vectors to the two vectors
 ******************************************************************/
-
 void 
 CBD::computeInterfaceVectors(const char * fname1, const char * fname2)
 {
@@ -289,8 +258,6 @@ CBD::computeInterfaceVectors(const char * fname1, const char * fname2)
 /******************************************************************//**
 * computeRate
 ******************************************************************/
-
-
 REAL
 CBD::computeRate(int numTraj, int nDocked)
 {
@@ -313,93 +280,92 @@ CBD::computeRate(int numTraj, int nDocked)
 
 /******************************************************************/
 /******************************************************************//**
-* approxBBall
+* approxBBall function to approximate.
+\param V a vector of xyz coordinates for charges
+\param cent an xyz coord for the CG sphere center
+\param rad a floating point of the radius of the CG sphere
 ******************************************************************/
-
-
 void 
 approxBBall(const vector<CPnt> & V, CPnt & cen, REAL & rad)
 {
   int n = V.size();
-  REAL rad2; // radius and radius squared
+  REAL rad2; // radius squared
   REAL xmin, xmax, ymin, ymax, zmin, zmax;  // bounding box extremes   
   int  Pxmin, Pxmax, Pymin, Pymax, Pzmin, Pzmax;  // index of V[] at box extreme
-
+	
   // find a large diameter to start with.    
   // first get the bounding box and V[] extreme points for it   
   xmin = xmax = V[0].x(); ymin = ymax = V[0].y();  zmin = zmax = V[0].z(); 
   Pxmin = Pxmax = Pymin = Pymax = Pzmin = Pzmax = 0;
-   
+	
   for (int i=1; i<n; i++) 
-    {       
-      if (V[i].x() < xmin) 
-	{ xmin = V[i].x();  Pxmin = i; }   
-      else if (V[i].x() > xmax) 
-	{ xmax = V[i].x(); Pxmax = i; }
-
-      if (V[i].y() < ymin) 
-	{ ymin = V[i].y(); Pymin = i; }
-      else if (V[i].y() > ymax) 
-	{ ymax = V[i].y(); Pymax = i; }
-
-      if (V[i].z() < zmin) 
-	{ zmin = V[i].z(); Pzmin = i; }
-      else if (V[i].z() > zmax) 
-	{ zmax = V[i].z(); Pzmax = i; }
-    }    
-
+	{       
+		if (V[i].x() < xmin) 
+		{ xmin = V[i].x();  Pxmin = i; }   
+		else if (V[i].x() > xmax) 
+		{ xmax = V[i].x(); Pxmax = i; }
+		
+		if (V[i].y() < ymin) 
+		{ ymin = V[i].y(); Pymin = i; }
+		else if (V[i].y() > ymax) 
+		{ ymax = V[i].y(); Pymax = i; }
+		
+		if (V[i].z() < zmin) 
+		{ zmin = V[i].z(); Pzmin = i; }
+		else if (V[i].z() > zmax) 
+		{ zmax = V[i].z(); Pzmax = i; }
+	} 
+	
   // select the largest extent as an initial diameter for the ball
   CPnt dVx = V[Pxmax] - V[Pxmin]; // diff of Vx max and min   
   CPnt dVy = V[Pymax] - V[Pymin]; // diff of Vy max and min
   CPnt dVz = V[Pzmax] - V[Pzmin]; // diff of Vz max and min
   REAL dx2 = dVx.normsq(), dy2 = dVy.normsq(), dz2 = dVz.normsq(); // diffs squared
-
+	
   if (dx2 >= dy2 && dx2 >= dz2) // x direction is largest extent
-    {         
-      cen = V[Pxmin] + (0.5*dVx);  // Center = midpoint of extremes
-      rad2 = (V[Pxmax] - cen).normsq();   // radius squared   
-    }
+	{         
+		cen = V[Pxmin] + (0.5*dVx);  // Center = midpoint of extremes
+		rad2 = (V[Pxmax] - cen).normsq();   // radius squared   
+	}
   else if (dy2 >= dz2) // y direction is largest extent
-    {                                
-      cen = V[Pymin] + (0.5*dVy);   // Center = midpoint of extremes
-      rad2 = (V[Pymax] - cen).normsq();    // radius squared
-    } 
+	{                                
+		cen = V[Pymin] + (0.5*dVy);   // Center = midpoint of extremes
+		rad2 = (V[Pymax] - cen).normsq();    // radius squared
+	} 
   else  // z direction is largest extent
-    {                                
-      cen = V[Pzmin] + (0.5*dVz);   // Center = midpoint of extremes
-      rad2 = (V[Pzmax] - cen).normsq();    // radius squared
-    } 
-
+	{                                
+		cen = V[Pzmin] + (0.5*dVz);   // Center = midpoint of extremes
+		rad2 = (V[Pzmax] - cen).normsq();    // radius squared
+	} 
+	
   rad = sqrt(rad2);
-
+	
   // now check that all points V[i] are in the ball    
   // and if not, expand the ball just enough to include them
   CPnt dV;   
   REAL dist, dist2;
   for (int i=0; i<n; i++) 
-    {
-      dV = V[i] - cen;
-      dist2 = dV.normsq();
-      if (dist2 <= rad2)    // V[i] is inside the ball already
-	continue;
-
-      // V[i] not in ball, so expand ball to include it
-      dist = sqrt(dist2); 
-      rad = (rad + dist) / 2.0;   // enlarge radius just enough
-      rad2 = rad * rad;
-      cen = cen + ((dist-rad)/dist) * dV;   // shift Center toward V[i]
-    }
+	{
+		dV = V[i] - cen;
+		dist2 = dV.normsq();
+		if (dist2 <= rad2)    // V[i] is inside the ball already
+			continue;
+		
+		// V[i] not in ball, so expand ball to include it
+		dist = sqrt(dist2); 
+		rad = (rad + dist) / 2.0;   // enlarge radius just enough
+		rad2 = rad * rad;
+		cen = cen + ((dist-rad)/dist) * dV;   // shift Center toward V[i]
+	}
   
   cout << "Ball: " << cen << " " << rad << endl;
   return;
-}
+} // end approxBBall
 
 /******************************************************************/
 /******************************************************************//**
 * readqcd
 ******************************************************************/
-
-
 void readqcd(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch, 
 	     REAL & rad)
 {
@@ -437,47 +403,54 @@ void readqcd(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch,
 
 /******************************************************************/
 /******************************************************************//**
-* writemdp
+* writemdp: a function to write out a PQR file type.  
+\param ifname a character string that contains the input file name
+\param ofname a character name that contains the output file name
+\param pnt a vector of charge positions
+\param cen a position of the CG sphere center
+\param sp a boolean that tells function whether to print out the CG
+				sphere in the PQR file or not
+\param chid a character of the chain ID of the molecule
 ******************************************************************/
 
 
 void writemdp(const char * ifname, const char * ofname, 
-	      const vector<CPnt> & pnt, const CPnt& cen, bool sp,
-	      char chid)
+							const vector<CPnt> & pnt, const CPnt& cen, bool sp,
+							char chid)
 {
   ifstream fin(ifname);
   ofstream fout(ofname, ios::app);
   if (!fin.is_open())
-    {
-      cout << "Could not open file " << ifname << endl;
-      exit(0);
-    }
-
+	{
+		cout << "Could not open file " << ifname << endl;
+		exit(0);
+	}
+	
   if (!fout.is_open())
-    {
-      cout << "Could not open file " << ofname << endl;
-      exit(0);
-    }
-
+	{
+		cout << "Could not open file " << ofname << endl;
+		exit(0);
+	}
+	
   char buf[100], temp[30];
   fin.getline(buf,99);
   int i = 0;
   while (!fin.eof())
-    {
-      if (strncmp(&(buf[0]),"ATOM",4) == 0)	  
 	{
-	  buf[21] = chid;
-	  if (strncmp(&(buf[17]),"DUM",3) == 0)
+		if (strncmp(&(buf[0]),"ATOM",4) == 0)	  
+		{
+			buf[21] = chid;
+			if (strncmp(&(buf[17]),"DUM",3) == 0)
 	    {
 	      if (sp)
-		{
-		  CPnt P = cen;
-		  sprintf(temp,"%8.3f%8.3f%8.3f", P.x(), P.y(), P.z());
-		  strncpy(&(buf[30]), temp, 24);
-		  fout << buf << endl;
-		}
+				{
+					CPnt P = cen;
+					sprintf(temp,"%8.3f%8.3f%8.3f", P.x(), P.y(), P.z());
+					strncpy(&(buf[30]), temp, 24);
+					fout << buf << endl;
+				}
 	    }
-	  else
+			else
 	    {
 	      CPnt P = pnt[i] + cen;
 	      sprintf(temp,"%8.3f%8.3f%8.3f", P.x(), P.y(), P.z());
@@ -485,10 +458,10 @@ void writemdp(const char * ifname, const char * ofname,
 	      fout << buf << endl;
 	      i++;
 	    }
+		}
+		
+		fin.getline(buf,99);     
 	}
-
-      fin.getline(buf,99);     
-    }
 }
 
 /******************************************************************/
@@ -556,36 +529,45 @@ void readmdp(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch,
 
 /******************************************************************/
 /******************************************************************//**
-* buildUnitCell
+* buildUnitCell, function used to build a unit cell for use in 
+infinite grid calculation.  
+	\param ifname a character string describing the input file name
+	\param ofname a character string describing the desired output file name
+	\param mpe a vector of multipole expansions
+	\param cen a vector of sphere centers
+	\params bSave a boolean operator indicating whether or not to write 
+						out grid
+	\params stretch a floating point of how much to stretch the center by ??
 ******************************************************************/
-
-
 void 
 buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe, 
-	      vector<CPnt*> & cen, bool bSave, REAL stretch)
+							vector<CPnt*> & cen, bool bSave, REAL stretch)
 {
   REAL rad;
   vector<CPnt> V;
   vector<REAL> ch;
   CPnt cn, cn2;
-
+	
   if (bSave)
-    {
-      ofstream fout(ofname);
-      fout.close();
-    }
-  readmdp(ifname, V,ch,rad,cn);
-  approxBBall(V, cn, rad);
-
+	{
+		ofstream fout(ofname);
+		fout.close();
+	}
+  readmdp(ifname, V,ch,rad,cn);  // read in the molecule from PQR file, save atom point xyzs in V
+  approxBBall(V, cn, rad);       // run through all the point charges and build a sphere large 
+																 // enough to enclose all of them.  it has a radius of rad
+	
   REAL lx = 79.1, ly = 79.1, lz = 37.9;
   REAL sx = 0.012642, sy = 0.012642, sz = 0.026385;
   CPnt t;
-
-  for (int i = 0; i < V.size(); i++)
+	
+  for (int i = 0; i < V.size(); i++)			// for all point charges, move their position by a scaling factor of s
     V[i] = CPnt(V[i].x()*sx, V[i].y()*sy, V[i].z()*sz);
-  cn = CPnt(cn.x()*sx, cn.y()*sy, cn.z()*sz);
+  cn = CPnt(cn.x()*sx, cn.y()*sy, cn.z()*sz); // and scale the center by that as well
   vector<CPnt> U(V.size());
-
+	
+	
+	// create a grid of 8 points and write out each one
   // ASU #1
   t = CPnt(0.0, 0.0, 0.0);
   cn2 = CPnt(cn.x()*lx, cn.y()*ly, cn.z()*lz) + t;
@@ -595,17 +577,17 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
     writemdp(ifname, ofname, U, cn2, false, 'A');
   mpe.push_back(new CMPE(ch, U, rad, 0, 15));
   cen.push_back(new CPnt(stretch*cn2));
-
+	
   // ASU #2
   t = CPnt(lx, ly, 0.5*lz);
   cn2 = CPnt(-cn.x()*lx, -cn.y()*ly, cn.z()*lz) + t;
   for (int i = 0; i < V.size(); i++)
     U[i] = CPnt(-V[i].x()*lx, -V[i].y()*ly, V[i].z()*lz) + (t - cn2);
   if (bSave) 
-   writemdp(ifname, ofname, U, cn2, false, 'B');
+		writemdp(ifname, ofname, U, cn2, false, 'B');
   mpe.push_back(new CMPE(ch, U, rad, 1, 15));
   cen.push_back(new CPnt(stretch*cn2));
-
+	
   // ASU #3
   t = CPnt(0.5*lx, 0.5*ly, -0.25*lz);
   cn2 = CPnt(-cn.y()*lx, cn.x()*ly, cn.z()*lz) + t;
@@ -615,7 +597,7 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
     writemdp(ifname, ofname, U, cn2, false, 'C');
   mpe.push_back(new CMPE(ch, U, rad, 2, 15));
   cen.push_back(new CPnt(stretch*cn2));
-
+	
   // ASU #4
   t = CPnt(0.5*lx, 0.5*ly, 0.25*lz);
   cn2 = CPnt(cn.y()*lx, -cn.x()*ly, cn.z()*lz) + t;
@@ -625,7 +607,7 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
     writemdp(ifname, ofname, U, cn2, false, 'D');
   mpe.push_back(new CMPE(ch, U, rad, 3, 15));
   cen.push_back(new CPnt(stretch*cn2));
-
+	
   // ASU #5
   t = CPnt(0.5*lx, 0.5*ly, 0.75*lz);
   cn2 = CPnt(-cn.x()*lx, cn.y()*ly, -cn.z()*lz) + t;
@@ -635,7 +617,7 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
     writemdp(ifname, ofname, U, cn2, false, 'E');
   mpe.push_back(new CMPE(ch, U, rad, 4, 15));
   cen.push_back(new CPnt(stretch*cn2));
-
+	
   // ASU #6
   t = CPnt(0.5*lx, 0.5*ly, 1.25*lz);
   cn2 = CPnt(cn.x()*lx, -cn.y()*ly, -cn.z()*lz) + t;
@@ -645,7 +627,7 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
     writemdp(ifname, ofname, U, cn2, false, 'F');
   mpe.push_back(new CMPE(ch, U, rad, 5, 15));
   cen.push_back(new CPnt(stretch*cn2));
-
+	
   // ASU #7
   t = CPnt(0.0, 0.0, lz);
   cn2 = CPnt(cn.y()*lx, cn.x()*ly, -cn.z()*lz) + t;
@@ -655,7 +637,7 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
     writemdp(ifname, ofname, U, cn2, false, 'G');
   mpe.push_back(new CMPE(ch, U, rad, 6, 15));
   cen.push_back(new CPnt(stretch*cn2));
-
+	
   // ASU #8
   t = CPnt(lx, ly, 0.5*lz);
   cn2 = CPnt(-cn.y()*lx, -cn.x()*ly, -cn.z()*lz) + t;
@@ -665,7 +647,7 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
     writemdp(ifname, ofname, U, cn2, false, 'H');
   mpe.push_back(new CMPE(ch, U, rad, 7, 15));
   cen.push_back(new CPnt(stretch*cn2));
-}
+} //end buildUnitCell
 
 
 /******************************************************************/
@@ -687,8 +669,6 @@ buildUnitCell(const char * ifname, const char * ofname, vector<CMPE*> & mpe,
 			\return a floating point number that returns the radius of 
 							the molecule input into the system
 ******************************************************************/
-
-
 REAL buildSystem(const char * ifname, int num, REAL dist, bool bSave,
 								 vector<CMPE*> & mpe, vector<CPnt*> & cen)
 {
@@ -782,9 +762,9 @@ REAL buildSystem(const char * ifname, int num, REAL dist, bool bSave,
 		
 		CMPE * pm = new CMPE(ch1, pr, rad1, n, 15);								// Make MPE for molecule i with 15 poles
 		mpe.push_back(pm);
-		if (bSave)
-		{	  
-			writemdp(ifname, ofname, pr, *(cen[n]), false, ' ');
+		if (bSave)																								// If we wish to save configurations
+		{																													// Write out a file without the CG sphere
+			writemdp(ifname, ofname, pr, *(cen[n]), false, ' ');		// And one containing the CG sphere
 			writemdp(ifname, ofname_sp, pr, *(cen[n]), true, ' ');
 		}
 	}
@@ -799,21 +779,18 @@ REAL buildSystem(const char * ifname, int num, REAL dist, bool bSave,
 	
 	\param ifname a character string of an input filename
 	\param num an integer of the number of molecules in the system
-	\param dist a floating point of the distance between molecules
 	\param rad a floating point of the radius of the molecules
 	\param mpe a vector of multipole expansions, one for each molecule
 	\param cen a vector of molecule positions 
 	\param fact a floating point of the conversion factor for the system
 ******************************************************************/
-
-
-void buildGrid(const char * ifname, int num, REAL dist, REAL rad,
+void buildGrid(const char * ifname, int num, REAL rad,
 							 const vector<CMPE*> & mpe, const vector<CPnt*> & cen, REAL fact)
 {
   cout << "building grid" << endl;
   REAL scale = 2.0;													// Scaling factor
 //  int gsize = 301;													// Grid edge length
-  int gsize = 51;													// Grid edge length
+  int gsize = 151;													// Grid edge length
   int gcen = gsize/2 + 1;
   int bd = gcen-1;
   float * V = new float[gsize*gsize*gsize];	// Volume of the grid cell
@@ -882,7 +859,7 @@ void buildGrid(const char * ifname, int num, REAL dist, REAL rad,
 //  FILE * fd = fopen(ofname, "w+");
 //  fwrite(V, sizeof(float), gsize*gsize*gsize, fd);
 //	fclose( fd );
-}
+} // end buildGrid
 
 /******************************************************************/
 /******************************************************************//**
@@ -931,7 +908,7 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 			*(cen[i]) -= per[i];
 		}
 	}
-}
+} // end perturb
 
 /******************************************************************/
 /******************************************************************//**
@@ -940,7 +917,6 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 * \param fout an output file
 * \param ind an integer for temporary file index
 ******************************************************************/
-
 int main1(int argc, char ** argv)
 {
 	if ( argc != 5 )
@@ -969,7 +945,7 @@ int main1(int argc, char ** argv)
     }
   fout << cdock << " " << argv[1] << endl;
   return 0;
-}
+} // end main1
 
 /******************************************************************/
 /******************************************************************//**
@@ -980,7 +956,6 @@ int main1(int argc, char ** argv)
 			Values are: 2, 4, 6 or 8						
 * \param dist a floating point distance for molecule placement
 ******************************************************************/
-
 int main2(int argc, char ** argv)
 {
 	if ( argc != 5 )
@@ -1025,7 +1000,7 @@ int main2(int argc, char ** argv)
     }  
 
   return 0;
-}
+} //end main2
 
 /******************************************************************/
 /******************************************************************//**
@@ -1040,7 +1015,6 @@ int main2(int argc, char ** argv)
 					diffusion coefficient of input molecule
 * \param a string containing the perturbation file name 
 ******************************************************************/
-
 int main3(int argc, char ** argv)
 {
 	if ( argc != 8 )
@@ -1093,7 +1067,7 @@ int main3(int argc, char ** argv)
   cout << endl;
 	
   return 0;;
-}
+} // end main3
 
 /******************************************************************/
 /******************************************************************//**
@@ -1110,7 +1084,6 @@ int main3(int argc, char ** argv)
 							distance for molecule placement
 *	\param a character string to describe the system
 ******************************************************************/
-
 int main4(int argc, char ** argv)
 {
 	if ( argc != 6 )
@@ -1203,7 +1176,6 @@ int main4(int argc, char ** argv)
 * \param num an integer number of molecules to introduce into system
 * \param dist a floating point number for distance for molecule placement
 ******************************************************************/
-
 int main5(int argc, char ** argv)
 {
 	if ( argc != 5 )
@@ -1239,20 +1211,27 @@ int main5(int argc, char ** argv)
     }
  
   REAL fact = COUL_K/DIELECTRIC_WATER*IKbT;
-  buildGrid(ifname, num, dist, rad, mpe, cen, fact);
+  buildGrid(ifname, num, rad, mpe, cen, fact);
 
   return 0;
-}
+} // end main5
 
 /******************************************************************/
 /******************************************************************//**
-* Main for computing diffusion
-* param 2: input file name
-* param 3: 
+* Main for computing self-polarization and potential grid for a 
+* single coarse-grained molecule positioned at (0,0,0).  Similar to
+the option dif, or main 5, but only for a single molecule and  
+* \param ifname a character string describing the input file name
+* \param fact a floating point scaling factor for the MPE radius
 ******************************************************************/
-
 int main6(int argc, char ** argv)
 {
+	if ( argc != 4 )
+	{
+		cout << "Correct input format: " << endl;
+		cout << " ./exec rad [PQR file] [scaling factor]" << endl;
+		exit(0);
+	}
   cout.precision(5);
   cout << "RAD" << endl;
 
@@ -1283,8 +1262,8 @@ int main6(int argc, char ** argv)
   
   strcpy(ofname,ifname);
   strcpy(ofname_sp,ifname);
-  sprintf(&(ofname[l-7]), "_1P.mdp");
-  sprintf(&(ofname_sp[l-7]), "_1P_sp.mdp");
+  sprintf(&(ofname[l-7]), "_1P_%3.1f.mdp", fact);
+  sprintf(&(ofname_sp[l-7]), "_1P_%3.1f_sp.mdp", fact);
   
   char rm[200];
   sprintf(rm,"rm -f %s", ofname);
@@ -1296,214 +1275,224 @@ int main6(int argc, char ** argv)
   cout << "\t" << ofname << endl;
   cout << "\t" << ofname_sp << endl;
   
-  writemdp(ifname, ofname, p1, *(cen[0]), false, ' ');
-  writemdp(ifname, ofname_sp, p1, *(cen[0]), true, ' ');
+  writemdp(ifname, ofname, p1, *(cen[0]), false, ' ');		// print out a PQR file without the CG sphere
+  writemdp(ifname, ofname_sp, p1, *(cen[0]), true, ' ');	// print out a PQR file including the CG sphere
 
   for (int i = 0; i < cen.size(); i++)
     cout << *(cen[i]);
   cout << endl;
 
   CMPE::initXForms(mpe);
-  int f = (int) (fact*100);
-  buildGrid(ifname, 1, f, rad1, mpe,cen,1.0);
+  buildGrid(ifname, 1, rad1, mpe,cen, 1.0);								// Build a potential grid
 
   return 0;
-}
+} // end of main6
 
 /******************************************************************/
 /******************************************************************//**
-* Main for 
-* param 2: input file name
-* param 3: 
-* param 4: Input for charge distribution name
+* Main for computing the effect of a third molecule on the interaction
+free energy of two molecules, as a function of separation distance.
+The output file generated, [runname]_dist*10.txt has 900 lines, each line
+representing the interaction free energy between two molecules.  
+The first value in each line represents the system of just two molecules, the
+next 30 values represents including a 3rd molecule in the system at 30 different
+orientations.
+	\param ifname a character string describing input file name
+	\param dist a floating point of the distance between two molecules
+	\param a string for output for runname
 ******************************************************************/
-
-
 int main7(int argc, char ** argv)
 {
+	if ( argc != 5 )
+	{
+		cout << "Correct input format: " << endl;
+		cout << " ./exec cng [PQR file] [distance between molecles] [runname]" << endl;
+		exit(0);
+	}
   cout.precision(5);
   cout << "CHANGE" << endl;
-
+	
   const char * ifname = argv[2];
   REAL dist = atof(argv[3]);
- 
+	
   seedRand(-1);
   
   REAL rad1;
   vector<CPnt> p1;
   vector<REAL> ch1;
   CPnt cn;
-  readmdp(ifname, p1,ch1,rad1,cn);
+  readmdp(ifname, p1,ch1,rad1,cn);			// read in the PQR file
   for (int i = 0; i < p1.size(); i++)
     p1[i] -= cn;
-
+	
   CProtein::initParameters(KAPPA, DIELECTRIC_PROT, DIELECTRIC_WATER, 3, rad1);
   
   vector<CMPE*> mpe;
   vector<CPnt*> cen;
-  REAL fact = rad1 + dist/2.0;
-
+  REAL fact = rad1 + dist/2.0;						// desired distance between two molecules
+	
   for (int n = 0; n < 3; n++)
-    {
-      CMPE * pm = new CMPE(ch1, p1, rad1, n, 12);
-      mpe.push_back(pm);
-    }
-
+	{
+		CMPE * pm = new CMPE(ch1, p1, rad1, n, 12);
+		mpe.push_back(pm);
+	}
+	
   cen.push_back(new CPnt(fact*CPnt(-1.0,-1.0/sqrt(3.0),0.0)));
-  cen.push_back(new CPnt(fact*CPnt(1.0,0.-1.0/sqrt(3.0),0.0)));
- 
+  cen.push_back(new CPnt(fact*CPnt(1.0,-1.0/sqrt(3.0),0.0)));
+	
   CPnt c3;
-  cen.push_back(&c3);
-
+  cen.push_back(&c3);										// create 3 molecules in an equilateral triangle
+	
   CMPE::initXForms(mpe);
   REAL pi, pj;
-
+	
   char fn[100];
   sprintf(fn,"%s_%dA.txt", argv[4], 
-	  (int)floor(10*dist)); 
+					(int)floor(1.1*dist)); 
   ofstream fout(fn);
   REAL c = 2.0/sqrt(3.0);
   int N = 30;
   REAL f[N], t[N];
-  for (int i = 1; i <= N; i++)      
-    {
-      REAL h = -1.0 + 2.0*(i-1.0)/(N-1.0);
-      t[i-1] = acos(h);
-      if (i == 1 or i == N)
-	f[i-1] = 0;
-      else 
-	f[i-1] = (f[i-2] + 3.6/sqrt(N*(1.0 - h*h)));
-
-      while(f[i-1] > 2*M_PI)
-	f[i-1] -= 2*M_PI;
-
-      while(f[i-1] < -2*M_PI)
-	f[i-1] += 2*M_PI;
-      cout << t[i-1]*180/M_PI << " " <<  f[i-1]*180/M_PI << endl; 
-    }
-
-
-  for (int i = 0; i < N; i++)
-    {
-      CQuat Qt(CPnt(0,1,0),t[i]);
-      CQuat Qf(CPnt(0,0,1),f[i]);
-      mpe[0]->reset(12, Qf*Qt);
-
-      for (int j = 0; j <  N; j++)
+  for (int i = 1; i <= N; i++)				// Generate orientations for the spheres to gather data over
 	{
-	  Qt = CQuat(CPnt(0,1,0),t[j]);
-	  Qf = CQuat(CPnt(0,0,1),f[j]);
-	  mpe[1]->reset(12, Qf*Qt);
-
-	  mpe[2]->reset(12, CQuat());
-	  c3 = CPnt(0.0, 1000, 0.0);
-	  CMPE::solve(mpe, cen, true);
-	  CMPE::computePairPot(mpe, 0, 1, pi, pj);
-	  fout << pi  << " ";
-	  c3 = fact*CPnt(0, c, 0);
-	  for (int k = 0; k < N; k++)
+		REAL h = -1.0 + 2.0*(i-1.0)/(N-1.0);
+		t[i-1] = acos(h);
+		if (i == 1 or i == N)
+			f[i-1] = 0;
+		else 
+			f[i-1] = (f[i-2] + 3.6/sqrt(N*(1.0 - h*h)));
+		
+		while(f[i-1] > 2*M_PI)
+			f[i-1] -= 2*M_PI;
+		
+		while(f[i-1] < -2*M_PI)
+			f[i-1] += 2*M_PI;
+		cout << t[i-1]*180/M_PI << " " <<  f[i-1]*180/M_PI << endl; // print out generated rotations
+	}
+	
+  for (int i = 0; i < N; i++)
+	{
+		CQuat Qt(CPnt(0,1,0),t[i]);			// for each orientation generated, rotate first sphere by it
+		CQuat Qf(CPnt(0,0,1),f[i]);
+		mpe[0]->reset(12, Qf*Qt);
+		
+		for (int j = 0; j <  N; j++)		// rotate second sphere by it as well 
+		{
+			Qt = CQuat(CPnt(0,1,0),t[j]);
+			Qf = CQuat(CPnt(0,0,1),f[j]);
+			mpe[1]->reset(12, Qf*Qt);
+			
+			mpe[2]->reset(12, CQuat());
+			c3 = CPnt(0.0, 1000, 0.0);		// place third sphere very far away so as not to factor into computations
+			CMPE::solve(mpe, cen, true);
+			CMPE::computePairPot(mpe, 0, 1, pi, pj);
+			fout << pi  << " ";
+			c3 = fact*CPnt(0, c, 0);		// now place it close and at random orientations like the other two
+			for (int k = 0; k < N; k++)
 	    {
 	      Qt = CQuat(CPnt(0,1,0),t[k]);
 	      Qf = CQuat(CPnt(0,0,1),f[k]);
 	      mpe[2]->reset(12, Qf*Qt);
-		  		  
+				
 	      CMPE::solve(mpe, cen, true);
 	      CMPE::computePairPot(mpe, 0, 1, pi, pj);
 	      fout << pi  << " ";	 
 	    }
-	  fout << endl;
+			fout << endl;
+		}
+		cout << i <<  "..";
+		cout.flush();
 	}
-      cout << i <<  "..";
-      cout.flush();
-    }
   
   cout << endl;
   return 0;
-}
+} //main7
 
 /******************************************************************/
 /******************************************************************//**
 * Main for makin an infinte grid
-* param 2: input file name
-* param 3: 
-* param 4: 
-* param 5: 
+* \param ifname a character string with input file name
+* \param layer an integer describing the number of neighbors to 
+			consider when performing energy, force and torque calculations
+* \param stretch a floating point number describing the scaling of 
+			the CG spheres
 ******************************************************************/
-
-
 int main8(int argc, char ** argv)
 {
+	if ( argc != 5 )
+	{
+		cout << "Correct input format: " << endl;
+		cout << " ./exec inf [PQR file] [# layers] [stretch factor]" << endl;
+		exit(0);
+	}
   cout.precision(5);
   cout << "INFINITE GRID" << endl;
-
+	
   const char * ifname = argv[2];
-  int dist = atoi(argv[3]);
-  int layer = atoi(argv[4]);
-  REAL stretch = atof(argv[5]);
-
+  int layer = atoi(argv[3]);
+  REAL stretch = atof(argv[4]);
+	
   seedRand(-1);
   
   int N = 200;
   REAL f[N], t[N];
-  for (int i = 1; i <= N; i++)      
-    {
-      REAL h = -1.0 + 2.0*(i-1.0)/(N-1.0);
-      t[i-1] = acos(h);
-      if (i == 1 or i == N)
-	f[i-1] = 0;
-      else 
-	f[i-1] = (f[i-2] + 3.6/sqrt(N*(1.0 - h*h)));
-
-      while(f[i-1] > 2*M_PI)
-	f[i-1] -= 2*M_PI;
-
-      while(f[i-1] < -2*M_PI)
-	f[i-1] += 2*M_PI;
-    }
-
+  for (int i = 1; i <= N; i++)     	// Generate orientations for the spheres to gather data over
+	{
+		REAL h = -1.0 + 2.0*(i-1.0)/(N-1.0);
+		t[i-1] = acos(h);
+		if (i == 1 or i == N)
+			f[i-1] = 0;
+		else 
+			f[i-1] = (f[i-2] + 3.6/sqrt(N*(1.0 - h*h)));
+		while(f[i-1] > 2*M_PI)
+			f[i-1] -= 2*M_PI;
+		while(f[i-1] < -2*M_PI)
+			f[i-1] += 2*M_PI;
+	}
+	
   vector<REAL> fs, ts;
-  for (int i = 0; i < N; i++)
+  for (int i = 0; i < N; i++)				// Save only orientations that are less than 180 deg
     if ((t[i] <= M_PI/2.0) && (f[i] <= M_PI/2.0))
-      {
-	fs.push_back(f[i]);
-	ts.push_back(t[i]);
-      }	
-  cout << fs.size() << " orientations" << endl;
-
+		{
+			fs.push_back(f[i]);
+			ts.push_back(t[i]);
+		}	
+  cout << fs.size() << " orientations" << endl;  // printing them out
+	
   char fon[100];
   strcpy(fon, ifname);
-  sprintf(&(fon[strlen(fon)-4]), "_88.pdb");
-
+  sprintf(&(fon[strlen(fon)-4]), "_88.pdb");		// opening file to write out grid to
+	
   vector<CMPE*> mpe;
   vector<CPnt*> cen;
   int m = 2*layer+1;
-  CProtein::initParameters(KAPPA, DIELECTRIC_PROT, DIELECTRIC_WATER, m*m*m*8, 26.0);
-
+  CProtein::initParameters(KAPPA, DIELECTRIC_PROT, DIELECTRIC_WATER, m*m*m*8, 26.0); // nmol=m^3*8
+	
   buildUnitCell(ifname, fon, mpe, cen, true, stretch);
   
   REAL lx = stretch*79.1, ly = stretch*79.1, lz = stretch*37.9;
   
-  for (int i = -layer; i <= layer; i++)
+  for (int i = -layer; i <= layer; i++)     // make a grid of layer layers and place points at each location
     for (int j = -layer; j <= layer; j++)
       for (int k = -layer; k <= layer; k++)
-	{
-	  CPnt c(lx*i, ly*j, lz*k);
-	  for (int n = 0; n < 8; n++)
-	    {
-	      if (i == 0 && j == 0 && k == 0)
-		continue;
-	      
-	      cen.push_back(new CPnt(c + *(cen[n])));
-	      mpe.push_back(mpe[n]);
-	    }
-	}
-
+			{
+				CPnt c(lx*i, ly*j, lz*k);
+				for (int n = 0; n < 8; n++)
+				{
+					if (i == 0 && j == 0 && k == 0)
+						continue;
+					
+					cen.push_back(new CPnt(c + *(cen[n])));
+					mpe.push_back(mpe[n]);
+				}
+			}
+	
   int tot = cen.size();
   cout << "N_MOL = " << tot << endl;
- 
+	
   CMPE::m_bInfinite = true;
   CMPE::m_unit = 8; 
-    
+	
   CMPE::initXForms(mpe);
   REAL k = COUL_K/DIELECTRIC_WATER*IKbT;
   vector<CPnt> force, torque;
@@ -1512,9 +1501,9 @@ int main8(int argc, char ** argv)
   CMPE::computeForce(mpe, cen, pot, force, torque);
   for (int n = 0; n < 8; n++)
     cout << k*pot[n] << " " << k*force[n] << " " << k*torque[n] << endl;
-
- return 0;
-}
+	
+	return 0;
+} // end main8
 
 /******************************************************************//**
 * Main!
@@ -1536,15 +1525,14 @@ int main(int argc, char ** argv)
   else if (strncmp(argv[1], "dif", 3) == 0)			// For computing a grid of potentials due to many molecules
     return main5(argc, argv);										// fixed in solution
 
-  else if (strncmp(argv[1], "rad", 3) == 0)
-    return main6(argc, argv);
+  else if (strncmp(argv[1], "rad", 3) == 0)			// For computing a potential grid for a single molecule
+    return main6(argc, argv);										// in solution
 
-  else if (strncmp(argv[1], "cng", 3) == 0)
-    return main7(argc, argv);
+  else if (strncmp(argv[1], "cng", 3) == 0)			// For computing the effect of a 3rd molecule of the 
+    return main7(argc, argv);										// total free energy of a system at distance dist (in A)
 
-  else if (strncmp(argv[1], "inf", 3) == 0)
-    return main8(argc, argv);
-
+  else if (strncmp(argv[1], "inf", 3) == 0)			//
+    return main8(argc, argv);										//
   else		// else, bad option
     {
       cout << "bad option!!! " << argv[1] << endl;
