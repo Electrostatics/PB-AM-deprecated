@@ -86,7 +86,7 @@ static int \hyperlink{classCMPE_a5e34c1f47c24748db2704af61b370fc0}{npol}
 static \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCMPE_a4e0a6b27c4cd14dd576fe94854c8d58d}{npol\-\_\-t}
 \item 
 static bool \hyperlink{classCMPE_a1c612f996b0be31759020f287d3ee7cc}{m\-\_\-b\-Infinite} = false
-\item 
+\begin{DoxyCompactList}\small\item\em Indicates whether simulation for an infinite grid is being performed. \end{DoxyCompactList}\item 
 static int \hyperlink{classCMPE_adf1757fa41fec1996e7ca1c7fe6fc9e0}{m\-\_\-unit} = 1
 \end{DoxyCompactItemize}
 
@@ -118,7 +118,8 @@ an object of the \hyperlink{classCMPE}{C\-M\-P\-E} class
 \end{DoxyReturn}
 Initialize a multipole expansion with a protein object 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -160,7 +161,8 @@ an object of the \hyperlink{classCMPE}{C\-M\-P\-E} class
 \end{DoxyReturn}
 Create a multipole expansion from a collection of charges. 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -229,6 +231,19 @@ Here is the call graph for this function\-:
 \item[{{\bf R\-E\-A\-L} \&}]{p2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_ab494bf000a7dec9410d23a5f47204baf}
+Function to compute pairwise interaction of two molecules in a system. 
+\begin{DoxyParams}{Parameters}
+{\em mpe} & a vector of M\-P\-Es, one for each molecule in the system \\
+\hline
+{\em i} & an integer of the index of the first molecule of interest \\
+\hline
+{\em j} & an integer of the index of the second molecule of interest \\
+\hline
+{\em p1} & a floating point of the potential on molecule 1 \\
+\hline
+{\em p2} & a floating point of the potential on molecule 2 \\
+\hline
+\end{DoxyParams}
 
 
 Here is the call graph for this function\-:
@@ -293,15 +308,7 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{{\bf R\-E\-A\-L}}]{rs}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_accac27799cb676fb3160683583a8619e}
-Initializing parameters for multipole expansion Inputs\-: kappa, dielectric of the protein, water dielectric, the nummber of molecules, average scaling factor $<$ Dielectric of protein
-
-$<$ Dielectric of solvent
-
-$<$ Number of molecules
-
-$<$ Create vector of size(number of molecules)
-
-$<$ List starts with 0 to (nmols-\/1) 
+Initializing parameters for multipole expansion Inputs\-: kappa, dielectric of the protein, water dielectric, the nummber of molecules, average scaling factor 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -348,9 +355,17 @@ Routine for mutual polarization. First computes the total number of molecules in
 \item[{const {\bf C\-Quat} \&}]{Q = {\ttfamily {\bf C\-Quat}()}}
 \end{DoxyParamCaption}
 )}}\label{classCMPE_ae44b4e76215412230e279f34bd5b9fab}
+\hyperlink{classCMPE}{C\-M\-P\-E} function to reset both the number of poles and the orientation of the multipole expansion 
+\begin{DoxyParams}{Parameters}
+{\em p} & is an integer number of poles \\
+\hline
+{\em Q} & is a \hyperlink{classCQuat}{C\-Quat} object for rotating the M\-P\-E \\
+\hline
+\end{DoxyParams}
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -390,7 +405,8 @@ Function that sets the order ?? \hypertarget{classCMPE_a688ea48a4a13e704fc97e27c
 )}}\label{classCMPE_a688ea48a4a13e704fc97e27c0f6dc78a}
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -488,6 +504,10 @@ Here is the call graph for this function\-:
 \hypertarget{classCMPE_a1c612f996b0be31759020f287d3ee7cc}{\index{C\-M\-P\-E@{C\-M\-P\-E}!m\-\_\-b\-Infinite@{m\-\_\-b\-Infinite}}
 \index{m\-\_\-b\-Infinite@{m\-\_\-b\-Infinite}!CMPE@{C\-M\-P\-E}}
 \subsubsection[{m\-\_\-b\-Infinite}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-M\-P\-E\-::m\-\_\-b\-Infinite = false\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_a1c612f996b0be31759020f287d3ee7cc}
+
+
+Indicates whether simulation for an infinite grid is being performed. 
+
 \hypertarget{classCMPE_adf1757fa41fec1996e7ca1c7fe6fc9e0}{\index{C\-M\-P\-E@{C\-M\-P\-E}!m\-\_\-unit@{m\-\_\-unit}}
 \index{m\-\_\-unit@{m\-\_\-unit}!CMPE@{C\-M\-P\-E}}
 \subsubsection[{m\-\_\-unit}]{\setlength{\rightskip}{0pt plus 5cm}int C\-M\-P\-E\-::m\-\_\-unit = 1\hspace{0.3cm}{\ttfamily [static]}}}\label{classCMPE_adf1757fa41fec1996e7ca1c7fe6fc9e0}

@@ -63,9 +63,13 @@
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab2366cfde717accefce56fc72aa5a2ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSpPnt.html#ab2366cfde717accefce56fc72aa5a2ed">CSpPnt</a> ()</td></tr>
+<tr class="memdesc:ab2366cfde717accefce56fc72aa5a2ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">The spherical coordinate constructor.  <a href="#ab2366cfde717accefce56fc72aa5a2ed"></a><br/></td></tr>
 <tr class="memitem:a2d035000bbff43189d79affc0447a9a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSpPnt.html#a2d035000bbff43189d79affc0447a9a3">CSpPnt</a> (<a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> rho_, <a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> theta_, <a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> phi_)</td></tr>
+<tr class="memdesc:a2d035000bbff43189d79affc0447a9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The spherical coordinate constructor.  <a href="#a2d035000bbff43189d79affc0447a9a3"></a><br/></td></tr>
 <tr class="memitem:aee31a3b97c734fa150f1a33daadd6dfc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCSpPnt.html">CSpPnt</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSpPnt.html#aee31a3b97c734fa150f1a33daadd6dfc">operator=</a> (const <a class="el" href="classCSpPnt.html">CSpPnt</a> &amp;s)</td></tr>
+<tr class="memdesc:aee31a3b97c734fa150f1a33daadd6dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The spherical coordinate = operator.  <a href="#aee31a3b97c734fa150f1a33daadd6dfc"></a><br/></td></tr>
 <tr class="memitem:a9525366e1c144421d07c0a1485256f82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSpPnt.html#a9525366e1c144421d07c0a1485256f82">zero</a> ()</td></tr>
+<tr class="memdesc:a9525366e1c144421d07c0a1485256f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">The spherical coordinate function zero.  <a href="#a9525366e1c144421d07c0a1485256f82"></a><br/></td></tr>
 <tr class="memitem:af6364f003b923aa77c880869d27caa64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSpPnt.html#af6364f003b923aa77c880869d27caa64">rho</a> ()</td></tr>
 <tr class="memitem:a4b48e7760135fc768ab6911a328194ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba">theta</a> ()</td></tr>
 <tr class="memitem:af4f411d4a656dfec7c5a69ba065dbe1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d">phi</a> ()</td></tr>
@@ -107,6 +111,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The spherical coordinate constructor. </p>
+<p>Create a SpPnt class and set r, theta and phi to zero </p>
+
 </div>
 </div>
 <a class="anchor" id="a2d035000bbff43189d79affc0447a9a3"></a>
@@ -147,6 +154,17 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The spherical coordinate constructor. </p>
+<p>Create a SpPnt class and set r, theta and phi to given inputs </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rho</td><td>a real number of radius input </td></tr>
+    <tr><td class="paramname">theta</td><td>a real number of theta input </td></tr>
+    <tr><td class="paramname">phi</td><td>a real number of phi input </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -171,6 +189,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The spherical coordinate = operator. </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -342,6 +362,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>The spherical coordinate function zero. </p>
+<p>Set r, theta and phi to zero </p>
+
 </div>
 </div>
 <hr/><h2>Friends And Related Function Documentation</h2>
@@ -442,7 +465,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 2 2014 13:46:59 for PB Analytical by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 10 2014 15:12:09 for PB Analytical by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

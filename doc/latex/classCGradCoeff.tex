@@ -12,7 +12,8 @@ The Grad\-Coeff expansion class.
 
 
 
-Inheritance diagram for C\-Grad\-Coeff\-:\nopagebreak
+Inheritance diagram for C\-Grad\-Coeff\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,7 +22,8 @@ Inheritance diagram for C\-Grad\-Coeff\-:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for C\-Grad\-Coeff\-:\nopagebreak
+Collaboration diagram for C\-Grad\-Coeff\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -36,9 +38,9 @@ Collaboration diagram for C\-Grad\-Coeff\-:\nopagebreak
 \hyperlink{classCGradCoeff_a08b900b0d57467172733978a44c076f8}{C\-Grad\-Coeff} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&G)
 \item 
 \hyperlink{classCGradCoeff_a41d80b3998f3dfe2a9111ab9f00855fb}{C\-Grad\-Coeff} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M, const \hyperlink{classCSpPnt}{C\-Sp\-Pnt} \&c)
-\item 
+\begin{DoxyCompactList}\small\item\em The Grad\-Coeff constructor. \end{DoxyCompactList}\item 
 \hyperlink{classCGradCoeff}{C\-Grad\-Coeff} \hyperlink{classCGradCoeff_ae5711114b36c80f3547ec0857e476500}{sph\-To\-Cart} (const \hyperlink{classCPnt}{C\-Pnt} $\ast$R)
-\item 
+\begin{DoxyCompactList}\small\item\em The Grad\-Coeff function sph\-To\-Cart. \end{DoxyCompactList}\item 
 const \hyperlink{util_8h_a0ef19d29521fc1e3356ea268ba175cfc}{Complex} \hyperlink{classCGradCoeff_ada19e3bbd4f70e5115535cc4365f51b3}{dr} (int n, int m) const 
 \item 
 const \hyperlink{util_8h_a0ef19d29521fc1e3356ea268ba175cfc}{Complex} \hyperlink{classCGradCoeff_ace80d29d482ccc81d023c2a035dd6022}{dt} (int n, int m) const 
@@ -88,9 +90,21 @@ The class that contains all details for gradient coefficients.
 \item[{const {\bf C\-Sp\-Pnt} \&}]{c}
 \end{DoxyParamCaption}
 )}}\label{classCGradCoeff_a41d80b3998f3dfe2a9111ab9f00855fb}
+
+
+The Grad\-Coeff constructor. 
+
+The function that creates grad coeffs for a given matrix M. 
+\begin{DoxyParams}{Parameters}
+{\em M} & a M\-Coeff object \\
+\hline
+{\em c} & a spherical coordinate by which to take the derivative on\\
+\hline
+\end{DoxyParams}
 Creating Grad Coefficent class 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -159,6 +173,15 @@ Here is the call graph for this function\-:\nopagebreak
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCGradCoeff_ae5711114b36c80f3547ec0857e476500}
 
 
+The Grad\-Coeff function sph\-To\-Cart. 
+
+The function that converts each component of the expansion re-\/operator derivatives to cartesian coordinates 
+\begin{DoxyParams}{Parameters}
+{\em R} & an input of X\-Y\-Z coordinates \\
+\hline
+\end{DoxyParams}
+
+
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -179,7 +202,7 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{const {\bf C\-Grad\-Coeff} \&}]{G}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCGradCoeff_a81f3ceab707183d2313bf86d44b71476}
-
+Printing out each partial derivative of the re-\/expansion operator 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

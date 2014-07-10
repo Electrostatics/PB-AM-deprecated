@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classCPnt.html#ac4dcf209c35c4ef0c119cd59fbddd18f" title="CPnt::normsq" alt="" coords="147,56,250,83"/>
-<area shape="rect" id="node5" href="$util_8h.html#a995a97713975591555fe37b5ad50745a" title="CPnt dot." alt="" coords="299,56,339,83"/>
+<area shape="rect" id="node3" href="$classCPnt.html#ac4dcf209c35c4ef0c119cd59fbddd18f" title="The CPnt normsq function." alt="" coords="147,56,250,83"/>
+<area shape="rect" id="node5" href="$util_8h.html#a995a97713975591555fe37b5ad50745a" title="The cartesian coordinate dot function." alt="" coords="299,56,339,83"/>
 <area shape="rect" id="node7" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="387,5,453,32"/>
 <area shape="rect" id="node9" href="$classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="387,56,453,83"/>
 <area shape="rect" id="node11" href="$classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="387,107,453,133"/>

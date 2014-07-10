@@ -77,9 +77,9 @@ void \hyperlink{BD_8cpp_a050f85eeb4bca700634b0c552f7d32e2}{readmdp} (const char 
 \item 
 void \hyperlink{BD_8cpp_abc59e3d5de96d0dbfd2e195fee14e244}{build\-Unit\-Cell} (const char $\ast$ifname, const char $\ast$ofname, vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen, bool b\-Save, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} stretch)
 \item 
-\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{BD_8cpp_add9f16fa66f1f140387a281f7ac53fd4}{build\-System} (const char $\ast$ifname, int num, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} dist, bool b\-Save, int ver, vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen)
+\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{BD_8cpp_a9c965fd0c3d37e5f71c0cd6a33218ea8}{build\-System} (const char $\ast$ifname, int num, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} dist, bool b\-Save, vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen)
 \item 
-void \hyperlink{BD_8cpp_ad261235621d7c522431468ac50a3c7c3}{build\-Grid} (const char $\ast$ifname, int num, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} dist, int ver, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} rad, const vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, const vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} fact)
+void \hyperlink{BD_8cpp_ab4f52653b848e0335005e8f9cb3cbd49}{build\-Grid} (const char $\ast$ifname, int num, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} rad, const vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, const vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} fact)
 \item 
 void \hyperlink{BD_8cpp_aa47d8f951ab91c51da9b69f787f18030}{perturb} (int ct, int num, ofstream \&fout, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} Dtr, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} Dr, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} dt, vector$<$ \hyperlink{classCMPE}{C\-M\-P\-E} $\ast$ $>$ \&mpe, vector$<$ \hyperlink{classCPnt}{C\-Pnt} $\ast$ $>$ \&cen)
 \item 
@@ -255,7 +255,16 @@ Inverse debye length.
 \item[{{\bf R\-E\-A\-L} \&}]{rad}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_a383d01cbd424a11c6571cb85c748a9fb}
-approx\-B\-Ball 
+approx\-B\-Ball function to approximate. 
+\begin{DoxyParams}{Parameters}
+{\em V} & a vector of xyz coordinates for charges \\
+\hline
+{\em cent} & an xyz coord for the C\-G sphere center \\
+\hline
+{\em rad} & a floating point of the radius of the C\-G sphere \\
+\hline
+\end{DoxyParams}
+
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -267,32 +276,48 @@ Here is the call graph for this function\-:
 \end{figure}
 
 
-\hypertarget{BD_8cpp_ad261235621d7c522431468ac50a3c7c3}{\index{B\-D.\-cpp@{B\-D.\-cpp}!build\-Grid@{build\-Grid}}
+\hypertarget{BD_8cpp_ab4f52653b848e0335005e8f9cb3cbd49}{\index{B\-D.\-cpp@{B\-D.\-cpp}!build\-Grid@{build\-Grid}}
 \index{build\-Grid@{build\-Grid}!BD.cpp@{B\-D.\-cpp}}
 \subsubsection[{build\-Grid}]{\setlength{\rightskip}{0pt plus 5cm}void build\-Grid (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{ifname, }
 \item[{int}]{num, }
-\item[{{\bf R\-E\-A\-L}}]{dist, }
-\item[{int}]{ver, }
 \item[{{\bf R\-E\-A\-L}}]{rad, }
 \item[{const vector$<$ {\bf C\-M\-P\-E} $\ast$ $>$ \&}]{mpe, }
 \item[{const vector$<$ {\bf C\-Pnt} $\ast$ $>$ \&}]{cen, }
 \item[{{\bf R\-E\-A\-L}}]{fact}
 \end{DoxyParamCaption}
-)}}\label{BD_8cpp_ad261235621d7c522431468ac50a3c7c3}
-Building a grid 
+)}}\label{BD_8cpp_ab4f52653b848e0335005e8f9cb3cbd49}
+Building a grid centered at ( 0, 0, 0 ) of bounded from -\/bd to +bd.
 
-Here is the call graph for this function\-:\nopagebreak
+
+\begin{DoxyParams}{Parameters}
+{\em ifname} & a character string of an input filename \\
+\hline
+{\em num} & an integer of the number of molecules in the system \\
+\hline
+{\em rad} & a floating point of the radius of the molecules \\
+\hline
+{\em mpe} & a vector of multipole expansions, one for each molecule \\
+\hline
+{\em cen} & a vector of molecule positions \\
+\hline
+{\em fact} & a floating point of the conversion factor for the system \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{BD_8cpp_ad261235621d7c522431468ac50a3c7c3_cgraph}
+\includegraphics[width=350pt]{BD_8cpp_ab4f52653b848e0335005e8f9cb3cbd49_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{BD_8cpp_add9f16fa66f1f140387a281f7ac53fd4}{\index{B\-D.\-cpp@{B\-D.\-cpp}!build\-System@{build\-System}}
+\hypertarget{BD_8cpp_a9c965fd0c3d37e5f71c0cd6a33218ea8}{\index{B\-D.\-cpp@{B\-D.\-cpp}!build\-System@{build\-System}}
 \index{build\-System@{build\-System}!BD.cpp@{B\-D.\-cpp}}
 \subsubsection[{build\-System}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} build\-System (
 \begin{DoxyParamCaption}
@@ -300,11 +325,10 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{int}]{num, }
 \item[{{\bf R\-E\-A\-L}}]{dist, }
 \item[{bool}]{b\-Save, }
-\item[{int}]{ver, }
 \item[{vector$<$ {\bf C\-M\-P\-E} $\ast$ $>$ \&}]{mpe, }
 \item[{vector$<$ {\bf C\-Pnt} $\ast$ $>$ \&}]{cen}
 \end{DoxyParamCaption}
-)}}\label{BD_8cpp_add9f16fa66f1f140387a281f7ac53fd4}
+)}}\label{BD_8cpp_a9c965fd0c3d37e5f71c0cd6a33218ea8}
 build\-System\-: a function that builds a system of num molecules separated equidistantly in space 
 \begin{DoxyParams}{Parameters}
 {\em ifname} & a character pointer that has the name of an file of type M\-D\-P \\
@@ -314,8 +338,6 @@ build\-System\-: a function that builds a system of num molecules separated equi
 {\em dist} & a floating point number, describes the distance desired between molecules \\
 \hline
 {\em b\-Save} & a boolean that indicates whether or not the user desires to save the configuration \\
-\hline
-{\em ver} & an integer that ?? \\
 \hline
 {\em mpe} & a vector of multipole expansion objects for use in mutual polarization \\
 \hline
@@ -332,7 +354,7 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{BD_8cpp_add9f16fa66f1f140387a281f7ac53fd4_cgraph}
+\includegraphics[width=350pt]{BD_8cpp_a9c965fd0c3d37e5f71c0cd6a33218ea8_cgraph}
 \end{center}
 \end{figure}
 
@@ -349,7 +371,18 @@ Here is the call graph for this function\-:
 \item[{{\bf R\-E\-A\-L}}]{stretch}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_abc59e3d5de96d0dbfd2e195fee14e244}
-build\-Unit\-Cell 
+build\-Unit\-Cell, function used to build a unit cell for use in infinite grid calculation. 
+\begin{DoxyParams}{Parameters}
+{\em ifname} & a character string describing the input file name \\
+\hline
+{\em ofname} & a character string describing the desired output file name \\
+\hline
+{\em mpe} & a vector of multipole expansions \\
+\hline
+{\em cen} & a vector of sphere centers  b\-Save a boolean operator indicating whether or not to write out grid  stretch a floating point of how much to stretch the center by ?? \\
+\hline
+\end{DoxyParams}
+
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -418,7 +451,7 @@ Here is the call graph for this function\-:
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_a398405351f04ca4ed39e969ff655925d}
-Main for computing energies, forces and torques on multiple molecules in a system. 
+Main for computing energies, forces and torques on a replication of a single molecule places equidistantly in a system. 
 \begin{DoxyParams}{Parameters}
 {\em ifname} & an input file name \\
 \hline
@@ -447,7 +480,22 @@ Here is the call graph for this function\-:
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_a3dcb9eab839663dc12e81ffe369eb3ef}
-Main for perturbation run param 2\-: input file name param 3\-: Number of iterations to run force calculations param 4\-: Distance for molecule placement param 5\-: param 6\-: Translation diffusion coefficient param 7\-: Rotation diffusion coefficient param 8\-: Perturbation file name 
+Main for perturbation run. 
+\begin{DoxyParams}{Parameters}
+{\em ifname} & a character pointer holding input file name \\
+\hline
+{\em num} & an integer describing the number of iterations to run force calculations \\
+\hline
+{\em dist} & an int describing the distance for molecule placement \\
+\hline
+{\em Dtr} & a floating point number containing the translational diffusion coefficient of input molecule \\
+\hline
+{\em Dr} & a floating point number containing the rotational diffusion coefficient of input molecule \\
+\hline
+{\em a} & string containing the perturbation file name \\
+\hline
+\end{DoxyParams}
+
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -467,7 +515,18 @@ Here is the call graph for this function\-:
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_a97854abebeb41d867b7fda2e39d0a439}
-Main for Computing the polarization forces param 2\-: input file name param 3\-: Number of iterations to run force calculations param 4\-: Distance for molecule placement param 5\-: 
+Main for Computing the polarization forces, used for comparing the effect of mutual polarization on force and torque. The output is a file named polar\-\_\-\mbox{[}force/torque\mbox{]}\-\_\-name\-\_\-nmol\-\_\-dist.\-txt The first line indicates the force or torque computed per molecule in the absence of mutual polarization The next line includes mutual polarization. These two lines repeat for 1000 iterations. 
+\begin{DoxyParams}{Parameters}
+{\em ifname} & is a character pointer for input file name \\
+\hline
+{\em num} & is an int of the number of molecules in the system \\
+\hline
+{\em dist} & is a floating point number indicating the distance for molecule placement \\
+\hline
+{\em a} & character string to describe the system \\
+\hline
+\end{DoxyParams}
+
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -487,7 +546,16 @@ Here is the call graph for this function\-:
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_a0d19adb86436f5ee44d7eee9646b0225}
-Main for computing diffusion param 2\-: input file name param 3\-: Number of iterations to run force calculations param 4\-: Distance for molecule placement param 5\-: 
+Main for computing the potential on a grid, given a number of num identical molecules placed dist apart in a salt solution. 
+\begin{DoxyParams}{Parameters}
+{\em ifname} & a character string containing an input file name \\
+\hline
+{\em num} & an integer number of molecules to introduce into system \\
+\hline
+{\em dist} & a floating point number for distance for molecule placement \\
+\hline
+\end{DoxyParams}
+
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -507,7 +575,14 @@ Here is the call graph for this function\-:
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_a40a8450c72f1738cbad72d80b48f4b16}
-Main for computing diffusion param 2\-: input file name param 3\-: 
+Main for computing self-\/polarization and potential grid for a single coarse-\/grained molecule positioned at (0,0,0). Similar to the option dif, or main 5, but only for a single molecule and 
+\begin{DoxyParams}{Parameters}
+{\em ifname} & a character string describing the input file name \\
+\hline
+{\em fact} & a floating point scaling factor for the M\-P\-E radius \\
+\hline
+\end{DoxyParams}
+
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -527,7 +602,16 @@ Here is the call graph for this function\-:
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_acbf4599ba222df52cd3247bce0402d79}
-Main for param 2\-: input file name param 3\-: param 4\-: Input for charge distribution name 
+Main for computing the effect of a third molecule on the interaction free energy of two molecules, as a function of separation distance. The output file generated, \mbox{[}runname\mbox{]}\-\_\-dist$\ast$10.txt has 900 lines, each line representing the interaction free energy between two molecules. The first value in each line represents the system of just two molecules, the next 30 values represents including a 3rd molecule in the system at 30 different orientations. 
+\begin{DoxyParams}{Parameters}
+{\em ifname} & a character string describing input file name \\
+\hline
+{\em dist} & a floating point of the distance between two molecules \\
+\hline
+{\em a} & string for output for runname \\
+\hline
+\end{DoxyParams}
+
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -547,7 +631,16 @@ Here is the call graph for this function\-:
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_a268054c4cc84d387786a1a4d52e90019}
-Main for makin an infinte grid param 2\-: input file name param 3\-: param 4\-: param 5\-: 
+Main for making an infinte grid. It prints out the potential, the force and the torque for 8 molecules in a lattice with a given number of lattice layers 
+\begin{DoxyParams}{Parameters}
+{\em ifname} & a character string with input file name \\
+\hline
+{\em layer} & an integer describing the number of neighbors to consider when performing energy, force and torque calculations \\
+\hline
+{\em stretch} & a floating point number describing the scaling of the C\-G spheres \\
+\hline
+\end{DoxyParams}
+
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -631,7 +724,22 @@ readqcd \hypertarget{BD_8cpp_af4a2c988c8f8f7423e6a4c8dd0d6ffef}{\index{B\-D.\-cp
 \item[{char}]{chid}
 \end{DoxyParamCaption}
 )}}\label{BD_8cpp_af4a2c988c8f8f7423e6a4c8dd0d6ffef}
-writemdp 
+writemdp\-: a function to write out a P\-Q\-R file type. 
+\begin{DoxyParams}{Parameters}
+{\em ifname} & a character string that contains the input file name \\
+\hline
+{\em ofname} & a character name that contains the output file name \\
+\hline
+{\em pnt} & a vector of charge positions \\
+\hline
+{\em cen} & a position of the C\-G sphere center \\
+\hline
+{\em sp} & a boolean that tells function whether to print out the C\-G sphere in the P\-Q\-R file or not \\
+\hline
+{\em chid} & a character of the chain I\-D of the molecule \\
+\hline
+\end{DoxyParams}
+
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]

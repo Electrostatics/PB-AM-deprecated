@@ -8,7 +8,7 @@
 <area shape="rect" id="node15" href="$classCMPE.html#a688ea48a4a13e704fc97e27c0f6dc78a" title="CMPE::setOrient" alt="" coords="387,233,509,260"/>
 <area shape="rect" id="node38" href="$classCMCoeff.html#a7010837883b56f9b972888bffb6fbb3d" title="The mcoeff expansion class." alt="" coords="393,284,503,311"/>
 <area shape="rect" id="node17" href="$classCRotCoeff.html#aa52111e9c4cb2949dfae960437742536" title="CRotCoeff::reset" alt="" coords="560,145,683,172"/>
-<area shape="rect" id="node23" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff::rotate" alt="" coords="558,233,685,260"/>
+<area shape="rect" id="node23" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff rotate function." alt="" coords="558,233,685,260"/>
 <area shape="rect" id="node26" href="$classCTriCoeff.html#aa80c22419286d9fc99daafb90a44d03e" title="CTriCoeff::rotate" alt="" coords="561,291,681,317"/>
 <area shape="rect" id="node19" href="$classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="749,95,869,121"/>
 <area shape="rect" id="node21" href="$classCRotCoeff.html#a4668070c3eacacf17be98bc2fb348287" title="CRotCoeff::isSingular" alt="" coords="734,145,885,172"/>

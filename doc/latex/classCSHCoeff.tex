@@ -36,18 +36,18 @@ Collaboration diagram for C\-S\-H\-Coeff\-:\nopagebreak
 void \hyperlink{classCSHCoeff_a7aa1d16fe8a3e18012f2ccaec89a0a0f}{reset} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} theta, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} phi, int p)
 \item 
 void \hyperlink{classCSHCoeff_adf80cf8370b4db9957de7acfe8aa64d6}{inc} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} inc function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{classCSHCoeff_ae6ad53fe9a4862de25fe7f2788649a41}{init} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} rs, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} kappa)
 \item 
 static void \hyperlink{classCSHCoeff_acd63e5bb85843c08800a83281f3daad9}{besselk} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} K\mbox{[}$\,$\mbox{]}, int n, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} val)
-\item 
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} besselk function. \end{DoxyCompactList}\item 
 static void \hyperlink{classCSHCoeff_a8fd12308d0884731596cc1268b04d232}{inc\-Besselk} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} K\mbox{[}$\,$\mbox{]}, int p, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} val)
 \item 
 static void \hyperlink{classCSHCoeff_aa6cc07501f3b8ab8d2f9f32ba5a7b279}{besseli} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} I\mbox{[}$\,$\mbox{]}, int n, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} val)
-\item 
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} besseli function. \end{DoxyCompactList}\item 
 static void \hyperlink{classCSHCoeff_ac30535573d45c2da6a424c415967e6f2}{special\-S\-H} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} S\-H\mbox{[}$\,$\mbox{]}, int n, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} val)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
@@ -56,7 +56,7 @@ static void \hyperlink{classCSHCoeff_ac30535573d45c2da6a424c415967e6f2}{special\
 \subsection{Detailed Description}
 The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} class. 
 
-The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} class contains information about spherical harmonics. 
+The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} class contains information about spherical harmonics. Contains computations for E\-Q(1) of Lotan 2006 as well as bessel function calculations for equations 2 and 3 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classCSHCoeff_a286a374e16fd7741f869fe5edb1ef9d4}{\index{C\-S\-H\-Coeff@{C\-S\-H\-Coeff}!C\-S\-H\-Coeff@{C\-S\-H\-Coeff}}
@@ -79,7 +79,7 @@ Initialize a \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} object.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-an object of the \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} class
+an object of the \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} class.
 \end{DoxyReturn}
 Initialize S\-H\-Coeff class 
 
@@ -93,16 +93,54 @@ Initialize S\-H\-Coeff class
 \item[{{\bf R\-E\-A\-L}}]{val}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCSHCoeff_aa6cc07501f3b8ab8d2f9f32ba5a7b279}
-\hypertarget{classCSHCoeff_acd63e5bb85843c08800a83281f3daad9}{\index{C\-S\-H\-Coeff@{C\-S\-H\-Coeff}!besselk@{besselk}}
+
+
+The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} besseli function. 
+
+Function to create the i modified spherical bessel function. in(z) = sqrt(pi/(2z)) $\ast$ I n+0.5 (z)
+
+There is a recursion relationship as follows\-: i n+1(z) = (2n+1)$\ast$(2n+3)$\ast$( i n-\/1(z) -\/ i n(z) )/ z$^\wedge$2
+
+But the alternate method used is\-:
+
+i n(z) = 1 + sum\-\_\-(j=1)$^\wedge$\-L t\-\_\-j$^\wedge$n(z$^\wedge$2/2) where\-: t\-\_\-j$^\wedge$n(y) = (1/j)$\ast$t\-\_\-(j-\/1)$^\wedge$n(y)$\ast$(y/(2n+2j+3))
+
+
+\begin{DoxyParams}{Parameters}
+{\em I} & a vector of floating points to store besseli functions of size p \\
+\hline
+{\em p} & an integer indicating the number of bessel functions to compute \\
+\hline
+{\em val} & a floating point with the value at which to evaluate the bessel function. Given as z in the Lotan 2006 paper.\\
+\hline
+\end{DoxyParams}
+Function to create the i modified spherical bessel function. \hypertarget{classCSHCoeff_acd63e5bb85843c08800a83281f3daad9}{\index{C\-S\-H\-Coeff@{C\-S\-H\-Coeff}!besselk@{besselk}}
 \index{besselk@{besselk}!CSHCoeff@{C\-S\-H\-Coeff}}
 \subsubsection[{besselk}]{\setlength{\rightskip}{0pt plus 5cm}void C\-S\-H\-Coeff\-::besselk (
 \begin{DoxyParamCaption}
 \item[{{\bf R\-E\-A\-L}}]{K\mbox{[}$\,$\mbox{]}, }
-\item[{int}]{n, }
+\item[{int}]{p, }
 \item[{{\bf R\-E\-A\-L}}]{val}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCSHCoeff_acd63e5bb85843c08800a83281f3daad9}
-\hypertarget{classCSHCoeff_adf80cf8370b4db9957de7acfe8aa64d6}{\index{C\-S\-H\-Coeff@{C\-S\-H\-Coeff}!inc@{inc}}
+
+
+The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} besselk function. 
+
+Function to create the i modified spherical bessel function. kn(z) = sqrt(pi/(2z)) $\ast$ K n+0.5 (z)
+
+There is a recursion relationship as follows\-: k n+1(z) = k n(z) + ( k n-\/1(z) $\ast$ z$^\wedge$2 )/( (2n+1)$\ast$(2n-\/1) )
+
+
+\begin{DoxyParams}{Parameters}
+{\em K} & a vector of floating points to store bessel\-K functions of size p \\
+\hline
+{\em p} & an integer indicating the number of bessel functions to compute \\
+\hline
+{\em val} & a floating point with the value at which to evaluate the bessel function. Given as z in the Lotan 2006 paper.\\
+\hline
+\end{DoxyParams}
+Function to create the k modified spherical bessel function. \hypertarget{classCSHCoeff_adf80cf8370b4db9957de7acfe8aa64d6}{\index{C\-S\-H\-Coeff@{C\-S\-H\-Coeff}!inc@{inc}}
 \index{inc@{inc}!CSHCoeff@{C\-S\-H\-Coeff}}
 \subsubsection[{inc}]{\setlength{\rightskip}{0pt plus 5cm}void C\-S\-H\-Coeff\-::inc (
 \begin{DoxyParamCaption}
@@ -110,6 +148,12 @@ Initialize S\-H\-Coeff class
 \end{DoxyParamCaption}
 )}}\label{classCSHCoeff_adf80cf8370b4db9957de7acfe8aa64d6}
 
+
+The \hyperlink{classCSHCoeff}{C\-S\-H\-Coeff} inc function. 
+
+Function to increase S\-H for N\-P\-O\-L\-E\-S=m\-\_\-p+1
+
+Function to increase the number of poles and create a legendre polynomial for m\-\_\-p+1 poles. 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -129,7 +173,7 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{{\bf R\-E\-A\-L}}]{val}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCSHCoeff_a8fd12308d0884731596cc1268b04d232}
-\hypertarget{classCSHCoeff_ae6ad53fe9a4862de25fe7f2788649a41}{\index{C\-S\-H\-Coeff@{C\-S\-H\-Coeff}!init@{init}}
+Function to increase the stored k modified spherical bessel function \hypertarget{classCSHCoeff_ae6ad53fe9a4862de25fe7f2788649a41}{\index{C\-S\-H\-Coeff@{C\-S\-H\-Coeff}!init@{init}}
 \index{init@{init}!CSHCoeff@{C\-S\-H\-Coeff}}
 \subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void C\-S\-H\-Coeff\-::init (
 \begin{DoxyParamCaption}
@@ -146,6 +190,15 @@ Initialize the spherical harmonics coefficients Inputs\-: rs = scaling factor $\
 \item[{int}]{p}
 \end{DoxyParamCaption}
 )}}\label{classCSHCoeff_a7aa1d16fe8a3e18012f2ccaec89a0a0f}
+Reset the spherical harmonics for a given theta and phi 
+\begin{DoxyParams}{Parameters}
+{\em theta} & a given theta angle for computing S\-H \\
+\hline
+{\em phi} & a given phi angle for computing S\-H \\
+\hline
+{\em p} & an int with the number of poles for computing S\-H \\
+\hline
+\end{DoxyParams}
 \hypertarget{classCSHCoeff_ac30535573d45c2da6a424c415967e6f2}{\index{C\-S\-H\-Coeff@{C\-S\-H\-Coeff}!special\-S\-H@{special\-S\-H}}
 \index{special\-S\-H@{special\-S\-H}!CSHCoeff@{C\-S\-H\-Coeff}}
 \subsubsection[{special\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}void C\-S\-H\-Coeff\-::special\-S\-H (
@@ -155,7 +208,10 @@ Initialize the spherical harmonics coefficients Inputs\-: rs = scaling factor $\
 \item[{{\bf R\-E\-A\-L}}]{val}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCSHCoeff_ac30535573d45c2da6a424c415967e6f2}
+Creating a special spherical harmonic, from a legendre polynomial, using the recursive relationship, for m=1\-: \begin{DoxyVerb}Pl,1 (val) = val * (2l-1)/(l-1) * Pl-1,1(val) - l/(l-1) * Pl-2,1(val)
 
+and finally: SH[l] = -1*sqrt((l-1)!/(l+1)!)*Pl,1(val)\end{DoxyVerb}
+ 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

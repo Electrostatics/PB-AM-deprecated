@@ -5,6 +5,6 @@
 
 EXEC="../../bin/mpe"
 
-$EXEC inf barnaseh.pqr 1 10  
-$EXEC inf barnaseh.pqr 2 10  
+$EXEC inf barnaseh.pqr 1 8  
+$EXEC inf barnaseh.pqr 2 8  
 

@@ -3,49 +3,59 @@
 }
 
 
+The trans\-Coeff class.  
+
+
+
+
 {\ttfamily \#include $<$transcoeff.\-h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classCTransCoeff_a1b4eb40fb4a4d8efb14ad684c1a169d4}{C\-Trans\-Coeff} (bool b\-Grad=true)
-\item 
+\begin{DoxyCompactList}\small\item\em The trans\-Coeff class constructor. \end{DoxyCompactList}\item 
 void \hyperlink{classCTransCoeff_ade17444acf44e5c80f8caa9a593f03ee}{reset} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} rho, int p)
-\item 
+\begin{DoxyCompactList}\small\item\em Trans\-Coeff reset function. \end{DoxyCompactList}\item 
 void \hyperlink{classCTransCoeff_a0152b91eec8d84278e6432019ce4ef91}{translate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, bool tpose)
-\item 
+\begin{DoxyCompactList}\small\item\em Trans\-Coeff translate function. \end{DoxyCompactList}\item 
 void \hyperlink{classCTransCoeff_a15c1d9affb86e989dc0beefa0683effb}{translate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, int p, bool tpose)
-\item 
+\begin{DoxyCompactList}\small\item\em Trans\-Coeff translate function. \end{DoxyCompactList}\item 
 void \hyperlink{classCTransCoeff_a909121581454680f2b50f797f22715f0}{d\-Translate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, bool tpose)
-\item 
+\begin{DoxyCompactList}\small\item\em Trans\-Coeff d\-Translate function. \end{DoxyCompactList}\item 
 void \hyperlink{classCTransCoeff_af1e5496a4734710f04841a202346aefb}{d\-Translate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, int p, bool tpose)
-\item 
+\begin{DoxyCompactList}\small\item\em Trans\-Coeff d\-Translate function. \end{DoxyCompactList}\item 
 void \hyperlink{classCTransCoeff_a0b68420a4ae33fc1e8fa3dd00daf413c}{inc\-Translate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, bool tpose)
-\item 
+\begin{DoxyCompactList}\small\item\em Trans\-Coeff d\-Translate function. \end{DoxyCompactList}\item 
 \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCTransCoeff_a9fb52e0afd88150756506af029f86611}{compute\-Error} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&t\-M1, const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&t\-M2, int p)
-\item 
+\begin{DoxyCompactList}\small\item\em Trans\-Coeff compute\-Error function. \end{DoxyCompactList}\item 
 int \hyperlink{classCTransCoeff_a3c10d7ee9ead85dab5c5d2301cb6bb81}{get\-Order} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Get the number of poles in the transfer coefficient object. \end{DoxyCompactList}\item 
 void \hyperlink{classCTransCoeff_a4148a93440f4f011c4fb8cb26667707e}{inc\-Order} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCTransCoeff}{C\-Trans\-Coeff} inc\-Order. \end{DoxyCompactList}\item 
 void \hyperlink{classCTransCoeff_a79b28e19c6f8c4a028296b351eb4a30a}{dec\-Order} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCTransCoeff}{C\-Trans\-Coeff} dec\-Order. \end{DoxyCompactList}\item 
 void \hyperlink{classCTransCoeff_a100c9adb6d3476193842504ddf0a1e99}{output\-Trans} (int p) const 
 \item 
 void \hyperlink{classCTransCoeff_af80128c89b9785e7d4a0e93702ac523f}{outputd\-Trans} (int p) const 
 \item 
 void \hyperlink{classCTransCoeff_abdfd0c88d82daed4913df4859087103d}{save\-Undo} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCTransCoeff}{C\-Trans\-Coeff} save\-Undo. \end{DoxyCompactList}\item 
 void \hyperlink{classCTransCoeff_ac310aa175fd393365941e426e96a290b}{undo} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCTransCoeff}{C\-Trans\-Coeff} undo. \end{DoxyCompactList}\item 
 void \hyperlink{classCTransCoeff_a16bd5045a9ba639775224cc7f121f4c6}{export\-Mat} (double $\ast$$\ast$T)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Trans\-Coeff export\-Mat function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{classCTransCoeff_ae4be8ef01d28f5b8d9b4282252575bee}{init\-Constants} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Trans\-Coeff init\-Constants function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The trans\-Coeff class. 
+
+The class that contains all details for a translation coefficients, as described by the appendix of Lotan 2006. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classCTransCoeff_a1b4eb40fb4a4d8efb14ad684c1a169d4}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!C\-Trans\-Coeff@{C\-Trans\-Coeff}}
@@ -56,6 +66,15 @@ static void \hyperlink{classCTransCoeff_ae4be8ef01d28f5b8d9b4282252575bee}{init\
 \end{DoxyParamCaption}
 )}}\label{classCTransCoeff_a1b4eb40fb4a4d8efb14ad684c1a169d4}
 
+
+The trans\-Coeff class constructor. 
+
+Constructing a transcoeff class, using input of whether or not to compute the gradient 
+\begin{DoxyParams}{Parameters}
+{\em b\-Grad} & is a boolean indicating of whether or not to compute gradients the default is yes\\
+\hline
+\end{DoxyParams}
+Constructing a transcoeff class, using input of whether or not to compute the gradient 
 
 \subsection{Member Function Documentation}
 \hypertarget{classCTransCoeff_a9fb52e0afd88150756506af029f86611}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!compute\-Error@{compute\-Error}}
@@ -68,6 +87,19 @@ static void \hyperlink{classCTransCoeff_ae4be8ef01d28f5b8d9b4282252575bee}{init\
 \end{DoxyParamCaption}
 )}}\label{classCTransCoeff_a9fb52e0afd88150756506af029f86611}
 
+
+Trans\-Coeff compute\-Error function. 
+
+Function to compute the error between two matrix coefficients 
+\begin{DoxyParams}{Parameters}
+{\em Min} & matrix coefficient input \\
+\hline
+{\em Mout} & matrix coefficient output \\
+\hline
+{\em p} & an integer indicating the number of poles\\
+\hline
+\end{DoxyParams}
+compute the error between two matrix coefficients 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -85,7 +117,11 @@ Here is the call graph for this function\-:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_a79b28e19c6f8c4a028296b351eb4a30a}
-\hypertarget{classCTransCoeff_a909121581454680f2b50f797f22715f0}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!d\-Translate@{d\-Translate}}
+
+
+\hyperlink{classCTransCoeff}{C\-Trans\-Coeff} dec\-Order. 
+
+Decrease the number of poles of the calculation. Memory must be deallocated etc \hypertarget{classCTransCoeff_a909121581454680f2b50f797f22715f0}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!d\-Translate@{d\-Translate}}
 \index{d\-Translate@{d\-Translate}!CTransCoeff@{C\-Trans\-Coeff}}
 \subsubsection[{d\-Translate}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::d\-Translate (
 \begin{DoxyParamCaption}
@@ -94,6 +130,19 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{bool}]{tpose}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_a909121581454680f2b50f797f22715f0}
+
+
+Trans\-Coeff d\-Translate function. 
+
+Function to apply the derivative tranlation operator to the M\-P coefficents 
+\begin{DoxyParams}{Parameters}
+{\em Min} & matrix coefficient input \\
+\hline
+{\em Mout} & matrix coefficient output \\
+\hline
+{\em tpose} & boolean to indicate whether or not to transpose matrix \\
+\hline
+\end{DoxyParams}
 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -117,6 +166,21 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{classCTransCoeff_af1e5496a4734710f04841a202346aefb}
 
 
+Trans\-Coeff d\-Translate function. 
+
+Function to apply the derivative tranlation operator to the M\-P coefficents 
+\begin{DoxyParams}{Parameters}
+{\em Min} & matrix coefficient input \\
+\hline
+{\em Mout} & matrix coefficient output \\
+\hline
+{\em p} & an integer indicating the number of poles \\
+\hline
+{\em tpose} & boolean to indicate whether or not to transpose matrix\\
+\hline
+\end{DoxyParams}
+Apply the derivative of the translation operator 
+
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -133,13 +197,23 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{double $\ast$$\ast$}]{T}
 \end{DoxyParamCaption}
 )}}\label{classCTransCoeff_a16bd5045a9ba639775224cc7f121f4c6}
-\hypertarget{classCTransCoeff_a3c10d7ee9ead85dab5c5d2301cb6bb81}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!get\-Order@{get\-Order}}
+
+
+Trans\-Coeff export\-Mat function. 
+
+Export the translation matrix as a 2\-X2 matrix
+
+Export translation coefficient matrix as 2\-X2 \hypertarget{classCTransCoeff_a3c10d7ee9ead85dab5c5d2301cb6bb81}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!get\-Order@{get\-Order}}
 \index{get\-Order@{get\-Order}!CTransCoeff@{C\-Trans\-Coeff}}
 \subsubsection[{get\-Order}]{\setlength{\rightskip}{0pt plus 5cm}int C\-Trans\-Coeff\-::get\-Order (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_a3c10d7ee9ead85dab5c5d2301cb6bb81}
+
+
+Get the number of poles in the transfer coefficient object. 
+
 \hypertarget{classCTransCoeff_a4148a93440f4f011c4fb8cb26667707e}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!inc\-Order@{inc\-Order}}
 \index{inc\-Order@{inc\-Order}!CTransCoeff@{C\-Trans\-Coeff}}
 \subsubsection[{inc\-Order}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::inc\-Order (
@@ -148,6 +222,10 @@ Here is the call graph for this function\-:\nopagebreak
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_a4148a93440f4f011c4fb8cb26667707e}
 
+
+\hyperlink{classCTransCoeff}{C\-Trans\-Coeff} inc\-Order. 
+
+Increase the number of poles of the calculation. Memory must be allocated, the bessel functions increased and the coefficients added too 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -169,6 +247,10 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{classCTransCoeff_a0b68420a4ae33fc1e8fa3dd00daf413c}
 
 
+Trans\-Coeff d\-Translate function. 
+
+Apply the translation operator to transform the top level of M\-P coeeffs assuming translation based upon p-\/1 levels already done. 
+
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -185,21 +267,27 @@ Here is the call graph for this function\-:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCTransCoeff_ae4be8ef01d28f5b8d9b4282252575bee}
-Initialize the rotation coefficients (includes coeff equs from 2006 paper $<$ K$^\wedge$2 $\ast$ R\-S$^\wedge$2 \hypertarget{classCTransCoeff_af80128c89b9785e7d4a0e93702ac523f}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!outputd\-Trans@{outputd\-Trans}}
+
+
+Trans\-Coeff init\-Constants function. 
+
+Function to initialize constants used in trans. coeff recursion
+
+Initialize the rotation coefficients (includes coeff equs from 2006 paper \hypertarget{classCTransCoeff_af80128c89b9785e7d4a0e93702ac523f}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!outputd\-Trans@{outputd\-Trans}}
 \index{outputd\-Trans@{outputd\-Trans}!CTransCoeff@{C\-Trans\-Coeff}}
 \subsubsection[{outputd\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::outputd\-Trans (
 \begin{DoxyParamCaption}
 \item[{int}]{p}
 \end{DoxyParamCaption}
 ) const}}\label{classCTransCoeff_af80128c89b9785e7d4a0e93702ac523f}
-\hypertarget{classCTransCoeff_a100c9adb6d3476193842504ddf0a1e99}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!output\-Trans@{output\-Trans}}
+Print out derivatives of trans coefficients \hypertarget{classCTransCoeff_a100c9adb6d3476193842504ddf0a1e99}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!output\-Trans@{output\-Trans}}
 \index{output\-Trans@{output\-Trans}!CTransCoeff@{C\-Trans\-Coeff}}
 \subsubsection[{output\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::output\-Trans (
 \begin{DoxyParamCaption}
 \item[{int}]{p}
 \end{DoxyParamCaption}
 ) const}}\label{classCTransCoeff_a100c9adb6d3476193842504ddf0a1e99}
-\hypertarget{classCTransCoeff_ade17444acf44e5c80f8caa9a593f03ee}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!reset@{reset}}
+Print out trans coefficients \hypertarget{classCTransCoeff_ade17444acf44e5c80f8caa9a593f03ee}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!reset@{reset}}
 \index{reset@{reset}!CTransCoeff@{C\-Trans\-Coeff}}
 \subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::reset (
 \begin{DoxyParamCaption}
@@ -207,14 +295,29 @@ Initialize the rotation coefficients (includes coeff equs from 2006 paper $<$ K$
 \item[{int}]{p}
 \end{DoxyParamCaption}
 )}}\label{classCTransCoeff_ade17444acf44e5c80f8caa9a593f03ee}
-\hypertarget{classCTransCoeff_abdfd0c88d82daed4913df4859087103d}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!save\-Undo@{save\-Undo}}
+
+
+Trans\-Coeff reset function. 
+
+Function to reset the translation coefficients and reallocate space 
+\begin{DoxyParams}{Parameters}
+{\em rho} & a floating point with the new desired distance, d \\
+\hline
+{\em p} & an int containing the new number of poles\\
+\hline
+\end{DoxyParams}
+Reset distance, poles, and memory \hypertarget{classCTransCoeff_abdfd0c88d82daed4913df4859087103d}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!save\-Undo@{save\-Undo}}
 \index{save\-Undo@{save\-Undo}!CTransCoeff@{C\-Trans\-Coeff}}
 \subsubsection[{save\-Undo}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::save\-Undo (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_abdfd0c88d82daed4913df4859087103d}
-\hypertarget{classCTransCoeff_a0152b91eec8d84278e6432019ce4ef91}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!translate@{translate}}
+
+
+\hyperlink{classCTransCoeff}{C\-Trans\-Coeff} save\-Undo. 
+
+Save the translation coefficients and derivatives as an undone move \hypertarget{classCTransCoeff_a0152b91eec8d84278e6432019ce4ef91}{\index{C\-Trans\-Coeff@{C\-Trans\-Coeff}!translate@{translate}}
 \index{translate@{translate}!CTransCoeff@{C\-Trans\-Coeff}}
 \subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Trans\-Coeff\-::translate (
 \begin{DoxyParamCaption}
@@ -223,6 +326,19 @@ Initialize the rotation coefficients (includes coeff equs from 2006 paper $<$ K$
 \item[{bool}]{tpose}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_a0152b91eec8d84278e6432019ce4ef91}
+
+
+Trans\-Coeff translate function. 
+
+Function to apply the tranlation operator to the M\-P coefficents 
+\begin{DoxyParams}{Parameters}
+{\em Min} & matrix coefficient input \\
+\hline
+{\em Mout} & matrix coefficient output \\
+\hline
+{\em tpose} & boolean to indicate whether or not to transpose matrix \\
+\hline
+\end{DoxyParams}
 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -246,6 +362,21 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{classCTransCoeff_a15c1d9affb86e989dc0beefa0683effb}
 
 
+Trans\-Coeff translate function. 
+
+Function to apply the tranlation operator to the M\-P coefficents 
+\begin{DoxyParams}{Parameters}
+{\em Min} & matrix coefficient input \\
+\hline
+{\em Mout} & matrix coefficient output \\
+\hline
+{\em p} & an integer indicating the number of poles \\
+\hline
+{\em tpose} & boolean to indicate whether or not to transpose matrix\\
+\hline
+\end{DoxyParams}
+Apply the translation operator to the M\-P coeffs 
+
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -263,6 +394,10 @@ Here is the call graph for this function\-:\nopagebreak
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTransCoeff_ac310aa175fd393365941e426e96a290b}
 
+
+\hyperlink{classCTransCoeff}{C\-Trans\-Coeff} undo. 
+
+Revert to old tranlation coefficients using saved components 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

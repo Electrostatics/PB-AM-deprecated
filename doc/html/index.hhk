@@ -56,8 +56,8 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#a383d01cbd424a11c6571cb85c748a9fb"><param name="Name" value="approxBBall"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#a19c0428544bfe3bd1d2d8f849252f4ec"><param name="Name" value="AVOGADRO_NUM"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#aa3ff29c160d7bfbbf442fe19402b1b1d"><param name="Name" value="b_DIST"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#ad261235621d7c522431468ac50a3c7c3"><param name="Name" value="buildGrid"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#add9f16fa66f1f140387a281f7ac53fd4"><param name="Name" value="buildSystem"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#ab4f52653b848e0335005e8f9cb3cbd49"><param name="Name" value="buildGrid"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#a9c965fd0c3d37e5f71c0cd6a33218ea8"><param name="Name" value="buildSystem"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#abc59e3d5de96d0dbfd2e195fee14e244"><param name="Name" value="buildUnitCell"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#a72e53579b3b8b94f0d5c6b95af3e2ecf"><param name="Name" value="COUL_K"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#a01a47ab37988e52002d412cc17b3e8ce"><param name="Name" value="COULOMB_CONSTANT"></OBJECT>
@@ -106,8 +106,8 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCAtom.html#a1681cf237fc69b41f3cd19883b0d95f9"><param name="Name" value="BRANCH1_SHIFT"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCAtom.html#a5c11499e3e68349fd7e83369a5939319"><param name="Name" value="BRANCH2_MASK"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCAtom.html#a1932c279f682ca9a43d653ec5afae175"><param name="Name" value="BRANCH2_SHIFT"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#ad261235621d7c522431468ac50a3c7c3"><param name="Name" value="buildGrid"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#add9f16fa66f1f140387a281f7ac53fd4"><param name="Name" value="buildSystem"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#ab4f52653b848e0335005e8f9cb3cbd49"><param name="Name" value="buildGrid"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#a9c965fd0c3d37e5f71c0cd6a33218ea8"><param name="Name" value="buildSystem"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#abc59e3d5de96d0dbfd2e195fee14e244"><param name="Name" value="buildUnitCell"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCAtom.html#a79e729b143961179c43939392d704848a6e700b53b49716ee00aa07e562cd7f43"><param name="Name" value="C"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCPnt.html#ad05fbf75e7550a927bc817f97115f2fc"><param name="Name" value="CartToSph"></OBJECT>

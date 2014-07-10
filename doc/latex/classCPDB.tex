@@ -3,20 +3,30 @@
 }
 
 
+The P\-D\-B class.  
+
+
+
+
 {\ttfamily \#include $<$pdb.\-h$>$}
 
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{classCPDB_a3033b818c15dea1b6df7c3b354a8d044}{load\-From\-P\-D\-B} (const char $\ast$fname, vector$<$ \hyperlink{classAA}{A\-A} $>$ \&aas)
-\item 
+\begin{DoxyCompactList}\small\item\em The P\-D\-B function load\-From\-P\-D\-B. \end{DoxyCompactList}\item 
 static void \hyperlink{classCPDB_ab30dfa8082d957c7008d2e4a2c56273b}{write\-To\-P\-D\-B} (const char $\ast$fname, const vector$<$ \hyperlink{classAA}{A\-A} $>$ \&aas)
-\item 
+\begin{DoxyCompactList}\small\item\em The P\-D\-B function write\-To\-P\-D\-B. \end{DoxyCompactList}\item 
 static void \hyperlink{classCPDB_a1c4247e99968afb8266c6cf85d537de6}{write\-Line} (ostream \&fout, int index, const char $\ast$chainid, const \hyperlink{classCAtom}{C\-Atom} \&atom, const \hyperlink{classCQuat}{C\-Quat} \&rot, const \hyperlink{classCPnt}{C\-Pnt} \&trans)
-\item 
+\begin{DoxyCompactList}\small\item\em The P\-D\-B function write\-Line. \end{DoxyCompactList}\item 
 static \hyperlink{classCAtom}{C\-Atom} \hyperlink{classCPDB_acdc2ba2ed5bb4dc8701577e29c0f4bf9}{readline} (const char $\ast$buf)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The P\-D\-B function read\-Line. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The P\-D\-B class. 
+
+The class that contains all details for a P\-D\-B object 
 
 \subsection{Member Function Documentation}
 \hypertarget{classCPDB_a3033b818c15dea1b6df7c3b354a8d044}{\index{C\-P\-D\-B@{C\-P\-D\-B}!load\-From\-P\-D\-B@{load\-From\-P\-D\-B}}
@@ -27,9 +37,21 @@ static \hyperlink{classCAtom}{C\-Atom} \hyperlink{classCPDB_acdc2ba2ed5bb4dc8701
 \item[{vector$<$ {\bf A\-A} $>$ \&}]{aas}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCPDB_a3033b818c15dea1b6df7c3b354a8d044}
-load\-From\-P\-D\-B Inputs\-: pdb filename for protein, empty vector for amino acid seq $<$ Checking for file 
 
-Here is the call graph for this function\-:\nopagebreak
+
+The P\-D\-B function load\-From\-P\-D\-B. 
+
+The function that opens a P\-D\-B and reads in the atoms in it, storing each in their respective amino acid groups 
+\begin{DoxyParams}{Parameters}
+{\em fname} & a character string of the filename handle \\
+\hline
+{\em a} & vector of amino acids to store information from P\-D\-B\\
+\hline
+\end{DoxyParams}
+load\-From\-P\-D\-B Inputs\-: pdb filename for protein, empty vector for amino acid seq 
+
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -45,9 +67,22 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{const char $\ast$}]{buf}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCPDB_acdc2ba2ed5bb4dc8701577e29c0f4bf9}
+
+
+The P\-D\-B function read\-Line. 
+
+The function called by load\-From\-P\-D\-B to read in a line and store as a \hyperlink{classCAtom}{C\-Atom} class object 
+\begin{DoxyParams}{Parameters}
+{\em buf} & a string from the P\-D\-B file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCAtom}{C\-Atom} object of the atom information contained on the line
+\end{DoxyReturn}
 read\-Line\-: read a line from a pdb file to obtain information about an atom 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -70,7 +105,27 @@ Here is the call graph for this function\-:\nopagebreak
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCPDB_a1c4247e99968afb8266c6cf85d537de6}
 
 
-Here is the call graph for this function\-:\nopagebreak
+The P\-D\-B function write\-Line. 
+
+The function called by write\-To\-P\-D\-B to write out each line 
+\begin{DoxyParams}{Parameters}
+{\em fout} & a character string of the filename handle \\
+\hline
+{\em int} & an index of the atom number \\
+\hline
+{\em chain\-Id} & a character string of the chain I\-D \\
+\hline
+{\em atom} & a \hyperlink{classCAtom}{C\-Atom} object of the atom to print \\
+\hline
+{\em rot} & a \hyperlink{classCQuat}{C\-Quat} object of the atom's orientation \\
+\hline
+{\em trans} & a \hyperlink{classCPnt}{C\-Pnt} object of the atoms translation\\
+\hline
+\end{DoxyParams}
+The function called by write\-To\-P\-D\-B to write out each line 
+
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -88,6 +143,17 @@ Here is the call graph for this function\-:\nopagebreak
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCPDB_ab30dfa8082d957c7008d2e4a2c56273b}
 
+
+The P\-D\-B function write\-To\-P\-D\-B. 
+
+The function that writes out a group of amino acids to a P\-D\-B 
+\begin{DoxyParams}{Parameters}
+{\em fname} & a character string of the filename handle \\
+\hline
+{\em a} & vector of amino acids to print to P\-D\-B\\
+\hline
+\end{DoxyParams}
+The function that writes out a group of amino acids to a P\-D\-B 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

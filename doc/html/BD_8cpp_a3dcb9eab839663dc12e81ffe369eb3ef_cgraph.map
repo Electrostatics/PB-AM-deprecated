@@ -1,7 +1,7 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$util_8h.html#ad864dc450da6954264580e4318e011eb" title="seedRand" alt="" coords="138,308,219,335"/>
-<area shape="rect" id="node5" href="$BD_8cpp.html#add9f16fa66f1f140387a281f7ac53fd4" title="buildSystem" alt="" coords="131,359,226,385"/>
-<area shape="rect" id="node15" href="$classCQuat.html#a3788f9ce393c8c6e7dc2df6e7675c594" title="CQuat chooseRandom." alt="" coords="297,409,455,436"/>
+<area shape="rect" id="node5" href="$BD_8cpp.html#a9c965fd0c3d37e5f71c0cd6a33218ea8" title="buildSystem" alt="" coords="131,359,226,385"/>
+<area shape="rect" id="node15" href="$classCQuat.html#a3788f9ce393c8c6e7dc2df6e7675c594" title="CQuat chooseRandom, choose random quaternion." alt="" coords="297,409,455,436"/>
 <area shape="rect" id="node25" href="$classCMPE.html#a56b7e4c76e20d5e34393a72cc31f6bb3" title="CMPE::initXForms" alt="" coords="113,460,245,487"/>
 <area shape="rect" id="node28" href="$classCMPE.html#a46bad2726842ca10071fd004010a6e1b" title="CMPE::solve" alt="" coords="326,528,426,555"/>
 <area shape="rect" id="node100" href="$BD_8cpp.html#aa47d8f951ab91c51da9b69f787f18030" title="perturb" alt="" coords="147,629,210,656"/>
@@ -26,25 +26,25 @@
 <area shape="rect" id="node45" href="$classCRotCoeff.html#a4668070c3eacacf17be98bc2fb348287" title="CRotCoeff::isSingular" alt="" coords="1333,485,1483,512"/>
 <area shape="rect" id="node47" href="$classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba" title="CSpPnt::theta" alt="" coords="1138,536,1243,563"/>
 <area shape="rect" id="node49" href="$classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d" title="CSpPnt::phi" alt="" coords="1144,56,1237,83"/>
-<area shape="rect" id="node51" href="$classCTransCoeff.html#ade17444acf44e5c80f8caa9a593f03ee" title="CTransCoeff::reset" alt="" coords="1123,107,1258,133"/>
+<area shape="rect" id="node51" href="$classCTransCoeff.html#ade17444acf44e5c80f8caa9a593f03ee" title="TransCoeff reset function." alt="" coords="1123,107,1258,133"/>
 <area shape="rect" id="node53" href="$classCSpPnt.html#af6364f003b923aa77c880869d27caa64" title="CSpPnt::rho" alt="" coords="1143,157,1238,184"/>
-<area shape="rect" id="node55" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff::rotate" alt="" coords="1127,611,1254,637"/>
-<area shape="rect" id="node58" href="$classCTransCoeff.html#a0152b91eec8d84278e6432019ce4ef91" title="CTransCoeff::translate" alt="" coords="1113,232,1268,259"/>
+<area shape="rect" id="node55" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff rotate function." alt="" coords="1127,611,1254,637"/>
+<area shape="rect" id="node58" href="$classCTransCoeff.html#a0152b91eec8d84278e6432019ce4ef91" title="TransCoeff translate function." alt="" coords="1113,232,1268,259"/>
 <area shape="rect" id="node61" href="$mcoeff_8h.html#a90c84c259a220e291cebf52d99560c61" title="The mcoeff expansion class." alt="" coords="1162,283,1219,309"/>
-<area shape="rect" id="node63" href="$classCTransCoeff.html#a9fb52e0afd88150756506af029f86611" title="CTransCoeff::computeError" alt="" coords="1099,763,1282,789"/>
+<area shape="rect" id="node63" href="$classCTransCoeff.html#a9fb52e0afd88150756506af029f86611" title="TransCoeff computeError function." alt="" coords="1099,763,1282,789"/>
 <area shape="rect" id="node67" href="$classCRotCoeff.html#a27b0198e460737ea20601fa4f0667df5" title="CRotCoeff::getParams" alt="" coords="1113,333,1269,360"/>
 <area shape="rect" id="node43" href="$classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="1348,435,1468,461"/>
 <area shape="rect" id="node65" href="$classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="CMCoeff::getOrder" alt="" coords="1341,763,1475,789"/>
-<area shape="rect" id="node74" href="$classCTransCoeff.html#a79b28e19c6f8c4a028296b351eb4a30a" title="CTransCoeff::decOrder" alt="" coords="891,763,1050,789"/>
+<area shape="rect" id="node74" href="$classCTransCoeff.html#a79b28e19c6f8c4a028296b351eb4a30a" title="CTransCoeff decOrder." alt="" coords="891,763,1050,789"/>
 <area shape="rect" id="node76" href="$classCRotCoeff.html#ae9fa83e941510deeda3aac1b8aecc58b" title="CRotCoeff::decOrder" alt="" coords="897,813,1044,840"/>
-<area shape="rect" id="node81" href="$classCTransCoeff.html#a4148a93440f4f011c4fb8cb26667707e" title="CTransCoeff::incOrder" alt="" coords="1113,712,1268,739"/>
+<area shape="rect" id="node81" href="$classCTransCoeff.html#a4148a93440f4f011c4fb8cb26667707e" title="CTransCoeff incOrder." alt="" coords="1113,712,1268,739"/>
 <area shape="rect" id="node85" href="$classCRotCoeff.html#a1416603a77ab7c9b7af515a7bad684f1" title="CRotCoeff::incOrder" alt="" coords="1119,661,1262,688"/>
 <area shape="rect" id="node83" href="$classCSHCoeff.html#a8fd12308d0884731596cc1268b04d232" title="CSHCoeff::incBesselk" alt="" coords="1331,712,1485,739"/>
-<area shape="rect" id="node89" href="$classCSHCoeff.html#adf80cf8370b4db9957de7acfe8aa64d6" title="CSHCoeff::inc" alt="" coords="1354,661,1462,688"/>
+<area shape="rect" id="node89" href="$classCSHCoeff.html#adf80cf8370b4db9957de7acfe8aa64d6" title="The CSHCoeff inc function." alt="" coords="1354,661,1462,688"/>
 <area shape="rect" id="node91" href="$classCMCoeff.html#a815a4d1f74b217ea54d9f05f6734004f" title="CMCoeff::setOrder" alt="" coords="1533,661,1667,688"/>
 <area shape="rect" id="node102" href="$classCBD.html#a9ad6f87e7436fa716a470e97f0ec836f" title="CBD getRandVec function." alt="" coords="311,629,441,656"/>
-<area shape="rect" id="node106" href="$classCPnt.html#ab92f2e6cc3891ff6a00eddb483b854ab" title="CPnt::norm" alt="" coords="331,680,421,707"/>
+<area shape="rect" id="node106" href="$classCPnt.html#ab92f2e6cc3891ff6a00eddb483b854ab" title="The CPnt norm function." alt="" coords="331,680,421,707"/>
 <area shape="rect" id="node108" href="$classCMPE.html#a70e20d2a606e1bae88c117b15a511e17" title="CMPE::updateSolve" alt="" coords="305,579,447,605"/>
 <area shape="rect" id="node112" href="$classCMPE.html#a61688da6057b840ca71dacb47db0c0ac" title="The MPE undoXForms function." alt="" coords="305,731,447,757"/>
-<area shape="rect" id="node104" href="$util_8h.html#a3daa70c1884dabb0992d5ce98e3f692a" title="randOrient" alt="" coords="543,629,625,656"/>
+<area shape="rect" id="node104" href="$util_8h.html#a3daa70c1884dabb0992d5ce98e3f692a" title="normRand" alt="" coords="543,629,625,656"/>
 </map>

@@ -3,6 +3,11 @@
 }
 
 
+The \hyperlink{classAA}{A\-A} class.  
+
+
+
+
 {\ttfamily \#include $<$pdb.\-h$>$}
 
 \subsection*{Public Types}
@@ -37,14 +42,14 @@ enum \hyperlink{classAA_a8717db02e7eeaac316898736843fa600}{A\-A\-C\-O\-D\-E} \{ 
 \hyperlink{classAA_a8717db02e7eeaac316898736843fa600a2362193b9e548fbc61b1b502e539f176}{N\-T\-R}, 
 \hyperlink{classAA_a8717db02e7eeaac316898736843fa600a67989ca37e3ee8b892f7569ca60a9bbd}{C\-T\-R}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classAA}{A\-A} class enum A\-A\-C\-O\-D\-E. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 const \hyperlink{classCAtom}{C\-Atom} $\ast$ \hyperlink{classAA_aa271a8269c3a69c795651b87768abd3c}{operator\mbox{[}$\,$\mbox{]}} (const char $\ast$aname) const 
-\item 
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classAA}{A\-A} \mbox{[}\mbox{]} operator. \end{DoxyCompactList}\item 
 const \hyperlink{classCAtom}{C\-Atom} \& \hyperlink{classAA_ad47e1014c42578100eb951d057130d60}{operator\mbox{[}$\,$\mbox{]}} (int i) const 
-\item 
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classAA}{A\-A} \mbox{[}\mbox{]} operator. \end{DoxyCompactList}\item 
 \hyperlink{classAA_a8717db02e7eeaac316898736843fa600}{A\-A\-C\-O\-D\-E} \hyperlink{classAA_a7bb2b102b435f41fa3c78c1cded8ce93}{get\-Type} () const 
 \item 
 int \hyperlink{classAA_a296b621ecb2dc785e0c27614dab7df37}{get\-Num\-Atoms} () const 
@@ -59,7 +64,7 @@ void \hyperlink{classAA_a77290c917ac630708465bb700c9a1d91}{clear} ()
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classAA_a8717db02e7eeaac316898736843fa600}{A\-A\-C\-O\-D\-E} \hyperlink{classAA_a4586e72f7a09f932e29188a5098f124f}{get\-A\-A\-Code} (const char $\ast$aa)
-\item 
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classAA}{A\-A} class function get\-A\-A\-Code. \end{DoxyCompactList}\item 
 static const char $\ast$ \hyperlink{classAA_a1ae2a562a71d05aa8c1f9b3c7136e3b7}{get\-Name} (\hyperlink{classAA_a8717db02e7eeaac316898736843fa600}{A\-A\-C\-O\-D\-E} code)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
@@ -71,11 +76,20 @@ static const char \hyperlink{classAA_ad31fab7fcd16661c068535ca46524a6a}{A\-A\-L\
 \begin{DoxyCompactList}\small\item\em 1 Letter codes for each amino acid \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+The \hyperlink{classAA}{A\-A} class. 
+
+The class that contains all details for an amino acid object 
+
 \subsection{Member Enumeration Documentation}
 \hypertarget{classAA_a8717db02e7eeaac316898736843fa600}{\index{A\-A@{A\-A}!A\-A\-C\-O\-D\-E@{A\-A\-C\-O\-D\-E}}
 \index{A\-A\-C\-O\-D\-E@{A\-A\-C\-O\-D\-E}!AA@{A\-A}}
 \subsubsection[{A\-A\-C\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\-A\-::\-A\-A\-C\-O\-D\-E}}}\label{classAA_a8717db02e7eeaac316898736843fa600}
-\begin{Desc}
+
+
+The \hyperlink{classAA}{A\-A} class enum A\-A\-C\-O\-D\-E. 
+
+An enumerator for the amino acids given by their 3 letter codes \begin{Desc}
 \item[Enumerator\-: ]\par
 \begin{description}
 \index{A\-L\-A@{A\-L\-A}!A\-A@{A\-A}}\index{A\-A@{A\-A}!A\-L\-A@{A\-L\-A}}\item[{\em 
@@ -142,6 +156,18 @@ static const char \hyperlink{classAA_ad31fab7fcd16661c068535ca46524a6a}{A\-A\-L\
 \item[{const char $\ast$}]{aa}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classAA_a4586e72f7a09f932e29188a5098f124f}
+
+
+The \hyperlink{classAA}{A\-A} class function get\-A\-A\-Code. 
+
+Return the enum code for a given amino acid 
+\begin{DoxyParams}{Parameters}
+{\em aa} & a string of amino acid name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an enum for the amino acid in question
+\end{DoxyReturn}
 Using the amino acid code name (3 or 1 letter), identify the given amino acid \hypertarget{classAA_a1ae2a562a71d05aa8c1f9b3c7136e3b7}{\index{A\-A@{A\-A}!get\-Name@{get\-Name}}
 \index{get\-Name@{get\-Name}!AA@{A\-A}}
 \subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ A\-A\-::get\-Name (
@@ -179,7 +205,20 @@ Using the amino acid code name (3 or 1 letter), identify the given amino acid \h
 ) const}}\label{classAA_aa271a8269c3a69c795651b87768abd3c}
 
 
-Here is the call graph for this function\-:\nopagebreak
+The \hyperlink{classAA}{A\-A} \mbox{[}\mbox{]} operator. 
+
+Given a character string of the aname, return the atom of interest 
+\begin{DoxyParams}{Parameters}
+{\em aname} & a four character pointer for atom of interest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the \hyperlink{classCAtom}{C\-Atom} object of interest
+\end{DoxyReturn}
+Find an atom using its four character string 
+
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -195,6 +234,18 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{int}]{i}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classAA_ad47e1014c42578100eb951d057130d60}
+
+
+The \hyperlink{classAA}{A\-A} \mbox{[}\mbox{]} operator. 
+
+Given the atom index, return the atom of interest 
+\begin{DoxyParams}{Parameters}
+{\em i} & an integer of the atom index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classCAtom}{C\-Atom} object of interest 
+\end{DoxyReturn}
 \hypertarget{classAA_a111b14b73321f7fbd0e910fe7377d3e2}{\index{A\-A@{A\-A}!set\-Type@{set\-Type}}
 \index{set\-Type@{set\-Type}!AA@{A\-A}}
 \subsubsection[{set\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void A\-A\-::set\-Type (

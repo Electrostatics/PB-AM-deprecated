@@ -5,6 +5,6 @@
 <area shape="rect" id="node13" href="$classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba" title="CSpPnt::theta" alt="" coords="229,183,334,209"/>
 <area shape="rect" id="node15" href="$classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d" title="CSpPnt::phi" alt="" coords="235,233,328,260"/>
 <area shape="rect" id="node17" href="$classCMCoeff.html#a3457ae837d9f8d250757fae3fd69c441" title="CMCoeff::dMdp" alt="" coords="224,284,339,311"/>
-<area shape="rect" id="node5" href="$classCSHCoeff.html#aa6cc07501f3b8ab8d2f9f32ba5a7b279" title="CSHCoeff::besseli" alt="" coords="389,5,521,32"/>
-<area shape="rect" id="node7" href="$classCSHCoeff.html#acd63e5bb85843c08800a83281f3daad9" title="CSHCoeff::besselk" alt="" coords="387,56,523,83"/>
+<area shape="rect" id="node5" href="$classCSHCoeff.html#aa6cc07501f3b8ab8d2f9f32ba5a7b279" title="The CSHCoeff besseli function." alt="" coords="389,5,521,32"/>
+<area shape="rect" id="node7" href="$classCSHCoeff.html#acd63e5bb85843c08800a83281f3daad9" title="The CSHCoeff besselk function." alt="" coords="387,56,523,83"/>
 </map>

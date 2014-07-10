@@ -1,6 +1,6 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$classCRotCoeff.html#aa52111e9c4cb2949dfae960437742536" title="CRotCoeff::reset" alt="" coords="179,56,301,83"/>
-<area shape="rect" id="node9" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff::rotate" alt="" coords="177,137,303,164"/>
+<area shape="rect" id="node9" href="$classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff rotate function." alt="" coords="177,137,303,164"/>
 <area shape="rect" id="node12" href="$classCTriCoeff.html#aa80c22419286d9fc99daafb90a44d03e" title="CTriCoeff::rotate" alt="" coords="180,201,300,228"/>
 <area shape="rect" id="node5" href="$classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="368,5,488,32"/>
 <area shape="rect" id="node7" href="$classCRotCoeff.html#a4668070c3eacacf17be98bc2fb348287" title="CRotCoeff::isSingular" alt="" coords="353,56,503,83"/>

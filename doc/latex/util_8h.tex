@@ -37,14 +37,14 @@ class \hyperlink{classCQuat}{C\-Quat}
 \begin{DoxyCompactItemize}
 \item 
 typedef double \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L}
-\item 
+\begin{DoxyCompactList}\small\item\em Defining R\-E\-A\-L as a double precision floating point number. \end{DoxyCompactList}\item 
 typedef complex$<$ \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} $>$ \hyperlink{util_8h_a0ef19d29521fc1e3356ea268ba175cfc}{Complex}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defining Complex as a complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{util_8h_a995a97713975591555fe37b5ad50745a}{dot} (const \hyperlink{classCPnt}{C\-Pnt} \&p1, const \hyperlink{classCPnt}{C\-Pnt} \&p2)
-\begin{DoxyCompactList}\small\item\em \hyperlink{classCPnt}{C\-Pnt} dot. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The cartesian coordinate dot function. \end{DoxyCompactList}\item 
 \hyperlink{classCPnt}{C\-Pnt} \hyperlink{util_8h_a491783063d690a2f389e3317f44dd0b7}{rand\-Orient} ()
 \begin{DoxyCompactList}\small\item\em rand\-Orient \end{DoxyCompactList}\item 
 \hyperlink{classCPnt}{C\-Pnt} \hyperlink{util_8h_a33c07e9b427f6ef2a832f0347547d920}{operator-\/} (const \hyperlink{classCPnt}{C\-Pnt} \&c1, const \hyperlink{classCPnt}{C\-Pnt} \&c2)
@@ -78,7 +78,7 @@ ostream \& \hyperlink{util_8h_a53a39a67bc3f52a606be1d4e71085b3f}{operator$<$$<$}
 ostream \& \hyperlink{util_8h_afeef42a3ba6ea600e39ee2accca10836}{operator$<$$<$} (ostream \&out, const \hyperlink{classCQuat}{C\-Quat} \&q)
 \begin{DoxyCompactList}\small\item\em \hyperlink{classCQuat}{C\-Quat} $<$$<$. \end{DoxyCompactList}\item 
 \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{util_8h_a3daa70c1884dabb0992d5ce98e3f692a}{norm\-Rand} ()
-\begin{DoxyCompactList}\small\item\em rand\-Orient \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em norm\-Rand \end{DoxyCompactList}\item 
 void \hyperlink{util_8h_ad864dc450da6954264580e4318e011eb}{seed\-Rand} (int s)
 \begin{DoxyCompactList}\small\item\em seed\-Rand \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -87,9 +87,17 @@ void \hyperlink{util_8h_ad864dc450da6954264580e4318e011eb}{seed\-Rand} (int s)
 \hypertarget{util_8h_a0ef19d29521fc1e3356ea268ba175cfc}{\index{util.\-h@{util.\-h}!Complex@{Complex}}
 \index{Complex@{Complex}!util.h@{util.\-h}}
 \subsubsection[{Complex}]{\setlength{\rightskip}{0pt plus 5cm}typedef complex$<${\bf R\-E\-A\-L}$>$ {\bf Complex}}}\label{util_8h_a0ef19d29521fc1e3356ea268ba175cfc}
+
+
+Defining Complex as a complex number. 
+
 \hypertarget{util_8h_a5821460e95a0800cf9f24c38915cbbde}{\index{util.\-h@{util.\-h}!R\-E\-A\-L@{R\-E\-A\-L}}
 \index{R\-E\-A\-L@{R\-E\-A\-L}!util.h@{util.\-h}}
 \subsubsection[{R\-E\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}typedef double {\bf R\-E\-A\-L}}}\label{util_8h_a5821460e95a0800cf9f24c38915cbbde}
+
+
+Defining R\-E\-A\-L as a double precision floating point number. 
+
 
 
 \subsection{Function Documentation}
@@ -159,7 +167,11 @@ Here is the call graph for this function\-:\nopagebreak
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a995a97713975591555fe37b5ad50745a}
 
 
-\hyperlink{classCPnt}{C\-Pnt} dot. 
+The cartesian coordinate dot function. 
+
+\hyperlink{classCPnt}{C\-Pnt} dot.
+
+Returns the dot product of two X\-Y\-Z coordinate objects
 
 dot product of two vectors 
 
@@ -181,9 +193,9 @@ Here is the call graph for this function\-:\nopagebreak
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{util_8h_a3daa70c1884dabb0992d5ce98e3f692a}
 
 
-rand\-Orient 
+norm\-Rand 
 
-\hypertarget{util_8h_a6bf4a1152989f36cdb084e617a81214b}{\index{util.\-h@{util.\-h}!operator$\ast$@{operator$\ast$}}
+Generate a random number \hypertarget{util_8h_a6bf4a1152989f36cdb084e617a81214b}{\index{util.\-h@{util.\-h}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!util.h@{util.\-h}}
 \subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Pnt} operator$\ast$ (
 \begin{DoxyParamCaption}
@@ -378,7 +390,7 @@ Print out quaternion \hypertarget{util_8h_a491783063d690a2f389e3317f44dd0b7}{\in
 
 rand\-Orient 
 
-Choose a random orientation for a vector \hypertarget{util_8h_ad864dc450da6954264580e4318e011eb}{\index{util.\-h@{util.\-h}!seed\-Rand@{seed\-Rand}}
+Choose a random orientation for a \hyperlink{classCPnt}{C\-Pnt} vector \hypertarget{util_8h_ad864dc450da6954264580e4318e011eb}{\index{util.\-h@{util.\-h}!seed\-Rand@{seed\-Rand}}
 \index{seed\-Rand@{seed\-Rand}!util.h@{util.\-h}}
 \subsubsection[{seed\-Rand}]{\setlength{\rightskip}{0pt plus 5cm}void seed\-Rand (
 \begin{DoxyParamCaption}

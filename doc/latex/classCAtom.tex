@@ -3,6 +3,11 @@
 }
 
 
+The Atom class.  
+
+
+
+
 {\ttfamily \#include $<$pdb.\-h$>$}
 
 \subsection*{Public Types}
@@ -30,7 +35,7 @@ enum \hyperlink{classCAtom_a1a65c02a5c158f4de46b2f09aca927d9}{P\-L\-A\-C\-E} \{ 
 \\*
 \hyperlink{classCAtom_a1a65c02a5c158f4de46b2f09aca927d9abb497da96be0e90f8e8e287cbfcebd63}{T\-E\-R\-M} =  9
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em The Atom class enum P\-L\-A\-C\-E. \end{DoxyCompactList}\item 
 enum \hyperlink{classCAtom_a59319a3892af30a3b184bcd0c407a273}{B\-R\-A\-N\-C\-H} \{ \hyperlink{classCAtom_a59319a3892af30a3b184bcd0c407a273a8f61dc1646c6d790eb50c727d454c4e9}{B\-R1} =  1, 
 \hyperlink{classCAtom_a59319a3892af30a3b184bcd0c407a273a3fe98bcd10670b758a0515ff4bf8bd07}{B\-R2} =  2, 
 \hyperlink{classCAtom_a59319a3892af30a3b184bcd0c407a273ac5ba63a26ac3523f677471e9b33058d2}{B\-R3} =  3
@@ -40,13 +45,13 @@ enum \hyperlink{classCAtom_a59319a3892af30a3b184bcd0c407a273}{B\-R\-A\-N\-C\-H} 
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classCAtom_a72956a614691046daa3f9cb679337c85}{C\-Atom} (int acode\-\_\-, int rcode\-\_\-, int resnum\-\_\-, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCAtom_a4c911762af7a8abf5fec08d3a896e5df}{x}, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCAtom_a63db481ebb7d5b7d96014d70e020acc2}{y}, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCAtom_ae5ce32de61ffe6f35f7790de5c805bd4}{z})
-\item 
+\begin{DoxyCompactList}\small\item\em The Atom class constructor. \end{DoxyCompactList}\item 
 \hyperlink{classCAtom_a55b4b673562699ae2fa4e3386b8d8a9b}{C\-Atom} (const \hyperlink{classCAtom}{C\-Atom} \&a)
-\item 
+\begin{DoxyCompactList}\small\item\em The Atom class constructor. \end{DoxyCompactList}\item 
 const \hyperlink{classCAtom}{C\-Atom} \& \hyperlink{classCAtom_a52de68ec7c9d0b50599bcb24c05fbc41}{operator=} (const \hyperlink{classCAtom}{C\-Atom} \&a)
-\item 
+\begin{DoxyCompactList}\small\item\em The Atom class =. \end{DoxyCompactList}\item 
 void \hyperlink{classCAtom_a214045c9b46083ef550c214d3f1a33bd}{set\-Pos} (const \hyperlink{classCPnt}{C\-Pnt} \&p)
-\item 
+\begin{DoxyCompactList}\small\item\em The Atom class set\-Pos function. \end{DoxyCompactList}\item 
 int \hyperlink{classCAtom_a2eaa281b7aa53c83c13a66de07c9e70c}{get\-Code} () const 
 \item 
 int \hyperlink{classCAtom_a02f2c6f689a978639b239f0b17ccdf1e}{get\-Res\-Code} () const 
@@ -73,9 +78,9 @@ bool \hyperlink{classCAtom_ac23e0bb6890eac49c8da3f350c1190b3}{is\-Heavy} () cons
 \begin{DoxyCompactItemize}
 \item 
 static int \hyperlink{classCAtom_a5208b057db97f1c98b3b8fd973a95412}{get\-Atom\-Code} (const char $\ast$aname)
-\item 
+\begin{DoxyCompactList}\small\item\em The Atom class get\-Atom\-Code function. \end{DoxyCompactList}\item 
 static void \hyperlink{classCAtom_ac31a8af47f25e335803afe6d356a0112}{generate\-Name} (int acode, char $\ast$aname)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The Atom class generate\-Name function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -84,22 +89,27 @@ static const char \hyperlink{classCAtom_a4c2f1a2299fb0ffbdb1307f744591baf}{E\-L\
 static const char \hyperlink{classCAtom_af438732d59641738cfea16a7dd895dea}{P\-L\-A\-C\-E\-S\-Y\-M} \mbox{[}\hyperlink{pdb_8h_a97e57794bbd80e909807f0ac940cc4f7}{N\-U\-M\-\_\-\-P\-L\-A\-C\-E\-S}\mbox{]}
 \begin{DoxyCompactList}\small\item\em Letter codes for location of atoms. \end{DoxyCompactList}\item 
 static const int \hyperlink{classCAtom_aa97b0aef40ff8616ad51269c3bd50070}{E\-L\-E\-M\-\_\-\-M\-A\-S\-K} = (7 $<$$<$ \hyperlink{classCAtom_a8d1a901dcaeab90596ffacac7bc04f3d}{C\-Atom\-::\-E\-L\-E\-M\-\_\-\-S\-H\-I\-F\-T})
-\item 
+\begin{DoxyCompactList}\small\item\em Mask for element. \end{DoxyCompactList}\item 
 static const int \hyperlink{classCAtom_a03572c4dc279704a994647c54249a1f6}{P\-L\-A\-C\-E\-\_\-\-M\-A\-S\-K} = (15 $<$$<$\hyperlink{classCAtom_a86677e582ce1bbdd16d6af1807804aa0}{C\-Atom\-::\-P\-L\-A\-C\-E\-\_\-\-S\-H\-I\-F\-T})
-\item 
+\begin{DoxyCompactList}\small\item\em Mask for place. \end{DoxyCompactList}\item 
 static const int \hyperlink{classCAtom_a0abe41c8fd1d3c1d0a19cad9e44427b1}{B\-R\-A\-N\-C\-H1\-\_\-\-M\-A\-S\-K} = (3 $<$$<$ \hyperlink{classCAtom_a1681cf237fc69b41f3cd19883b0d95f9}{C\-Atom\-::\-B\-R\-A\-N\-C\-H1\-\_\-\-S\-H\-I\-F\-T})
-\item 
+\begin{DoxyCompactList}\small\item\em Mask for branch1. \end{DoxyCompactList}\item 
 static const int \hyperlink{classCAtom_a5c11499e3e68349fd7e83369a5939319}{B\-R\-A\-N\-C\-H2\-\_\-\-M\-A\-S\-K} = (3 $<$$<$ \hyperlink{classCAtom_a1932c279f682ca9a43d653ec5afae175}{C\-Atom\-::\-B\-R\-A\-N\-C\-H2\-\_\-\-S\-H\-I\-F\-T})
-\item 
+\begin{DoxyCompactList}\small\item\em Mask for branch2. \end{DoxyCompactList}\item 
 static const int \hyperlink{classCAtom_a8d1a901dcaeab90596ffacac7bc04f3d}{E\-L\-E\-M\-\_\-\-S\-H\-I\-F\-T} = 8
-\item 
+\begin{DoxyCompactList}\small\item\em Bit information for the element. \end{DoxyCompactList}\item 
 static const int \hyperlink{classCAtom_a86677e582ce1bbdd16d6af1807804aa0}{P\-L\-A\-C\-E\-\_\-\-S\-H\-I\-F\-T} = 4
-\item 
+\begin{DoxyCompactList}\small\item\em Bit information for the place. \end{DoxyCompactList}\item 
 static const int \hyperlink{classCAtom_a1681cf237fc69b41f3cd19883b0d95f9}{B\-R\-A\-N\-C\-H1\-\_\-\-S\-H\-I\-F\-T} = 2
-\item 
+\begin{DoxyCompactList}\small\item\em Bit information for the branch1. \end{DoxyCompactList}\item 
 static const int \hyperlink{classCAtom_a1932c279f682ca9a43d653ec5afae175}{B\-R\-A\-N\-C\-H2\-\_\-\-S\-H\-I\-F\-T} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Bit information for the branch2. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The Atom class. 
+
+The class that contains all details for a atom object 
 
 \subsection{Member Enumeration Documentation}
 \hypertarget{classCAtom_a59319a3892af30a3b184bcd0c407a273}{\index{C\-Atom@{C\-Atom}!B\-R\-A\-N\-C\-H@{B\-R\-A\-N\-C\-H}}
@@ -139,7 +149,11 @@ static const int \hyperlink{classCAtom_a1932c279f682ca9a43d653ec5afae175}{B\-R\-
 \hypertarget{classCAtom_a1a65c02a5c158f4de46b2f09aca927d9}{\index{C\-Atom@{C\-Atom}!P\-L\-A\-C\-E@{P\-L\-A\-C\-E}}
 \index{P\-L\-A\-C\-E@{P\-L\-A\-C\-E}!CAtom@{C\-Atom}}
 \subsubsection[{P\-L\-A\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\-Atom\-::\-P\-L\-A\-C\-E}}}\label{classCAtom_a1a65c02a5c158f4de46b2f09aca927d9}
-\begin{Desc}
+
+
+The Atom class enum P\-L\-A\-C\-E. 
+
+An enumerator for the various positions on a protein that an atom may be found. \begin{Desc}
 \item[Enumerator\-: ]\par
 \begin{description}
 \index{A\-L\-P\-H\-A@{A\-L\-P\-H\-A}!C\-Atom@{C\-Atom}}\index{C\-Atom@{C\-Atom}!A\-L\-P\-H\-A@{A\-L\-P\-H\-A}}\item[{\em 
@@ -178,13 +192,41 @@ static const int \hyperlink{classCAtom_a1932c279f682ca9a43d653ec5afae175}{B\-R\-
 \item[{{\bf R\-E\-A\-L}}]{z}
 \end{DoxyParamCaption}
 )}}\label{classCAtom_a72956a614691046daa3f9cb679337c85}
-\hypertarget{classCAtom_a55b4b673562699ae2fa4e3386b8d8a9b}{\index{C\-Atom@{C\-Atom}!C\-Atom@{C\-Atom}}
+
+
+The Atom class constructor. 
+
+Creates an Atom class. using multiple inputs. Maps the given atom to it's O\-P\-L\-S partial charge. 
+\begin{DoxyParams}{Parameters}
+{\em acode} & an integer containing the atom code (atomic symbol) \\
+\hline
+{\em rcode} & an integer containing the residue name \\
+\hline
+{\em resnum} & an integer containing the residue number of atom \\
+\hline
+{\em x} & a floating point containing the x coordinate of the atom \\
+\hline
+{\em y} & a floating point containing the y coordinate of the atom \\
+\hline
+{\em z} & a floating point containing the z coordinate of the atom\\
+\hline
+\end{DoxyParams}
+The Atom class constructor \hypertarget{classCAtom_a55b4b673562699ae2fa4e3386b8d8a9b}{\index{C\-Atom@{C\-Atom}!C\-Atom@{C\-Atom}}
 \index{C\-Atom@{C\-Atom}!CAtom@{C\-Atom}}
 \subsubsection[{C\-Atom}]{\setlength{\rightskip}{0pt plus 5cm}C\-Atom\-::\-C\-Atom (
 \begin{DoxyParamCaption}
 \item[{const {\bf C\-Atom} \&}]{a}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCAtom_a55b4b673562699ae2fa4e3386b8d8a9b}
+
+
+The Atom class constructor. 
+
+Creates an Atom class. using another atom object 
+\begin{DoxyParams}{Parameters}
+{\em a} & a \hyperlink{classCAtom}{C\-Atom} object \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -196,14 +238,34 @@ static const int \hyperlink{classCAtom_a1932c279f682ca9a43d653ec5afae175}{B\-R\-
 \item[{char $\ast$}]{aname}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_ac31a8af47f25e335803afe6d356a0112}
-\hypertarget{classCAtom_a5208b057db97f1c98b3b8fd973a95412}{\index{C\-Atom@{C\-Atom}!get\-Atom\-Code@{get\-Atom\-Code}}
+
+
+The Atom class generate\-Name function. 
+
+A function that generates a 4 character string containing the name of the atom 
+\begin{DoxyParams}{Parameters}
+{\em acode} & is the integer code of the atom \\
+\hline
+{\em aname} & a pointer to a character string that is used to identify the atom\\
+\hline
+\end{DoxyParams}
+Generate 4 character sequence for atom name with some bit shifting \hypertarget{classCAtom_a5208b057db97f1c98b3b8fd973a95412}{\index{C\-Atom@{C\-Atom}!get\-Atom\-Code@{get\-Atom\-Code}}
 \index{get\-Atom\-Code@{get\-Atom\-Code}!CAtom@{C\-Atom}}
 \subsubsection[{get\-Atom\-Code}]{\setlength{\rightskip}{0pt plus 5cm}int C\-Atom\-::get\-Atom\-Code (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{aname}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_a5208b057db97f1c98b3b8fd973a95412}
-\hypertarget{classCAtom_a909e61ce36305e5e923fd75d48ab6cb8}{\index{C\-Atom@{C\-Atom}!get\-Charge@{get\-Charge}}
+
+
+The Atom class get\-Atom\-Code function. 
+
+A function that returns a code from the character string 
+\begin{DoxyParams}{Parameters}
+{\em aname} & a character string of 4 that specifies atom name\\
+\hline
+\end{DoxyParams}
+Generate Atom\-Code from the 4 character string \hypertarget{classCAtom_a909e61ce36305e5e923fd75d48ab6cb8}{\index{C\-Atom@{C\-Atom}!get\-Charge@{get\-Charge}}
 \index{get\-Charge@{get\-Charge}!CAtom@{C\-Atom}}
 \subsubsection[{get\-Charge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} C\-Atom\-::get\-Charge (
 \begin{DoxyParamCaption}
@@ -266,6 +328,10 @@ static const int \hyperlink{classCAtom_a1932c279f682ca9a43d653ec5afae175}{B\-R\-
 \item[{const {\bf C\-Atom} \&}]{a}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCAtom_a52de68ec7c9d0b50599bcb24c05fbc41}
+
+
+The Atom class =. 
+
 \hypertarget{classCAtom_a214045c9b46083ef550c214d3f1a33bd}{\index{C\-Atom@{C\-Atom}!set\-Pos@{set\-Pos}}
 \index{set\-Pos@{set\-Pos}!CAtom@{C\-Atom}}
 \subsubsection[{set\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Atom\-::set\-Pos (
@@ -273,6 +339,15 @@ static const int \hyperlink{classCAtom_a1932c279f682ca9a43d653ec5afae175}{B\-R\-
 \item[{const {\bf C\-Pnt} \&}]{p}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCAtom_a214045c9b46083ef550c214d3f1a33bd}
+
+
+The Atom class set\-Pos function. 
+
+A function that sets the atom position to xyz coords given 
+\begin{DoxyParams}{Parameters}
+{\em p} & a \hyperlink{classCPnt}{C\-Pnt} object \\
+\hline
+\end{DoxyParams}
 \hypertarget{classCAtom_a4c911762af7a8abf5fec08d3a896e5df}{\index{C\-Atom@{C\-Atom}!x@{x}}
 \index{x@{x}!CAtom@{C\-Atom}}
 \subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} C\-Atom\-::x (
@@ -311,21 +386,45 @@ Here is the call graph for this function\-:\nopagebreak
 \hypertarget{classCAtom_a0abe41c8fd1d3c1d0a19cad9e44427b1}{\index{C\-Atom@{C\-Atom}!B\-R\-A\-N\-C\-H1\-\_\-\-M\-A\-S\-K@{B\-R\-A\-N\-C\-H1\-\_\-\-M\-A\-S\-K}}
 \index{B\-R\-A\-N\-C\-H1\-\_\-\-M\-A\-S\-K@{B\-R\-A\-N\-C\-H1\-\_\-\-M\-A\-S\-K}!CAtom@{C\-Atom}}
 \subsubsection[{B\-R\-A\-N\-C\-H1\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}const int C\-Atom\-::\-B\-R\-A\-N\-C\-H1\-\_\-\-M\-A\-S\-K = (3 $<$$<$ {\bf C\-Atom\-::\-B\-R\-A\-N\-C\-H1\-\_\-\-S\-H\-I\-F\-T})\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_a0abe41c8fd1d3c1d0a19cad9e44427b1}
+
+
+Mask for branch1. 
+
 \hypertarget{classCAtom_a1681cf237fc69b41f3cd19883b0d95f9}{\index{C\-Atom@{C\-Atom}!B\-R\-A\-N\-C\-H1\-\_\-\-S\-H\-I\-F\-T@{B\-R\-A\-N\-C\-H1\-\_\-\-S\-H\-I\-F\-T}}
 \index{B\-R\-A\-N\-C\-H1\-\_\-\-S\-H\-I\-F\-T@{B\-R\-A\-N\-C\-H1\-\_\-\-S\-H\-I\-F\-T}!CAtom@{C\-Atom}}
 \subsubsection[{B\-R\-A\-N\-C\-H1\-\_\-\-S\-H\-I\-F\-T}]{\setlength{\rightskip}{0pt plus 5cm}const int C\-Atom\-::\-B\-R\-A\-N\-C\-H1\-\_\-\-S\-H\-I\-F\-T = 2\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_a1681cf237fc69b41f3cd19883b0d95f9}
+
+
+Bit information for the branch1. 
+
 \hypertarget{classCAtom_a5c11499e3e68349fd7e83369a5939319}{\index{C\-Atom@{C\-Atom}!B\-R\-A\-N\-C\-H2\-\_\-\-M\-A\-S\-K@{B\-R\-A\-N\-C\-H2\-\_\-\-M\-A\-S\-K}}
 \index{B\-R\-A\-N\-C\-H2\-\_\-\-M\-A\-S\-K@{B\-R\-A\-N\-C\-H2\-\_\-\-M\-A\-S\-K}!CAtom@{C\-Atom}}
 \subsubsection[{B\-R\-A\-N\-C\-H2\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}const int C\-Atom\-::\-B\-R\-A\-N\-C\-H2\-\_\-\-M\-A\-S\-K = (3 $<$$<$ {\bf C\-Atom\-::\-B\-R\-A\-N\-C\-H2\-\_\-\-S\-H\-I\-F\-T})\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_a5c11499e3e68349fd7e83369a5939319}
+
+
+Mask for branch2. 
+
 \hypertarget{classCAtom_a1932c279f682ca9a43d653ec5afae175}{\index{C\-Atom@{C\-Atom}!B\-R\-A\-N\-C\-H2\-\_\-\-S\-H\-I\-F\-T@{B\-R\-A\-N\-C\-H2\-\_\-\-S\-H\-I\-F\-T}}
 \index{B\-R\-A\-N\-C\-H2\-\_\-\-S\-H\-I\-F\-T@{B\-R\-A\-N\-C\-H2\-\_\-\-S\-H\-I\-F\-T}!CAtom@{C\-Atom}}
 \subsubsection[{B\-R\-A\-N\-C\-H2\-\_\-\-S\-H\-I\-F\-T}]{\setlength{\rightskip}{0pt plus 5cm}const int C\-Atom\-::\-B\-R\-A\-N\-C\-H2\-\_\-\-S\-H\-I\-F\-T = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_a1932c279f682ca9a43d653ec5afae175}
+
+
+Bit information for the branch2. 
+
 \hypertarget{classCAtom_aa97b0aef40ff8616ad51269c3bd50070}{\index{C\-Atom@{C\-Atom}!E\-L\-E\-M\-\_\-\-M\-A\-S\-K@{E\-L\-E\-M\-\_\-\-M\-A\-S\-K}}
 \index{E\-L\-E\-M\-\_\-\-M\-A\-S\-K@{E\-L\-E\-M\-\_\-\-M\-A\-S\-K}!CAtom@{C\-Atom}}
 \subsubsection[{E\-L\-E\-M\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}const int C\-Atom\-::\-E\-L\-E\-M\-\_\-\-M\-A\-S\-K = (7 $<$$<$ {\bf C\-Atom\-::\-E\-L\-E\-M\-\_\-\-S\-H\-I\-F\-T})\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_aa97b0aef40ff8616ad51269c3bd50070}
+
+
+Mask for element. 
+
 \hypertarget{classCAtom_a8d1a901dcaeab90596ffacac7bc04f3d}{\index{C\-Atom@{C\-Atom}!E\-L\-E\-M\-\_\-\-S\-H\-I\-F\-T@{E\-L\-E\-M\-\_\-\-S\-H\-I\-F\-T}}
 \index{E\-L\-E\-M\-\_\-\-S\-H\-I\-F\-T@{E\-L\-E\-M\-\_\-\-S\-H\-I\-F\-T}!CAtom@{C\-Atom}}
 \subsubsection[{E\-L\-E\-M\-\_\-\-S\-H\-I\-F\-T}]{\setlength{\rightskip}{0pt plus 5cm}const int C\-Atom\-::\-E\-L\-E\-M\-\_\-\-S\-H\-I\-F\-T = 8\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_a8d1a901dcaeab90596ffacac7bc04f3d}
+
+
+Bit information for the element. 
+
 \hypertarget{classCAtom_a4c2f1a2299fb0ffbdb1307f744591baf}{\index{C\-Atom@{C\-Atom}!E\-L\-E\-M\-S\-Y\-M@{E\-L\-E\-M\-S\-Y\-M}}
 \index{E\-L\-E\-M\-S\-Y\-M@{E\-L\-E\-M\-S\-Y\-M}!CAtom@{C\-Atom}}
 \subsubsection[{E\-L\-E\-M\-S\-Y\-M}]{\setlength{\rightskip}{0pt plus 5cm}const char C\-Atom\-::\-E\-L\-E\-M\-S\-Y\-M = \{'{\bf H}', '{\bf C}', '{\bf N}', '{\bf O}', '{\bf S}'\}\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_a4c2f1a2299fb0ffbdb1307f744591baf}
@@ -336,9 +435,17 @@ Atomic symbols.
 \hypertarget{classCAtom_a03572c4dc279704a994647c54249a1f6}{\index{C\-Atom@{C\-Atom}!P\-L\-A\-C\-E\-\_\-\-M\-A\-S\-K@{P\-L\-A\-C\-E\-\_\-\-M\-A\-S\-K}}
 \index{P\-L\-A\-C\-E\-\_\-\-M\-A\-S\-K@{P\-L\-A\-C\-E\-\_\-\-M\-A\-S\-K}!CAtom@{C\-Atom}}
 \subsubsection[{P\-L\-A\-C\-E\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}const int C\-Atom\-::\-P\-L\-A\-C\-E\-\_\-\-M\-A\-S\-K = (15 $<$$<${\bf C\-Atom\-::\-P\-L\-A\-C\-E\-\_\-\-S\-H\-I\-F\-T})\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_a03572c4dc279704a994647c54249a1f6}
+
+
+Mask for place. 
+
 \hypertarget{classCAtom_a86677e582ce1bbdd16d6af1807804aa0}{\index{C\-Atom@{C\-Atom}!P\-L\-A\-C\-E\-\_\-\-S\-H\-I\-F\-T@{P\-L\-A\-C\-E\-\_\-\-S\-H\-I\-F\-T}}
 \index{P\-L\-A\-C\-E\-\_\-\-S\-H\-I\-F\-T@{P\-L\-A\-C\-E\-\_\-\-S\-H\-I\-F\-T}!CAtom@{C\-Atom}}
 \subsubsection[{P\-L\-A\-C\-E\-\_\-\-S\-H\-I\-F\-T}]{\setlength{\rightskip}{0pt plus 5cm}const int C\-Atom\-::\-P\-L\-A\-C\-E\-\_\-\-S\-H\-I\-F\-T = 4\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_a86677e582ce1bbdd16d6af1807804aa0}
+
+
+Bit information for the place. 
+
 \hypertarget{classCAtom_af438732d59641738cfea16a7dd895dea}{\index{C\-Atom@{C\-Atom}!P\-L\-A\-C\-E\-S\-Y\-M@{P\-L\-A\-C\-E\-S\-Y\-M}}
 \index{P\-L\-A\-C\-E\-S\-Y\-M@{P\-L\-A\-C\-E\-S\-Y\-M}!CAtom@{C\-Atom}}
 \subsubsection[{P\-L\-A\-C\-E\-S\-Y\-M}]{\setlength{\rightskip}{0pt plus 5cm}const char C\-Atom\-::\-P\-L\-A\-C\-E\-S\-Y\-M\hspace{0.3cm}{\ttfamily [static]}}}\label{classCAtom_af438732d59641738cfea16a7dd895dea}

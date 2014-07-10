@@ -1,10 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classCPDB.html#acdc2ba2ed5bb4dc8701577e29c0f4bf9" title="CPDB::readline" alt="" coords="221,31,334,57"/>
+<area shape="rect" id="node3" href="$classCPDB.html#acdc2ba2ed5bb4dc8701577e29c0f4bf9" title="The PDB function readLine." alt="" coords="221,31,334,57"/>
 <area shape="rect" id="node9" href="$classCAtom.html#a6af9e202834bac9613129184d62e1c19" title="CAtom::getResNum" alt="" coords="207,81,348,108"/>
 <area shape="rect" id="node11" href="$classAA.html#a77290c917ac630708465bb700c9a1d91" title="AA::clear" alt="" coords="239,132,315,159"/>
 <area shape="rect" id="node13" href="$classAA.html#a111b14b73321f7fbd0e910fe7377d3e2" title="AA::setType" alt="" coords="230,183,325,209"/>
 <area shape="rect" id="node15" href="$classCAtom.html#a02f2c6f689a978639b239f0b17ccdf1e" title="CAtom::getResCode" alt="" coords="205,233,349,260"/>
 <area shape="rect" id="node17" href="$classAA.html#ae0851c13f0b0aee431c4b90a17a58c7a" title="AA::insertAtom" alt="" coords="222,284,333,311"/>
-<area shape="rect" id="node5" href="$classCAtom.html#a5208b057db97f1c98b3b8fd973a95412" title="CAtom::getAtomCode" alt="" coords="398,5,549,32"/>
-<area shape="rect" id="node7" href="$classAA.html#a4586e72f7a09f932e29188a5098f124f" title="AA::getAACode" alt="" coords="416,56,531,83"/>
+<area shape="rect" id="node5" href="$classCAtom.html#a5208b057db97f1c98b3b8fd973a95412" title="The Atom class getAtomCode function." alt="" coords="398,5,549,32"/>
+<area shape="rect" id="node7" href="$classAA.html#a4586e72f7a09f932e29188a5098f124f" title="The AA class function getAACode." alt="" coords="416,56,531,83"/>
 </map>

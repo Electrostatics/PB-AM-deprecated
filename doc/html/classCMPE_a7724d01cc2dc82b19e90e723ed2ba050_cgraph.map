@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classCPnt.html#a619a71665a5a40fddbc8e6c6a6b450cc" title="CPnt::zero" alt="" coords="219,5,304,32"/>
+<area shape="rect" id="node3" href="$classCPnt.html#a619a71665a5a40fddbc8e6c6a6b450cc" title="The cartesian coordinate function zero." alt="" coords="219,5,304,32"/>
 <area shape="rect" id="node5" href="$util_8h.html#ad05fbf75e7550a927bc817f97115f2fc" title="CSpPnt CartToSph." alt="" coords="219,107,304,133"/>
 <area shape="rect" id="node7" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="352,69,419,96"/>
 <area shape="rect" id="node9" href="$classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="352,145,419,172"/>

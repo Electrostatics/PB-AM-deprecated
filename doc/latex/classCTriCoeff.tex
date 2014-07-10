@@ -3,11 +3,17 @@
 }
 
 
+The \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} class.  
+
+
+
+
 {\ttfamily \#include $<$tricoeff.\-h$>$}
 
 
 
-Inheritance diagram for C\-Tri\-Coeff\-:\nopagebreak
+Inheritance diagram for C\-Tri\-Coeff\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -61,7 +67,7 @@ const \hyperlink{classCMCoeff}{C\-M\-Coeff} \& \hyperlink{classCTriCoeff_ae1643f
 virtual void \hyperlink{classCTriCoeff_ad4c1064a7de4dd89f81959d842812ee2}{output} () const 
 \item 
 void \hyperlink{classCTriCoeff_a9886af4188561152d331366cfaec1c53}{save\-Undo} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The M\-P\-E set\-Order function. \end{DoxyCompactList}\item 
 void \hyperlink{classCTriCoeff_a8202256093cb071f6ae95887ea1c8dde}{undo} ()
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
@@ -93,6 +99,11 @@ ostream \& \hyperlink{classCTriCoeff_a47cfb1958c5a43e847aa4e45e1c2c5d4}{operator
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+The \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} class. 
+
+The tri coefficient class. Contains a trio of matrix coefficient objects 
+
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classCTriCoeff_a00b825a596e5f4dd0184a50c53bd5d3c}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!C\-Tri\-Coeff@{C\-Tri\-Coeff}}
 \index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!CTriCoeff@{C\-Tri\-Coeff}}
@@ -102,7 +113,7 @@ ostream \& \hyperlink{classCTriCoeff_a47cfb1958c5a43e847aa4e45e1c2c5d4}{operator
 \item[{int}]{res = {\ttfamily {\bf N\-\_\-\-P\-O\-L\-E\-S}}}
 \end{DoxyParamCaption}
 )}}\label{classCTriCoeff_a00b825a596e5f4dd0184a50c53bd5d3c}
-
+Constructor 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -232,7 +243,7 @@ Here is the call graph for this function\-:\nopagebreak
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCTriCoeff_ad4c1064a7de4dd89f81959d842812ee2}
-\hypertarget{classCTriCoeff_a0cd79d07cd4eb27e673886611f94f3ab}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!recip@{recip}}
+Print out the Tri\-Coeff. \hypertarget{classCTriCoeff_a0cd79d07cd4eb27e673886611f94f3ab}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!recip@{recip}}
 \index{recip@{recip}!CTriCoeff@{C\-Tri\-Coeff}}
 \subsubsection[{recip}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::recip (
 \begin{DoxyParamCaption}
@@ -254,7 +265,7 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{int}]{p}
 \end{DoxyParamCaption}
 )}}\label{classCTriCoeff_aa80c22419286d9fc99daafb90a44d03e}
-
+Initialize the torque coefficients. 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -272,7 +283,11 @@ Here is the call graph for this function\-:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCTriCoeff_a9886af4188561152d331366cfaec1c53}
-\hypertarget{classCTriCoeff_a8df569d14c28af368916f6d6258faa35}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!set\-Order@{set\-Order}}
+
+
+The M\-P\-E set\-Order function. 
+
+Function that sets the order ?? \hypertarget{classCTriCoeff_a8df569d14c28af368916f6d6258faa35}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!set\-Order@{set\-Order}}
 \index{set\-Order@{set\-Order}!CTriCoeff@{C\-Tri\-Coeff}}
 \subsubsection[{set\-Order}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Tri\-Coeff\-::set\-Order (
 \begin{DoxyParamCaption}
@@ -344,7 +359,7 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{const {\bf C\-Tri\-Coeff} \&}]{exp}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCTriCoeff_a47cfb1958c5a43e847aa4e45e1c2c5d4}
-
+Print out the tri coeffs 
 
 \subsection{Member Data Documentation}
 \hypertarget{classCTriCoeff_afac3ecb3b5c965a7ba4cc0409c2100e8}{\index{C\-Tri\-Coeff@{C\-Tri\-Coeff}!m\-\_\-\-M@{m\-\_\-\-M}}

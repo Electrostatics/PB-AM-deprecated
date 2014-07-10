@@ -3,13 +3,18 @@
 }
 
 
+The rotation coefficient class.  
+
+
+
+
 {\ttfamily \#include $<$rotcoeff.\-h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classCRotCoeff_a5dae485fb061a3c231365159aefc9bb5}{C\-Rot\-Coeff} (bool b\-Grad=true)
-\item 
+\begin{DoxyCompactList}\small\item\em The rotation coefficient class constructor. \end{DoxyCompactList}\item 
 void \hyperlink{classCRotCoeff_aa52111e9c4cb2949dfae960437742536}{reset} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} theta, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} phi, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} xi, int p)
 \item 
 void \hyperlink{classCRotCoeff_a4a6461f2947e6c07d4a28da4d87a8935}{reset} (const \hyperlink{classCPnt}{C\-Pnt} \&axis, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} ang, int p)
@@ -17,33 +22,33 @@ void \hyperlink{classCRotCoeff_a4a6461f2947e6c07d4a28da4d87a8935}{reset} (const 
 void \hyperlink{classCRotCoeff_a6dea4a3900cc4ac8c012cc8790b92719}{reset} (const \hyperlink{classCQuat}{C\-Quat} \&Q, int p)
 \item 
 void \hyperlink{classCRotCoeff_aa9b14ebaa2c45a8fa740fa36d9f31d2c}{rotate} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&Tin, \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&Tout, bool b\-For)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCRotCoeff}{C\-Rot\-Coeff} rotate function. \end{DoxyCompactList}\item 
 void \hyperlink{classCRotCoeff_a6d65091921f8baa2175c97758dff4e16}{rotate} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&Tin, \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&Tout, int p1, int p2, bool b\-For)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCRotCoeff}{C\-Rot\-Coeff} rotate function. \end{DoxyCompactList}\item 
 void \hyperlink{classCRotCoeff_a319c60548de84e430bd55f17d020fa3f}{rotate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, bool b\-For)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCRotCoeff}{C\-Rot\-Coeff} rotate function. \end{DoxyCompactList}\item 
 void \hyperlink{classCRotCoeff_ab93dd694803d34505c026b6d48bb6d25}{rotate} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, int p1, int p2, bool b\-For)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCRotCoeff}{C\-Rot\-Coeff} rotate function. \end{DoxyCompactList}\item 
 void \hyperlink{classCRotCoeff_a73c21837871db96b643b0e9ccf77a6b4}{d\-Rotate\-T} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, bool b\-For)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCRotCoeff}{C\-Rot\-Coeff} d\-Rotate\-T function. \end{DoxyCompactList}\item 
 void \hyperlink{classCRotCoeff_ab40b0a7225f78c026e488950545a33d6}{d\-Rotate\-T} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, int p1, int p2, bool b\-For)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCRotCoeff}{C\-Rot\-Coeff} d\-Rotate\-T function. \end{DoxyCompactList}\item 
 void \hyperlink{classCRotCoeff_a8fc43b5ba7290e8f59fe124105445542}{d\-Rotate\-P} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, bool b\-For)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCRotCoeff}{C\-Rot\-Coeff} d\-Rotate\-P function. \end{DoxyCompactList}\item 
 void \hyperlink{classCRotCoeff_a88d3ed40239b588e18399c549509f687}{d\-Rotate\-P} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, int p1, int p2, bool b\-For)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCRotCoeff}{C\-Rot\-Coeff} d\-Rotate\-P function. \end{DoxyCompactList}\item 
 void \hyperlink{classCRotCoeff_a1416603a77ab7c9b7af515a7bad684f1}{inc\-Order} ()
 \item 
 void \hyperlink{classCRotCoeff_ae9fa83e941510deeda3aac1b8aecc58b}{dec\-Order} ()
-\item 
-void \hyperlink{classCRotCoeff_acf2c3650570013fee7e54491fa1d5920}{save\-Undo} ()
-\item 
-void \hyperlink{classCRotCoeff_a976ea6ff504912701f549e988fd217dc}{undo} ()
 \item 
 void \hyperlink{classCRotCoeff_a505db8551887fabe49b0f7b6076c2060}{output\-Rot} (int p) const 
 \item 
 void \hyperlink{classCRotCoeff_a23dff497ccb1ca53dba01af9a27fdab8}{outputd\-Rot} (int p) const 
 \item 
+void \hyperlink{classCRotCoeff_acf2c3650570013fee7e54491fa1d5920}{save\-Undo} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCRotCoeff}{C\-Rot\-Coeff} save\-Undo. \end{DoxyCompactList}\item 
+void \hyperlink{classCRotCoeff_a976ea6ff504912701f549e988fd217dc}{undo} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCRotCoeff}{C\-Rot\-Coeff} undo. \end{DoxyCompactList}\item 
 bool \hyperlink{classCRotCoeff_a4668070c3eacacf17be98bc2fb348287}{is\-Singular} () const 
 \item 
 void \hyperlink{classCRotCoeff_a27b0198e460737ea20601fa4f0667df5}{get\-Params} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \&st, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \&ct, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \&sp, \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \&cp) const 
@@ -52,8 +57,13 @@ void \hyperlink{classCRotCoeff_a27b0198e460737ea20601fa4f0667df5}{get\-Params} (
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{classCRotCoeff_aa51371c84f373916cd8e35031b38cb52}{init\-Constants} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The rotation coefficient init\-Constants function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The rotation coefficient class. 
+
+The class that contains all details for rotation coefficients, which are described in the Appendix, section A.\-1 of Lotan 2006. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classCRotCoeff_a5dae485fb061a3c231365159aefc9bb5}{\index{C\-Rot\-Coeff@{C\-Rot\-Coeff}!C\-Rot\-Coeff@{C\-Rot\-Coeff}}
@@ -64,6 +74,15 @@ static void \hyperlink{classCRotCoeff_aa51371c84f373916cd8e35031b38cb52}{init\-C
 \end{DoxyParamCaption}
 )}}\label{classCRotCoeff_a5dae485fb061a3c231365159aefc9bb5}
 
+
+The rotation coefficient class constructor. 
+
+This creates an object of the Rot\-Coeff class, using input of the user. Sets b\-Sing to false and N\-P\-O\-L\-E\-S to 1 
+\begin{DoxyParams}{Parameters}
+{\em b\-Grad} & a boolean that identifies whether or not the gradients of rotation coefficients should be computed or not. Default is yes.\\
+\hline
+\end{DoxyParams}
+The rotation coefficient class constructor 
 
 \subsection{Member Function Documentation}
 \hypertarget{classCRotCoeff_ae9fa83e941510deeda3aac1b8aecc58b}{\index{C\-Rot\-Coeff@{C\-Rot\-Coeff}!dec\-Order@{dec\-Order}}
@@ -82,6 +101,23 @@ static void \hyperlink{classCRotCoeff_aa51371c84f373916cd8e35031b38cb52}{init\-C
 \item[{bool}]{b\-For}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCRotCoeff_a8fc43b5ba7290e8f59fe124105445542}
+
+
+\hyperlink{classCRotCoeff}{C\-Rot\-Coeff} d\-Rotate\-P function. 
+
+Function to apply the gradient of rotation operator to the M\-P coefficents with respect to P\-H\-I 
+\begin{DoxyParams}{Parameters}
+{\em Min} & mp coefficient input \\
+\hline
+{\em Mout} & mp coefficient output \\
+\hline
+{\em p1} & an integer indicating the number of poles \\
+\hline
+{\em p2} & an integer indicating the number of poles \\
+\hline
+{\em b\-For} & boolean to indicate whether or not \\
+\hline
+\end{DoxyParams}
 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -106,6 +142,23 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{classCRotCoeff_a88d3ed40239b588e18399c549509f687}
 
 
+\hyperlink{classCRotCoeff}{C\-Rot\-Coeff} d\-Rotate\-P function. 
+
+Function to apply the gradient of rotation operator to the M\-P coefficents with respect to P\-H\-I 
+\begin{DoxyParams}{Parameters}
+{\em Min} & mp coefficient input \\
+\hline
+{\em Mout} & mp coefficient output \\
+\hline
+{\em p1} & an integer indicating the lowest number of poles \\
+\hline
+{\em p2} & an integer indicating the highest number of poles \\
+\hline
+{\em b\-For} & boolean to indicate whether or not\\
+\hline
+\end{DoxyParams}
+Apply the derivative of the rotation operator with respect to P\-H\-I to the M\-P coeffs 
+
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -124,6 +177,19 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{bool}]{b\-For}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCRotCoeff_a73c21837871db96b643b0e9ccf77a6b4}
+
+
+\hyperlink{classCRotCoeff}{C\-Rot\-Coeff} d\-Rotate\-T function. 
+
+Function to apply the gradient of rotation operator to the M\-P coefficents with respect to T\-H\-E\-T\-A 
+\begin{DoxyParams}{Parameters}
+{\em Min} & mp coefficient input \\
+\hline
+{\em Mout} & mp coefficient output \\
+\hline
+{\em b\-For} & boolean to indicate whether or not \\
+\hline
+\end{DoxyParams}
 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -147,6 +213,23 @@ Here is the call graph for this function\-:\nopagebreak
 \end{DoxyParamCaption}
 )}}\label{classCRotCoeff_ab40b0a7225f78c026e488950545a33d6}
 
+
+\hyperlink{classCRotCoeff}{C\-Rot\-Coeff} d\-Rotate\-T function. 
+
+Function to apply the gradient of rotation operator to the M\-P coefficents with respect to T\-H\-E\-T\-A 
+\begin{DoxyParams}{Parameters}
+{\em Min} & mp coefficient input \\
+\hline
+{\em Mout} & mp coefficient output \\
+\hline
+{\em p1} & an integer indicating the lowest number of poles \\
+\hline
+{\em p2} & an integer indicating the highest number of poles \\
+\hline
+{\em b\-For} & boolean to indicate whether or not\\
+\hline
+\end{DoxyParams}
+Apply the derivative of the rotation operator with respect to T\-H\-E\-T\-A to the M\-P coeffs 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -174,9 +257,10 @@ Here is the call graph for this function\-:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )}}\label{classCRotCoeff_a1416603a77ab7c9b7af515a7bad684f1}
+Function to increase the number of poles and recompute rotation coefficients 
 
-
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -192,11 +276,13 @@ Here is the call graph for this function\-:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classCRotCoeff_aa51371c84f373916cd8e35031b38cb52}
-Initialize the rotation coefficients (includes coeff equs from 2006 paper $<$ Given as a(n,m) in Lotan, 2006 (eq 1.\-2)
 
-$<$ Given as b(n,m) in Lotan, 2006 (eq 1.\-2)
 
-$<$ Given as b(n,m) in Lotan, 2006 (eq 1.\-2) \hypertarget{classCRotCoeff_a4668070c3eacacf17be98bc2fb348287}{\index{C\-Rot\-Coeff@{C\-Rot\-Coeff}!is\-Singular@{is\-Singular}}
+The rotation coefficient init\-Constants function. 
+
+This function initializes the rotation coefficients as described in A.\-1 of Lotan 2006. It initializes a and b constants as described in the appendix. Calls compute\-Q\-Coeff
+
+Initialize the rotation coefficients (includes coeff equs from 2006 paper \hypertarget{classCRotCoeff_a4668070c3eacacf17be98bc2fb348287}{\index{C\-Rot\-Coeff@{C\-Rot\-Coeff}!is\-Singular@{is\-Singular}}
 \index{is\-Singular@{is\-Singular}!CRotCoeff@{C\-Rot\-Coeff}}
 \subsubsection[{is\-Singular}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Rot\-Coeff\-::is\-Singular (
 \begin{DoxyParamCaption}
@@ -210,14 +296,14 @@ $<$ Given as b(n,m) in Lotan, 2006 (eq 1.\-2) \hypertarget{classCRotCoeff_a46680
 \item[{int}]{p}
 \end{DoxyParamCaption}
 ) const}}\label{classCRotCoeff_a23dff497ccb1ca53dba01af9a27fdab8}
-\hypertarget{classCRotCoeff_a505db8551887fabe49b0f7b6076c2060}{\index{C\-Rot\-Coeff@{C\-Rot\-Coeff}!output\-Rot@{output\-Rot}}
+Print out derivatives of rot coefficients \hypertarget{classCRotCoeff_a505db8551887fabe49b0f7b6076c2060}{\index{C\-Rot\-Coeff@{C\-Rot\-Coeff}!output\-Rot@{output\-Rot}}
 \index{output\-Rot@{output\-Rot}!CRotCoeff@{C\-Rot\-Coeff}}
 \subsubsection[{output\-Rot}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Rot\-Coeff\-::output\-Rot (
 \begin{DoxyParamCaption}
 \item[{int}]{p}
 \end{DoxyParamCaption}
 ) const}}\label{classCRotCoeff_a505db8551887fabe49b0f7b6076c2060}
-\hypertarget{classCRotCoeff_aa52111e9c4cb2949dfae960437742536}{\index{C\-Rot\-Coeff@{C\-Rot\-Coeff}!reset@{reset}}
+Print out rotation coefficients \hypertarget{classCRotCoeff_aa52111e9c4cb2949dfae960437742536}{\index{C\-Rot\-Coeff@{C\-Rot\-Coeff}!reset@{reset}}
 \index{reset@{reset}!CRotCoeff@{C\-Rot\-Coeff}}
 \subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Rot\-Coeff\-::reset (
 \begin{DoxyParamCaption}
@@ -227,6 +313,17 @@ $<$ Given as b(n,m) in Lotan, 2006 (eq 1.\-2) \hypertarget{classCRotCoeff_a46680
 \item[{int}]{p}
 \end{DoxyParamCaption}
 )}}\label{classCRotCoeff_aa52111e9c4cb2949dfae960437742536}
+reset rotation coefficient given an angle for theta, phi and xi and a number of poles 
+\begin{DoxyParams}{Parameters}
+{\em theta,a} & real number of angle theta \\
+\hline
+{\em phi,a} & real number for phi angle in rad \\
+\hline
+{\em xi} & a \\
+\hline
+{\em p} & an integer indicating the number of poles \\
+\hline
+\end{DoxyParams}
 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -249,7 +346,8 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{classCRotCoeff_a4a6461f2947e6c07d4a28da4d87a8935}
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -266,6 +364,13 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{int}]{p}
 \end{DoxyParamCaption}
 )}}\label{classCRotCoeff_a6dea4a3900cc4ac8c012cc8790b92719}
+reset\-: Resets the rotation coefficients for a given number of poles 
+\begin{DoxyParams}{Parameters}
+{\em Q} & a quaternion for rotation \\
+\hline
+{\em p} & an int describing the number of poles \\
+\hline
+\end{DoxyParams}
 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -286,6 +391,19 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{bool}]{b\-For}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCRotCoeff_aa9b14ebaa2c45a8fa740fa36d9f31d2c}
+
+
+\hyperlink{classCRotCoeff}{C\-Rot\-Coeff} rotate function. 
+
+Function to apply the rotation operator to the tricoefficents 
+\begin{DoxyParams}{Parameters}
+{\em Tin} & tri coefficient input \\
+\hline
+{\em Tout} & tri coefficient output \\
+\hline
+{\em b\-For} & boolean to indicate whether or not \\
+\hline
+\end{DoxyParams}
 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -310,7 +428,40 @@ Here is the call graph for this function\-:\nopagebreak
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCRotCoeff_a6d65091921f8baa2175c97758dff4e16}
 
 
-Here is the call graph for this function\-:\nopagebreak
+\hyperlink{classCRotCoeff}{C\-Rot\-Coeff} rotate function. 
+
+\hyperlink{classCRotCoeff}{C\-Rot\-Coeff} rotate.
+
+Function to apply the rotation operator to the tricoefficents 
+\begin{DoxyParams}{Parameters}
+{\em Tin} & tri coefficient input \\
+\hline
+{\em Tout} & tri coefficient output \\
+\hline
+{\em p1} & an integer indicating the lowest number of poles \\
+\hline
+{\em p2} & an integer indicating the highest number of poles \\
+\hline
+{\em b\-For} & boolean to indicate whether or not\\
+\hline
+\end{DoxyParams}
+Rotate three matrices of tricoeff class 
+\begin{DoxyParams}{Parameters}
+{\em Tin} & a Tri\-Coeff object for input \\
+\hline
+{\em Tout} & a Tri\-Coeff object for output \\
+\hline
+{\em p1} & an int \\
+\hline
+{\em p2} & an int \\
+\hline
+{\em b\-For} & a boolean of \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -328,6 +479,19 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{bool}]{b\-For}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCRotCoeff_a319c60548de84e430bd55f17d020fa3f}
+
+
+\hyperlink{classCRotCoeff}{C\-Rot\-Coeff} rotate function. 
+
+Function to apply the rotation operator to the M\-P coefficents 
+\begin{DoxyParams}{Parameters}
+{\em Min} & mp coefficient input \\
+\hline
+{\em Mout} & mp coefficient output \\
+\hline
+{\em b\-For} & boolean to indicate whether or not \\
+\hline
+\end{DoxyParams}
 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -352,6 +516,23 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{classCRotCoeff_ab93dd694803d34505c026b6d48bb6d25}
 
 
+\hyperlink{classCRotCoeff}{C\-Rot\-Coeff} rotate function. 
+
+Function to apply the rotation operator to the M\-P coefficents 
+\begin{DoxyParams}{Parameters}
+{\em Min} & mp coefficient input \\
+\hline
+{\em Mout} & mp coefficient output \\
+\hline
+{\em p1} & an integer indicating the lowest number of poles \\
+\hline
+{\em p2} & an integer indicating the highest number of poles \\
+\hline
+{\em b\-For} & boolean to indicate whether or not\\
+\hline
+\end{DoxyParams}
+Apply the rotation operator to the M\-P coeffs 
+
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -370,6 +551,10 @@ Here is the call graph for this function\-:\nopagebreak
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCRotCoeff_acf2c3650570013fee7e54491fa1d5920}
 
 
+\hyperlink{classCRotCoeff}{C\-Rot\-Coeff} save\-Undo. 
+
+Save the rotation coefficients and derivatives as an undone move 
+
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -387,6 +572,10 @@ Here is the call graph for this function\-:\nopagebreak
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCRotCoeff_a976ea6ff504912701f549e988fd217dc}
 
+
+\hyperlink{classCRotCoeff}{C\-Rot\-Coeff} undo. 
+
+Revert to old rotation coefficients using saved components 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
