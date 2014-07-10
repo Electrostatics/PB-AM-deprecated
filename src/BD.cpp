@@ -1385,7 +1385,7 @@ int main7(int argc, char ** argv)
 			mpe[2]->reset(12, CQuat());
 			c3 = CPnt(0.0, 1000, 0.0);		// place third sphere very far away so as not to factor into computations
 			CMPE::solve(mpe, cen, true);
-			CMPE::computePairPot(mpe, 0, 1, pi, pj);
+			CMPE::computePairPot(mpe, 0, 1, pi, pj);  // compute a pairwise potential
 			fout << pi  << " ";
 			c3 = fact*CPnt(0, c, 0);		// now place it close and at random orientations like the other two
 			for (int k = 0; k < N; k++)
@@ -1410,12 +1410,15 @@ int main7(int argc, char ** argv)
 
 /******************************************************************/
 /******************************************************************//**
-* Main for makin an infinte grid
+* Main for making an infinte grid.  It prints out the potential, the force
+and the torque for 8 molecules in a lattice with a given number of lattice
+layers
 * \param ifname a character string with input file name
 * \param layer an integer describing the number of neighbors to 
 			consider when performing energy, force and torque calculations
 * \param stretch a floating point number describing the scaling of 
 			the CG spheres
+
 ******************************************************************/
 int main8(int argc, char ** argv)
 {

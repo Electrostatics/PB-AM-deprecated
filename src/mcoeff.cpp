@@ -67,85 +67,84 @@ CMCoeff::CMCoeff(REAL ch, const CPnt & pos, int p, TYPE type)
   CSHCoeff SH(p);
   SH.reset(spos.theta(), spos.phi(), p);
   REAL C[p];
-
+	
   if (m_type == MPOLE || m_type == MPOLE_K)
-    {
-      if (m_type == MPOLE_K)
-	CSHCoeff::besseli(C, p, KAPPA*spos.rho());
-      else
-	CSHCoeff::besseli(C, p, 0.0);  
-      
-      REAL r = spos.rho()*IRS;
-      for (int n = 0; n < p; n++)
 	{
-	  C[n] *= k;
-	  k *= r;
+		if (m_type == MPOLE_K)
+			CSHCoeff::besseli(C, p, KAPPA*spos.rho());
+		else
+			CSHCoeff::besseli(C, p, 0.0);  
+		
+		REAL r = spos.rho()*IRS;
+		for (int n = 0; n < p; n++)
+		{
+			C[n] *= k;
+			k *= r;
+		}
 	}
-    }
   else
-    {
-      REAL ir = 1.0/spos.rho();
-      if (m_type == LOCAL_K)
 	{
-	  CSHCoeff::besselk(C, p, KAPPA*spos.rho());
-	  k *=  exp(-KAPPA*spos.rho())*ir;
+		REAL ir = 1.0/spos.rho();
+		if (m_type == LOCAL_K)
+		{
+			CSHCoeff::besselk(C, p, KAPPA*spos.rho());
+			k *=  exp(-KAPPA*spos.rho())*ir;
+		}
+		else
+		{
+			CSHCoeff::besselk(C, p, 0.0);
+			k *= ir;
+		}
+		
+		ir *= RS;  
+		for (int n = 0; n < p; n++)
+		{
+			C[n] *= k;;
+			k *= ir;
+		}
 	}
-      else
-	{
-	  CSHCoeff::besselk(C, p, 0.0);
-	  k *= ir;
-	}
-
-      ir *= RS;  
-      for (int n = 0; n < p; n++)
-	{
-	  C[n] *= k;;
-	  k *= ir;
-	}
-    }
-
+	
   (*this) += (SH * C);
 }
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Take partial derivative of matrix with respect to radius r
 ******************************************************************/
-
 CMCoeff
 CMCoeff::dMdr(REAL r) const
 {
   CMCoeff M(*this);
   REAL k[m_p];
   REAL ir = 1/r;
-
+	
   if (m_type == MPOLE)
-    {
-      for (int n = 0; n < m_p; n++)
-	k[n] = ir*n;
-    }
+	{
+		for (int n = 0; n < m_p; n++)
+			k[n] = ir*n;
+	}
   else if (m_type == LOCAL)
-    {
-      for (int n = 0; n < m_p; n++)
-	k[n] = -ir*(n+1);
-    }
+	{
+		for (int n = 0; n < m_p; n++)
+			k[n] = -ir*(n+1);
+	}
   else if (m_type == MPOLE_K)
-    {
-      REAL I[m_p+1];
-      REAL c = KAPPA*KAPPA*r*r;
-      CSHCoeff::besseli(I, m_p+1, KAPPA*r);
-      for (int n = 0; n < m_p; n++)
-	k[n] = ir*(n + c*I[n+1]/(I[n]*(2*n+3)));
-    }
+	{
+		REAL I[m_p+1];
+		REAL c = KAPPA*KAPPA*r*r;
+		CSHCoeff::besseli(I, m_p+1, KAPPA*r);
+		for (int n = 0; n < m_p; n++)
+			k[n] = ir*(n + c*I[n+1]/(I[n]*(2*n+3)));
+	}
   else
-    {
-      REAL K[m_p+1];
-      CSHCoeff::besselk(K, m_p+1, KAPPA*r);
- 
-      for (int n = 0; n < m_p; n++)
-	k[n] = ir*(n - (2*n+1)*K[n+1]/K[n]);
-    }
-
+	{
+		REAL K[m_p+1];
+		CSHCoeff::besselk(K, m_p+1, KAPPA*r);
+		
+		for (int n = 0; n < m_p; n++)
+			k[n] = ir*(n - (2*n+1)*K[n+1]/K[n]);
+	}
+	
   M *= k;
   return M;
 }

@@ -19,22 +19,30 @@ using namespace std;
 */
 class CGradCoeff : public CTriCoeff
 {
- public: 
+public: 
   CGradCoeff(int p = 0, int res = N_POLES) : CTriCoeff(p, res) {} 
   CGradCoeff(const CTriCoeff & G) : CTriCoeff(G) {} 
+
+//!  The GradCoeff constructor
+/*! The function that creates grad coeffs for a given matrix M.
+			\param M a MCoeff object
+			\param c a spherical coordinate by which to take the 
+					derivative on  */
   CGradCoeff(const CMCoeff & M, const CSpPnt & c); 
   
   CGradCoeff sphToCart(const CPnt * R);
-  
+
+// printing out Grad coefficients
   friend ostream & operator<<(ostream & out, const CGradCoeff & G);
 
+	
   const Complex dr(int n, int m) const
   { return m_M[dRHO](n,m); }
   const Complex dt(int n, int m) const
   { return m_M[dTHETA](n,m); }
   const Complex dp(int n, int m) const
   { return m_M[dPHI](n,m); }
-
+	
   Complex & dr(int n, int m)
   { return m_M[dRHO](n,m); }
   Complex & dt(int n, int m)
@@ -43,18 +51,27 @@ class CGradCoeff : public CTriCoeff
   { return m_M[dPHI](n,m); }
 };
 
+
+/////////////////////////////////////
+////// Inline functions
+
+//!  The GradCoeff function sphToCart
+/*! The function that converts each component of the 
+expansion re-operator derivatives to cartesian coordinates
+	\param R an input of XYZ coordinates
+*/
 inline CGradCoeff 
 CGradCoeff::sphToCart(const CPnt * R)
 {
   CGradCoeff G(getOrder());
-
+	
   for (int i = 0; i < 3; i++)
-    {
-      G.m_M[0] += R[i].x()*m_M[i];
-      G.m_M[1] += R[i].y()*m_M[i];
-      G.m_M[2] += R[i].z()*m_M[i];
-    }
-
+	{
+		G.m_M[0] += R[i].x()*m_M[i];
+		G.m_M[1] += R[i].y()*m_M[i];
+		G.m_M[2] += R[i].z()*m_M[i];
+	}
+	
   return G;
 }
 

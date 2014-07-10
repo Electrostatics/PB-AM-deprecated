@@ -5,6 +5,10 @@
 
 using namespace std;
 
+	//!  The CTriCoeff class 
+/*!
+		The tri coefficient class. Contains a trio of matrix coefficient objects
+*/
 class CTriCoeff
 {
  public:
@@ -58,6 +62,13 @@ protected:
   CMCoeff m_M[3];
 };
 
+///////////////////////////////////////////
+/////// Inline functions
+
+//!  The MPE setOrder function
+/*!
+		Function that sets the order ??  
+*/
 inline void
 CTriCoeff::saveUndo()
 {

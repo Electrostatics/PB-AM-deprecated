@@ -14,7 +14,8 @@ class CTriCoeff;
 
 //!  The mcoeff expansion class
 /*!
-		The class that contains all details for a mcoeff ??  
+		The class that contains all details for a Matrix expansion
+		and its coefficients 
 */
 
 class CMCoeff
@@ -29,20 +30,19 @@ public:
 							LOCAL_K
 	};
 	
-		//!  The MCoeff class constructor
+//!  The MCoeff class constructor
 /*!
 		Initialize a MCoeff object.
 		\param charges a vector of floating point charges
 		\param pos a vector of cartesian coordinates, one per charge
 		\param p an integer that generally represents the number of poles
 		\param rad a floating point number that represents the radius of the CG molecule. Default is zero.
-		\return an object of the MCoeff class
-*/
+		\return an object of the MCoeff class */
   CMCoeff(const vector<REAL> & charges, const vector<CPnt>&  pos, 
 					int p, REAL rad = 0.0);
   CMCoeff(REAL ch, const CPnt & pos,int p, TYPE type);
 	
-	//!  The mcoeff class constructor
+//!  The mcoeff class constructor
 /*!
 		Initialize a MCoeff object.
 		\param p is an int that is a minimal number of poles. Default is zero.

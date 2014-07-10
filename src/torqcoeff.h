@@ -7,32 +7,29 @@
 
 #include "tricoeff.h"
 
+	//!  The CTorqCoeff class 
+/*!
+		The CTorqCoeff class contains information about 
+		torque coefficients, related to TriCoeff, and used for
+		computing torque coefficients in a molecule, the H variables  
+*/
 class CTorqCoeff : public CTriCoeff
 {
  public:
   CTorqCoeff(int p = 0, int res = 0) : CTriCoeff(p, res) {} 
   CTorqCoeff(const CTriCoeff & G) : CTriCoeff(G) {} 
+	
+//!  The CTorqCoeff class constructor 
+/*!
+		The CTorqCoeff construction using the inputs:
+		\param charges a vector of charges within the molecule
+		\param pos a vector of charge positions in cartesian coords
+		\param p an integer of number of poles
+		\param rad a floating point number of the radius of the CG sphere. 
+*/
   CTorqCoeff(const vector<REAL> & charges, const vector<CPnt>&  pos, 
 	     int p, REAL rad);
 
-  /*  
-const Complex dx(int n, int m) const
-  { return m_M[0](n,m); }
-  const Complex dy(int n, int m) const
-  { return m_M[1](n,m); }
-  const Complex dz(int n, int m) const
-  { return m_M[2](n,m); }
-
-  Complex & dx(int n, int m)
-  { return m_M[0](n,m); }
-  Complex & dy(int n, int m)
-  { return m_M[1](n,m); }
-  Complex & dz(int n, int m)
-  { return m_M[2](n,m); }
-  */
 };
-
-
-
 
 #endif

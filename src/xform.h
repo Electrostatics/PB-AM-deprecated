@@ -19,50 +19,59 @@
 */
 class CXForm
 {
- public:
+public:
   CXForm() : m_pM1(NULL), m_pM2(NULL), m_rot(false) {}
+	
+	//!  The XForm class constructor
+/*!
+		The constructor creates an XForm class from two
+		matrix coefficients M1 and M2
+		\param M1 is a matrix coefficient from the first molecule
+		\param M2 is a matrix coefficient from the 2nd molecule
+*/
   CXForm(const CMCoeff & M1, const CMCoeff & M2) : 
-    m_pM1(&M1), m_pM2(&M2), m_rot(true) {}
+	m_pM1(&M1), m_pM2(&M2), m_rot(true) {}
   void init(const CPnt & P, int p)
-    { reset(P, p); }
+	{ reset(P, p); }
   
   static void initConstants();
-    
+	
   void xform(const CMCoeff & Min, CGradCoeff & Gout, bool bFor);
   void xform(const CMCoeff & Min, CMCoeff & Mout, bool bFor);
   void xform(const CTriCoeff & Gin, CTriCoeff & Gout, bool bFor);
   void reset(const CPnt & P, int p);
- 
+	
   void sphToCart(CPnt & p);
   void sphToCart(CGradCoeff & Gin);
-
+	
   int getOrder() const
-    { return m_p; }
+	{ return m_p; }
   REAL getError() const
-    { return m_relError; }
+	{ return m_relError; }
   
   REAL incOrder();
   REAL decOrder();
   
   bool isInc()
-    { return (m_relError >= MAX_REL_ERROR); }
+	{ return (m_relError >= MAX_REL_ERROR); }
   bool isDec()
-   { return (m_relError < MIN_REL_ERROR); }
-
+	{ return (m_relError < MIN_REL_ERROR); }
+	
   void saveUndo();
   void undo();
-
- private:
+	
+private:
   void compRelError()
-    {
-      REAL a = fabs(m_resid1) + fabs(m_resid2);
-      m_relError = (m_p > 2 ? a/fabs(m_base) : a);
-    }
+	{
+		REAL a = fabs(m_resid1) + fabs(m_resid2);
+		m_relError = (m_p > 2 ? a/fabs(m_base) : a);
+	}
   
   CRotCoeff m_rot;
   CTransCoeff m_trans;
   int m_p, m_pU;
-  const CMCoeff * m_pM1, *m_pM2;
+  const CMCoeff * m_pM1;  //!< The matrix coefficient of the first molecule
+	const CMCoeff * m_pM2;  //!< The matrix coefficient of the second molecule
   REAL m_relError, m_resid1, m_resid2, m_base;
   REAL m_rbu[4];
   CMCoeff m_tM1, m_tM2, m_tM3;
@@ -70,11 +79,13 @@ class CXForm
   CPnt m_R[3], m_RU[3];
 };
 
-/******************************************************************/
-/******************************************************************//**
-* 
-******************************************************************/
+///////////////////////////////////////////
+/////// Inline functions
 
+//!  The XForm saveUndo function
+/*!
+		Function that ?  
+*/
 inline void
 CXForm::saveUndo()
 {
@@ -93,11 +104,10 @@ CXForm::saveUndo()
   m_pU = m_p;
 }
 
-/******************************************************************/
-/******************************************************************//**
-* 
-******************************************************************/
-
+//!  The XForm undo function
+/*!
+		Function that ?  
+*/
 inline void
 CXForm::undo()
 {

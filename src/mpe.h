@@ -93,6 +93,11 @@ public:
   REAL ngpol_t;
 	
 private:
+
+		//!  The MPE initCD function
+/*!
+		Computes Gamma and Delta coefficients for the MPE
+*/
   void initCD();
 	
 	//!  The MPE initialize function
@@ -129,18 +134,26 @@ private:
   static CXForm & XFS(int i, int j) 
 	{ assert(i < j); return *m_xfs[IDX[i]+(j-i)-1]; }
 	
-  static REAL KAPPA, DIEL_S, DIEL_P;
+  static REAL KAPPA; 						//!< A floating point number of the inverse debye length
+	static REAL DIEL_S;						//!< A floating point number of the dielectric of the solvent
+	static REAL DIEL_P;						//!< A floating point number of the dielectric of the protein
   static int N_MOL;
   static CGradCoeff ** m_tmpG;
   static CMCoeff * m_tmpM;
   static CMCoeff m_tM;					//!< A temporary coefficient object for the multipole expansion
   static CGradCoeff m_tG1, m_tG2, *m_tG;
-  static CXForm ** m_xfs;
-  static int * IDX;							//!<
+	
+  static CXForm ** m_xfs;				//!< An array of transforms that holds one for each pair of mols in the system
+  static int * IDX;							/** An integer array of summed interactions.  For NMOL=4, 
+																		 IDX[0]=0, IDX[1] = 3, IDX[2] = 3+2 = 5, IDX[3] = 3+2+1 = 6  */
   static int m_total;						//!< Sum of ((number of poles per molecule)*(N_POLE+1)/2)
 	
-  REAL m_C[N_POLES];						//!< Part of GAMMA vector, dielectric boundary crossing operator, coefficients for eq(19) in paper
-	REAL m_CD[N_POLES];						//!< Part of DELTA vector, cavity polarization operator. Coefficients for eq(20) in paper
+	// Form factors, gamma and delta 
+  REAL m_C[N_POLES];						/** Part of GAMMA vector, dielectric boundary crossing operator, 
+																										coefficients for eq(19) in paper */
+	REAL m_CD[N_POLES];						/** Part of DELTA vector, cavity polarization operator. 
+																										Coefficients for eq(20) in paper */
+																										
   REAL m_rad;										//!< Radius of the sphere for this object of CMPE
   CMCoeff m_M;									//!< 									
 	CMCoeff m_rM;									//!< Coefficients for rotated m_M

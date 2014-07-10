@@ -23,8 +23,8 @@ CGradCoeff CMPE::m_tG1, CMPE::m_tG2, *CMPE::m_tG;
 CXForm ** CMPE::m_xfs;
 int * CMPE::IDX, CMPE::m_total, CMPE::npol;
 REAL CMPE::npol_t;
-bool CMPE::m_bInfinite = false;		//<! Indicates whether simulation for an infinite grid is being performed
-int CMPE::m_unit = 1;							//<! 
+bool CMPE::m_bInfinite = false;		//!< Indicates whether simulation for an infinite grid is being performed
+int CMPE::m_unit = 1;							//!< 
 
 /******************************************************************/
 /******************************************************************//**
@@ -37,16 +37,22 @@ int CMPE::m_unit = 1;							//<!
 void
 CMPE::initConstants(REAL kappa, REAL dielp, REAL diels, int nmol, REAL rs)
 {
-  DIEL_P = dielp;		//!< Dielectric of protein
-  DIEL_S = diels;		//!< Dielectric of solvent
-  N_MOL = nmol;		//!< Number of molecules 
+  DIEL_P = dielp;		// Dielectric of protein
+  DIEL_S = diels;		// Dielectric of solvent
+  N_MOL = nmol;		// Number of molecules 
   
-	//<! Initializing other classes: SHCoeff and Transform
+	// Initializing other classes: SHCoeff and Transform
   CSHCoeff::init(rs, kappa);
   CXForm::initConstants();
 
-  IDX = new int[N_MOL];		//!< Create vector of size(number of molecules)
-  IDX[0] = 0;							//!< List starts with 0 to (nmols-1)
+  IDX = new int[N_MOL];		// Create vector of size(number of molecules)
+  IDX[0] = 0;							// List starts with 0. 
+	// For each subsequent value, tells how many inter-molecule interactions are given
+	//  by the previous molecule's interactions plus it's own
+	
+	// If NMOL=2 	// IDX[0]=0; IDX[1]= = IDX[0] + 1 own interaction = 1
+	// If NMOL=3	// IDX[0]=0, IDX[1] = 2, IDX[2] = IDX[1] + 1 own = 3 
+	// If NMOL=4	// IDX[0]=0, IDX[1] = 3, IDX[2] = 3+2 = 5, IDX[3] = 3+2+1 = 6 
   for (int i = N_MOL-1; i > 0; i--)
     IDX[N_MOL-i] = IDX[N_MOL-i-1] + i;
 
@@ -116,16 +122,16 @@ CMPE::CMPE(const CProtein & mol) : m_pM(0, N_POLES), m_rot(false)
   m_rad = mol.getRadius();
   m_id = mol.getID();
   initCD();													// Initializing conformational constants for the given protein
-
+	
   int num = mol.getNumCharges();
   vector<CPnt> pos(num);
   vector<REAL> ch(num);
   for (int i = 0; i < num; i++)
-    {
-      pos[i] = mol.getChargePos(i);
-      ch[i] = mol.getCharge(i);
-    }
-
+	{
+		pos[i] = mol.getChargePos(i);
+		ch[i] = mol.getCharge(i);
+	}
+	
   initialize(ch, pos, 1);
   reset(1);
 }
@@ -376,15 +382,15 @@ CMPE::reexpand(const vector<CMPE*> & mpe, int i)
   m_L.reset(m_p);
   
   for (int j = 0; j < i; j++)
-    {
-      XFS(j,i).xform(mpe[j]->m_pM, m_tM, false);
-      m_L += m_tM;
-    }
+	{
+		XFS(j,i).xform(mpe[j]->m_pM, m_tM, false);
+		m_L += m_tM;
+	}
   for (int j = i+1; j < N_MOL; j++)
-    {
-      XFS(i,j).xform(mpe[j]->m_pM, m_tM, true);
-      m_L += m_tM;
-    }
+	{
+		XFS(i,j).xform(mpe[j]->m_pM, m_tM, true);
+		m_L += m_tM;
+	}
 }
 
 /******************************************************************/
@@ -395,8 +401,8 @@ CMPE::reexpand(const vector<CMPE*> & mpe, int i)
 REAL
 CMPE::recompute(const vector<CMPE*> & mpe, int i)
 {
-  if (N_MOL == 1)
-    return 0.0;
+  if (N_MOL == 1)	// if there is only 1 molecule in the system,
+    return 0.0;		// we do not need to recompute the MPEs
 
   reexpand(mpe, i);
 
@@ -417,28 +423,28 @@ void
 CMPE::reexpandGrad(const vector<CMPE*> & mpe, int i)
 {
   m_dL.reset(getOrder());
-
+	
   for (int k = 0; k < i; k++)
-    {
-      XFS(k,i).xform(mpe[k]->m_pM, m_tG2, false);
-      m_dL -= m_tG2;
-    }
+	{
+		XFS(k,i).xform(mpe[k]->m_pM, m_tG2, false);
+		m_dL -= m_tG2;
+	}
   for (int k = i+1; k < N_MOL; k++)
-    {
-      XFS(i,k).xform(mpe[k]->m_pM, m_tG2, true);
-      m_dL += m_tG2;
-    }
-    
+	{
+		XFS(i,k).xform(mpe[k]->m_pM, m_tG2, true);
+		m_dL += m_tG2;
+	}
+	
   for (int k = 0; k < i; k++)
-    {
-      XFS(k,i).xform(mpe[k]->m_pG[i], m_tG2, false);
-      m_dL += m_tG2;
-    }
+	{
+		XFS(k,i).xform(mpe[k]->m_pG[i], m_tG2, false);
+		m_dL += m_tG2;
+	}
   for (int k = i+1; k < N_MOL; k++)
-    {
-      XFS(i,k).xform(mpe[k]->m_pG[i], m_tG2, true);
-      m_dL += m_tG2;
-    }
+	{
+		XFS(i,k).xform(mpe[k]->m_pG[i], m_tG2, true);
+		m_dL += m_tG2;
+	}
 }
 
 /******************************************************************/
@@ -452,26 +458,26 @@ CMPE::recomputeGrad(const vector<CMPE*> & mpe, int i, int j)
 {
   if (N_MOL == 1)
     return 0.0;
-
+	
   m_tG1 = m_tG[i];
   
   for (int k = 0; k < i; k++)
-    {
-      XFS(k,i).xform(mpe[k]->m_pG[j], m_tG2, false);
-      m_tG1 += m_tG2;
-    }
+	{
+		XFS(k,i).xform(mpe[k]->m_pG[j], m_tG2, false);
+		m_tG1 += m_tG2;
+	}
   for (int k = i+1; k < N_MOL; k++)
-    {
-      XFS(i,k).xform(mpe[k]->m_pG[j], m_tG2, true);
-      m_tG1 += m_tG2;
-    }
-
+	{
+		XFS(i,k).xform(mpe[k]->m_pG[j], m_tG2, true);
+		m_tG1 += m_tG2;
+	}
+	
   if (i == j)
     m_dL = m_tG1;
-
+	
   m_tG1 *= m_CD;
   REAL dev = CGradCoeff::computeDev(m_pG[j], m_tG1);
-
+	
   m_pG[j] = m_tG1;
   return dev;
 }
@@ -485,40 +491,43 @@ void
 CMPE::prepareDTA(const vector<CMPE*> & mpe, int j)
 {
   m_tG[j].reset(mpe[j]->getOrder());
-
+	
   int i_max = (m_bInfinite ? m_unit : N_MOL);
   for (int i = 0; i < N_MOL; i++)
-    {
-      if (i == j)
 	{
-	  for (int k = 0; k < i; k++)
+		if (i == j)
+		{
+			for (int k = 0; k < i; k++)
 	    {
 	      XFS(k,i).xform(mpe[k]->m_pM, m_tG2, false);
 	      m_tG[i] -= m_tG2;
 	    }
-	  for (int k = i+1; k < N_MOL; k++)
+			for (int k = i+1; k < N_MOL; k++)
 	    {
 	      XFS(i,k).xform(mpe[k]->m_pM, m_tG2, true);
 	      m_tG[i] += m_tG2;
 	    }
+		}
+		else if (j < i)
+		{
+			XFS(j,i).xform(mpe[j]->m_pM, m_tG[i], false);
+		}
+		else
+		{
+			XFS(i,j).xform(mpe[j]->m_pM, m_tG[i], true);
+			m_tG[i].recip();
+		}
 	}
-      else if (j < i)
-	{
-	  XFS(j,i).xform(mpe[j]->m_pM, m_tG[i], false);
-	}
-      else
-	{
-	  XFS(i,j).xform(mpe[j]->m_pM, m_tG[i], true);
-	  m_tG[i].recip();
-	}
-    }
 }
 
 /******************************************************************/
 /******************************************************************//**
 * 
+\param mpe a vector of MPEs, one for each molecule in the system
+\param force a xyz vector of forces
+\param torque a xyz vector of torques
+\param i an integer of the molecule index
 ******************************************************************/
-
 void
 CMPE::computeForceOn(vector<CMPE*> & mpe, CPnt & force, CPnt & torque, int i)
 {
@@ -530,50 +539,61 @@ CMPE::computeForceOn(vector<CMPE*> & mpe, CPnt & force, CPnt & torque, int i)
   torque = cross(m_dL, m_rT);
 }
 
+/******************************************************************/
+/******************************************************************//**
+* Function to compute pairwise interaction of two molecules in a system.
+\param mpe a vector of MPEs, one for each molecule in the system
+\param i an integer of the index of the first molecule of interest
+\param j an integer of the index of the second molecule of interest
+\param p1 a floating point of the potential on molecule 1
+\param p2 a floating point of the potential on molecule 2
+******************************************************************/
 void
 CMPE::computePairPot(const vector<CMPE*> & mpe, int i, int j, 
 		     REAL & p1, REAL & p2)
 {
   if (i < j)
-    {
-      XFS(i,j).xform(mpe[j]->m_pM, m_tM, true);
-      p1 = inprod(m_tM,mpe[i]->m_pM);
-      XFS(i,j).xform(mpe[i]->m_pM, m_tM, false);
-      p2 = inprod(m_tM, mpe[j]->m_pM);
-    }
+	{
+		XFS(i,j).xform(mpe[j]->m_pM, m_tM, true);
+		p1 = inprod(m_tM,mpe[i]->m_pM);
+		XFS(i,j).xform(mpe[i]->m_pM, m_tM, false);
+		p2 = inprod(m_tM, mpe[j]->m_pM);
+	}
   else if (j < i)
-    {
-      XFS(j,i).xform(mpe[j]->m_pM, m_tM, false);
-      p1 = inprod(m_tM,mpe[i]->m_pM);
-      XFS(j,i).xform(mpe[i]->m_pM, m_tM, true);
-      p2 = inprod(m_tM, mpe[j]->m_pM);
-    }
-}
-
-void
-CMPE::computeForce(vector<CMPE*> & mpe, const vector<CPnt*> & cen,
-		   vector<REAL> & pot, vector<CPnt> & force, 
-		   vector<CPnt> & torque)
-{
-  int i_max = (m_bInfinite ? m_unit : N_MOL);
-
-  pot.clear(); pot.resize(i_max);
-  force.clear(); force.resize(i_max);
-  torque.clear(); torque.resize(i_max);
-  
-  for (int j = 0; j < i_max; j++)
-    {
-      pot[j] = inprod(mpe[j]->m_L, mpe[j]->m_pM);
-      mpe[j]->computeForceOn(mpe, force[j], torque[j], j);
-    }
+	{
+		XFS(j,i).xform(mpe[j]->m_pM, m_tM, false);
+		p1 = inprod(m_tM,mpe[i]->m_pM);
+		XFS(j,i).xform(mpe[i]->m_pM, m_tM, true);
+		p2 = inprod(m_tM, mpe[j]->m_pM);
+	}
 }
 
 /******************************************************************/
 /******************************************************************//**
 * 
 ******************************************************************/
+void
+CMPE::computeForce(vector<CMPE*> & mpe, const vector<CPnt*> & cen,
+		   vector<REAL> & pot, vector<CPnt> & force, 
+		   vector<CPnt> & torque)
+{
+  int i_max = (m_bInfinite ? m_unit : N_MOL);
+	
+  pot.clear(); pot.resize(i_max);
+  force.clear(); force.resize(i_max);
+  torque.clear(); torque.resize(i_max);
+  
+  for (int j = 0; j < i_max; j++)
+	{
+		pot[j] = inprod(mpe[j]->m_L, mpe[j]->m_pM);
+		mpe[j]->computeForceOn(mpe, force[j], torque[j], j);
+	}
+}
 
-
+/******************************************************************/
+/******************************************************************//**
+* 
+******************************************************************/
 REAL
 CMPE::computeForceAt(const vector<CMPE*> & mpe, const vector<CPnt*> & cen,
 		     const CPnt & P, CPnt & force, CPnt & torque, int p)
@@ -581,22 +601,22 @@ CMPE::computeForceAt(const vector<CMPE*> & mpe, const vector<CPnt*> & cen,
   force.zero();
   torque.zero();
   REAL pot = 0.0;
-
+	
   CPnt R[3];
   for (int i = 0; i < N_MOL; i++)
-    {
-      CSpPnt c = CartToSph(P - (*cen[i]));
-      CMCoeff L(1.0, P - (*cen[i]), p, CMCoeff::LOCAL_K);
-      CGradCoeff dL(L, c);
-
-      CPnt f = inprod(mpe[i]->m_pM, dL);
-
-      CMPE::sphToCartMat(P - (*cen[i]), R);
-      force += CPnt(f.x()*R[0] + f.y()*R[1] + f.z()*R[2]);
-      
-      pot += inprod(mpe[i]->m_pM, L);
-    }
- 
+	{
+		CSpPnt c = CartToSph(P - (*cen[i]));
+		CMCoeff L(1.0, P - (*cen[i]), p, CMCoeff::LOCAL_K);
+		CGradCoeff dL(L, c);
+		
+		CPnt f = inprod(mpe[i]->m_pM, dL);
+		
+		CMPE::sphToCartMat(P - (*cen[i]), R);
+		force += CPnt(f.x()*R[0] + f.y()*R[1] + f.z()*R[2]);
+		
+		pot += inprod(mpe[i]->m_pM, L);
+	}
+	
   return pot;
 }
 
@@ -610,13 +630,13 @@ CMPE::computePotAt(const vector<CMPE*> & mpe, const vector<CPnt*> & cen,
 		   const CPnt & P)
 {
   REAL pot = 0.0;
-
+	
   for (int i = 0; i < mpe.size(); i++)
-    {
-      CMCoeff L(1.0, P - (*cen[i]), mpe[i]->getOrder(), CMCoeff::LOCAL_K);
-      pot += inprod(mpe[i]->m_pM, L);
-    }
- 
+	{
+		CMCoeff L(1.0, P - (*cen[i]), mpe[i]->getOrder(), CMCoeff::LOCAL_K);
+		pot += inprod(mpe[i]->m_pM, L);
+	}
+	
   return pot;
 }
 
@@ -645,10 +665,10 @@ CMPE::reexpand(const vector<CMPE*> & mpe)
 {
   int i_max = (m_bInfinite ? m_unit : N_MOL);
   for (int i = 0; i < i_max; i++)
-    {
-      mpe[i]->reexpand(mpe, i);
-      mpe[i]->reexpandGrad(mpe, i);
-    }
+	{
+		mpe[i]->reexpand(mpe, i);
+		mpe[i]->reexpandGrad(mpe, i);
+	}
 }
 
 /******************************************************************/
