@@ -9,8 +9,6 @@
 /******************************************************************//**
 * Initializing constants
 ******************************************************************/
-
-
 #define b_DIST 100.0											//!< Initial distance between 2 proteins for BD run
 #define q_DIST 500.0											//!< Distance for molecules to be considered escaped
 #define f_DIST 100.0											//!< Cutoff for protein force interactions
@@ -22,18 +20,18 @@
 #define KAPPA (sqrt(SALT_CONCENTRATION)/3.04)	//!< Inverse debye length 
 
 #define COULOMB_CONSTANT (8.988e9)				//!< [ N*m^2/C^2 ]
-#define ELECTRON_CHARGE (1.60217733e-19)		//!<  [ coulombs ]
+#define ELECTRON_CHARGE (1.60217733e-19)	//!<  [ coulombs ]
 #define AVOGADRO_NUM (6.02209e23)				
-#define KCAL 4184.0								//!<  [ 1 kCal = 4184 Joules ]
-#define ANGSTROM (1e-10)						//!<  [ 1A = 1e-10 Meters ]
-#define PICO_SEC (1e-12)						//!<  [ 1 ps = 1e-12 s ]	
+#define KCAL 4184.0												//!<  [ 1 kCal = 4184 Joules ]
+#define ANGSTROM (1e-10)									//!<  [ 1A = 1e-10 Meters ]
+#define PICO_SEC (1e-12)									//!<  [ 1 ps = 1e-12 s ]	
 #define COUL_K 332.141144
 
 #define GAMMA (0.01*100/1000*ANGSTROM*PICO_SEC)
-#define Kb (1.380658e-23)						//!<  [ m^2 kg/ s^2 / K ] 
-#define TEMP 298.0								//!<  [ Kelvin ]
-#define KbT (1.98718E-03*TEMP)					//!< (TEMP*Kb*AVOGADRO_NUM/KCAL)
-#define IKbT (1.0/KbT)							//!<  1/KbT
+#define Kb (1.380658e-23)									//!<  [ m^2 kg/ s^2 / K ] 
+#define TEMP 298.0												//!<  [ Kelvin ]
+#define KbT (1.98718E-03*TEMP)						//!< (TEMP*Kb*AVOGADRO_NUM/KCAL)
+#define IKbT (1.0/KbT)										//!<  1/KbT
 
 #define TOL 2.5
 
@@ -41,7 +39,6 @@
 #define ROTATE_ANGLE 20.0
 #define PATCH_SIZE (cos(PATCH_ANGLE*M_PI/180.0))
 #define ROTATE_SIZE (cos(ROTATE_ANGLE*M_PI/180.0))
-
 
 const char CBD::STATUS_STRING[3][10] = {"ESCAPED", "DOCKED", "RUNNING"};
 int scount;
@@ -137,27 +134,27 @@ CBD::run()
 ******************************************************************/
 CBD::STATUS
 CBD::makeMove(const CPnt & dR2, const CPnt & dO1, 
-	      const CPnt & dO2, REAL dt) 
+							const CPnt & dO2, REAL dt) 
 {
   REAL bdist = CProtein::computeDistance(*m_mol1, *m_mol2);
   int c = 0;
   while(true)
-    {
-      c++;
-      if (c > 500)
-	cout << "stuck inside loop" << endl;
-      CPnt dR2_ = dR2 + CBD::getRandVec(sqrt(2*dt*m_Dtr));
-      m_mol2->translate(dR2_);
-      
-      if (!m_mol1->inCollision(*m_mol2))
-	break;
-      else
-	m_mol2->untransform();
-    }
-
+	{
+		c++;
+		if (c > 500)
+			cout << "stuck inside loop" << endl;
+		CPnt dR2_ = dR2 + CBD::getRandVec(sqrt(2*dt*m_Dtr));
+		m_mol2->translate(dR2_);
+		
+		if (!m_mol1->inCollision(*m_mol2))
+			break;
+		else
+			m_mol2->untransform();
+	}
+	
   if (escaped(q_DIST))
     return ESCAPED;
-
+	
   CPnt dO1_ = dO1 + CBD::getRandVec(sqrt(2*dt*m_Dr1));
   CPnt dO2_ = dO2 + CBD::getRandVec(sqrt(2*dt*m_Dr2));
   
@@ -166,37 +163,37 @@ CBD::makeMove(const CPnt & dR2, const CPnt & dO1,
   
   REAL adist = CProtein::computeDistance(*m_mol1, *m_mol2);
   if (adist > f_DIST)
-    {
-       m_rot1 = Q1*m_rot1;
-       m_rot2 = Q2*m_rot2;
-    }
+	{
+		m_rot1 = Q1*m_rot1;
+		m_rot2 = Q2*m_rot2;
+	}
   else
-    {
-      if (bdist > f_DIST)
 	{
-	  m_mol1->rotate(m_rot1);
-	  m_mol2->rotate(m_rot2);
+		if (bdist > f_DIST)
+		{
+			m_mol1->rotate(m_rot1);
+			m_mol2->rotate(m_rot2);
+			
+			m_orth1 = m_rot1 * m_orth1;
+			m_patch1 = m_rot1 * m_patch1;
+			m_orth2 = m_rot2 * m_orth2;
+			m_patch2 = m_rot2 * m_patch2;
+			
+			m_rot1.identity();
+			m_rot2.identity();
+		}
+		else
+		{
+			m_mol1->rotate(Q1);
+			m_mol2->rotate(Q2);
+			
+			m_orth1 = Q1 * m_orth1;
+			m_patch1 = Q1 * m_patch1;
+			m_orth2 = Q2 * m_orth2;
+			m_patch2 = Q2 * m_patch2;
+		}
+	}
 	
-	  m_orth1 = m_rot1 * m_orth1;
-	  m_patch1 = m_rot1 * m_patch1;
-	  m_orth2 = m_rot2 * m_orth2;
-	  m_patch2 = m_rot2 * m_patch2;
-
-	  m_rot1.identity();
-	  m_rot2.identity();
-	}
-      else
-	{
-	  m_mol1->rotate(Q1);
-	  m_mol2->rotate(Q2);
-
-	  m_orth1 = Q1 * m_orth1;
-	  m_patch1 = Q1 * m_patch1;
-	  m_orth2 = Q2 * m_orth2;
-	  m_patch2 = Q2 * m_patch2;
-	}
-    }
-
   if (isDocked())
     return DOCKED;
   else 
@@ -205,7 +202,8 @@ CBD::makeMove(const CPnt & dR2, const CPnt & dO1,
 
 /******************************************************************/
 /******************************************************************//**
-* isDocked
+* isDocked function to determine whether or not the moving protein has 
+docked on the other
 ******************************************************************/
 bool 
 CBD::isDocked() const
@@ -372,33 +370,33 @@ void readqcd(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch,
   ifstream fin(fname);
   char buf[100], temp;
   REAL sum = 0.0;
-
+	
   pnt.clear();
   ch.clear();
   bool first = true;
   fin.getline(buf,99);
   while (!fin.eof())
-    {
-      double x,y,z,c,r;
-      sscanf(buf, "ATOM\t1\tLTL\tTST\t%lf %lf %lf %lf %lf", 
-	     &x, &y, &z, &c, &r);
-
-      if (first)
 	{
-	  rad = r;
-	  first = false;
+		double x,y,z,c,r;
+		sscanf(buf, "ATOM\t1\tLTL\tTST\t%lf %lf %lf %lf %lf", 
+					 &x, &y, &z, &c, &r);
+		
+		if (first)
+		{
+			rad = r;
+			first = false;
+		}
+		else
+		{
+			pnt.push_back(CPnt(x,y,z));
+			ch.push_back(c);
+			sum += c;
+		}
+		fin.getline(buf,99);     
 	}
-      else
-	{
-	  pnt.push_back(CPnt(x,y,z));
-	  ch.push_back(c);
-	  sum += c;
-	}
-      fin.getline(buf,99);     
-    }
-
+	
   cout << fname << ": charges: " << ch.size() << ", net charge: " 
-       << sum << ", radius: " << rad << endl; 
+	<< sum << ", radius: " << rad << endl; 
 }
 
 /******************************************************************/
@@ -412,8 +410,6 @@ void readqcd(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch,
 				sphere in the PQR file or not
 \param chid a character of the chain ID of the molecule
 ******************************************************************/
-
-
 void writemdp(const char * ifname, const char * ofname, 
 							const vector<CPnt> & pnt, const CPnt& cen, bool sp,
 							char chid)
@@ -475,7 +471,6 @@ that approximates the CG version of the molecule.
 	\param rad a floating point number that stores the radius of the molecule
 	\param cen a vector of xyz coordinates for the molecule's center of geom
 ******************************************************************/
-
 void readmdp(const char * fname, vector<CPnt> & pnt, vector<REAL> & ch, 
 						 REAL & rad, CPnt & cen)
 {
@@ -891,7 +886,6 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 		
 		for (int i = 0; i < cen.size(); i++)
 			cout << *(cen[i]);
-		cout << "  within perturb" << endl;
 		
 		CMPE::updateSolve(mpe, cen);
 		//CMPE::computeForce(mpe, cen, force, torque);
@@ -901,7 +895,9 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 			fout << mpe[i]->ngpol << " " << mpe[i]->ngpol_t << " ";
 		fout << endl;
 	*/	
-		
+	
+		cout << "  within perturb" << endl;
+					
 		CMPE::undoXForms();
 		for (int i = 0; i < num; i++)
 		{

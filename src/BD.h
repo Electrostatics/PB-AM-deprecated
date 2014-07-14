@@ -10,11 +10,9 @@
 using namespace std;
 
 //!  The Brownian dynamics class
-/*!
-		The class that contains all details for a BD run, where 1 protein is fixed
+/*! The class that contains all details for a BD run, where 1 protein is fixed
 		at the center while the other is allowed to translate and rotate, until it has
-		escaped the system or it has come into contact with the fixed protein.
-*/
+		escaped the system or it has come into contact with the fixed protein. */
 
 class CBD
 {
@@ -79,7 +77,6 @@ class CBD
 ///////////////////////////////////////////
 ///// Inline functions
 
-
 //!  Escaped function
 /*!
 		The function that determines whether the second protein has 
@@ -113,7 +110,6 @@ CBD::compute_dt() const
 }
 
 #endif
-
 
 // UNUSED
 /*
