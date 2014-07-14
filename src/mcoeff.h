@@ -29,9 +29,11 @@ public:
 							LOCAL, 
 							LOCAL_K
 	};
+
+// Functions in mcoeff.cpp
 	
-//!  The MCoeff class constructor
-/*!
+	//!  The MCoeff class constructor
+	/*!
 		Initialize a MCoeff object.
 		\param charges a vector of floating point charges
 		\param pos a vector of cartesian coordinates, one per charge
@@ -40,95 +42,146 @@ public:
 		\return an object of the MCoeff class */
   CMCoeff(const vector<REAL> & charges, const vector<CPnt>&  pos, 
 					int p, REAL rad = 0.0);
+	//!  The MCoeff class constructor
+	/*!
+		Initialize a MCoeff object.
+		\param charges a floating point number representin a partial charge
+		\param pos a vector of cartesian coordinates for the XYZ coord of the charge
+		\param p an integer that generally represents the number of poles
+		\param type an Enum indicating the type of expansion class to be made
+		\return an object of the MCoeff class */
   CMCoeff(REAL ch, const CPnt & pos,int p, TYPE type);
+
+	// Functions for computing derivatives! 
+  CMCoeff dMdr(REAL r) const;
+  CMCoeff dMdt(REAL theta, REAL phi) const;
+  CMCoeff dMdp() const;
 	
-//!  The mcoeff class constructor
-/*!
+	// Printing functions
+  void output(int p);	  
+  friend ostream & operator<<(ostream & out, const CMCoeff & p);
+
+	
+// Inline functions
+	//!  The mcoeff class constructor
+	/*!
 		Initialize a MCoeff object.
 		\param p is an int that is a minimal number of poles. Default is zero.
 		\param res is an in that describes the total number of residuals (poles) for the expansion. Default is N_POLES
 		\param type is an enum of TYPE that gives type of expansion coefficients.  Default is MPOLE
-		\return an object of the MCoeff class
-*/
+		\return an object of the MCoeff class */
   CMCoeff(int p = 0, int res = N_POLES, TYPE type = MPOLE) : 
 	m_p(0), m_type(type)
   { reserve(res); reset(p); }
-  
-  CMCoeff & operator=(const CMCoeff & M)
-  { m_M.assign(M.m_M.begin(), M.m_M.begin()+IDX[M.m_p]); m_p = M.m_p; }
-  void copy(const CMCoeff & M, int p);
-  void copy_p(const CMCoeff & M, int p);
 	
+	//!  The mcoeff class constructor
+	/*!
+		Initialize a MCoeff object.
+		\param M is an input MCoeff object
+		\return an object of the MCoeff class */
   CMCoeff(const CMCoeff & M) : m_type(M.m_type)
   { *this = M; }
-  
-  CMCoeff dMdr(REAL r) const;
-  CMCoeff dMdt(REAL theta, REAL phi) const;
-  CMCoeff dMdp() const;
+ 
+	//!  The mcoeff class = operator
+	/*! Set the object to the left of = sign to the MCoeff object on the right of it */	 
+  CMCoeff & operator=(const CMCoeff & M)
+  { m_M.assign(M.m_M.begin(), M.m_M.begin()+IDX[M.m_p]); m_p = M.m_p; }
+	
+	//!  The mcoeff class recip fuction
+	/*! Multiplies each value of the Matrix object by -1 */
   void recip()
   { for (int l = 0; l < IDX[m_p]; l++) m_M[l] = -m_M[l]; }
-  void reset(int p = 0);
-  void reserve(int p)
+
+	//!  The mcoeff class reserve fuction
+	/*! Reallocates the size of the coefficient matrix
+			\param p an int of the position in the index to indicate
+							what size allocation is desired for coeff matrix */	
+	void reserve(int p)
 	{if (p > 0) m_M.reserve(IDX[p]); }
   
+	//!  The mcoeff class () operator
+	/*! Returns the n,mth index of the coefficient matrix
+			\param n an index of the matrix, runs from 0 to npoles
+			\param m an index of the matrix, runs from -n to +n */	
   const Complex operator()(int n, int m) const 
 	{
 		assert(abs(m) <= n && n < m_p);
 		return (m >= 0 ? m_M[IDX[n]+m] : conj(m_M[IDX[n]-m])); 
 	}
+	//!  The mcoeff class () operator
+	/*! Returns the n,mth index of the coefficient matrix
+			\param n an index of the matrix, runs from 0 to npoles
+			\param m an index of the matrix, runs from -n to +n */	
   Complex & operator()(int n, int m)
 	{ assert(m >= 0 && m <= n && n < m_p); return m_M[IDX[n]+m]; }
   
-  void operator*=(const REAL C[N_POLES]);
-  void operator+=(const CMCoeff & E);
-  void operator-=(const CMCoeff & E);
-  
-  friend ostream & operator<<(ostream & out, const CMCoeff & p);
-  friend CPnt inprod(const CMCoeff & M1, const CTriCoeff & M2);
-  friend REAL inprod(const CMCoeff & M1, const CMCoeff & M2);
-  friend CMCoeff operator+(const CMCoeff & M1, const CMCoeff & M2);
-  friend CMCoeff operator-(const CMCoeff & M1, const CMCoeff & M2);
   friend CMCoeff operator*(const CMCoeff & M, const REAL C[N_POLES])
   { CMCoeff N = M; N *= C; return N; }
-  friend CMCoeff operator*(REAL s, const CMCoeff & M);
-  friend CMCoeff conj(const CMCoeff & M);
-  
+ 
+	//!  The mcoeff class getOrder fuction
+	/*! Returns the number of poles in the MCoeff object */	 
   int getOrder() const
   { return m_p; }
+	//!  The mcoeff class setOrder fuction
+	/*! Sets the order of poles and resizes the matrix
+		\param p an integer of number of desired poles  */
   void setOrder(int p)
   { 
     m_M.resize(IDX[p]);
     m_p = p; 
   }
-	
+
+
+// Inline functions, written after class below
+	// Save and undo
   void saveUndo();
   void undo();
-  void output(int p);
+
+// Reset Matrix coefficients
+	void reset(int p = 0);
 	
-  REAL change() const;
+	// Copy functions
+  void copy(const CMCoeff & M, int p);
+  void copy_p(const CMCoeff & M, int p);
+
+	// Operators
+  void operator*=(const REAL C[N_POLES]);
+  void operator+=(const CMCoeff & E);
+  void operator-=(const CMCoeff & E);
+  friend CMCoeff operator*(REAL s, const CMCoeff & M);
+  friend CMCoeff operator+(const CMCoeff & M1, const CMCoeff & M2);
+  friend CMCoeff operator-(const CMCoeff & M1, const CMCoeff & M2);
+  friend CPnt inprod(const CMCoeff & M1, const CTriCoeff & M2);
+  friend REAL inprod(const CMCoeff & M1, const CMCoeff & M2);
+	friend CMCoeff conj(const CMCoeff & M);
+	
+	// For computing change in iteration rounds
   static REAL computeDev(const CMCoeff & M1, const CMCoeff & M2);
+  REAL change() const;
+	
+// Variables
 	
   static REAL RS;							//!< Scaling factor for system (~ protein radius)
 	static REAL IRS;						//!< Inverse scaling factor (=1/RS)
 	static REAL KAPPA;					//!< Inverse Debye length
 	
 protected:
-  static int IDX[2*N_POLES+1];
+  static int IDX[2*N_POLES+1];//<! An index vector for 2*Pol + 1 values
   TYPE m_type;								//<! Enum indicating the type of MCoeff given.
-  vector<Complex> m_M;
-	vector<Complex> m_MU;
+  vector<Complex> m_M;				//!< A vector of complex numbers of matrix coefficients
+	vector<Complex> m_MU;				//!< A vector of complex numbers of matrix coefficients, saved incase of undo
   int m_p;										//!< Number of poles for the expansion.
-	int m_pU;
+	int m_pU;										//!< Number of poles for the expansion, saved incase of undo
 }; // end CMCoeff
 
 //////////////////////////////////////////
 // Inline functions
 //////////////////////////////////////////
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The mcoeff saveUndo function
+/*! A function that saves the M matrix in the matrix MU
+for storage in the case of an undo.  It also saves the current number 
+of poles */
 inline void
 CMCoeff::saveUndo()
 {
@@ -136,10 +189,9 @@ CMCoeff::saveUndo()
   m_pU = m_p; 
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The mcoeff undo function
+/*! A function that reverts the M matrix to the matrix MU.  
+		It also reverts the number of poles */
 inline void
 CMCoeff::undo()
 {
@@ -147,10 +199,10 @@ CMCoeff::undo()
   m_p = m_pU; 
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The mcoeff reset function
+/*! A function that resets the matrix coefficients at input integer
+		to all zero, and sets the number of poles to given input.
+		\param p an integer of desired number of poles. */
 inline void 
 CMCoeff::reset(int p)
 {
@@ -158,10 +210,12 @@ CMCoeff::reset(int p)
   m_p = p;
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The mcoeff copy function
+/*! A function that copies the number of poles and matrix
+	coefficients from an input MCoeff object to current MCoeff
+	object.
+		\param M an input of a coefficient matrix to copy
+		\param p an integer of desired number of poles. */
 inline void 
 CMCoeff::copy(const CMCoeff & M, int p)
 {
@@ -171,10 +225,11 @@ CMCoeff::copy(const CMCoeff & M, int p)
   m_type = M.m_type;
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The mcoeff copy_p function
+/*! A function that copies one level of poles to the end 
+		of the MCoeff being operated on. 
+		\param M a MCoeff object to copy from
+		\param p an int of the pole number to copy */
 inline void 
 CMCoeff::copy_p(const CMCoeff & M, int p)
 {
@@ -184,10 +239,8 @@ CMCoeff::copy_p(const CMCoeff & M, int p)
   m_p = p;
 }
 
-//!  The MCoeff expansion class operator *
-/*!
-		Function that multiplies the MCoeff by the Gamma operator  
-*/
+//!  The MCoeff expansion class operator *=
+/*! Function that multiplies the MCoeff by the Gamma operator */
 inline void 
 CMCoeff::operator*=(const REAL C[N_POLES])
 {
@@ -196,10 +249,8 @@ CMCoeff::operator*=(const REAL C[N_POLES])
       m_M[IDX[n]+m] *= C[n];
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The MCoeff expansion class operator +=
+/*! Function that adds one MCoeff object to another */
 inline  void 
 CMCoeff::operator+=(const CMCoeff & E)
 {
@@ -213,10 +264,8 @@ CMCoeff::operator+=(const CMCoeff & E)
     m_M[l] += E.m_M[l];
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The MCoeff expansion class operator -=
+/*! Function that subtracts one MCoeff object from another */
 inline  void 
 CMCoeff::operator-=(const CMCoeff & E)
 {
@@ -230,10 +279,8 @@ CMCoeff::operator-=(const CMCoeff & E)
     m_M[l] -= E.m_M[l];
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The MCoeff expansion class operator *
+/*! Function that multiplies the MCoeff by a floating point */
 inline CMCoeff 
 operator*(REAL s, const CMCoeff & M)
 {
@@ -245,10 +292,8 @@ operator*(REAL s, const CMCoeff & M)
   return N;
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The MCoeff expansion class operator +
+/*! Function that adds one MCoeff object to another */
 inline CMCoeff
 operator+(const CMCoeff & M1, const CMCoeff & M2)
 {
@@ -268,10 +313,8 @@ operator+(const CMCoeff & M1, const CMCoeff & M2)
 	}
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The MCoeff expansion class operator -
+/*! Function that subtracts one MCoeff object from another */
 inline CMCoeff
 operator-(const CMCoeff & M1, const CMCoeff & M2)
 {
@@ -292,10 +335,9 @@ operator-(const CMCoeff & M1, const CMCoeff & M2)
 	}
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The mcoeff expansion conj function
+/*! Function that computes and returns the complex
+conjugate of a matrix. */
 inline CMCoeff
 conj(const CMCoeff & M)
 {
@@ -306,9 +348,10 @@ conj(const CMCoeff & M)
   return N;
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
+//!  The mcoeff inprod function
+/*! Function that computes the inner product of two MCoeff objects
+	\param M1 one MCoeff input
+	\param M2 the other MCoeff input
 */
 inline REAL 
 inprod(const CMCoeff & M1,  const CMCoeff & M2)
@@ -330,7 +373,8 @@ inprod(const CMCoeff & M1,  const CMCoeff & M2)
 
 //!  The mcoeff expansion computeDev function
 /*!
-		A function that computes the deviation between 2 Matrix coeff objects
+		A function that computes the deviation between 2 Matrix coeff objects.
+		Represents EQ 52 in paper, somewhat.
 		\param M1 a pointer to an MCoeff object
 		\param M2 a pointer to a second MCoeff object for comparison to first
 		\return a floating point number of the deviation between the two objects'
@@ -365,10 +409,10 @@ CMCoeff::computeDev(const CMCoeff & M1, const CMCoeff & M2)
   return sum;
 }
 
-//!  The mcoeff expansion class
-/*!
-		The class that contains all details for a mcoeff ??  
-*/
+//!  The mcoeff change function
+/*! Computes the difference between the saved Matrix and the current one,
+			This and the function computeDev account for EQ 52 in 
+			the Lotan 2006 paper */
 inline REAL
 CMCoeff::change() const
 {

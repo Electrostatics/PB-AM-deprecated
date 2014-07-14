@@ -10,7 +10,7 @@ int CMCoeff::IDX[2*N_POLES+1];
 
 /******************************************************************/
 /******************************************************************//**
-* Initialize matrix expansion coefficients
+* Construct matrix expansion coefficient object
 ******************************************************************/
 
 CMCoeff::CMCoeff(const vector<REAL> & charges, const vector<CPnt> & pos, 
@@ -54,7 +54,7 @@ CMCoeff::CMCoeff(const vector<REAL> & charges, const vector<CPnt> & pos,
 
 /******************************************************************/
 /******************************************************************//**
-* 
+*  Construct matrix expansion coefficient object
 ******************************************************************/
 
 CMCoeff::CMCoeff(REAL ch, const CPnt & pos, int p, TYPE type) 
@@ -110,6 +110,7 @@ CMCoeff::CMCoeff(REAL ch, const CPnt & pos, int p, TYPE type)
 /******************************************************************/
 /******************************************************************//**
 * Take partial derivative of matrix with respect to radius r
+\return a MCoeff object of derivatives WRT r
 ******************************************************************/
 CMCoeff
 CMCoeff::dMdr(REAL r) const
@@ -151,7 +152,8 @@ CMCoeff::dMdr(REAL r) const
 
 /******************************************************************/
 /******************************************************************//**
-* 
+*  Take partial derivative of matrix with respect to theta angle
+\return a MCoeff object of derivatives WRT theta
 ******************************************************************/
 
 CMCoeff
@@ -160,26 +162,31 @@ CMCoeff::dMdt(REAL theta, REAL phi) const
   CMCoeff M(m_p);
   REAL cot_t = 1.0/tan(theta);
   Complex cis(cos(phi), -sin(phi));
-
+	
   M(0,0) = 0.0;
   for (int n = 1; n < m_p; n++)
-    {
-      M(n,0) = -sqrt((REAL)n*(n+1))*(cis*m_M[IDX[n]+1]);
-      for (int m = 1; m < n; m++)
-	M(n,m) = m*cot_t*m_M[IDX[n]+m] -
-	  sqrt((REAL)(n-m)*(n+m+1))*(cis*m_M[IDX[n]+m+1]);
-
-      M(n,n) = n*cot_t*m_M[IDX[n]+n];
-    }
-
+	{
+		M(n,0) = -sqrt((REAL)n*(n+1))*(cis*m_M[IDX[n]+1]);
+		for (int m = 1; m < n; m++)
+			M(n,m) = m*cot_t*m_M[IDX[n]+m] -
+			sqrt((REAL)(n-m)*(n+m+1))*(cis*m_M[IDX[n]+m+1]);
+		
+		M(n,n) = n*cot_t*m_M[IDX[n]+n];
+	}
+	
   return M; 
 }
 
+/******************************************************************/
+/******************************************************************//**
+*  Take partial derivative of matrix with respect to phi angle
+\return a MCoeff object of derivatives WRT phi
+******************************************************************/
 CMCoeff
 CMCoeff::dMdp() const
 {
   CMCoeff M(m_p);
-
+	
   for (int n = 0; n < m_p; n++)
     for (int m = 0; m <= n; m++)
       M(n,m) = Complex(-m_M[IDX[n]+m].imag()*m, m_M[IDX[n]+m].real()*m);
@@ -189,7 +196,7 @@ CMCoeff::dMdp() const
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Printing out the Matrix coefficient object
 ******************************************************************/
 
 ostream & 
@@ -197,22 +204,22 @@ operator<<(ostream & out, const CMCoeff & M)
 {
   cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
   for (int n = 0; n < M.getOrder(); n++)
-    {
-      for (int m = 0; m <= n; m++)
 	{
-	  REAL r = fabs(M(n,m).real())>1e-15 ? M(n,m).real() : 0;
-	  REAL im = fabs(M(n,m).imag())>1e-15 ? M(n,m).imag() : 0;
-	  cout << "(" << r << "," << im << ") | ";
+		for (int m = 0; m <= n; m++)
+		{
+			REAL r = fabs(M(n,m).real())>1e-15 ? M(n,m).real() : 0;
+			REAL im = fabs(M(n,m).imag())>1e-15 ? M(n,m).imag() : 0;
+			cout << "(" << r << "," << im << ") | ";
+		}
+		cout << endl;
 	}
-      cout << endl;
-    }
   cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
   return out;
 }
 
 /******************************************************************/
 /******************************************************************//**
-* 
+*  Printing out the Matrix coefficient object
 ******************************************************************/
 
 void
@@ -222,6 +229,6 @@ CMCoeff::output(int p)
   m_p = p;
   cout << *this; 
   m_p = temp;
-
+	
 }
 

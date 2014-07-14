@@ -45,7 +45,7 @@ CTriCoeff::rotate(const CQuat & Q, int p)
 }
 
 /******************************************************************//**
-* 
+* Increase the torsion coefficients
 ******************************************************************/
 void
 CTriCoeff::incRotate(const CQuat & Q)

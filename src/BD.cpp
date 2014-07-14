@@ -12,7 +12,7 @@
 
 
 #define b_DIST 100.0											//!< Initial distance between 2 proteins for BD run
-#define q_DIST 500.0
+#define q_DIST 500.0											//!< Distance for molecules to be considered escaped
 #define f_DIST 100.0											//!< Cutoff for protein force interactions
 
 #define DIELECTRIC_WATER 78.0							//!< The dielectric constant of water
@@ -894,12 +894,13 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 		cout << "  within perturb" << endl;
 		
 		CMPE::updateSolve(mpe, cen);
-		//      CMPE::computeForce(mpe, cen, force, torque);
+		//CMPE::computeForce(mpe, cen, force, torque);
 		
-		fout << CMPE::npol << " " << CMPE::npol_t << " ";
+	/*	fout << CMPE::npol << " " << CMPE::npol_t << " ";
 		for (int i = 0; i < num; i++)
 			fout << mpe[i]->ngpol << " " << mpe[i]->ngpol_t << " ";
 		fout << endl;
+	*/	
 		
 		CMPE::undoXForms();
 		for (int i = 0; i < num; i++)
@@ -1017,7 +1018,7 @@ int main2(int argc, char ** argv)
 ******************************************************************/
 int main3(int argc, char ** argv)
 {
-	if ( argc != 8 )
+	if ( argc != 9 )
 	{
 		cout << "Correct input format: " << endl;
 		cout << " ./exec per [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules]" <<

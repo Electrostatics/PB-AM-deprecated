@@ -51,7 +51,7 @@ CXForm::reset(const CPnt & P, int p)
 	{
 		REAL irst = ir/sint, irct = ir*cost;
 		
-		m_R[0] = CPnt(sint*cosp, irct*cosp, -irst*sinp);
+		m_R[0] = CPnt(sint*cosp, irct*cosp, -irst*sinp);		// EQ 48
 		m_R[1] = CPnt(sint*sinp, irct*sinp, irst*cosp);
 		m_R[2] = CPnt(cost, -ir*sint, 0.0);
 	}
@@ -59,41 +59,44 @@ CXForm::reset(const CPnt & P, int p)
 
 /******************************************************************/
 /******************************************************************//**
-* Compute the derivatives of the transformed MP coeffs
+* Compute the derivatives of the transformed MP coeffs, using EQ 47
+of Lotan 2006.  
 ******************************************************************/
 void 
 CXForm::xform(const CMCoeff & Min, CGradCoeff & Gout, bool bFor)
 {
   assert(Min.getOrder() >= m_p);
 
-  // Derivative with respect to rho
-  m_rot.rotate(Min, m_tM1, true);
-  m_trans.dTranslate(m_tM1, m_tM2, !bFor); 
-  m_rot.rotate(m_tM2, Gout[dRHO], false);
+  // Derivative with respect to rho,	in paper, dT/dr = R * dS/dr * R 
+  m_rot.rotate(Min, m_tM1, true);						// tM1 = R
+  m_trans.dTranslate(m_tM1, m_tM2, !bFor);	// tM2 = dS/dr*tM1
+  m_rot.rotate(m_tM2, Gout[dRHO], false);		// Gout[dRHO] = R*tM2
   
   // Derivative with respect to theta and phi (first part)
-  m_trans.translate(m_tM1, m_tM2, !bFor);
-  m_rot.dRotateT(m_tM2, Gout[dTHETA], false);
-  m_rot.dRotateP(m_tM2, Gout[dPHI], false);
+	// 
+  m_trans.translate(m_tM1, m_tM2, !bFor);		   // tM2 = S*R = S*tM1
+  m_rot.dRotateT(m_tM2, Gout[dTHETA], false); // Gout[dT] = dR/dt*tM2
+  m_rot.dRotateP(m_tM2, Gout[dPHI], false);	  // Gout[dP] = dR/dphi*tM2
   
   // Derivative with respect to theta (second part)
   m_rot.dRotateT(Min, m_tM1, true);
   m_trans.translate(m_tM1, m_tM2, !bFor);
   m_rot.rotate(m_tM2, m_tM1, false);
-  Gout[dTHETA] += m_tM1;
+  Gout[dTHETA] += m_tM1;			// Gout[dTHETA] = dR/dt*tM2 + R*S*dr/dt
   
   // Derivative with respect to phi (second part)
   m_rot.dRotateP(Min, m_tM1, true);
   m_trans.translate(m_tM1, m_tM2, !bFor);
   m_rot.rotate(m_tM2, m_tM1, false);
-  Gout[dPHI] += m_tM1;
+  Gout[dPHI] += m_tM1;				// Gout[dRHO] = dR/dphi*tM2 + R*S*dr/dphi
 
-  sphToCart(Gout);
+  sphToCart(Gout);						// convert the spherical derivs to cartesian
 }
 
 /******************************************************************/
 /******************************************************************//**
-* Transform the MP coeffs
+* Transform the MP coeffs, from the formula given for Mout = T dot Min
+from Lotan 2006, EQ 46.
 ******************************************************************/
 void 
 CXForm::xform(const CMCoeff & Min, CMCoeff & Mout, bool bFor)
@@ -119,7 +122,7 @@ CXForm::xform(const CTriCoeff & Gin, CTriCoeff & Gout, bool bFor)
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Increase number of poles
 ******************************************************************/
 REAL
 CXForm::incOrder()
@@ -146,7 +149,7 @@ CXForm::incOrder()
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Decrease the number of poles
 ******************************************************************/
 REAL
 CXForm::decOrder()
@@ -168,7 +171,7 @@ CXForm::decOrder()
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Convert a partial deriv in spherical coords to cartesian
 ******************************************************************/
 void
 CXForm::sphToCart(CPnt & p)
@@ -178,7 +181,7 @@ CXForm::sphToCart(CPnt & p)
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Convert a partial deriv of GradCoeff object in spherical to cartesian
 ******************************************************************/
 void
 CXForm::sphToCart(CGradCoeff & G)

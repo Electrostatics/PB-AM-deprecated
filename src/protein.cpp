@@ -4,7 +4,7 @@
 #include "protein.h"
 #include "pdb.h"
 
-#define PARAM_FILE "charges_OPLS"				//<! Hard link to the file that contains a list of all OPLS charges for each amino acid
+#define PARAM_FILE "charges_OPLS"				//<! Hard link to the file that contains a list of all OPLS charges for each AA
 #define MAX_MPE_ERROR 0.02							//!< Maximum error allowed for the multipole expansions
 
 map<int, REAL> CProtein::CHARGES[NUM_AAS];	//!< Array of charges for each amino acid in the protein.
@@ -12,7 +12,7 @@ bool CProtein::m_initialized = false;				//!< Operator that indicates whether th
 vector<CMPE*> CProtein::m_exps;							//!< A vector of expansions that are kept for each protein in the system
 vector<CPnt*> CProtein::m_cens;							//!< A vector of positions for each protein in the system
 vector<CProtein*> CProtein::m_mols;					//!< A vector of protein classes, one for each protein in the system.
-bool CProtein::m_bFirst = true;							//!< Operator that designates whether a force calc has been performed or not (true=no)
+bool CProtein::m_bFirst = true;							//!< Operator, designates whether a force calc has been performed  (true=no)
 
 /******************************************************************/
 /******************************************************************//**
@@ -82,8 +82,8 @@ CProtein::CProtein(const char * fname)
   vector<AA> aas;
   CPDB::loadFromPDB(fname, aas);
 
-  for (int i = 0; i < aas.size(); i++)							// Add each atom in each amino acid of protein to matrix of atoms
-    for (int j = 0; j < aas[i].getNumAtoms(); j++)
+  for (int i = 0; i < aas.size(); i++)							// Add each atom in each amino acid of 
+    for (int j = 0; j < aas[i].getNumAtoms(); j++)	// protein to matrix of atoms
       m_atoms.push_back(aas[i][j]);
 
   for (int i = 0; i < m_atoms.size(); i++)				// Add charge on atom in each amino acid to vector of charges
@@ -303,8 +303,8 @@ CProtein::computeForces(vector<CPnt> & force, vector<CPnt> & torque)
 
   if (m_bFirst)
     {
-      CMPE::initXForms(m_exps);						// Initialize transforms if this is the first force calc of the simulation
-      m_bFirst = false;
+      CMPE::initXForms(m_exps);						// Initialize transforms if this is the first 
+      m_bFirst = false;										// force calc of the simulation
     }
 
   CMPE::updateSolve(m_exps, m_cens);			// Update the solution to mutual polarization.

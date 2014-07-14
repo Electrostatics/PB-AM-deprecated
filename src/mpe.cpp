@@ -14,17 +14,20 @@
 
 #define CLKS_PER_MSEC (0.001*CLOCKS_PER_SEC)
 
+// MPE class members described in the mpe.h file
 CMPE * CMPE::tp;
 REAL CMPE::DIEL_P = 1.0;
 REAL CMPE::DIEL_S = 1.0;
 int CMPE::N_MOL = 0;
 CMCoeff CMPE::m_tM;
-CGradCoeff CMPE::m_tG1, CMPE::m_tG2, *CMPE::m_tG;
+CGradCoeff CMPE::m_tG1;
+CGradCoeff CMPE::m_tG2;
+CGradCoeff *CMPE::m_tG;
 CXForm ** CMPE::m_xfs;
-int * CMPE::IDX, CMPE::m_total, CMPE::npol;
-REAL CMPE::npol_t;
-bool CMPE::m_bInfinite = false;		//!< Indicates whether simulation for an infinite grid is being performed
-int CMPE::m_unit = 1;							//!< 
+int * CMPE::IDX;		
+int CMPE::m_total;
+bool CMPE::m_bInfinite = false;		
+int CMPE::m_unit = 1;							 
 
 /******************************************************************/
 /******************************************************************//**
@@ -33,7 +36,6 @@ int CMPE::m_unit = 1;							//!<
 *				dielectric, the nummber of molecules, average scaling factor
 * 
 ******************************************************************/
-
 void
 CMPE::initConstants(REAL kappa, REAL dielp, REAL diels, int nmol, REAL rs)
 {
@@ -68,7 +70,6 @@ CMPE::initConstants(REAL kappa, REAL dielp, REAL diels, int nmol, REAL rs)
 * Initialize transforms.  Create a transform for each pair of proteins
 *   in the system, using their matrix coefficients.
 ******************************************************************/
-
 void
 CMPE::initXForms(const vector<CMPE*> & mpe)
 {
@@ -81,9 +82,8 @@ CMPE::initXForms(const vector<CMPE*> & mpe)
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Function that sets the orientation of the MPE object given a quaternion
 ******************************************************************/
-
 void
 CMPE::setOrient(const CQuat & rot)
 {
@@ -100,7 +100,6 @@ CMPE::setOrient(const CQuat & rot)
 /******************************************************************//**
 * Rotate the top level of the expansions associated with this molecule.
 ******************************************************************/
-
 void
 CMPE::incRotate()
 {
@@ -115,8 +114,6 @@ CMPE::incRotate()
 /******************************************************************//**
 * Initialize a multipole expansion with a protein object
 ******************************************************************/
-
-
 CMPE::CMPE(const CProtein & mol) : m_pM(0, N_POLES), m_rot(false) 
 {
   m_rad = mol.getRadius();
@@ -140,7 +137,6 @@ CMPE::CMPE(const CProtein & mol) : m_pM(0, N_POLES), m_rot(false)
 /******************************************************************//**
 * Create a multipole expansion from a collection of charges.
 ******************************************************************/
-
 CMPE::CMPE(const vector<REAL> & charges, const vector<CPnt> & pos, 
 	   REAL rad, int id, int p) : 
   m_rad(rad),  m_id(id), m_pM(0, N_POLES), m_rot(false)
@@ -154,7 +150,6 @@ CMPE::CMPE(const vector<REAL> & charges, const vector<CPnt> & pos,
 /******************************************************************//**
 * Initialize many multipole expansion coefficients
 ******************************************************************/
-
 void
 CMPE::initialize(const vector<REAL> & charges, const vector<CPnt> & pos,
 		 int p)
@@ -171,10 +166,7 @@ CMPE::initialize(const vector<REAL> & charges, const vector<CPnt> & pos,
 /******************************************************************//**
 * CMPE function to reset both the number of poles and 
 		the orientation of the multipole expansion
-		\param p is an integer number of poles
-		\param Q is a CQuat object for rotating the MPE
 ******************************************************************/
-
 void
 CMPE::reset(int p, const CQuat & Q)
 {
@@ -195,7 +187,6 @@ CMPE::reset(int p, const CQuat & Q)
 * Initializing the surface charge distribution, using equations
 *			(19) and (20) from the 2006 paper.
 ******************************************************************/
-
 void
 CMPE::initCD()
 {
@@ -236,7 +227,6 @@ CMPE::initCD()
 * Function to update transforms.  Inputs are protein centers and 
 * multipole expansions for each protein.  
 ******************************************************************/
-
 void 
 CMPE::updateXForms(const vector<CPnt*> & cen, vector<CMPE*> & mpe)
 {
@@ -244,17 +234,19 @@ CMPE::updateXForms(const vector<CPnt*> & cen, vector<CMPE*> & mpe)
   for (int i = 0; i < N_MOL; i++)
     max[i] = 0;
 	
-  int i_max = (m_bInfinite ? m_unit : N_MOL);
+  int i_max = (m_bInfinite ? m_unit : N_MOL);		// If infinite grid, use unit (1) else, use NMOL
   for (int i = 0; i < i_max; i++)
     for (int j = i+1; j < N_MOL; j++)
 		{
 			int minp = (mpe[i]->getOrder() > mpe[j]->getOrder() ?			// Find the lowest pole order of
 									mpe[j]->getOrder() : mpe[i]->getOrder());			// the two proteins
 			
-			XFS(i,j).init(*(cen[i]) - *(cen[j]), minp);								// reset the dist from 1 to 2 and the min # of poles
+			XFS(i,j).init(*(cen[i]) - *(cen[j]), minp);								// reset the dist from 1 to 2 and 
+																																//the min # of poles
 			
-			while (XFS(i,j).isDec() && XFS(i,j).getOrder() > 1)				// If there is less than the tolerated error in the mut
-				XFS(i,j).decOrder();																		// polarization, reduce the number of poles for many factors
+			while (XFS(i,j).isDec() && XFS(i,j).getOrder() > 1)				// If there is less than the tolerated 
+				XFS(i,j).decOrder();																		// error in the mut polarization, reduce 
+																																// the number of poles for many factors
 			
 			while (XFS(i,j).isInc() && XFS(i,j).getOrder() < N_POLES)	// Increase number of poles if needed
 			{
@@ -277,9 +269,6 @@ CMPE::updateXForms(const vector<CPnt*> & cen, vector<CMPE*> & mpe)
 				max[i] = p;
 			if (p > max[j])
 				max[j] = p;
-			
-			//	cout << "(" << i << "," << j << "): " << p << " poles, dev = " 
-			//     << XFS(i,j).getError() << " " << *(cen[j]) << endl;
 		}
 	
   m_total = 0;
@@ -301,15 +290,14 @@ CMPE::updateXForms(const vector<CPnt*> & cen, vector<CMPE*> & mpe)
 * of molecules in the system, then computes the initial mutual 
 * polarization and its error.
 ******************************************************************/
-
 void
 CMPE::polarize(vector<CMPE*> & mpe, bool bPot)
 {
   if (N_MOL == 1)
     return;
 	
-  int i_max = (m_bInfinite ? m_unit : N_MOL);
-  REAL itot = 1.0/m_total;												// 1/(N_POLES^2), weighting factor for mutual polarization
+  int i_max = (m_bInfinite ? m_unit : N_MOL);		// If infinite grid, use unit (1) else, use NMOL
+  REAL itot = 1.0/m_total;											// 1/(N_POLES^2), weighting factor for mutual polarization
   REAL d[i_max], dev = 0.0;
   timeval t1, t2;
 	
@@ -321,7 +309,7 @@ CMPE::polarize(vector<CMPE*> & mpe, bool bPot)
 	
   int ct = i_max;
   int i = 0;
-  while (dev*itot > MAX_POLAR_DEV_SQR)				// While the mutual polarization error is greater than tol.
+  while (dev*itot > MAX_POLAR_DEV_SQR)					// While the mutual polarization error is greater than tol.
 	{
 		dev -= d[i];
 		d[i] = mpe[i]->recompute(mpe, i);
@@ -337,10 +325,10 @@ CMPE::polarize(vector<CMPE*> & mpe, bool bPot)
 		ct++;
 	}
 	
-  if (bPot)																	// If we only want to compute potential, exit
+  if (bPot)																			// If we only want to compute potential, exit
     return;
 	
-  for (int j = 0; j < i_max; j++)						// Else, compute the gradient for force, torque computations
+  for (int j = 0; j < i_max; j++)								// Else, compute the gradient for force, torque computations
 	{
 		dev = 0.0;
 		prepareDTA(mpe, j);
@@ -369,13 +357,13 @@ CMPE::polarize(vector<CMPE*> & mpe, bool bPot)
 		}
 		
 	}
-}  
+}  // end polarize
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Function to perform part of iteration to solve for A matrix
+in the paper. Of EQ 51, L = SUM( T * A )
 ******************************************************************/
-
 void
 CMPE::reexpand(const vector<CMPE*> & mpe, int i)
 {
@@ -383,12 +371,12 @@ CMPE::reexpand(const vector<CMPE*> & mpe, int i)
   
   for (int j = 0; j < i; j++)
 	{
-		XFS(j,i).xform(mpe[j]->m_pM, m_tM, false);
+		XFS(j,i).xform(mpe[j]->m_pM, m_tM, false);			// performing part of EQ 51
 		m_L += m_tM;
 	}
   for (int j = i+1; j < N_MOL; j++)
 	{
-		XFS(i,j).xform(mpe[j]->m_pM, m_tM, true);
+		XFS(i,j).xform(mpe[j]->m_pM, m_tM, true);			// performing part of EQ 51
 		m_L += m_tM;
 	}
 }
@@ -397,7 +385,6 @@ CMPE::reexpand(const vector<CMPE*> & mpe, int i)
 /******************************************************************//**
 * Recompute the MP coeffs at mol i
 ******************************************************************/
-
 REAL
 CMPE::recompute(const vector<CMPE*> & mpe, int i)
 {
@@ -406,18 +393,18 @@ CMPE::recompute(const vector<CMPE*> & mpe, int i)
 
   reexpand(mpe, i);
 
-  m_tM = m_L;
-  m_tM *= mpe[i]->m_CD;
-  m_tM += m_rM;
+  m_tM = m_L;						// Sum(T * A) of EQ 51
+  m_tM *= mpe[i]->m_CD;	// Delta*Sum(T * A) of EQ 51
+  m_tM += m_rM;					// Delta*Sum(T * A) + E of EQ 51
 
-  REAL dev = CMCoeff::computeDev(m_pM, m_tM);
+  REAL dev = CMCoeff::computeDev(m_pM, m_tM);  // Compute change of EQ 52
   m_pM = m_tM;
   return dev;
 }
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Function to reexpand the gradient of molecule i
 ******************************************************************/
 void
 CMPE::reexpandGrad(const vector<CMPE*> & mpe, int i)
@@ -450,9 +437,8 @@ CMPE::reexpandGrad(const vector<CMPE*> & mpe, int i)
 /******************************************************************/
 /******************************************************************//**
 * Recompute the gradient of the MP coeffs at mol i respect to the position
-* of mol j.
+* of mol j. Computes EQ 53 in the Lotan 2006 paper.
 ******************************************************************/
-
 REAL
 CMPE::recomputeGrad(const vector<CMPE*> & mpe, int i, int j)
 {
@@ -461,10 +447,10 @@ CMPE::recomputeGrad(const vector<CMPE*> & mpe, int i, int j)
 	
   m_tG1 = m_tG[i];
   
-  for (int k = 0; k < i; k++)
-	{
-		XFS(k,i).xform(mpe[k]->m_pG[j], m_tG2, false);
-		m_tG1 += m_tG2;
+  for (int k = 0; k < i; k++)					// Computing T*d(A)
+	{	
+		XFS(k,i).xform(mpe[k]->m_pG[j], m_tG2, false);  
+		m_tG1 += m_tG2;										// Adding it to precomputed dT*A
 	}
   for (int k = i+1; k < N_MOL; k++)
 	{
@@ -486,7 +472,6 @@ CMPE::recomputeGrad(const vector<CMPE*> & mpe, int i, int j)
 /******************************************************************//**
 * Precompute the sum of the products of dT(i,j)*A(i)
 ******************************************************************/
-
 void
 CMPE::prepareDTA(const vector<CMPE*> & mpe, int j)
 {
@@ -522,33 +507,21 @@ CMPE::prepareDTA(const vector<CMPE*> & mpe, int j)
 
 /******************************************************************/
 /******************************************************************//**
-* 
-\param mpe a vector of MPEs, one for each molecule in the system
-\param force a xyz vector of forces
-\param torque a xyz vector of torques
-\param i an integer of the molecule index
+* Computes the force on molecule i, contains equations of the Lotan
+2006 paper, both EQ 37 and EQ 41
 ******************************************************************/
 void
 CMPE::computeForceOn(vector<CMPE*> & mpe, CPnt & force, CPnt & torque, int i)
 {
-  REAL pot = 0.0;
-  //cout << inprod(m_L,m_pM) << endl;
-
-  force = inprod((m_pM+m_pM)-m_rM, m_dL);
-  //cout << force << endl;
-  torque = cross(m_dL, m_rT);
+  force = inprod((m_pM+m_pM)-m_rM, m_dL); // EQ 37: <dL,A> + <L, dA>
+  torque = cross(m_dL, m_rT);							// EQ 41: H X dL
 }
 
 /******************************************************************/
 /******************************************************************//**
-* Function to compute pairwise interaction of two molecules in a system.
-\param mpe a vector of MPEs, one for each molecule in the system
-\param i an integer of the index of the first molecule of interest
-\param j an integer of the index of the second molecule of interest
-\param p1 a floating point of the potential on molecule 1
-\param p2 a floating point of the potential on molecule 2
+* Function to compute pairwise interaction of two molecules in a system. 
 ******************************************************************/
-void
+/*void
 CMPE::computePairPot(const vector<CMPE*> & mpe, int i, int j, 
 		     REAL & p1, REAL & p2)
 {
@@ -567,10 +540,10 @@ CMPE::computePairPot(const vector<CMPE*> & mpe, int i, int j,
 		p2 = inprod(m_tM, mpe[j]->m_pM);
 	}
 }
-
+*/
 /******************************************************************/
 /******************************************************************//**
-* 
+*  CMPE function to compute forces and torques on a system 
 ******************************************************************/
 void
 CMPE::computeForce(vector<CMPE*> & mpe, const vector<CPnt*> & cen,
@@ -585,7 +558,7 @@ CMPE::computeForce(vector<CMPE*> & mpe, const vector<CPnt*> & cen,
   
   for (int j = 0; j < i_max; j++)
 	{
-		pot[j] = inprod(mpe[j]->m_L, mpe[j]->m_pM);
+		pot[j] = inprod(mpe[j]->m_L, mpe[j]->m_pM);  // Omega in paper EQ 28
 		mpe[j]->computeForceOn(mpe, force[j], torque[j], j);
 	}
 }
@@ -594,7 +567,7 @@ CMPE::computeForce(vector<CMPE*> & mpe, const vector<CPnt*> & cen,
 /******************************************************************//**
 * 
 ******************************************************************/
-REAL
+/*REAL
 CMPE::computeForceAt(const vector<CMPE*> & mpe, const vector<CPnt*> & cen,
 		     const CPnt & P, CPnt & force, CPnt & torque, int p)
 {
@@ -619,12 +592,12 @@ CMPE::computeForceAt(const vector<CMPE*> & mpe, const vector<CPnt*> & cen,
 	
   return pot;
 }
+*/
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Function to compute potential on a system at a given cartesian point
 ******************************************************************/
-
 REAL
 CMPE::computePotAt(const vector<CMPE*> & mpe, const vector<CPnt*> & cen,
 		   const CPnt & P)
@@ -642,10 +615,8 @@ CMPE::computePotAt(const vector<CMPE*> & mpe, const vector<CPnt*> & cen,
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* A function to run mutual polarization on the system
 ******************************************************************/
-
-
 void 
 CMPE::solve(vector<CMPE*> & mpe, const vector<CPnt*> & cen, bool bPot)
 { 
@@ -657,9 +628,9 @@ CMPE::solve(vector<CMPE*> & mpe, const vector<CPnt*> & cen, bool bPot)
 
 /******************************************************************/
 /******************************************************************//**
-* 
+* Function of MPE class that reexpands the input matrix pM by
+		the matrix transform, as in EQ 46 of paper.
 ******************************************************************/
-
 void
 CMPE::reexpand(const vector<CMPE*> & mpe)
 {
@@ -676,7 +647,6 @@ CMPE::reexpand(const vector<CMPE*> & mpe)
 * Update solution to multipole expansion.  Calls Transforms and 
 *   polarize schemes.  
 ******************************************************************/
-
 void
 CMPE::updateSolve(vector<CMPE*> & mpe, const vector<CPnt*> & cen)
 {

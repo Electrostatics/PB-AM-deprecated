@@ -38,7 +38,8 @@ public:
 /*!  Function to apply the rotation operator to the tricoefficents
 			\param Tin tri coefficient input
 			\param Tout tri coefficient output
-			\param bFor boolean to indicate whether or not  */	
+			\param bFor boolean to indicate to compute the original 
+					coefficient or the conjugate transpose  */	
   void rotate(const CTriCoeff & Tin, CTriCoeff & Tout, bool bFor)
 	{ rotate(Tin, Tout, 1, m_p, bFor); }
 //! CRotCoeff rotate function
@@ -47,14 +48,16 @@ public:
 			\param Tout tri coefficient output
 			\param p1 an integer indicating the lowest number of poles
 			\param p2 an integer indicating the highest number of poles
-			\param bFor boolean to indicate whether or not  */	
+			\param bFor boolean to indicate to compute the original 
+					coefficient (true) or the conjugate transpose  */
   void rotate(const CTriCoeff & Tin, CTriCoeff & Tout, int p1, int p2, 
 							bool bFor);							
 //! CRotCoeff rotate function
 /*!  Function to apply the rotation operator to the MP coefficents
 			\param Min mp coefficient input
 			\param Mout mp coefficient output
-			\param bFor boolean to indicate whether or not  */	
+			\param bFor boolean to indicate to compute the original 
+					coefficient (true) or the conjugate transpose  */
   void rotate(const CMCoeff & Min, CMCoeff & Mout, bool bFor)
 	{ rotate(Min, Mout, 1, m_p, bFor); }
 //! CRotCoeff rotate function
@@ -63,7 +66,8 @@ public:
 			\param Mout mp coefficient output
 			\param p1 an integer indicating the lowest number of poles
 			\param p2 an integer indicating the highest number of poles
-			\param bFor boolean to indicate whether or not  */	
+			\param bFor boolean to indicate to compute the original 
+					coefficient (true) or the conjugate transpose  */	
   void rotate(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2, 
 							bool bFor);
 //! CRotCoeff dRotateT function
@@ -71,7 +75,8 @@ public:
 		with respect to THETA
 			\param Min mp coefficient input
 			\param Mout mp coefficient output
-			\param bFor boolean to indicate whether or not  */
+			\param bFor boolean to indicate to compute the original 
+					coefficient (true) or the conjugate transpose  */
   void dRotateT(const CMCoeff & Min, CMCoeff & Mout, bool bFor)
 	{ dRotateT(Min, Mout, 1, m_p, bFor); }
 //! CRotCoeff dRotateT function
@@ -81,7 +86,8 @@ public:
 			\param Mout mp coefficient output
 			\param p1 an integer indicating the lowest number of poles
 			\param p2 an integer indicating the highest number of poles
-			\param bFor boolean to indicate whether or not  */
+			\param bFor boolean to indicate to compute the original 
+					coefficient (true) or the conjugate transpose  */
   void dRotateT(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2, 
 								bool bFor);
 //! CRotCoeff dRotateP function
@@ -91,7 +97,8 @@ public:
 			\param Mout mp coefficient output
 			\param p1 an integer indicating the number of poles
 			\param p2 an integer indicating the number of poles
-			\param bFor boolean to indicate whether or not  */
+			\param bFor boolean to indicate to compute the original 
+					coefficient (true) or the conjugate transpose  */
   void dRotateP(const CMCoeff & Min, CMCoeff & Mout, bool bFor)
 	{ dRotateP(Min, Mout, 1, m_p, bFor); }
 //! CRotCoeff dRotateP function
@@ -101,7 +108,8 @@ public:
 			\param Mout mp coefficient output
 			\param p1 an integer indicating the lowest number of poles
 			\param p2 an integer indicating the highest number of poles
-			\param bFor boolean to indicate whether or not  */
+			\param bFor boolean to indicate to compute the original 
+					coefficient (true) or the conjugate transpose  */
   void dRotateP(const CMCoeff & Min, CMCoeff & Mout, int p1, int p2,
 								bool bFor);
 	

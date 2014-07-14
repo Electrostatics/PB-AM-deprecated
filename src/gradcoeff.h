@@ -58,7 +58,9 @@ public:
 //!  The GradCoeff function sphToCart
 /*! The function that converts each component of the 
 expansion re-operator derivatives to cartesian coordinates
-	\param R an input of XYZ coordinates
+	\param R a matrix input of the conversion matrix from
+					spherical to cartesian coordinates, given in
+					EQ 48 of Lotan 2006, contained in XForm class
 */
 inline CGradCoeff 
 CGradCoeff::sphToCart(const CPnt * R)
