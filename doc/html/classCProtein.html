@@ -54,6 +54,9 @@
 </div><!--header-->
 <div class="contents">
 
+<p>The protein class.  
+ <a href="classCProtein.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="protein_8h_source.html">protein.h</a>&gt;</code></p>
 
 <p><a href="classCProtein-members.html">List of all members.</a></p>
@@ -61,40 +64,56 @@
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:add7b99ce966900c95f6a0b5ce1d644ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#add7b99ce966900c95f6a0b5ce1d644ac">CProtein</a> (const char *fname)</td></tr>
-<tr class="memitem:adba2a9646ab9e4d026192e124965a0b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#adba2a9646ab9e4d026192e124965a0b3">computeTransformTo</a> (const <a class="el" href="classCProtein.html">CProtein</a> &amp;target, <a class="el" href="classCQuat.html">CQuat</a> &amp;q, <a class="el" href="classCPnt.html">CPnt</a> &amp;trans) const </td></tr>
+<tr class="memdesc:add7b99ce966900c95f6a0b5ce1d644ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein class constructor.  <a href="#add7b99ce966900c95f6a0b5ce1d644ac"></a><br/></td></tr>
 <tr class="memitem:afb3fe3188e1a61488295b4fcdb3664e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#afb3fe3188e1a61488295b4fcdb3664e6">inCollision</a> (const <a class="el" href="classCProtein.html">CProtein</a> &amp;mol)</td></tr>
+<tr class="memdesc:afb3fe3188e1a61488295b4fcdb3664e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein inCollision function.  <a href="#afb3fe3188e1a61488295b4fcdb3664e6"></a><br/></td></tr>
+<tr class="memitem:a61914554b1b927e7f2bfa4c12c78ba0a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCAtom.html">CAtom</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a61914554b1b927e7f2bfa4c12c78ba0a">getAtom</a> (int resnum, int acode) const </td></tr>
+<tr class="memdesc:a61914554b1b927e7f2bfa4c12c78ba0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein getAtom function.  <a href="#a61914554b1b927e7f2bfa4c12c78ba0a"></a><br/></td></tr>
 <tr class="memitem:a7d82de84256c6e9b5868b8fe08df6e15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a7d82de84256c6e9b5868b8fe08df6e15">translate</a> (const <a class="el" href="classCPnt.html">CPnt</a> &amp;trans)</td></tr>
+<tr class="memdesc:a7d82de84256c6e9b5868b8fe08df6e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein translate.  <a href="#a7d82de84256c6e9b5868b8fe08df6e15"></a><br/></td></tr>
 <tr class="memitem:a890bc62459bae1a93b67e90cdcef18eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb">setPos</a> (const <a class="el" href="classCPnt.html">CPnt</a> &amp;trans)</td></tr>
+<tr class="memdesc:a890bc62459bae1a93b67e90cdcef18eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein setPos.  <a href="#a890bc62459bae1a93b67e90cdcef18eb"></a><br/></td></tr>
 <tr class="memitem:a2ab8b5e61cd26aafde2841b6b3655d45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a2ab8b5e61cd26aafde2841b6b3655d45">rotate</a> (const <a class="el" href="classCQuat.html">CQuat</a> &amp;rot)</td></tr>
+<tr class="memdesc:a2ab8b5e61cd26aafde2841b6b3655d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein rotate.  <a href="#a2ab8b5e61cd26aafde2841b6b3655d45"></a><br/></td></tr>
 <tr class="memitem:a40f7c9e8d7b4717e00027b0c92ad109b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a40f7c9e8d7b4717e00027b0c92ad109b">setOrient</a> (const <a class="el" href="classCQuat.html">CQuat</a> &amp;rot)</td></tr>
-<tr class="memitem:af6187aab0e8c8d59f60ddfed41ee7bd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#af6187aab0e8c8d59f60ddfed41ee7bd2">PDBoutput</a> (ostream &amp;fout, int sindex, const char *chainid, const <a class="el" href="classCQuat.html">CQuat</a> &amp;rot, const <a class="el" href="classCPnt.html">CPnt</a> &amp;trans)</td></tr>
-<tr class="memitem:a14c964f72704f17611aa0b941ad50ff0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a14c964f72704f17611aa0b941ad50ff0">QCDoutput</a> (ostream &amp;fout)</td></tr>
+<tr class="memdesc:a40f7c9e8d7b4717e00027b0c92ad109b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein setOrient.  <a href="#a40f7c9e8d7b4717e00027b0c92ad109b"></a><br/></td></tr>
 <tr class="memitem:ac7497ee640c9910a3b05ed890845b118"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#ac7497ee640c9910a3b05ed890845b118">untransform</a> ()</td></tr>
+<tr class="memdesc:ac7497ee640c9910a3b05ed890845b118"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein untransform.  <a href="#ac7497ee640c9910a3b05ed890845b118"></a><br/></td></tr>
 <tr class="memitem:a8d680f9e8b07520eedfe5b43f50d1c03"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a8d680f9e8b07520eedfe5b43f50d1c03">getNumCharges</a> () const </td></tr>
+<tr class="memdesc:a8d680f9e8b07520eedfe5b43f50d1c03"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein getNumCharges.  <a href="#a8d680f9e8b07520eedfe5b43f50d1c03"></a><br/></td></tr>
 <tr class="memitem:a199bba5ba36900bdad8fd34bc0cc5342"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a199bba5ba36900bdad8fd34bc0cc5342">getCharge</a> (int i) const </td></tr>
+<tr class="memdesc:a199bba5ba36900bdad8fd34bc0cc5342"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein getCharge.  <a href="#a199bba5ba36900bdad8fd34bc0cc5342"></a><br/></td></tr>
 <tr class="memitem:af41397ca141fb18b7a39854797e0df6a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCPnt.html">CPnt</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#af41397ca141fb18b7a39854797e0df6a">getChargePos</a> (int i) const </td></tr>
+<tr class="memdesc:af41397ca141fb18b7a39854797e0df6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein getChargePos.  <a href="#af41397ca141fb18b7a39854797e0df6a"></a><br/></td></tr>
 <tr class="memitem:aaa51486082bb376c17cf272ed9ef6bca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#aaa51486082bb376c17cf272ed9ef6bca">getRadius</a> () const </td></tr>
 <tr class="memitem:add93b850304f89cbb6af897e1df0fe4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#add93b850304f89cbb6af897e1df0fe4a">getSumCharge</a> () const </td></tr>
 <tr class="memitem:a65cfe943745c04072d5a03b7caad861e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCQuat.html">CQuat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a65cfe943745c04072d5a03b7caad861e">getOrientation</a> () const </td></tr>
 <tr class="memitem:a1290a004e6e5854a8df7aa4acf9ba8e0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCPnt.html">CPnt</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a1290a004e6e5854a8df7aa4acf9ba8e0">getPosition</a> () const </td></tr>
 <tr class="memitem:ae44ab2afca86374611113fa26e8c1b2f"><td class="memItemLeft" align="right" valign="top">const vector&lt; <a class="el" href="classCAtom.html">CAtom</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#ae44ab2afca86374611113fa26e8c1b2f">getAtoms</a> () const </td></tr>
-<tr class="memitem:a61914554b1b927e7f2bfa4c12c78ba0a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCAtom.html">CAtom</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a61914554b1b927e7f2bfa4c12c78ba0a">getAtom</a> (int resnum, int acode) const </td></tr>
 <tr class="memitem:aa4cd0f117c25ed7e5a84db8e70147014"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#aa4cd0f117c25ed7e5a84db8e70147014">getID</a> () const </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aeff60f05cbd42168359f75187b9ac888"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#aeff60f05cbd42168359f75187b9ac888">initParameters</a> (<a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> kappa, <a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> dielp, <a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> diels, int nmol, <a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> rs)</td></tr>
+<tr class="memdesc:aeff60f05cbd42168359f75187b9ac888"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein initParameters function.  <a href="#aeff60f05cbd42168359f75187b9ac888"></a><br/></td></tr>
 <tr class="memitem:a7d6c3fb53c773ea006d123e35301d9b8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a7d6c3fb53c773ea006d123e35301d9b8">computeForces</a> (vector&lt; <a class="el" href="classCPnt.html">CPnt</a> &gt; &amp;force, vector&lt; <a class="el" href="classCPnt.html">CPnt</a> &gt; &amp;torque)</td></tr>
-<tr class="memitem:a60767b1667e57c9a68045a6c148799cd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a60767b1667e57c9a68045a6c148799cd">isInitialized</a> ()</td></tr>
-<tr class="memitem:a3d071c05412cb0f2a423920d5ae000dc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a3d071c05412cb0f2a423920d5ae000dc">computeDistance</a> (const <a class="el" href="classCProtein.html">CProtein</a> &amp;p1, const <a class="el" href="classCProtein.html">CProtein</a> &amp;p2)</td></tr>
+<tr class="memdesc:a7d6c3fb53c773ea006d123e35301d9b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein computeForces function.  <a href="#a7d6c3fb53c773ea006d123e35301d9b8"></a><br/></td></tr>
 <tr class="memitem:a2e38b7c42c30f967591fafb5060bc4f7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a2e38b7c42c30f967591fafb5060bc4f7">getInterfaceAtoms</a> (const <a class="el" href="classCProtein.html">CProtein</a> &amp;P1, const <a class="el" href="classCProtein.html">CProtein</a> &amp;P2, vector&lt; <a class="el" href="classCPnt.html">CPnt</a> &gt; &amp;pos)</td></tr>
+<tr class="memdesc:a2e38b7c42c30f967591fafb5060bc4f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein getInterfaceAtoms function.  <a href="#a2e38b7c42c30f967591fafb5060bc4f7"></a><br/></td></tr>
+<tr class="memitem:a60767b1667e57c9a68045a6c148799cd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a60767b1667e57c9a68045a6c148799cd">isInitialized</a> ()</td></tr>
+<tr class="memdesc:a60767b1667e57c9a68045a6c148799cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein isInitialized.  <a href="#a60767b1667e57c9a68045a6c148799cd"></a><br/></td></tr>
+<tr class="memitem:a3d071c05412cb0f2a423920d5ae000dc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a3d071c05412cb0f2a423920d5ae000dc">computeDistance</a> (const <a class="el" href="classCProtein.html">CProtein</a> &amp;p1, const <a class="el" href="classCProtein.html">CProtein</a> &amp;p2)</td></tr>
+<tr class="memdesc:a3d071c05412cb0f2a423920d5ae000dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protein computeDistance.  <a href="#a3d071c05412cb0f2a423920d5ae000dc"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a5999d9758c6552f1c329cb3b5612485d"><td class="memItemLeft" align="right" valign="top">static map&lt; int, <a class="el" href="util_8h.html#a5821460e95a0800cf9f24c38915cbbde">REAL</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCProtein.html#a5999d9758c6552f1c329cb3b5612485d">CHARGES</a> [<a class="el" href="pdb_8h.html#aaa82008f92b935630ccf49c27a4bcc6e">NUM_AAS</a>]</td></tr>
 <tr class="memdesc:a5999d9758c6552f1c329cb3b5612485d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of charges for each amino acid in the protein.  <a href="#a5999d9758c6552f1c329cb3b5612485d"></a><br/></td></tr>
 </table>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>The protein class. </p>
+<p>The class that contains all details for a protein and its multipole expansions, etc </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="add7b99ce966900c95f6a0b5ce1d644ac"></a>
 <div class="memitem">
 <div class="memproto">
@@ -108,6 +127,15 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The protein class constructor. </p>
+<p><a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> class constructor </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fname</td><td>a character string of filename for input PDB</td></tr>
+  </table>
+  </dd>
+</dl>
 <p>Initializing protein class </p>
 
 <p><div class="dynheader">
@@ -115,7 +143,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCProtein_add7b99ce966900c95f6a0b5ce1d644ac_cgraph.png" border="0" usemap="#classCProtein_add7b99ce966900c95f6a0b5ce1d644ac_cgraph" alt=""/></div>
 <map name="classCProtein_add7b99ce966900c95f6a0b5ce1d644ac_cgraph" id="classCProtein_add7b99ce966900c95f6a0b5ce1d644ac_cgraph">
-<area shape="rect" id="node3" href="classCPDB.html#a3033b818c15dea1b6df7c3b354a8d044" title="The PDB function loadFromPDB." alt="" coords="199,157,350,184"/><area shape="rect" id="node21" href="classCProtein.html#a199bba5ba36900bdad8fd34bc0cc5342" title="CProtein::getCharge" alt="" coords="204,208,345,235"/><area shape="rect" id="node23" href="classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb" title="CProtein::setPos" alt="" coords="213,259,336,285"/><area shape="rect" id="node25" href="classCProtein.html#a8d680f9e8b07520eedfe5b43f50d1c03" title="CProtein::getNumCharges" alt="" coords="187,309,363,336"/><area shape="rect" id="node5" href="classCPDB.html#acdc2ba2ed5bb4dc8701577e29c0f4bf9" title="The PDB function readLine." alt="" coords="426,31,539,57"/><area shape="rect" id="node11" href="classCAtom.html#a6af9e202834bac9613129184d62e1c19" title="CAtom::getResNum" alt="" coords="412,81,553,108"/><area shape="rect" id="node13" href="classAA.html#a77290c917ac630708465bb700c9a1d91" title="AA::clear" alt="" coords="445,132,521,159"/><area shape="rect" id="node15" href="classAA.html#a111b14b73321f7fbd0e910fe7377d3e2" title="AA::setType" alt="" coords="435,183,530,209"/><area shape="rect" id="node17" href="classCAtom.html#a02f2c6f689a978639b239f0b17ccdf1e" title="CAtom::getResCode" alt="" coords="411,233,555,260"/><area shape="rect" id="node19" href="classAA.html#ae0851c13f0b0aee431c4b90a17a58c7a" title="AA::insertAtom" alt="" coords="427,284,538,311"/><area shape="rect" id="node7" href="classCAtom.html#a5208b057db97f1c98b3b8fd973a95412" title="The Atom class getAtomCode function." alt="" coords="603,5,754,32"/><area shape="rect" id="node9" href="classAA.html#a4586e72f7a09f932e29188a5098f124f" title="The AA class function getAACode." alt="" coords="621,56,736,83"/></map>
+<area shape="rect" id="node3" href="classCPDB.html#a3033b818c15dea1b6df7c3b354a8d044" title="The PDB function loadFromPDB." alt="" coords="199,157,350,184"/><area shape="rect" id="node21" href="classCProtein.html#a199bba5ba36900bdad8fd34bc0cc5342" title="The protein getCharge." alt="" coords="204,208,345,235"/><area shape="rect" id="node23" href="classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb" title="The protein setPos." alt="" coords="213,259,336,285"/><area shape="rect" id="node25" href="classCProtein.html#a8d680f9e8b07520eedfe5b43f50d1c03" title="The protein getNumCharges." alt="" coords="187,309,363,336"/><area shape="rect" id="node5" href="classCPDB.html#acdc2ba2ed5bb4dc8701577e29c0f4bf9" title="The PDB function readLine." alt="" coords="426,31,539,57"/><area shape="rect" id="node11" href="classCAtom.html#a6af9e202834bac9613129184d62e1c19" title="CAtom::getResNum" alt="" coords="412,81,553,108"/><area shape="rect" id="node13" href="classAA.html#a77290c917ac630708465bb700c9a1d91" title="AA::clear" alt="" coords="445,132,521,159"/><area shape="rect" id="node15" href="classAA.html#a111b14b73321f7fbd0e910fe7377d3e2" title="AA::setType" alt="" coords="435,183,530,209"/><area shape="rect" id="node17" href="classCAtom.html#a02f2c6f689a978639b239f0b17ccdf1e" title="CAtom::getResCode" alt="" coords="411,233,555,260"/><area shape="rect" id="node19" href="classAA.html#ae0851c13f0b0aee431c4b90a17a58c7a" title="AA::insertAtom" alt="" coords="427,284,538,311"/><area shape="rect" id="node7" href="classCAtom.html#a5208b057db97f1c98b3b8fd973a95412" title="The Atom class getAtomCode function." alt="" coords="603,5,754,32"/><area shape="rect" id="node9" href="classAA.html#a4586e72f7a09f932e29188a5098f124f" title="The AA class function getAACode." alt="" coords="621,56,736,83"/></map>
 </div>
 </p>
 
@@ -153,6 +181,17 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The protein computeDistance. </p>
+<p><a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> computeDistance function </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1</td><td>a CG molecule object </td></tr>
+    <tr><td class="paramname">p2</td><td>a second CG molecule object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>a floating point of the distance between the two objects </dd></dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -196,6 +235,16 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The protein computeForces function. </p>
+<p>Function that computes forces and torques on a group of <a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> objects </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">force</td><td>a vector of forces </td></tr>
+    <tr><td class="paramname">torque</td><td>a vector of torques</td></tr>
+  </table>
+  </dd>
+</dl>
 <p>Compute forces between molecules. Input: vector of forces and torques acting on each molecule in the system </p>
 
 <p><div class="dynheader">
@@ -203,41 +252,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCProtein_a7d6c3fb53c773ea006d123e35301d9b8_cgraph.png" border="0" usemap="#classCProtein_a7d6c3fb53c773ea006d123e35301d9b8_cgraph" alt=""/></div>
 <map name="classCProtein_a7d6c3fb53c773ea006d123e35301d9b8_cgraph" id="classCProtein_a7d6c3fb53c773ea006d123e35301d9b8_cgraph">
-<area shape="rect" id="node3" href="classCMPE.html#a56b7e4c76e20d5e34393a72cc31f6bb3" title="CMPE::initXForms" alt="" coords="229,216,361,243"/><area shape="rect" id="node5" href="classCMPE.html#a70e20d2a606e1bae88c117b15a511e17" title="CMPE::updateSolve" alt="" coords="224,317,365,344"/><area shape="rect" id="node80" href="classCMPE.html#ab825df6d8ab377af3715b86e3a495e34" title="CMPE::computeForce" alt="" coords="415,236,567,263"/><area shape="rect" id="node7" href="classCMPE.html#a65d2f19a87b451dbd84bb4b11cbfd571" title="CMPE::updateXForms" alt="" coords="413,431,568,457"/><area shape="rect" id="node78" href="classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="Function for mutual polarization." alt="" coords="433,317,548,344"/><area shape="rect" id="node9" href="classCXForm.html#a9fe5afbc751e5d8a8d48aa20471c84a5" title="CXForm::init" alt="" coords="635,396,731,423"/><area shape="rect" id="node50" href="classCMPE.html#a047394488b2ce41894b336b6a1d8e30a" title="CMPE::getOrder" alt="" coords="623,345,742,372"/><area shape="rect" id="node52" href="classCXForm.html#a903c633f1ac0756230bcd383e35a1d85" title="CXForm::decOrder" alt="" coords="617,447,749,473"/><area shape="rect" id="node59" href="classCXForm.html#a094937703c2d67ef29f5c12fbc65b438" title="CXForm::incOrder" alt="" coords="813,636,941,663"/><area shape="rect" id="node76" href="classCXForm.html#afb77c0beb4e49769b0eadb717b2d1179" title="CXForm::getOrder" alt="" coords="618,497,747,524"/><area shape="rect" id="node11" href="classCXForm.html#a4e9f8fd4d9fd24150cd357f724fa10c1" title="CXForm::reset" alt="" coords="823,333,931,360"/><area shape="rect" id="node13" href="util_8h.html#ad05fbf75e7550a927bc817f97115f2fc" title="CSpPnt CartToSph." alt="" coords="1055,333,1140,360"/><area shape="rect" id="node21" href="classCRotCoeff.html#aa52111e9c4cb2949dfae960437742536" title="CRotCoeff::reset" alt="" coords="1036,384,1159,411"/><area shape="rect" id="node25" href="classCRotCoeff.html#a4668070c3eacacf17be98bc2fb348287" title="CRotCoeff::isSingular" alt="" coords="1239,435,1390,461"/><area shape="rect" id="node27" href="classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba" title="CSpPnt::theta" alt="" coords="1045,485,1150,512"/><area shape="rect" id="node29" href="classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d" title="CSpPnt::phi" alt="" coords="1051,56,1144,83"/><area shape="rect" id="node31" href="classCTransCoeff.html#ade17444acf44e5c80f8caa9a593f03ee" title="TransCoeff reset function." alt="" coords="1030,107,1165,133"/><area shape="rect" id="node33" href="classCSpPnt.html#af6364f003b923aa77c880869d27caa64" title="CSpPnt::rho" alt="" coords="1050,157,1145,184"/><area shape="rect" id="node35" href="classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff rotate function." alt="" coords="1034,611,1161,637"/><area shape="rect" id="node38" href="classCTransCoeff.html#a0152b91eec8d84278e6432019ce4ef91" title="TransCoeff translate function." alt="" coords="1020,232,1175,259"/><area shape="rect" id="node41" href="mcoeff_8h.html#a90c84c259a220e291cebf52d99560c61" title="The mcoeff expansion class." alt="" coords="1069,5,1126,32"/><area shape="rect" id="node43" href="classCTransCoeff.html#a9fb52e0afd88150756506af029f86611" title="TransCoeff computeError function." alt="" coords="1006,536,1189,563"/><area shape="rect" id="node47" href="classCRotCoeff.html#a27b0198e460737ea20601fa4f0667df5" title="CRotCoeff::getParams" alt="" coords="1019,283,1175,309"/><area shape="rect" id="node15" href="classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="1281,333,1348,360"/><area shape="rect" id="node17" href="classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="1281,232,1348,259"/><area shape="rect" id="node19" href="classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="1281,283,1348,309"/><area shape="rect" id="node23" href="classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="1255,384,1375,411"/><area shape="rect" id="node45" href="classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="CMCoeff::getOrder" alt="" coords="1248,687,1381,713"/><area shape="rect" id="node54" href="classCTransCoeff.html#a79b28e19c6f8c4a028296b351eb4a30a" title="CTransCoeff decOrder." alt="" coords="798,472,957,499"/><area shape="rect" id="node56" href="classCRotCoeff.html#ae9fa83e941510deeda3aac1b8aecc58b" title="CRotCoeff::decOrder" alt="" coords="804,523,951,549"/><area shape="rect" id="node61" href="classCTransCoeff.html#a4148a93440f4f011c4fb8cb26667707e" title="CTransCoeff incOrder." alt="" coords="1020,763,1175,789"/><area shape="rect" id="node65" href="classCRotCoeff.html#a1416603a77ab7c9b7af515a7bad684f1" title="CRotCoeff::incOrder" alt="" coords="1026,661,1169,688"/><area shape="rect" id="node63" href="classCSHCoeff.html#a8fd12308d0884731596cc1268b04d232" title="CSHCoeff::incBesselk" alt="" coords="1237,763,1392,789"/><area shape="rect" id="node69" href="classCSHCoeff.html#adf80cf8370b4db9957de7acfe8aa64d6" title="The CSHCoeff inc function." alt="" coords="1261,636,1369,663"/><area shape="rect" id="node71" href="classCMCoeff.html#a815a4d1f74b217ea54d9f05f6734004f" title="CMCoeff::setOrder" alt="" coords="1440,636,1573,663"/></map>
+<area shape="rect" id="node3" href="classCMPE.html#a56b7e4c76e20d5e34393a72cc31f6bb3" title="CMPE initXForms function." alt="" coords="229,216,361,243"/><area shape="rect" id="node5" href="classCMPE.html#a70e20d2a606e1bae88c117b15a511e17" title="Function for updating the solutions of the mutual MPE." alt="" coords="224,317,365,344"/><area shape="rect" id="node80" href="classCMPE.html#ab825df6d8ab377af3715b86e3a495e34" title="CMPE computeForce function." alt="" coords="415,236,567,263"/><area shape="rect" id="node7" href="classCMPE.html#a65d2f19a87b451dbd84bb4b11cbfd571" title="Function for updateXForms." alt="" coords="413,431,568,457"/><area shape="rect" id="node78" href="classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="Function for mutual polarization." alt="" coords="433,317,548,344"/><area shape="rect" id="node9" href="classCXForm.html#a9fe5afbc751e5d8a8d48aa20471c84a5" title="CXForm::init" alt="" coords="635,396,731,423"/><area shape="rect" id="node50" href="classCMPE.html#a047394488b2ce41894b336b6a1d8e30a" title="The MPE getOrder function." alt="" coords="623,345,742,372"/><area shape="rect" id="node52" href="classCXForm.html#a903c633f1ac0756230bcd383e35a1d85" title="CXForm::decOrder" alt="" coords="617,447,749,473"/><area shape="rect" id="node59" href="classCXForm.html#a094937703c2d67ef29f5c12fbc65b438" title="CXForm::incOrder" alt="" coords="813,636,941,663"/><area shape="rect" id="node76" href="classCXForm.html#afb77c0beb4e49769b0eadb717b2d1179" title="CXForm::getOrder" alt="" coords="618,497,747,524"/><area shape="rect" id="node11" href="classCXForm.html#a4e9f8fd4d9fd24150cd357f724fa10c1" title="The XForm class reset function." alt="" coords="823,333,931,360"/><area shape="rect" id="node13" href="util_8h.html#ad05fbf75e7550a927bc817f97115f2fc" title="CSpPnt CartToSph." alt="" coords="1055,333,1140,360"/><area shape="rect" id="node21" href="classCRotCoeff.html#aa52111e9c4cb2949dfae960437742536" title="CRotCoeff::reset" alt="" coords="1036,384,1159,411"/><area shape="rect" id="node25" href="classCRotCoeff.html#a4668070c3eacacf17be98bc2fb348287" title="CRotCoeff::isSingular" alt="" coords="1239,435,1390,461"/><area shape="rect" id="node27" href="classCSpPnt.html#a4b48e7760135fc768ab6911a328194ba" title="CSpPnt::theta" alt="" coords="1045,485,1150,512"/><area shape="rect" id="node29" href="classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d" title="CSpPnt::phi" alt="" coords="1051,56,1144,83"/><area shape="rect" id="node31" href="classCTransCoeff.html#ade17444acf44e5c80f8caa9a593f03ee" title="TransCoeff reset function." alt="" coords="1030,107,1165,133"/><area shape="rect" id="node33" href="classCSpPnt.html#af6364f003b923aa77c880869d27caa64" title="CSpPnt::rho" alt="" coords="1050,157,1145,184"/><area shape="rect" id="node35" href="classCRotCoeff.html#aa9b14ebaa2c45a8fa740fa36d9f31d2c" title="CRotCoeff rotate function." alt="" coords="1034,611,1161,637"/><area shape="rect" id="node38" href="classCTransCoeff.html#a0152b91eec8d84278e6432019ce4ef91" title="TransCoeff translate function." alt="" coords="1020,232,1175,259"/><area shape="rect" id="node41" href="mcoeff_8h.html#a90c84c259a220e291cebf52d99560c61" title="The mcoeff inprod function." alt="" coords="1069,5,1126,32"/><area shape="rect" id="node43" href="classCTransCoeff.html#a9fb52e0afd88150756506af029f86611" title="TransCoeff computeError function." alt="" coords="1006,536,1189,563"/><area shape="rect" id="node47" href="classCRotCoeff.html#a27b0198e460737ea20601fa4f0667df5" title="CRotCoeff::getParams" alt="" coords="1019,283,1175,309"/><area shape="rect" id="node15" href="classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="1281,333,1348,360"/><area shape="rect" id="node17" href="classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="1281,232,1348,259"/><area shape="rect" id="node19" href="classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="1281,283,1348,309"/><area shape="rect" id="node23" href="classCSHCoeff.html#a7aa1d16fe8a3e18012f2ccaec89a0a0f" title="CSHCoeff::reset" alt="" coords="1255,384,1375,411"/><area shape="rect" id="node45" href="classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="The mcoeff class getOrder fuction." alt="" coords="1248,687,1381,713"/><area shape="rect" id="node54" href="classCTransCoeff.html#a79b28e19c6f8c4a028296b351eb4a30a" title="CTransCoeff decOrder." alt="" coords="798,472,957,499"/><area shape="rect" id="node56" href="classCRotCoeff.html#ae9fa83e941510deeda3aac1b8aecc58b" title="CRotCoeff::decOrder" alt="" coords="804,523,951,549"/><area shape="rect" id="node61" href="classCTransCoeff.html#a4148a93440f4f011c4fb8cb26667707e" title="CTransCoeff incOrder." alt="" coords="1020,763,1175,789"/><area shape="rect" id="node65" href="classCRotCoeff.html#a1416603a77ab7c9b7af515a7bad684f1" title="CRotCoeff::incOrder" alt="" coords="1026,661,1169,688"/><area shape="rect" id="node63" href="classCSHCoeff.html#a8fd12308d0884731596cc1268b04d232" title="CSHCoeff::incBesselk" alt="" coords="1237,763,1392,789"/><area shape="rect" id="node69" href="classCSHCoeff.html#adf80cf8370b4db9957de7acfe8aa64d6" title="The CSHCoeff inc function." alt="" coords="1261,636,1369,663"/><area shape="rect" id="node71" href="classCMCoeff.html#a815a4d1f74b217ea54d9f05f6734004f" title="The mcoeff class setOrder fuction." alt="" coords="1440,636,1573,663"/></map>
 </div>
 </p>
-
-</div>
-</div>
-<a class="anchor" id="adba2a9646ab9e4d026192e124965a0b3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CProtein::computeTransformTo </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classCProtein.html">CProtein</a> &amp;&#160;</td>
-          <td class="paramname"><em>target</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classCQuat.html">CQuat</a> &amp;&#160;</td>
-          <td class="paramname"><em>q</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classCPnt.html">CPnt</a> &amp;&#160;</td>
-          <td class="paramname"><em>trans</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -264,6 +281,17 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The protein getAtom function. </p>
+<p>Function that returns the desired atom </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resnum</td><td>an int of the residue number of the desired atom </td></tr>
+    <tr><td class="paramname">acode</td><td>an int of the atom code of the desired atom</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Return atom of residue number resnum and atom code acode </p>
 
 </div>
 </div>
@@ -312,6 +340,16 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>The protein getCharge. </p>
+<p><a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> getCharge function </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>the ith atom in the protein for which to obtain charge </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>a floating point of the charge at atom i </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="af41397ca141fb18b7a39854797e0df6a"></a>
@@ -335,6 +373,16 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The protein getChargePos. </p>
+<p><a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> getChargePos function </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>the ith atom in the protein for which to obtain charge position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>a <a class="el" href="classCPnt.html" title="The cartesian coordinate class.">CPnt</a> of the position of atom i </dd></dl>
 
 </div>
 </div>
@@ -399,6 +447,18 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>The protein getInterfaceAtoms function. </p>
+<p>Function that returns a list of atoms at the interface </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">P1</td><td>a <a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> object </td></tr>
+    <tr><td class="paramname">P2</td><td>a second <a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> object that will dock with P1 </td></tr>
+    <tr><td class="paramname">pos</td><td>a vector of positions of atoms at the P!-P2 interface</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function that returns a list of atoms at the interface </p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -430,6 +490,10 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The protein getNumCharges. </p>
+<p><a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> getNumCharges function </p>
+<dl class="section return"><dt>Returns:</dt><dd>the number of charges in the protein </dd></dl>
 
 </div>
 </div>
@@ -539,12 +603,23 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>The protein inCollision function. </p>
+<p>Function that determines whether two molecules have collided or not </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mol</td><td>a vector of <a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> objects </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>a boolean indicating whether the molecules have collided (true)</dd></dl>
+<p>Function to determine whether two CG molecules are collided or not </p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCProtein_afb3fe3188e1a61488295b4fcdb3664e6_cgraph.png" border="0" usemap="#classCProtein_afb3fe3188e1a61488295b4fcdb3664e6_cgraph" alt=""/></div>
 <map name="classCProtein_afb3fe3188e1a61488295b4fcdb3664e6_cgraph" id="classCProtein_afb3fe3188e1a61488295b4fcdb3664e6_cgraph">
-<area shape="rect" id="node3" href="classCProtein.html#a3d071c05412cb0f2a423920d5ae000dc" title="CProtein::computeDistance" alt="" coords="195,5,378,32"/><area shape="rect" id="node7" href="classCProtein.html#aaa51486082bb376c17cf272ed9ef6bca" title="CProtein::getRadius" alt="" coords="217,56,357,83"/><area shape="rect" id="node5" href="classCProtein.html#a1290a004e6e5854a8df7aa4acf9ba8e0" title="CProtein::getPosition" alt="" coords="427,5,573,32"/></map>
+<area shape="rect" id="node3" href="classCProtein.html#a3d071c05412cb0f2a423920d5ae000dc" title="The protein computeDistance." alt="" coords="195,5,378,32"/><area shape="rect" id="node7" href="classCProtein.html#aaa51486082bb376c17cf272ed9ef6bca" title="CProtein::getRadius" alt="" coords="217,56,357,83"/><area shape="rect" id="node5" href="classCProtein.html#a1290a004e6e5854a8df7aa4acf9ba8e0" title="CProtein::getPosition" alt="" coords="427,5,573,32"/></map>
 </div>
 </p>
 
@@ -599,6 +674,19 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The protein initParameters function. </p>
+<p>Function that initializes parameters for a protein class </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">kappa</td><td>the inverse debye length </td></tr>
+    <tr><td class="paramname">dielp</td><td>the protein dielectric constant </td></tr>
+    <tr><td class="paramname">diels</td><td>the solvent dielectric constant </td></tr>
+    <tr><td class="paramname">nmol</td><td>the number of molecules in the system </td></tr>
+    <tr><td class="paramname">rs</td><td>a scaling factor of the molecule</td></tr>
+  </table>
+  </dd>
+</dl>
 <p>Initializing parameters for protein file Inputs: kappa, dielectric of the protein, water dielectric, the nummber of molecules, average scaling factor RS~avg molecular radius </p>
 
 <p><div class="dynheader">
@@ -606,7 +694,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCProtein_aeff60f05cbd42168359f75187b9ac888_cgraph.png" border="0" usemap="#classCProtein_aeff60f05cbd42168359f75187b9ac888_cgraph" alt=""/></div>
 <map name="classCProtein_aeff60f05cbd42168359f75187b9ac888_cgraph" id="classCProtein_aeff60f05cbd42168359f75187b9ac888_cgraph">
-<area shape="rect" id="node3" href="classCMPE.html#accac27799cb676fb3160683583a8619e" title="CMPE::initConstants" alt="" coords="219,5,365,32"/><area shape="rect" id="node5" href="classCSHCoeff.html#ae6ad53fe9a4862de25fe7f2788649a41" title="CSHCoeff::init" alt="" coords="414,5,522,32"/></map>
+<area shape="rect" id="node3" href="classCMPE.html#accac27799cb676fb3160683583a8619e" title="CMPE initConstants function." alt="" coords="219,5,365,32"/><area shape="rect" id="node5" href="classCSHCoeff.html#ae6ad53fe9a4862de25fe7f2788649a41" title="CSHCoeff::init" alt="" coords="414,5,522,32"/></map>
 </div>
 </p>
 
@@ -633,83 +721,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="af6187aab0e8c8d59f60ddfed41ee7bd2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CProtein::PDBoutput </td>
-          <td>(</td>
-          <td class="paramtype">ostream &amp;&#160;</td>
-          <td class="paramname"><em>fout</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>sindex</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>chainid</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classCQuat.html">CQuat</a> &amp;&#160;</td>
-          <td class="paramname"><em>rot</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classCPnt.html">CPnt</a> &amp;&#160;</td>
-          <td class="paramname"><em>trans</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classCProtein_af6187aab0e8c8d59f60ddfed41ee7bd2_cgraph.png" border="0" usemap="#classCProtein_af6187aab0e8c8d59f60ddfed41ee7bd2_cgraph" alt=""/></div>
-<map name="classCProtein_af6187aab0e8c8d59f60ddfed41ee7bd2_cgraph" id="classCProtein_af6187aab0e8c8d59f60ddfed41ee7bd2_cgraph">
-<area shape="rect" id="node3" href="classCPDB.html#a1c4247e99968afb8266c6cf85d537de6" title="The PDB function writeLine." alt="" coords="200,208,320,235"/><area shape="rect" id="node5" href="classCAtom.html#ac31a8af47f25e335803afe6d356a0112" title="The Atom class generateName function." alt="" coords="369,5,525,32"/><area shape="rect" id="node7" href="classCAtom.html#a2eaa281b7aa53c83c13a66de07c9e70c" title="CAtom::getCode" alt="" coords="387,56,507,83"/><area shape="rect" id="node9" href="classAA.html#a1ae2a562a71d05aa8c1f9b3c7136e3b7" title="AA::getName" alt="" coords="396,107,497,133"/><area shape="rect" id="node11" href="classCAtom.html#a02f2c6f689a978639b239f0b17ccdf1e" title="CAtom::getResCode" alt="" coords="375,157,519,184"/><area shape="rect" id="node13" href="classCAtom.html#a6af9e202834bac9613129184d62e1c19" title="CAtom::getResNum" alt="" coords="376,208,517,235"/><area shape="rect" id="node15" href="classCAtom.html#ad53ff83c6676d072a06694a4398b257d" title="CAtom::getPos" alt="" coords="391,259,503,285"/><area shape="rect" id="node17" href="classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="413,309,480,336"/><area shape="rect" id="node19" href="classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="413,360,480,387"/><area shape="rect" id="node21" href="classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="413,411,480,437"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a14c964f72704f17611aa0b941ad50ff0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CProtein::QCDoutput </td>
-          <td>(</td>
-          <td class="paramtype">ostream &amp;&#160;</td>
-          <td class="paramname"><em>fout</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classCProtein_a14c964f72704f17611aa0b941ad50ff0_cgraph.png" border="0" usemap="#classCProtein_a14c964f72704f17611aa0b941ad50ff0_cgraph" alt=""/></div>
-<map name="classCProtein_a14c964f72704f17611aa0b941ad50ff0_cgraph" id="classCProtein_a14c964f72704f17611aa0b941ad50ff0_cgraph">
-<area shape="rect" id="node3" href="classCProtein.html#aaa51486082bb376c17cf272ed9ef6bca" title="CProtein::getRadius" alt="" coords="201,5,341,32"/><area shape="rect" id="node5" href="classCAtom.html#ad53ff83c6676d072a06694a4398b257d" title="CAtom::getPos" alt="" coords="215,56,327,83"/><area shape="rect" id="node7" href="classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="237,107,304,133"/><area shape="rect" id="node9" href="classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="237,157,304,184"/><area shape="rect" id="node11" href="classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="237,208,304,235"/><area shape="rect" id="node13" href="classCAtom.html#a909e61ce36305e5e923fd75d48ab6cb8" title="CAtom::getCharge" alt="" coords="205,259,336,285"/></map>
-</div>
-</p>
+<p>The protein isInitialized. </p>
+<p><a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> isInitialized function, check if object's constants have been initialized </p>
+<dl class="section return"><dt>Returns:</dt><dd>a boolean of whether or not the system has been initialized </dd></dl>
 
 </div>
 </div>
@@ -735,6 +749,15 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>The protein rotate. </p>
+<p><a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> rotate function </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rot</td><td>a quaternion to rotate the <a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> object by </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a40f7c9e8d7b4717e00027b0c92ad109b"></a>
@@ -758,6 +781,15 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The protein setOrient. </p>
+<p><a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> setOrient function </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rot</td><td>a quaterion to set the orientation of the molecule with </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -783,6 +815,15 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>The protein setPos. </p>
+<p><a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> setPos function </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trans</td><td>a vector of XYZ coordinates to set the center at </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a7d82de84256c6e9b5868b8fe08df6e15"></a>
@@ -807,6 +848,15 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>The protein translate. </p>
+<p><a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> translate function </p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trans</td><td>a vector of XYZ coordinates to translate the <a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> object by </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ac7497ee640c9910a3b05ed890845b118"></a>
@@ -829,6 +879,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The protein untransform. </p>
+<p><a class="el" href="classCProtein.html" title="The protein class.">CProtein</a> untransform function, move protein center back to saved location </p>
 
 </div>
 </div>
@@ -862,7 +915,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 10 2014 15:12:07 for PB Analytical by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 14 2014 16:00:37 for PB Analytical by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>

@@ -9,43 +9,43 @@
 <area shape="rect" id="node137" href="$BD_8cpp.html#a268054c4cc84d387786a1a4d52e90019" title="main8" alt="" coords="399,1323,457,1349"/>
 <area shape="rect" id="node5" href="$util_8h.html#ad864dc450da6954264580e4318e011eb" title="seedRand" alt="" coords="609,1221,690,1248"/>
 <area shape="rect" id="node7" href="$classCBD.html#a0e59f17fc428ea28a8c8b4c9656a3538" title="CBD run function." alt="" coords="211,233,288,260"/>
-<area shape="rect" id="node9" href="$classCProtein.html#a40f7c9e8d7b4717e00027b0c92ad109b" title="CProtein::setOrient" alt="" coords="361,208,495,235"/>
+<area shape="rect" id="node9" href="$classCProtein.html#a40f7c9e8d7b4717e00027b0c92ad109b" title="The protein setOrient." alt="" coords="361,208,495,235"/>
 <area shape="rect" id="node11" href="$classCQuat.html#a3788f9ce393c8c6e7dc2df6e7675c594" title="CQuat chooseRandom, choose random quaternion." alt="" coords="782,512,941,539"/>
-<area shape="rect" id="node13" href="$classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb" title="CProtein::setPos" alt="" coords="367,259,489,285"/>
+<area shape="rect" id="node13" href="$classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb" title="The protein setPos." alt="" coords="367,259,489,285"/>
 <area shape="rect" id="node15" href="$util_8h.html#a491783063d690a2f389e3317f44dd0b7" title="randOrient" alt="" coords="387,309,469,336"/>
 <area shape="rect" id="node17" href="$classCProtein.html#aaa51486082bb376c17cf272ed9ef6bca" title="CProtein::getRadius" alt="" coords="358,5,498,32"/>
-<area shape="rect" id="node19" href="$classCProtein.html#a3d071c05412cb0f2a423920d5ae000dc" title="CProtein::computeDistance" alt="" coords="337,107,519,133"/>
+<area shape="rect" id="node19" href="$classCProtein.html#a3d071c05412cb0f2a423920d5ae000dc" title="The protein computeDistance." alt="" coords="337,107,519,133"/>
 <area shape="rect" id="node21" href="$classCProtein.html#a1290a004e6e5854a8df7aa4acf9ba8e0" title="CProtein::getPosition" alt="" coords="576,81,723,108"/>
-<area shape="rect" id="node23" href="$classCProtein.html#a7d6c3fb53c773ea006d123e35301d9b8" title="CProtein::computeForces" alt="" coords="343,917,513,944"/>
+<area shape="rect" id="node23" href="$classCProtein.html#a7d6c3fb53c773ea006d123e35301d9b8" title="The protein computeForces function." alt="" coords="343,917,513,944"/>
 <area shape="rect" id="node47" href="$classCPnt.html#a619a71665a5a40fddbc8e6c6a6b450cc" title="The cartesian coordinate function zero." alt="" coords="385,157,471,184"/>
-<area shape="rect" id="node25" href="$classCMPE.html#a56b7e4c76e20d5e34393a72cc31f6bb3" title="CMPE::initXForms" alt="" coords="583,1069,715,1096"/>
-<area shape="rect" id="node27" href="$classCMPE.html#a70e20d2a606e1bae88c117b15a511e17" title="CMPE::updateSolve" alt="" coords="579,765,720,792"/>
-<area shape="rect" id="node43" href="$classCMPE.html#ab825df6d8ab377af3715b86e3a495e34" title="CMPE::computeForce" alt="" coords="573,917,725,944"/>
-<area shape="rect" id="node29" href="$classCMPE.html#a65d2f19a87b451dbd84bb4b11cbfd571" title="CMPE::updateXForms" alt="" coords="784,892,939,919"/>
+<area shape="rect" id="node25" href="$classCMPE.html#a56b7e4c76e20d5e34393a72cc31f6bb3" title="CMPE initXForms function." alt="" coords="583,1069,715,1096"/>
+<area shape="rect" id="node27" href="$classCMPE.html#a70e20d2a606e1bae88c117b15a511e17" title="Function for updating the solutions of the mutual MPE." alt="" coords="579,765,720,792"/>
+<area shape="rect" id="node43" href="$classCMPE.html#ab825df6d8ab377af3715b86e3a495e34" title="CMPE computeForce function." alt="" coords="573,917,725,944"/>
+<area shape="rect" id="node29" href="$classCMPE.html#a65d2f19a87b451dbd84bb4b11cbfd571" title="Function for updateXForms." alt="" coords="784,892,939,919"/>
 <area shape="rect" id="node41" href="$classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029" title="Function for mutual polarization." alt="" coords="804,968,919,995"/>
 <area shape="rect" id="node31" href="$classCXForm.html#a9fe5afbc751e5d8a8d48aa20471c84a5" title="CXForm::init" alt="" coords="1017,917,1113,944"/>
-<area shape="rect" id="node33" href="$classCMPE.html#a047394488b2ce41894b336b6a1d8e30a" title="CMPE::getOrder" alt="" coords="1006,1081,1125,1108"/>
+<area shape="rect" id="node33" href="$classCMPE.html#a047394488b2ce41894b336b6a1d8e30a" title="The MPE getOrder function." alt="" coords="1006,1081,1125,1108"/>
 <area shape="rect" id="node35" href="$classCXForm.html#a903c633f1ac0756230bcd383e35a1d85" title="CXForm::decOrder" alt="" coords="999,968,1131,995"/>
 <area shape="rect" id="node37" href="$classCXForm.html#a094937703c2d67ef29f5c12fbc65b438" title="CXForm::incOrder" alt="" coords="1001,816,1129,843"/>
 <area shape="rect" id="node39" href="$classCXForm.html#afb77c0beb4e49769b0eadb717b2d1179" title="CXForm::getOrder" alt="" coords="1001,867,1130,893"/>
-<area shape="rect" id="node45" href="$mcoeff_8h.html#a90c84c259a220e291cebf52d99560c61" title="The mcoeff expansion class." alt="" coords="1037,1221,1094,1248"/>
+<area shape="rect" id="node45" href="$mcoeff_8h.html#a90c84c259a220e291cebf52d99560c61" title="The mcoeff inprod function." alt="" coords="1037,1221,1094,1248"/>
 <area shape="rect" id="node53" href="$BD_8cpp.html#a9c965fd0c3d37e5f71c0cd6a33218ea8" title="buildSystem" alt="" coords="602,1019,697,1045"/>
 <area shape="rect" id="node55" href="$BD_8cpp.html#a050f85eeb4bca700634b0c552f7d32e2" title="readmdp" alt="" coords="825,1475,897,1501"/>
-<area shape="rect" id="node57" href="$classCProtein.html#aeff60f05cbd42168359f75187b9ac888" title="CProtein::initParameters" alt="" coords="779,1652,944,1679"/>
+<area shape="rect" id="node57" href="$classCProtein.html#aeff60f05cbd42168359f75187b9ac888" title="The protein initParameters function." alt="" coords="779,1652,944,1679"/>
 <area shape="rect" id="node62" href="$BD_8cpp.html#af4a2c988c8f8f7423e6a4c8dd0d6ffef" title="writemdp" alt="" coords="824,1323,899,1349"/>
-<area shape="rect" id="node59" href="$classCMPE.html#accac27799cb676fb3160683583a8619e" title="CMPE::initConstants" alt="" coords="992,1652,1139,1679"/>
+<area shape="rect" id="node59" href="$classCMPE.html#accac27799cb676fb3160683583a8619e" title="CMPE initConstants function." alt="" coords="992,1652,1139,1679"/>
 <area shape="rect" id="node64" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="1032,1272,1099,1299"/>
 <area shape="rect" id="node66" href="$classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="1032,1411,1099,1437"/>
 <area shape="rect" id="node68" href="$classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="1032,1335,1099,1361"/>
-<area shape="rect" id="node80" href="$classCMPE.html#a46bad2726842ca10071fd004010a6e1b" title="CMPE::solve" alt="" coords="599,1323,699,1349"/>
+<area shape="rect" id="node80" href="$classCMPE.html#a46bad2726842ca10071fd004010a6e1b" title="CMPE solve function." alt="" coords="599,1323,699,1349"/>
 <area shape="rect" id="node84" href="$BD_8cpp.html#aa47d8f951ab91c51da9b69f787f18030" title="perturb" alt="" coords="397,563,459,589"/>
 <area shape="rect" id="node86" href="$classCBD.html#a9ad6f87e7436fa716a470e97f0ec836f" title="CBD getRandVec function." alt="" coords="584,512,715,539"/>
 <area shape="rect" id="node88" href="$classCPnt.html#ab92f2e6cc3891ff6a00eddb483b854ab" title="The CPnt norm function." alt="" coords="605,563,694,589"/>
 <area shape="rect" id="node91" href="$classCMPE.html#a61688da6057b840ca71dacb47db0c0ac" title="The MPE undoXForms function." alt="" coords="578,461,721,488"/>
-<area shape="rect" id="node100" href="$classCMPE.html#af10ee159904becb5add924aa48df3c56" title="CMPE::reexpand" alt="" coords="588,664,711,691"/>
+<area shape="rect" id="node100" href="$classCMPE.html#af10ee159904becb5add924aa48df3c56" title="Function for reexpansion of MPE." alt="" coords="588,664,711,691"/>
 <area shape="rect" id="node111" href="$BD_8cpp.html#ab4f52653b848e0335005e8f9cb3cbd49" title="buildGrid" alt="" coords="613,1272,686,1299"/>
-<area shape="rect" id="node113" href="$classCMPE.html#a8a6b260459ff6af55260e2c7897f3bd0" title="CMPE::computePotAt" alt="" coords="785,1171,937,1197"/>
-<area shape="rect" id="node132" href="$classCMPE.html#ab494bf000a7dec9410d23a5f47204baf" title="CMPE::computePairPot" alt="" coords="568,1576,731,1603"/>
-<area shape="rect" id="node134" href="$classCXForm.html#aa86ee5b2fefaf70e9f914966555aa6ef" title="CXForm::xform" alt="" coords="805,1576,917,1603"/>
+<area shape="rect" id="node113" href="$classCMPE.html#a8a6b260459ff6af55260e2c7897f3bd0" title="CMPE computePot function." alt="" coords="785,1171,937,1197"/>
+<area shape="rect" id="node132" href="$classCMPE.html#ab494bf000a7dec9410d23a5f47204baf" title="The MPE computePairPot function." alt="" coords="568,1576,731,1603"/>
+<area shape="rect" id="node134" href="$classCXForm.html#aa86ee5b2fefaf70e9f914966555aa6ef" title="The XForm class xform function." alt="" coords="805,1576,917,1603"/>
 <area shape="rect" id="node141" href="$BD_8cpp.html#abc59e3d5de96d0dbfd2e195fee14e244" title="buildUnitCell" alt="" coords="601,1424,697,1451"/>
 </map>

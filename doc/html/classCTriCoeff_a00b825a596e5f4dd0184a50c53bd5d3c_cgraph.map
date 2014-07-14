@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classCMCoeff.html#a10d5db85d700255768d091c10fda818c" title="CMCoeff::reserve" alt="" coords="198,5,325,32"/>
-<area shape="rect" id="node5" href="$classCMCoeff.html#a5fc4a2ee0ab437bd601fd67ccc5bd43b" title="The mcoeff expansion class." alt="" coords="205,56,317,83"/>
+<area shape="rect" id="node3" href="$classCMCoeff.html#a10d5db85d700255768d091c10fda818c" title="The mcoeff class reserve fuction." alt="" coords="198,5,325,32"/>
+<area shape="rect" id="node5" href="$classCMCoeff.html#a5fc4a2ee0ab437bd601fd67ccc5bd43b" title="The mcoeff reset function." alt="" coords="205,56,317,83"/>
 </map>

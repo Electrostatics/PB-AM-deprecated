@@ -521,7 +521,7 @@ CMPE::computeForceOn(vector<CMPE*> & mpe, CPnt & force, CPnt & torque, int i)
 /******************************************************************//**
 * Function to compute pairwise interaction of two molecules in a system. 
 ******************************************************************/
-/*void
+void
 CMPE::computePairPot(const vector<CMPE*> & mpe, int i, int j, 
 		     REAL & p1, REAL & p2)
 {
@@ -540,7 +540,7 @@ CMPE::computePairPot(const vector<CMPE*> & mpe, int i, int j,
 		p2 = inprod(m_tM, mpe[j]->m_pM);
 	}
 }
-*/
+
 /******************************************************************/
 /******************************************************************//**
 *  CMPE function to compute forces and torques on a system 

@@ -1,0 +1,129 @@
+cng_test  
+
+ 	Executes a program that computes the effect of a third molecule on the interaction of
+	free energy of two molecules placed equidistantly. It requires the following input:
+
+		./exec cng [PQR file] [distance between molecles] [runname]
+	The following files should be in the CWD: *pqr and charges_OPLS
+
+  And it outputs the following:
+
+	[runname]_dist.txt 
+		This file has 900 lines, each line representing the interaction free energy 
+		between two molecules. The first value in each line represents the system 
+		of just two molecules, the next 30 values represents including a 3rd 
+		molecule in the system at 30 different orientations.
+
+ -------------------------
+
+dif_test  
+
+	Executes the computation of the potential at points on a grid in space from -75 to +75, 
+	for a system oof 2, 4, 6, or 8 molecules placed equidistantly in a salty solution.
+	 It requires the following input:
+
+		./exec dif [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules]
+  The following files should be in the CWD: *pqr and charges_OPLS
+
+  And it outputs the following:
+
+	pqrname_[# part]P.mdp
+			A PQR file of file of molecules in their positions created by dif run with
+			original OPLS partial charges
+	pqrname_[# part]P_sp.mdp
+			Same as first PQR file, but with CG spheres included as well
+	pqrname_[# part]P.gmpe
+			A file of gridded potentials at 151 points for the X, Y and Z dimension.
+
+ -------------------------
+
+inf_test  
+
+	Executes the creation of an infinite grid approximation. It requires the following input:
+
+		./exec inf [PQR file] [# lattice layers] [stretch factor]
+	  The following files should be in the CWD: *pqr and charges_OPLS
+
+  And it outputs the following:
+	
+	pqrname_88.pdb 
+		A PDB file of the input molecule with [# lat lay] layers in a grid
+
+	*.out
+		The program prints out the potential, the XYZ force and the XYZ torque
+		for the eight molecules placed at the center of the infinite grid
+
+ -------------------------
+
+pol_test  
+
+	Executes a routine the compares the force and torque of identical molecules places equidistantly
+	in a salty environment, with and without mutual polarization effects. It requires the following input:
+
+		./exec pol [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules] [runname]
+		The following files should be in the CWD: *pqr and charges_OPLS
+
+  And it outputs the following:
+
+	polar_[force/torque]_name_nmol_dist.txt
+			The first line indicates the force or torque computed per molecule in the absence of 
+			mutual polarization. The next line includes mutual polarization. These 2 lines repeat 1000 times.
+
+
+ -------------------------
+
+rad_test  
+
+	Executes the self-polarizarion and potential calculation on a grid for a single CG molecule,
+	positioned at (0,0,0).  Similar to dif option, but for only one molecule. It requires the 
+	following input:
+
+		 ./exec rad [PQR file] [scaling factor]
+		The following files should be in the CWD: *pqr and charges_OPLS
+
+  And it outputs the following:
+
+	pqrname_[# part]P.mdp
+			A PQR file of file of molecules in their positions created by dif run with
+			original OPLS partial charges
+	pqrname_[# part]P_sp.mdp
+			Same as first PQR file, but with CG spheres included as well
+	pqrname_[# part]P.gmpe
+			A file of gridded potentials at 151 points for the X, Y and Z dimension.
+
+ -------------------------
+
+sim_test  
+
+Executes the BD simulation part of the code.  It requires the following input:
+	
+		./exec sim [Salt conc] [outfile] [temp file #]
+		The following files should be in the CWD: *pqr and charges_OPLS
+
+	And it outputs the following:
+
+	temp[temp file #].out 
+		A temp file that outputs parameters while running each BD run
+
+	[outfile]
+		A File that contains the outcome of each BD run. the first 
+		column is the status of the simulation at the end, the second
+		is the trajectory number and the last column is the step number
+
+ -------------------------
+
+slv_test
+
+	Computes the energies, forces and the torques on a system of multiple molecules,
+	placed equidistantly in a salty solution.  It requires the following input:
+
+		./exec slv [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules]
+		The following files should be in the CWD: *pqr and charges_OPLS
+
+  And it outputs the following:		
+
+	*.out 
+		A list of each molecule in the system and the energy, force and torque acting on it
+
+
+

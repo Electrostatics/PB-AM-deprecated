@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classCProtein.html#a3d071c05412cb0f2a423920d5ae000dc" title="CProtein::computeDistance" alt="" coords="195,5,378,32"/>
+<area shape="rect" id="node3" href="$classCProtein.html#a3d071c05412cb0f2a423920d5ae000dc" title="The protein computeDistance." alt="" coords="195,5,378,32"/>
 <area shape="rect" id="node7" href="$classCProtein.html#aaa51486082bb376c17cf272ed9ef6bca" title="CProtein::getRadius" alt="" coords="217,56,357,83"/>
 <area shape="rect" id="node5" href="$classCProtein.html#a1290a004e6e5854a8df7aa4acf9ba8e0" title="CProtein::getPosition" alt="" coords="427,5,573,32"/>
 </map>

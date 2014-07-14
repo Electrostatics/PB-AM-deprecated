@@ -34,15 +34,15 @@ class \hyperlink{classCMCoeff}{C\-M\-Coeff}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classCMCoeff}{C\-M\-Coeff} \hyperlink{mcoeff_8h_a4bebac156440468c712dfce37bc9fc7c}{operator$\ast$} (\hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} s, const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M)
-\begin{DoxyCompactList}\small\item\em The mcoeff expansion class. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The M\-Coeff expansion class operator $\ast$. \end{DoxyCompactList}\item 
 \hyperlink{classCMCoeff}{C\-M\-Coeff} \hyperlink{mcoeff_8h_ab6e8a538afe3d4f8de9c1fa4904479ec}{operator+} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M1, const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M2)
-\begin{DoxyCompactList}\small\item\em The mcoeff expansion class. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The M\-Coeff expansion class operator +. \end{DoxyCompactList}\item 
 \hyperlink{classCMCoeff}{C\-M\-Coeff} \hyperlink{mcoeff_8h_a2f5f513c1e1864710b85443edbbc311a}{operator-\/} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M1, const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M2)
-\begin{DoxyCompactList}\small\item\em The mcoeff expansion class. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The M\-Coeff expansion class operator -\/. \end{DoxyCompactList}\item 
 \hyperlink{classCMCoeff}{C\-M\-Coeff} \hyperlink{mcoeff_8h_a33f855dbf0c86d35853f618e3494db87}{conj} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M)
-\begin{DoxyCompactList}\small\item\em The mcoeff expansion class. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The mcoeff expansion conj function. \end{DoxyCompactList}\item 
 \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{mcoeff_8h_a90c84c259a220e291cebf52d99560c61}{inprod} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M1, const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&M2)
-\begin{DoxyCompactList}\small\item\em The mcoeff expansion class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The mcoeff inprod function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
@@ -64,9 +64,9 @@ class \hyperlink{classCMCoeff}{C\-M\-Coeff}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{mcoeff_8h_a33f855dbf0c86d35853f618e3494db87}
 
 
-The mcoeff expansion class. 
+The mcoeff expansion conj function. 
 
-The class that contains all details for a mcoeff ?? \hypertarget{mcoeff_8h_a90c84c259a220e291cebf52d99560c61}{\index{mcoeff.\-h@{mcoeff.\-h}!inprod@{inprod}}
+Function that computes and returns the complex conjugate of a matrix. \hypertarget{mcoeff_8h_a90c84c259a220e291cebf52d99560c61}{\index{mcoeff.\-h@{mcoeff.\-h}!inprod@{inprod}}
 \index{inprod@{inprod}!mcoeff.h@{mcoeff.\-h}}
 \subsubsection[{inprod}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-A\-L} inprod (
 \begin{DoxyParamCaption}
@@ -76,9 +76,16 @@ The class that contains all details for a mcoeff ?? \hypertarget{mcoeff_8h_a90c8
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{mcoeff_8h_a90c84c259a220e291cebf52d99560c61}
 
 
-The mcoeff expansion class. 
+The mcoeff inprod function. 
 
-The class that contains all details for a mcoeff ?? \hypertarget{mcoeff_8h_a4bebac156440468c712dfce37bc9fc7c}{\index{mcoeff.\-h@{mcoeff.\-h}!operator$\ast$@{operator$\ast$}}
+Function that computes the inner product of two M\-Coeff objects 
+\begin{DoxyParams}{Parameters}
+{\em M1} & one M\-Coeff input \\
+\hline
+{\em M2} & the other M\-Coeff input \\
+\hline
+\end{DoxyParams}
+\hypertarget{mcoeff_8h_a4bebac156440468c712dfce37bc9fc7c}{\index{mcoeff.\-h@{mcoeff.\-h}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!mcoeff.h@{mcoeff.\-h}}
 \subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-M\-Coeff} operator$\ast$ (
 \begin{DoxyParamCaption}
@@ -88,9 +95,9 @@ The class that contains all details for a mcoeff ?? \hypertarget{mcoeff_8h_a4beb
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{mcoeff_8h_a4bebac156440468c712dfce37bc9fc7c}
 
 
-The mcoeff expansion class. 
+The M\-Coeff expansion class operator $\ast$. 
 
-The class that contains all details for a mcoeff ?? \hypertarget{mcoeff_8h_ab6e8a538afe3d4f8de9c1fa4904479ec}{\index{mcoeff.\-h@{mcoeff.\-h}!operator+@{operator+}}
+Function that multiplies the M\-Coeff by a floating point \hypertarget{mcoeff_8h_ab6e8a538afe3d4f8de9c1fa4904479ec}{\index{mcoeff.\-h@{mcoeff.\-h}!operator+@{operator+}}
 \index{operator+@{operator+}!mcoeff.h@{mcoeff.\-h}}
 \subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-M\-Coeff} operator+ (
 \begin{DoxyParamCaption}
@@ -100,9 +107,9 @@ The class that contains all details for a mcoeff ?? \hypertarget{mcoeff_8h_ab6e8
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{mcoeff_8h_ab6e8a538afe3d4f8de9c1fa4904479ec}
 
 
-The mcoeff expansion class. 
+The M\-Coeff expansion class operator +. 
 
-The class that contains all details for a mcoeff ?? \hypertarget{mcoeff_8h_a2f5f513c1e1864710b85443edbbc311a}{\index{mcoeff.\-h@{mcoeff.\-h}!operator-\/@{operator-\/}}
+Function that adds one M\-Coeff object to another \hypertarget{mcoeff_8h_a2f5f513c1e1864710b85443edbbc311a}{\index{mcoeff.\-h@{mcoeff.\-h}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!mcoeff.h@{mcoeff.\-h}}
 \subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-M\-Coeff} operator-\/ (
 \begin{DoxyParamCaption}
@@ -112,6 +119,6 @@ The class that contains all details for a mcoeff ?? \hypertarget{mcoeff_8h_a2f5f
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{mcoeff_8h_a2f5f513c1e1864710b85443edbbc311a}
 
 
-The mcoeff expansion class. 
+The M\-Coeff expansion class operator -\/. 
 
-The class that contains all details for a mcoeff ?? 
+Function that subtracts one M\-Coeff object from another 

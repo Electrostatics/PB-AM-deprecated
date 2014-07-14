@@ -1,8 +1,8 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$classCPDB.html#a3033b818c15dea1b6df7c3b354a8d044" title="The PDB function loadFromPDB." alt="" coords="199,157,350,184"/>
-<area shape="rect" id="node21" href="$classCProtein.html#a199bba5ba36900bdad8fd34bc0cc5342" title="CProtein::getCharge" alt="" coords="204,208,345,235"/>
-<area shape="rect" id="node23" href="$classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb" title="CProtein::setPos" alt="" coords="213,259,336,285"/>
-<area shape="rect" id="node25" href="$classCProtein.html#a8d680f9e8b07520eedfe5b43f50d1c03" title="CProtein::getNumCharges" alt="" coords="187,309,363,336"/>
+<area shape="rect" id="node21" href="$classCProtein.html#a199bba5ba36900bdad8fd34bc0cc5342" title="The protein getCharge." alt="" coords="204,208,345,235"/>
+<area shape="rect" id="node23" href="$classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb" title="The protein setPos." alt="" coords="213,259,336,285"/>
+<area shape="rect" id="node25" href="$classCProtein.html#a8d680f9e8b07520eedfe5b43f50d1c03" title="The protein getNumCharges." alt="" coords="187,309,363,336"/>
 <area shape="rect" id="node5" href="$classCPDB.html#acdc2ba2ed5bb4dc8701577e29c0f4bf9" title="The PDB function readLine." alt="" coords="426,31,539,57"/>
 <area shape="rect" id="node11" href="$classCAtom.html#a6af9e202834bac9613129184d62e1c19" title="CAtom::getResNum" alt="" coords="412,81,553,108"/>
 <area shape="rect" id="node13" href="$classAA.html#a77290c917ac630708465bb700c9a1d91" title="AA::clear" alt="" coords="445,132,521,159"/>

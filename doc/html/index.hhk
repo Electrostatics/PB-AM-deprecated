@@ -234,7 +234,6 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#aee8dd608bd75c7d0415da2746f54acee"><param name="Name" value="CMPE"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#ab825df6d8ab377af3715b86e3a495e34"><param name="Name" value="computeForce"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#a7724d01cc2dc82b19e90e723ed2ba050"><param name="Name" value="computeForceAt"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#ab494bf000a7dec9410d23a5f47204baf"><param name="Name" value="computePairPot"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#a8a6b260459ff6af55260e2c7897f3bd0"><param name="Name" value="computePotAt"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#a047394488b2ce41894b336b6a1d8e30a"><param name="Name" value="getOrder"></OBJECT>
@@ -246,8 +245,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#adf1757fa41fec1996e7ca1c7fe6fc9e0"><param name="Name" value="m_unit"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#a17b9196644f13740f99675a5a0d8ef23"><param name="Name" value="ngpol"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#afc7b0e78e954f7bb1419864a70c4d0b7"><param name="Name" value="ngpol_t"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#a5e34c1f47c24748db2704af61b370fc0"><param name="Name" value="npol"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#a4e0a6b27c4cd14dd576fe94854c8d58d"><param name="Name" value="npol_t"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#ab6f4e1fc5fe634c04841e691903d8029"><param name="Name" value="polarize"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#af10ee159904becb5add924aa48df3c56"><param name="Name" value="reexpand"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#ae44b4e76215412230e279f34bd5b9fab"><param name="Name" value="reset"></OBJECT>
@@ -270,12 +267,10 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a3d071c05412cb0f2a423920d5ae000dc"><param name="Name" value="computeDistance"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCTransCoeff.html#a9fb52e0afd88150756506af029f86611"><param name="Name" value="computeError"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#ab825df6d8ab377af3715b86e3a495e34"><param name="Name" value="computeForce"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#a7724d01cc2dc82b19e90e723ed2ba050"><param name="Name" value="computeForceAt"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a7d6c3fb53c773ea006d123e35301d9b8"><param name="Name" value="computeForces"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#ab494bf000a7dec9410d23a5f47204baf"><param name="Name" value="computePairPot"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#a8a6b260459ff6af55260e2c7897f3bd0"><param name="Name" value="computePotAt"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCBD.html#afa41f280cb3eeb206e6e7c7e99332726"><param name="Name" value="computeRate"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#adba2a9646ab9e4d026192e124965a0b3"><param name="Name" value="computeTransformTo"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a33f855dbf0c86d35853f618e3494db87"><param name="Name" value="conj"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMCoeff.html#a33f855dbf0c86d35853f618e3494db87"><param name="Name" value="CMCoeff"></OBJECT>
@@ -333,7 +328,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a5999d9758c6552f1c329cb3b5612485d"><param name="Name" value="CHARGES"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a3d071c05412cb0f2a423920d5ae000dc"><param name="Name" value="computeDistance"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a7d6c3fb53c773ea006d123e35301d9b8"><param name="Name" value="computeForces"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#adba2a9646ab9e4d026192e124965a0b3"><param name="Name" value="computeTransformTo"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#add7b99ce966900c95f6a0b5ce1d644ac"><param name="Name" value="CProtein"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a61914554b1b927e7f2bfa4c12c78ba0a"><param name="Name" value="getAtom"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#ae44ab2afca86374611113fa26e8c1b2f"><param name="Name" value="getAtoms"></OBJECT>
@@ -349,8 +343,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#afb3fe3188e1a61488295b4fcdb3664e6"><param name="Name" value="inCollision"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#aeff60f05cbd42168359f75187b9ac888"><param name="Name" value="initParameters"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a60767b1667e57c9a68045a6c148799cd"><param name="Name" value="isInitialized"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#af6187aab0e8c8d59f60ddfed41ee7bd2"><param name="Name" value="PDBoutput"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a14c964f72704f17611aa0b941ad50ff0"><param name="Name" value="QCDoutput"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a2ab8b5e61cd26aafde2841b6b3655d45"><param name="Name" value="rotate"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a40f7c9e8d7b4717e00027b0c92ad109b"><param name="Name" value="setOrient"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a890bc62459bae1a93b67e90cdcef18eb"><param name="Name" value="setPos"></OBJECT>
@@ -708,8 +700,6 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="util_8h.html#a3daa70c1884dabb0992d5ce98e3f692a"><param name="Name" value="normRand"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCPnt.html#ac4dcf209c35c4ef0c119cd59fbddd18f"><param name="Name" value="normsq"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#a5e34c1f47c24748db2704af61b370fc0"><param name="Name" value="npol"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCMPE.html#a4e0a6b27c4cd14dd576fe94854c8d58d"><param name="Name" value="npol_t"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classAA.html#a8717db02e7eeaac316898736843fa600a2362193b9e548fbc61b1b502e539f176"><param name="Name" value="NTR"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="pdb_8h.html#aaa82008f92b935630ccf49c27a4bcc6e"><param name="Name" value="NUM_AAS"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="pdb_8h.html#a39e506e6b2b0a7caa66b2ad2dba6ef24"><param name="Name" value="NUM_ELEM"></OBJECT>
@@ -808,7 +798,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="pdb_8h.html#a39e506e6b2b0a7caa66b2ad2dba6ef24"><param name="Name" value="NUM_ELEM"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="pdb_8h.html#a97e57794bbd80e909807f0ac940cc4f7"><param name="Name" value="NUM_PLACES"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#af6187aab0e8c8d59f60ddfed41ee7bd2"><param name="Name" value="PDBoutput"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#aa47d8f951ab91c51da9b69f787f18030"><param name="Name" value="perturb"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classAA.html#a8717db02e7eeaac316898736843fa600ab61eea814f02c0bfb8ad583be990c0b7"><param name="Name" value="PHE"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCSpPnt.html#af4f411d4a656dfec7c5a69ba065dbe1d"><param name="Name" value="phi"></OBJECT>
@@ -825,7 +814,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="protein_8cpp.html#aac4cbf64d7084205e04bc1b1569baf05"><param name="Name" value="PARAM_FILE"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#aa65e1d68e66a51e68853cc6de4171c27"><param name="Name" value="q_DIST"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="classCProtein.html#a14c964f72704f17611aa0b941ad50ff0"><param name="Name" value="QCDoutput"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="util_8h.html#a491783063d690a2f389e3317f44dd0b7"><param name="Name" value="randOrient"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classCPDB.html#acdc2ba2ed5bb4dc8701577e29c0f4bf9"><param name="Name" value="readline"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="BD_8cpp.html#a050f85eeb4bca700634b0c552f7d32e2"><param name="Name" value="readmdp"></OBJECT>

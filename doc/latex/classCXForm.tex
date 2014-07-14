@@ -20,17 +20,17 @@ The X\-Form class.
 void \hyperlink{classCXForm_a9fe5afbc751e5d8a8d48aa20471c84a5}{init} (const \hyperlink{classCPnt}{C\-Pnt} \&P, int p)
 \item 
 void \hyperlink{classCXForm_aa86ee5b2fefaf70e9f914966555aa6ef}{xform} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCGradCoeff}{C\-Grad\-Coeff} \&Gout, bool b\-For)
-\item 
+\begin{DoxyCompactList}\small\item\em The X\-Form class xform function. \end{DoxyCompactList}\item 
 void \hyperlink{classCXForm_a1680a3a028017a27dea361e6af92f1fb}{xform} (const \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Min, \hyperlink{classCMCoeff}{C\-M\-Coeff} \&Mout, bool b\-For)
-\item 
+\begin{DoxyCompactList}\small\item\em The X\-Form class xform function. \end{DoxyCompactList}\item 
 void \hyperlink{classCXForm_a7c8028608cadb13dfa6320be661256d6}{xform} (const \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&Gin, \hyperlink{classCTriCoeff}{C\-Tri\-Coeff} \&Gout, bool b\-For)
-\item 
+\begin{DoxyCompactList}\small\item\em The X\-Form class xform function. \end{DoxyCompactList}\item 
 void \hyperlink{classCXForm_a4e9f8fd4d9fd24150cd357f724fa10c1}{reset} (const \hyperlink{classCPnt}{C\-Pnt} \&P, int p)
-\item 
+\begin{DoxyCompactList}\small\item\em The X\-Form class reset function. \end{DoxyCompactList}\item 
 void \hyperlink{classCXForm_a092244b7fc2a15139d8aefac7600c549}{sph\-To\-Cart} (\hyperlink{classCPnt}{C\-Pnt} \&p)
-\item 
+\begin{DoxyCompactList}\small\item\em The X\-Form class sph\-To\-Cart function. \end{DoxyCompactList}\item 
 void \hyperlink{classCXForm_abfae99a00642489f3431c8114112a608}{sph\-To\-Cart} (\hyperlink{classCGradCoeff}{C\-Grad\-Coeff} \&Gin)
-\item 
+\begin{DoxyCompactList}\small\item\em The X\-Form class sph\-To\-Cart function. \end{DoxyCompactList}\item 
 int \hyperlink{classCXForm_afb77c0beb4e49769b0eadb717b2d1179}{get\-Order} () const 
 \item 
 \hyperlink{util_8h_a5821460e95a0800cf9f24c38915cbbde}{R\-E\-A\-L} \hyperlink{classCXForm_aa25c50b2811830ca8e54853a143e5dde}{get\-Error} () const 
@@ -57,7 +57,7 @@ static void \hyperlink{classCXForm_a69329814cc3fdf98afabaebb57305886}{init\-Cons
 \subsection{Detailed Description}
 The X\-Form class. 
 
-The class that contains all details for a transform ?? 
+The class that contains all details for the re-\/expansion operator (section 4.\-1 of the Lotan 2006 paper) 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classCXForm_a3079705401c30fcd28c9b6adc9fff542}{\index{C\-X\-Form@{C\-X\-Form}!C\-X\-Form@{C\-X\-Form}}
@@ -96,7 +96,7 @@ The constructor creates an X\-Form class from two matrix coefficients M1 and M2
 {}
 \end{DoxyParamCaption}
 )}}\label{classCXForm_a903c633f1ac0756230bcd383e35a1d85}
-
+Decrease the number of poles 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -129,7 +129,7 @@ Here is the call graph for this function\-:
 {}
 \end{DoxyParamCaption}
 )}}\label{classCXForm_a094937703c2d67ef29f5c12fbc65b438}
-
+Increase number of poles 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -190,6 +190,12 @@ Initialize the rotation coefficients and the translation coefficients \hypertarg
 \item[{int}]{p}
 \end{DoxyParamCaption}
 )}}\label{classCXForm_a4e9f8fd4d9fd24150cd357f724fa10c1}
+
+
+The X\-Form class reset function. 
+
+Reset the X\-Form object by the given X\-Y\-Z coords and p number of poles
+
 Initialize to a Mto\-L transform by the vector P. 
 
 Here is the call graph for this function\-:
@@ -213,7 +219,7 @@ Here is the call graph for this function\-:
 
 The X\-Form save\-Undo function. 
 
-Function that ? 
+Function that saves the current step, for cases of undo later 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -234,8 +240,16 @@ Here is the call graph for this function\-:
 )}}\label{classCXForm_a092244b7fc2a15139d8aefac7600c549}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+The X\-Form class sph\-To\-Cart function. 
+
+Convert a partial deriv in spherical coordinates to cartesian\-: \mbox{[}d\-F/dr, d\-F/dt, d\-F,dphi\mbox{]} to \mbox{[}d\-F/dx, d\-F/dy, d\-F,dz\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em p} & a 3 coordinate function F to convert\\
+\hline
+\end{DoxyParams}
+Convert a partial deriv in spherical coords to cartesian 
+
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -248,10 +262,19 @@ Here is the call graph for this function\-:
 \index{sph\-To\-Cart@{sph\-To\-Cart}!CXForm@{C\-X\-Form}}
 \subsubsection[{sph\-To\-Cart}]{\setlength{\rightskip}{0pt plus 5cm}void C\-X\-Form\-::sph\-To\-Cart (
 \begin{DoxyParamCaption}
-\item[{{\bf C\-Grad\-Coeff} \&}]{Gin}
+\item[{{\bf C\-Grad\-Coeff} \&}]{G}
 \end{DoxyParamCaption}
 )}}\label{classCXForm_abfae99a00642489f3431c8114112a608}
 
+
+The X\-Form class sph\-To\-Cart function. 
+
+Convert a partial deriv of Grad\-Coeff object in spherical to cartesian\-: 
+\begin{DoxyParams}{Parameters}
+{\em Gin} & a Grad\-Coeff object to convert\\
+\hline
+\end{DoxyParams}
+Convert a partial deriv of Grad\-Coeff object in spherical to cartesian 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -274,7 +297,7 @@ Here is the call graph for this function\-:
 
 The X\-Form undo function. 
 
-Function that ? 
+Function that replaces current X\-Form values with saved values to revert to an old state. 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -295,7 +318,20 @@ Here is the call graph for this function\-:
 \item[{bool}]{b\-For}
 \end{DoxyParamCaption}
 )}}\label{classCXForm_aa86ee5b2fefaf70e9f914966555aa6ef}
-Compute the derivatives of the transformed M\-P coeffs 
+
+
+The X\-Form class xform function. 
+
+The function takes a Matrix coefficient class and computes the gradient of it. 
+\begin{DoxyParams}{Parameters}
+{\em Min} & is a matrix coefficient for transformation \\
+\hline
+{\em Gout} & is a gradient coefficient object made from function \\
+\hline
+{\em b\-For} & is a boolean to indicate whether the input should be transposed for translation coefficients\\
+\hline
+\end{DoxyParams}
+Compute the derivatives of the transformed M\-P coeffs, using E\-Q 47 of Lotan 2006. 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -316,7 +352,20 @@ Here is the call graph for this function\-:
 \item[{bool}]{b\-For}
 \end{DoxyParamCaption}
 )}}\label{classCXForm_a1680a3a028017a27dea361e6af92f1fb}
-Transform the M\-P coeffs 
+
+
+The X\-Form class xform function. 
+
+The function takes a Matrix coefficient class and computes the re-\/expansion of it, Z= T dot X 
+\begin{DoxyParams}{Parameters}
+{\em Min} & is a matrix coefficient for transformation \\
+\hline
+{\em Mout} & is a re-\/expanded coefficient object made from function \\
+\hline
+{\em b\-For} & is a boolean to indicate whether the input should be transposed for translation coefficients\\
+\hline
+\end{DoxyParams}
+Transform the M\-P coeffs, from the formula given for Mout = T dot Min from Lotan 2006, E\-Q 46. 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -337,6 +386,19 @@ Here is the call graph for this function\-:
 \item[{bool}]{b\-For}
 \end{DoxyParamCaption}
 )}}\label{classCXForm_a7c8028608cadb13dfa6320be661256d6}
+
+
+The X\-Form class xform function. 
+
+The function takes a triplet matrix coefficient class and computes the re-\/expansion of the three matrices, Z= T dot X 
+\begin{DoxyParams}{Parameters}
+{\em Gin} & is a triplet matrix coefficient for transformation \\
+\hline
+{\em Gout} & is a re-\/expanded triplet coefficient object made from function \\
+\hline
+{\em b\-For} & is a boolean to indicate whether the input should be transposed for translation coefficients\\
+\hline
+\end{DoxyParams}
 Transform the M\-P coeff triplet. 
 
 Here is the call graph for this function\-:

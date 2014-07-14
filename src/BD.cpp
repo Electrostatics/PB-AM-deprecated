@@ -871,9 +871,6 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
   for (int k = 0; k < ct; k++)
 	{
 		cout << "------ " << k << " -------" << endl;
-		//for (int i = 0; i < cen.size(); i++)
-		//	cout << *(cen[i]);
-		//cout << endl;
 		for (int j = 0; j < num; j++)
 		{
 			per[j] = CBD::getRandVec(sqrt(2*dt*Dtr));
@@ -886,8 +883,15 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 		
 		for (int i = 0; i < cen.size(); i++)
 			cout << *(cen[i]);
+		cout << endl;
 		
 		CMPE::updateSolve(mpe, cen);
+
+		cout << "Done in perturb of setting orient " << endl;
+		for (int i = 0; i < num; i++)
+			mpe[i]->saveUndo();
+
+		
 		//CMPE::computeForce(mpe, cen, force, torque);
 		
 	/*	fout << CMPE::npol << " " << CMPE::npol_t << " ";
@@ -896,7 +900,6 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 		fout << endl;
 	*/	
 	
-		cout << "  within perturb" << endl;
 					
 		CMPE::undoXForms();
 		for (int i = 0; i < num; i++)
@@ -1052,7 +1055,6 @@ int main3(int argc, char ** argv)
 		{
 			CQuat Q = CQuat::chooseRandom();
 			mpe[j]->reset(12, Q);
-			cout << "Done reset of iter " << i << " and mol " << j << endl;
 		}
 		
 		CMPE::solve(mpe,cen,false);

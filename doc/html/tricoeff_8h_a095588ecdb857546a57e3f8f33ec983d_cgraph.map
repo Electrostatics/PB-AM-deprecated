@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="CMCoeff::getOrder" alt="" coords="115,5,248,32"/>
-<area shape="rect" id="node5" href="$classCTriCoeff.html#a0190ac9feab5bb2cb5e04ea48539b2fe" title="CTriCoeff::getOrder" alt="" coords="113,56,250,83"/>
-<area shape="rect" id="node7" href="$mcoeff_8h.html#a90c84c259a220e291cebf52d99560c61" title="The mcoeff expansion class." alt="" coords="153,107,210,133"/>
+<area shape="rect" id="node3" href="$classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="The mcoeff class getOrder fuction." alt="" coords="115,5,248,32"/>
+<area shape="rect" id="node5" href="$classCTriCoeff.html#a0190ac9feab5bb2cb5e04ea48539b2fe" title="The CTriCoeff getOrder function." alt="" coords="113,56,250,83"/>
+<area shape="rect" id="node7" href="$mcoeff_8h.html#a90c84c259a220e291cebf52d99560c61" title="The mcoeff inprod function." alt="" coords="153,107,210,133"/>
 </map>

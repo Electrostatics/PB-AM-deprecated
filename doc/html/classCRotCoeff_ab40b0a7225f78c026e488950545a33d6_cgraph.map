@@ -1,7 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="CMCoeff::getOrder" alt="" coords="209,5,343,32"/>
-<area shape="rect" id="node5" href="$classCMCoeff.html#a815a4d1f74b217ea54d9f05f6734004f" title="CMCoeff::setOrder" alt="" coords="209,56,343,83"/>
+<area shape="rect" id="node3" href="$classCMCoeff.html#a4ca84260f5a63a33547ebce310b21c32" title="The mcoeff class getOrder fuction." alt="" coords="209,5,343,32"/>
+<area shape="rect" id="node5" href="$classCMCoeff.html#a815a4d1f74b217ea54d9f05f6734004f" title="The mcoeff class setOrder fuction." alt="" coords="209,56,343,83"/>
 <area shape="rect" id="node7" href="$classCRotCoeff.html#a4668070c3eacacf17be98bc2fb348287" title="CRotCoeff::isSingular" alt="" coords="201,107,351,133"/>
-<area shape="rect" id="node9" href="$classCMCoeff.html#a6e7e750022bf6a6f32dff9092881647c" title="CMCoeff::recip" alt="" coords="221,157,331,184"/>
-<area shape="rect" id="node11" href="$mcoeff_8h.html#a33f855dbf0c86d35853f618e3494db87" title="The mcoeff expansion class." alt="" coords="253,208,299,235"/>
+<area shape="rect" id="node9" href="$classCMCoeff.html#a6e7e750022bf6a6f32dff9092881647c" title="The mcoeff class recip fuction." alt="" coords="221,157,331,184"/>
+<area shape="rect" id="node11" href="$mcoeff_8h.html#a33f855dbf0c86d35853f618e3494db87" title="The mcoeff expansion conj function." alt="" coords="253,208,299,235"/>
 </map>

@@ -118,7 +118,7 @@ public:
 		\param j an integer of the index of the second molecule of interest
 		\param p1 a floating point of the potential on molecule 1
 		\param p2 a floating point of the potential on molecule 2 */
-  //static void computePairPot(const vector<CMPE*> & mpe, int i, int j, REAL & p1, REAL & p2);
+  static void computePairPot(const vector<CMPE*> & mpe, int i, int j, REAL & p1, REAL & p2);
 
 		//!  The MPE setOrient function
 	/*! Function that sets the orientation of the MPE object given a quaternion

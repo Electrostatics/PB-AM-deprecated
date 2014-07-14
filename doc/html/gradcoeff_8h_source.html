@@ -96,26 +96,26 @@
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">inline</span> <a class="code" href="classCGradCoeff.html" title="The GradCoeff expansion class.">CGradCoeff</a> </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="classCGradCoeff.html#ae5711114b36c80f3547ec0857e476500">   64</a></span>&#160;<a class="code" href="classCGradCoeff.html#ae5711114b36c80f3547ec0857e476500" title="The GradCoeff function sphToCart.">CGradCoeff::sphToCart</a>(<span class="keyword">const</span> <a class="code" href="classCPnt.html" title="The cartesian coordinate class.">CPnt</a> * R)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="classCGradCoeff.html" title="The GradCoeff expansion class.">CGradCoeff</a> G(getOrder());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; i++)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        G.<a class="code" href="classCTriCoeff.html#afac3ecb3b5c965a7ba4cc0409c2100e8">m_M</a>[0] += R[i].<a class="code" href="classCPnt.html#a5867d45fc05ae371116367067eb23f48">x</a>()*m_M[i];</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        G.<a class="code" href="classCTriCoeff.html#afac3ecb3b5c965a7ba4cc0409c2100e8">m_M</a>[1] += R[i].<a class="code" href="classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec">y</a>()*m_M[i];</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        G.<a class="code" href="classCTriCoeff.html#afac3ecb3b5c965a7ba4cc0409c2100e8">m_M</a>[2] += R[i].<a class="code" href="classCPnt.html#a37d139ebe50234ab753472b896c7d17c">z</a>()*m_M[i];</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> G;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">inline</span> <a class="code" href="classCGradCoeff.html" title="The GradCoeff expansion class.">CGradCoeff</a> </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="classCGradCoeff.html#ae5711114b36c80f3547ec0857e476500">   66</a></span>&#160;<a class="code" href="classCGradCoeff.html#ae5711114b36c80f3547ec0857e476500" title="The GradCoeff function sphToCart.">CGradCoeff::sphToCart</a>(<span class="keyword">const</span> <a class="code" href="classCPnt.html" title="The cartesian coordinate class.">CPnt</a> * R)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="classCGradCoeff.html" title="The GradCoeff expansion class.">CGradCoeff</a> G(getOrder());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; i++)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        G.<a class="code" href="classCTriCoeff.html#afac3ecb3b5c965a7ba4cc0409c2100e8" title="The three matrix coefficients that comprise the object.">m_M</a>[0] += R[i].<a class="code" href="classCPnt.html#a5867d45fc05ae371116367067eb23f48">x</a>()*m_M[i];</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        G.<a class="code" href="classCTriCoeff.html#afac3ecb3b5c965a7ba4cc0409c2100e8" title="The three matrix coefficients that comprise the object.">m_M</a>[1] += R[i].<a class="code" href="classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec">y</a>()*m_M[i];</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        G.<a class="code" href="classCTriCoeff.html#afac3ecb3b5c965a7ba4cc0409c2100e8" title="The three matrix coefficients that comprise the object.">m_M</a>[2] += R[i].<a class="code" href="classCPnt.html#a37d139ebe50234ab753472b896c7d17c">z</a>()*m_M[i];</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">return</span> G;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 10 2014 15:11:57 for PB Analytical by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 14 2014 16:00:29 for PB Analytical by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1
 </small></address>
