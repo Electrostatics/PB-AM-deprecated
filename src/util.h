@@ -229,20 +229,16 @@ public:
 	{ m_imag = q.m_imag; m_real = q.m_real; return *this; }
 
 //! CQuat identity
-/*!
-		Generate the identity quaternion, with imag parts set to (0,0,0)
-		and the real part to 1.0
-*/
+/*! Generate the identity quaternion, with imag parts set to (0,0,0)
+		and the real part to 1.0 */
   void identity()
 	{ m_imag.zero(); m_real = 1.0;}
   
   CQuat & operator*=(const CQuat & q);
 
 //! CQuat normalize
-/*!
-		Normalize the quaternion, compute the norm and then
-		reset the imaginary and real parts of the quaternion
-*/
+/*! Normalize the quaternion, compute the norm and then
+		reset the imaginary and real parts of the quaternion  */
   void normalize()
 	{ 
 		REAL in_norm = 1.0/sqrt(m_imag.normsq() + m_real*m_real);
@@ -250,9 +246,7 @@ public:
 	}  
 	
 //! CQuat conj
-/*!
-		Set the imaginary part to their conjugates.
-*/
+/*! Set the imaginary part to their conjugates. */
   void conj()
 	{ m_imag = -m_imag; }
 	
@@ -377,7 +371,7 @@ operator<<(ostream & out, const CPnt & p)
   return out;
 }
 
-//!  CSpPnt <
+//!  CSpPnt <<
 /*! Printing out a CSpPnt object */
 inline ostream & 
 operator<<(ostream & out, const CSpPnt & p)
@@ -524,9 +518,7 @@ normRand()
 }
 
 //!  seedRand 
-/*!
-		Generate a random number for random number seed.
-*/
+/*! Generate a random number for random number seed. */
 inline void
 seedRand(int s)
 {
