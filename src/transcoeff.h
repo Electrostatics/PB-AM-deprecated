@@ -5,17 +5,14 @@
 #include "shcoeff.h"
 
 //!  The transCoeff class
-/*!	
-	The class that contains all details for a translation coefficients, as
-	described by the appendix of Lotan 2006.   
-*/
+/*!	The class that contains all details for a translation coefficients, as
+	described by the appendix of Lotan 2006.   */
 class CTransCoeff
 {
  public:
  
 //!  The transCoeff class constructor
-/*!	
-		Constructing a transcoeff class, using input of whether or 
+/*!	Constructing a transcoeff class, using input of whether or 
 		not to compute the gradient
 		\param bGrad is a boolean indicating of whether or not to compute gradients
 						the default is yes  */ 
