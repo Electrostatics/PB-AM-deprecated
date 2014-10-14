@@ -1,0 +1,26 @@
+add_executable(mpe
+	BD.h
+	BD.cpp
+	gradcoeff.h
+	gradcoeff.cpp
+	mcoeff.h
+	mcoeff.cpp
+	mpe.h
+	mpe.cpp
+	pdb.h
+	pdb.cpp
+	protein.h
+	protein.cpp
+	rotcoeff.h
+	rotcoeff.cpp
+	shcoeff.h
+	shcoeff.cpp
+	torqcoeff.h
+	torqcoeff.cpp
+	transcoeff.h
+	transcoeff.cpp
+	tricoeff.h
+	tricoeff.cpp
+	util.h
+	xform.h
+	xform.cpp)
