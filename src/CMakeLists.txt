@@ -24,3 +24,5 @@ add_executable(mpe
 	util.h
 	xform.h
 	xform.cpp)
+
+install(TARGETS mpe RUNTIME DESTINATION bin)
