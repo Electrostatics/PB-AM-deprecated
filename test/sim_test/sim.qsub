@@ -5,5 +5,6 @@
 
 EXEC="../../bin/mpe"
 
-$EXEC sim 0.05 out.test 1  
+##$EXEC sim barnaseh.pdb barstarh.pdb 0.05 out.test 1  
+$EXEC sim barnase.pqr barstar.pqr 0.05 out.test 1  
 

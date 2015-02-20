@@ -18,6 +18,21 @@ class AA;
 */
 class CAtom {
  public:
+
+ //!  The Atom class constructor
+/*!
+		Creates an Atom class. using multiple inputs.  Maps the given atom to
+		it's OPLS partial charge.
+		\param acode an integer containing the atom code (atomic symbol)
+		\param rcode an integer containing the residue name
+		\param resnum an integer containing the residue number of atom
+		\param x a floating point containing the x coordinate of the atom
+		\param y a floating point containing the y coordinate of the atom
+		\param z a floating point containing the z coordinate of the atom
+		\param chg a floating point containing the charge of the atom
+		\param rad a floating point containing the radius of the atom
+*/
+  CAtom(int acode_, int rcode_, int resnum_, REAL x, REAL y, REAL z, REAL chg, REAL rad);
  
  //!  The Atom class constructor
 /*!
@@ -194,7 +209,6 @@ private:
 class CPDB
 {
  public:
- 
  //!  The PDB function loadFromPDB
 /*!
 		The function that opens a PDB and reads in the atoms in it, storing
@@ -203,6 +217,17 @@ class CPDB
 		\param a vector of amino acids to store information from PDB
 */
   static void loadFromPDB(const char * fname, vector<AA> & aas);
+ 
+ //!  The PDB function writeToPDB
+ 
+ //!  The PDB function loadFromPQR
+/*!
+		The function that opens a PDB and reads in the atoms in it, storing
+		each in their respective amino acid groups
+		\param fname a character string of the filename handle
+		\param a vector of amino acids to store information from PQR
+*/
+  static void loadFromPQR(const char * fname, vector<AA> & aas);
  
  //!  The PDB function writeToPDB
 /*!
@@ -225,15 +250,24 @@ class CPDB
 */
   static void writeLine(ostream & fout, int index, const char * chainid,
 													const CAtom & atom, const CQuat & rot, const CPnt & trans);
+
+ //!  The PDB function readLinePQR
+/*!
+		The function called by loadFromPQR to read in a line and
+		store as a CAtom class object
+		\param buf a string from the PQR file
+		\return CAtom object of the atom information contained on the line
+*/	
+	static CAtom readlinePQR(const char * buf);
   
- //!  The PDB function readLine
+ //!  The PDB function readLinePDB
 /*!
 		The function called by loadFromPDB to read in a line and
 		store as a CAtom class object
 		\param buf a string from the PDB file
 		\return CAtom object of the atom information contained on the line
 */	
-	static CAtom readline(const char * buf);
+	static CAtom readlinePDB(const char * buf);
 };  //end CPDB
 
 

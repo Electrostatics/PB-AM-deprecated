@@ -77,15 +77,25 @@ CProtein::loadChargeMap()
 CProtein::CProtein(const char * fname)
 {
   vector<AA> aas;
-  CPDB::loadFromPDB(fname, aas);
+	string ss = fname;
+
+	if (ss.find("pdb") != std::string::npos)
+	{	
+		CPDB::loadFromPDB(fname, aas);
+	} else if (ss.find("pqr") != std::string::npos)
+	{
+		CPDB::loadFromPQR(fname, aas);
+	}
+		
+	for (int i = 0; i < aas.size(); i++)							// Add each atom in each amino acid of 
+		for (int j = 0; j < aas[i].getNumAtoms(); j++)	// protein to matrix of atoms
+			m_atoms.push_back(aas[i][j]);
 	
-  for (int i = 0; i < aas.size(); i++)							// Add each atom in each amino acid of 
-    for (int j = 0; j < aas[i].getNumAtoms(); j++)	// protein to matrix of atoms
-      m_atoms.push_back(aas[i][j]);
-	
-  for (int i = 0; i < m_atoms.size(); i++)				// Add charge on atom in each amino acid to vector of charges
-    if (m_atoms[i].getCharge() != 0.0)
-      m_chargedAtoms.push_back(&(m_atoms[i]));
+	for (int i = 0; i < m_atoms.size(); i++)				// Add charge on atom in each amino acid to vector of charges
+	{
+		if (m_atoms[i].getCharge() != 0.0)
+				m_chargedAtoms.push_back(&(m_atoms[i]));
+	}
 	
   m_center = computeCenter();											// compute center of geometry if the atom
   for (int i = 0; i < m_atoms.size(); i++)				// reposition each atom WRT to the center of mass of protein

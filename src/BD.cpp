@@ -919,19 +919,20 @@ void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 ******************************************************************/
 int main1(int argc, char ** argv)
 {
-	if ( argc != 5 )
+	if ( argc != 7 )
 	{
 		cout << "Correct input format: " << endl;
-		cout << " ./exec sim [Salt conc] [outfile] [temp file #]" << endl;
+		cout << " ./exec sim [protein 1] [protein 2] [Salt conc] [outfile] [temp file #]" << endl;
 		exit(0);
 	}
   seedRand(-1);
 
-  REAL kappa = sqrt(atof(argv[2]))/3.04;				// Inverse debye length
-  CBD bd("barnaseh.pdb", "barstarh.pdb",kappa);
+  REAL kappa = sqrt(atof(argv[4]))/3.04;				// Inverse debye length
+ // CBD bd("barnaseh.pdb", "barstarh.pdb",kappa);
+  CBD bd(argv[2],argv[3],kappa);
   
-  ofstream fout(argv[3]);
-  sprintf(temp_file, "temp%d.out", atoi(argv[4]));
+  ofstream fout(argv[5]);
+  sprintf(temp_file, "temp%d.out", atoi(argv[6]));
 
   int cdock = 0;
   for (int i = 0; i < 50000; i++)

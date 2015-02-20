@@ -42,7 +42,7 @@ depend:
 #mpe.o: /usr/include/machine/endian.h /usr/include/ppc/endian.h
 #mpe.o: /usr/include/time.h /usr/include/gcc/darwin/3.3-fast/machine/limits.h
 #mpe.o: /usr/include/ppc/limits.h
-mpe.o: mpe.h util.h mcoeff.h gradcoeff.h tricoeff.h
+#mpe.o: mpe.h util.h mcoeff.h gradcoeff.h tricoeff.h
 mpe.o: torqcoeff.h xform.h shcoeff.h rotcoeff.h transcoeff.h protein.h pdb.h   
 protein.o: protein.h pdb.h util.h 
 #protein.o: /usr/include/sys/appleapiopts.h /usr/include/sys/types.h /usr/include/sys/time.h

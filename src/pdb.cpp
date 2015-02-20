@@ -1,5 +1,11 @@
 #include <fstream>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <sstream>
+#include <algorithm>
 #include <iostream>
+
 
 #include "pdb.h"
 #include "protein.h"
@@ -39,6 +45,17 @@ CAtom::CAtom(int acode_, int rcode_, int resnum_, REAL x, REAL y, REAL z) :
     m_charge = CProtein::CProtein::CHARGES[m_rcode][m_acode];  // set atom charge by mapping
 
   m_rad = 2.0;									// set atom radius to 2.0 A
+}
+
+/******************************************************************/
+/******************************************************************//**
+* The Atom class constructor
+******************************************************************/
+CAtom::CAtom(int acode_, int rcode_, int resnum_, REAL x, REAL y, REAL z, REAL chg, REAL rad) :
+  m_acode(acode_), m_rcode(rcode_), m_resnum(resnum_), m_pos(x, y, z), 
+  m_charge(chg), m_rad(rad)
+{
+  map<int,REAL>::const_iterator it = CProtein::CHARGES[m_rcode].find(m_acode);
 }
 
 /******************************************************************/
@@ -178,6 +195,56 @@ AA::getAACode(const char * aa)
 
 /******************************************************************/
 /******************************************************************//**
+* loadFromPQR
+* Inputs: pqr filename for protein, empty vector for amino acid seq
+******************************************************************/
+void CPDB::loadFromPQR(const char * fname, vector<AA> & aas)
+{
+  aas.clear();
+
+  ifstream fin(fname);
+  if (!fin.is_open())		// Checking for file
+    {
+      cout << "Could not open input file " << fname << endl;
+      exit(0);
+    }
+
+  char buf[200];
+  char aname[5], rname[5];
+  int curr_res = -1;
+  float x,y,z;
+  int i = 0;
+  AA aa;
+  bool first = true;
+  while (!fin.eof())
+    {
+      fin.getline(buf, 199);
+			
+			if (strncmp(buf, "ATOM", 4) != 0)  // If there is an atom in the current line
+				continue;
+
+      CAtom a = readlinePQR(buf);					// read it in with readLine function, return atom class with name, xyz etc
+     
+      if (a.getResNum() != curr_res)
+			{
+				if (!first)
+					aas.push_back(aa);
+				else 
+					first = false;
+
+				aa.clear();
+				aa.setType((AA::AACODE) a.getResCode());
+				curr_res = a.getResNum();
+			}
+
+      aa.insertAtom(a);
+    }
+  
+  aas.push_back(aa);
+}  // end loadFromPQR
+
+/******************************************************************/
+/******************************************************************//**
 * loadFromPDB
 * Inputs: pdb filename for protein, empty vector for amino acid seq
 ******************************************************************/
@@ -206,7 +273,7 @@ void CPDB::loadFromPDB(const char * fname, vector<AA> & aas)
 			if (strncmp(buf, "ATOM", 4) != 0)  // If there is an atom in the current line
 				continue;
 
-      CAtom a = readline(buf);					// read it in with readLine function, return atom class with name, xyz etc
+      CAtom a = readlinePDB(buf);					// read it in with readLine function, return atom class with name, xyz etc
      
       if (a.getResNum() != curr_res)
 			{
@@ -225,28 +292,67 @@ void CPDB::loadFromPDB(const char * fname, vector<AA> & aas)
   
   aas.push_back(aa);
 
-  /*
-  int p = 0;
-  vector<AA>::iterator it = aas.begin();
-  for (; it != aas.end(); it++)
-    {
-      vector<ATOM_>::iterator at = it->atoms.begin();
-      for (; at != it->atoms.end(); at++)
-	cout << at->name << " " << AA_NAMES[it->type] << " " << p << " " 
-	     << at->pos[0] << " " << at->pos[1] << " " << at->pos[2] << endl;
-
-	  p++;
-    }
-  */
 }  // end loadFromPDB
 
 /******************************************************************/
 /******************************************************************//**
-* readLine: read a line from a pdb file to obtain information about 
+* readLinePQR: read a line from a pdb file to obtain information about 
 * an atom
 ******************************************************************/
 CAtom
-CPDB::readline(const char * buf)
+CPDB::readlinePQR(const char * buf)
+{
+	string temp = string(buf);
+	float x,y,z,charge,radius;
+	int resnum;
+
+	//sscanf(buf,"%s %d %s %s %s %d %f %f %f %f %f")
+	
+	stringstream ss(temp);
+	istream_iterator<string> begin(ss);
+	istream_iterator<string> end;
+	vector<string> strings(begin, end);
+	//copy(strings.begin(), strings.end(), ostream_iterator<string>(cout, "\n"));
+
+	int i = strings.size();
+	if(i==11)
+	{
+		resnum = atoi(strings[5].c_str());
+		x = atof(strings[6].c_str());
+		y = atof(strings[7].c_str());
+		z = atof(strings[8].c_str());
+		charge = atof(strings[9].c_str());
+		radius = atof(strings[10].c_str());
+	} else if (i==10)
+	{
+		resnum = atoi(strings[4].c_str());
+		x = atof(strings[5].c_str());
+		y = atof(strings[6].c_str());
+		z = atof(strings[7].c_str());
+		charge = atof(strings[8].c_str());
+		radius = atof(strings[9].c_str());
+	} else 
+	{
+		cout<< "Incorrect PQR file format!" << endl; 
+		exit(0);
+	}
+
+	const char *achar;
+	achar = strings[2].c_str();
+  int acode = CAtom::getAtomCode(achar);
+  int rcode = AA::getAACode(strings[3].c_str());
+	
+  return CAtom(acode, rcode, resnum, x, y, z, charge, radius);
+} // end readLinePQR
+
+
+/******************************************************************/
+/******************************************************************//**
+* readLinePDB: read a line from a pdb file to obtain information about 
+* an atom
+******************************************************************/
+CAtom
+CPDB::readlinePDB(const char * buf)
 {
   int i = 12;
   while (buf[i] == ' ')
