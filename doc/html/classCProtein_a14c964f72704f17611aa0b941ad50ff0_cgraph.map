@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classCProtein.html#aaa51486082bb376c17cf272ed9ef6bca" title="CProtein::getRadius" alt="" coords="201,5,341,32"/>
-<area shape="rect" id="node5" href="$classCAtom.html#ad53ff83c6676d072a06694a4398b257d" title="CAtom::getPos" alt="" coords="215,56,327,83"/>
-<area shape="rect" id="node7" href="$classCPnt.html#a5867d45fc05ae371116367067eb23f48" title="CPnt::x" alt="" coords="237,107,304,133"/>
-<area shape="rect" id="node9" href="$classCPnt.html#ac9283f60e70f312ee1784de6c6ea5aec" title="CPnt::y" alt="" coords="237,157,304,184"/>
-<area shape="rect" id="node11" href="$classCPnt.html#a37d139ebe50234ab753472b896c7d17c" title="CPnt::z" alt="" coords="237,208,304,235"/>
-<area shape="rect" id="node13" href="$classCAtom.html#a909e61ce36305e5e923fd75d48ab6cb8" title="CAtom::getCharge" alt="" coords="205,259,336,285"/>
-</map>
