@@ -1,0 +1,10 @@
+#!/bin/bash
+#$ -cwd
+#$ -o inf.out
+#$ -j y
+
+EXEC="../../bin/mpe"
+
+$EXEC inf barnaseh.pqr 1 8  
+$EXEC inf barnaseh.pqr 2 8  
+

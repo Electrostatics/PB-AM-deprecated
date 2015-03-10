@@ -1,0 +1,11 @@
+#!/bin/bash
+#$ -cwd
+#$ -o slv.out
+#$ -j y
+
+EXEC="../../bin/mpe"
+
+$EXEC slv barnaseh.pqr 2 15.0  
+$EXEC slv barnaseh.pqr 4 15.0  
+$EXEC slv barnaseh.pqr 8 15.0  
+

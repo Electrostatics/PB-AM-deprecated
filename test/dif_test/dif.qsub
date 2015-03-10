@@ -1,0 +1,9 @@
+#!/bin/bash
+#$ -cwd
+#$ -o dif.out
+#$ -j y
+
+EXEC="../../bin/mpe"
+
+$EXEC dif barnaseh.pqr 4 15.0  
+
