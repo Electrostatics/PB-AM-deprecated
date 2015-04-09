@@ -54,7 +54,7 @@ class CTriCoeff
 // Operators
 //!  The CTriCoeff = operator
 /*! Function that sets on TriCoeff equal to another. */
-  const CTriCoeff & operator=(const CTriCoeff & G)
+  void operator=(const CTriCoeff & G)
     { m_M[0] = G.m_M[0]; m_M[1] = G.m_M[1]; m_M[2] = G.m_M[2]; }
 //!  The CTriCoeff [] operator
 /*! Function that returns the indexed matrix in the object. */

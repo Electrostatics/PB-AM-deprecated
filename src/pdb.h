@@ -57,7 +57,7 @@ class CAtom {
 	m_pos(a.m_pos), m_charge(a.m_charge), m_rad(a.m_rad) {}
 	
 	//!  The Atom class =
-  const CAtom & operator=(const CAtom & a)
+  const void operator=(const CAtom & a)
 	{ 
 		m_acode = a.m_acode; m_rcode = a.m_rcode; m_resnum = a.m_resnum;
 		m_pos = a.m_pos; m_charge = a.m_charge; m_rad = a.m_rad;

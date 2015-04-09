@@ -863,8 +863,9 @@ void buildGrid(const char * ifname, int num, REAL rad,
 void perturb(int ct, int num, ofstream & fout, REAL Dtr, REAL Dr, REAL dt,
 						 vector<CMPE*> & mpe, vector<CPnt*> & cen)
 {
-  CPnt per[num], rot;
-  CQuat Q0[num];
+  CPnt rot;
+  vector<CPnt> per(num);
+  vector<CQuat> Q0(num);
   for (int j = 0; j < num; j++)
     Q0[j] = mpe[j]->getOrient();
 	

@@ -57,7 +57,7 @@ CProtein::loadChargeMap()
       if (buf[0] == '#')
 	continue;
 
-      int r = sscanf(buf, "%s %s %g", &rname, &aname, &ch);
+      int r = sscanf(buf, "%s %s %g", rname, aname, &ch);
       if (r != 3)
 	{
 	  cout << "Bad input line in file " << PARAM_FILE 

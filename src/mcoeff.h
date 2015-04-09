@@ -84,7 +84,7 @@ public:
  
 	//!  The mcoeff class = operator
 	/*! Set the object to the left of = sign to the MCoeff object on the right of it */	 
-  CMCoeff & operator=(const CMCoeff & M)
+  void operator=(const CMCoeff & M)
   { m_M.assign(M.m_M.begin(), M.m_M.begin()+IDX[M.m_p]); m_p = M.m_p; }
 	
 	//!  The mcoeff class recip fuction
