@@ -112,7 +112,7 @@ CBD::run()
 			dO2.zero();
 		}
 
-    if (scount % 1000 == 0)																	// Print out details every 1000 steps
+    if (scount % 10 == 0)																	// Print out details every 1000 steps
 		{
 			CPnt t =  m_mol2->getPosition() - m_mol1->getPosition();
 			fout << scount << ") " << m_mol1->getPosition() 
@@ -936,7 +936,8 @@ int main1(int argc, char ** argv)
   sprintf(temp_file, "temp%d.out", atoi(argv[6]));
 
   int cdock = 0;
-  for (int i = 0; i < 50000; i++)
+  //for (int i = 0; i < 50000; i++)
+  for (int i = 0; i < 50; i++)
     {
       CBD::STATUS status = bd.run();
       if (status == CBD::DOCKED)
@@ -973,27 +974,28 @@ int main2(int argc, char ** argv)
  
   const char * ifname = argv[2];
   int num = atoi(argv[3]);
-  int dist = atoi(argv[4]);
+  double dist = atof(argv[4]);
   
   vector<CMPE*> mpe;
   vector<CPnt*> cen;
-  buildSystem(ifname, num, dist, false, mpe, cen);   // building a system of num equidistant mols
+  buildSystem(ifname, num, dist, true, mpe, cen);   // building a system of num equidistant mols
 
   CMPE::initXForms(mpe);
   CMPE::updateXForms(cen, mpe);
   CMPE::polarize(mpe, false); 
-  CMPE::updateXForms(cen, mpe);
-  CMPE::polarize(mpe, false); 
+  //CMPE::updateXForms(cen, mpe);
+  //CMPE::polarize(mpe, false); 
   
   vector<CPnt> force, torque;
   vector<REAL> pot(num);
   
-  REAL fact = 1.0; //COUL_K/DIELECTRIC_WATER*IKbT;
+  REAL fact = COUL_K/DIELECTRIC_WATER*IKbT;
   
   CMPE::computeForce(mpe, cen, pot, force, torque);
   for (int i = 0; i < num; i++)
     {
       cout << "MOLECULE #" << i+1 << endl;
+      cout << "\tPOSITION: " << (*cen[i]) << endl;
       cout << "\tENERGY: " << fact*pot[i] << endl;
       force[i] *= fact;
       torque[i] *= fact;

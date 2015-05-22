@@ -251,13 +251,13 @@ private:
   REAL m_rad;										//!< Radius of the sphere for this object of CMPE
 
 // Matrix coefficients for EQ 51, used for solving for A matrix of system
-  static CMCoeff m_tM;					//!< A temporary coefficient object for the multipole expansion
+  static CMCoeff m_tM;					//!< A transform coefficient object for the multipole expansion, L in paper
   CMCoeff m_M;									//!< A matrix coefficient object transformed by Gamma 									
 	CMCoeff m_rM;									//!< Coefficients multipole expansion, E in paper
-	CMCoeff m_pM;									//!< A gradient coefficient object for the current multipole expansion
+	CMCoeff m_pM;									//!< A gradient coefficient object for the current multipole expansion, A in paper
 	CMCoeff m_L;									//!< A coefficient object for the local expansion 
 
-	CGradCoeff m_dL;							//!< A 
+	CGradCoeff m_dL;							//!< A gradient of the local expansion 
   CTorqCoeff m_T;								//!< A coefficient matrix for torques of system.
 	CTorqCoeff m_rT;							//!< A rotated coefficient matrix for torques of system, the H matrix of EQ 41
   CRotCoeff m_rot;							//!< A rotation coefficient object for MPE

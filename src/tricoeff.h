@@ -85,6 +85,7 @@ class CTriCoeff
   friend CTriCoeff conj(const CTriCoeff & G);
   friend CPnt cross(const CTriCoeff & G1, const CTriCoeff & G2);
   friend CPnt inprod(const CMCoeff & M1, const CTriCoeff & M2);
+  friend CPnt inprod( const CTriCoeff & M2,const CMCoeff & M1);
   friend CTriCoeff operator+(const CTriCoeff & G1, const CTriCoeff & G2);
   friend CTriCoeff operator-(const CTriCoeff & G1, const CTriCoeff & G2);	
   static REAL computeDev(const CTriCoeff & G1, const CTriCoeff & G2);
@@ -216,6 +217,21 @@ inprod(const CMCoeff & M1, const CTriCoeff & M2)
 
   return CPnt(inprod(M1, M2.m_M[0]), inprod(M1, M2.m_M[1]), 
 	      inprod(M1, M2.m_M[2]));
+}
+
+//!  The CTriCoeff inprod function
+/*! Function that computes the inner product between a matrix coeff
+			object and a TriCoeff object: [ M1 dot M2[0], M1 dot M2[1], M1 dot M2[2] ]
+			\param M1 a MCoeff object
+			\param M2 a TriCoeff object  
+			\return A cartesian vector object of inner products, depicted above */
+inline CPnt
+inprod(const CTriCoeff & M2, const CMCoeff & M1)
+{
+  assert(M1.getOrder() == M2.getOrder());
+
+  return CPnt(inprod( M2.m_M[0], M1), inprod(M2.m_M[1], M1), 
+	      inprod(M2.m_M[2], M1));
 }
 
 //!  The CTriCoeff cross function

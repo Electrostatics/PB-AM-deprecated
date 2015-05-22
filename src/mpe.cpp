@@ -513,7 +513,8 @@ CMPE::prepareDTA(const vector<CMPE*> & mpe, int j)
 void
 CMPE::computeForceOn(vector<CMPE*> & mpe, CPnt & force, CPnt & torque, int i)
 {
-  force = inprod((m_pM+m_pM)-m_rM, m_dL); // EQ 37: <dL,A> + <L, dA>
+  force = -inprod(m_dL, (m_pM+m_pM)-m_rM); // EQ 37: <dL,A> + <L, dA>
+  //force = inprod(m_pM, m_dL) + inprod((*m_pG), m_L); // EQ 37: <dL,A> + <L, dA>
   torque = cross(m_dL, m_rT);							// EQ 41: H X dL
 }
 

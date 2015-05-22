@@ -97,7 +97,27 @@ sim_test
 
 Executes the BD simulation part of the code.  It requires the following input:
 	
-		./exec sim [Salt conc] [outfile] [temp file #]
+		./exec sim [pqr file 1] [pqr file 2] [Salt conc] [outfile] [temp file #]
+		The following files should be in the CWD: *pqr and charges_OPLS
+
+	And it outputs the following:
+
+	temp[temp file #].out 
+		A temp file that outputs parameters while running each BD run
+
+	[outfile]
+		A File that contains the outcome of each BD run. the first 
+		column is the status of the simulation at the end, the second
+		is the trajectory number and the last column is the step number
+
+ -------------------------
+
+sim_2sphere_test  
+
+Executes the BD simulation part of the code for two charged spheres in salty solution.  
+	It requires the following input:
+	
+		./exec sim [pqr file 1] [pqr file 2] [Salt conc] [outfile] [temp file #]
 		The following files should be in the CWD: *pqr and charges_OPLS
 
 	And it outputs the following:
@@ -124,6 +144,23 @@ slv_test
 
 	*.out 
 		A list of each molecule in the system and the energy, force and torque acting on it
+
+
+ -------------------------
+
+slv_2sphere_test
+
+	Computes the energies, forces and the torques on a system of 2 spheres containing a single charge,
+	placed equidistantly in a salty solution.  It requires the following input:
+
+		./exec slv [PQR file] [2, 4, 6 or 8 molecules] [distance between molecules]
+		The following files should be in the CWD: *pqr and charges_OPLS
+
+  And it outputs the following:		
+
+	*.out 
+		A list of each molecule in the system and the energy, force and torque acting on it
+
 
 
 

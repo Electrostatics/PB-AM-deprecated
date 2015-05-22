@@ -1,0 +1,48 @@
+SOLVE
+neg_charge.pqr: charges: 1, net charge: -0.3, radius: 1.85, cen: [16.797,53.685,31.795]
+saving files:
+	neg_cha_2P.mdp
+	neg_cha_2P_sp.mdp
+Building system is complete
+MOLECULE #1
+	POSITION: [0,0,9.35]
+	ENERGY: 0.0089032
+	FORCE: 0.0011332 [-0,-0,0.0011332]
+	TORQUE: 0 [0,0,0]
+MOLECULE #2
+	POSITION: [0,0,-9.35]
+	ENERGY: 0.0089104
+	FORCE: 0.0011343 [-0,-0,-0.0011343]
+	TORQUE: 0 [0,0,0]
+SOLVE
+pos_charge.pqr: charges: 1, net charge: 9, radius: 1.85, cen: [16.797,53.685,31.795]
+saving files:
+	pos_cha_2P.mdp
+	pos_cha_2P_sp.mdp
+Building system is complete
+MOLECULE #1
+	POSITION: [0,0,9.35]
+	ENERGY: 8.0194
+	FORCE: 1.0199 [-0,-0,1.0199]
+	TORQUE: 0 [0,0,0]
+MOLECULE #2
+	POSITION: [0,0,-9.35]
+	ENERGY: 8.0194
+	FORCE: 1.0209 [-0,-0,-1.0209]
+	TORQUE: 0 [0,0,0]
+SOLVE
+no_charge.pqr: charges: 1, net charge: 0, radius: 1.85, cen: [16.797,53.685,31.795]
+saving files:
+	no_cha_2P.mdp
+	no_cha_2P_sp.mdp
+Building system is complete
+MOLECULE #1
+	POSITION: [0,0,9.35]
+	ENERGY: 0
+	FORCE: 0 [-0,-0,-0]
+	TORQUE: 0 [0,0,0]
+MOLECULE #2
+	POSITION: [0,0,-9.35]
+	ENERGY: 0
+	FORCE: 0 [-0,-0,-0]
+	TORQUE: 0 [0,0,0]

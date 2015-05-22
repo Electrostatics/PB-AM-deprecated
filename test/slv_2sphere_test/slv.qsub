@@ -1,0 +1,11 @@
+#!/bin/bash
+#$ -cwd
+#$ -o slv.out
+#$ -j y
+
+EXEC="../../bin/mpe"
+
+$EXEC slv neg_charge.pqr 2 15.00  
+$EXEC slv pos_charge.pqr 2 15.00  
+$EXEC slv no_charge.pqr 2 15.00  
+

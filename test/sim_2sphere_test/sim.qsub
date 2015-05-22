@@ -1,0 +1,12 @@
+#!/bin/bash
+#$ -cwd
+#$ -o bd_sim.out
+#$ -j y
+
+EXEC="../../bin/mpe"
+##EXEC="/home/lfelberg/temp/pas4_JCTCitay/bin/mpe"
+
+##$EXEC sim pos_bd.pqr pos_bd.pqr  0.05 out.test 1
+$EXEC sim pos_bd.pqr neg_bd.pqr  0.05 out.test 2
+##$EXEC sim neg_bd.pqr neg_bd.pqr  0.05 out.test 3
+
