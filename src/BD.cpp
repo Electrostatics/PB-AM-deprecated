@@ -914,8 +914,8 @@ int main2(int argc, char **argv) {
 	CMPE::initXForms(mpe);
 	CMPE::updateXForms(cen, mpe);
 	CMPE::polarize(mpe, false);
-	// CMPE::updateXForms(cen, mpe);
-	// CMPE::polarize(mpe, false);
+	CMPE::updateXForms(cen, mpe);
+	CMPE::polarize(mpe, false);
 
 	vector<CPnt> force, torque;
 	vector<REAL> pot(num);
