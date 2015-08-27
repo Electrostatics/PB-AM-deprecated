@@ -76,6 +76,18 @@ private:
 	CQuat m_rot1, m_rot2;
 }; // end CBD
 
+// Run functions
+int run_sim(const char * protein1_file, const char * protein2_file,
+		double salt_concentration, const char * outfile, int temp_file_no);
+int run_slv(const char * ifname, int num, double dist);
+int run_per(const char * ifname, int num, int dist, REAL Dtr, REAL Dr,
+		const char * run_name);
+int run_pol(const char *ifname, int num, int dist, const char *run_name);
+int run_dif(const char * ifname, int num, REAL dist);
+int run_rad(const char *ifname, REAL fact);
+int run_cng(const char * ifname, REAL dist, const char * run_name);
+int run_inf(const char *ifname, int layer, REAL stretch);
+
 ///////////////////////////////////////////
 ///// Inline functions
 

@@ -852,21 +852,16 @@ void perturb(int ct, int num, ofstream &fout, REAL Dtr, REAL Dr, REAL dt,
  * \param fout an output file
  * \param ind an integer for temporary file index
  ******************************************************************/
-int main1(int argc, char **argv) {
-	if (argc != 7) {
-		cout << "Correct input format: " << endl;
-		cout << " ./exec sim [protein 1] [protein 2] [Salt conc] [outfile]"
-				" [temp file #]" << endl;
-		exit(0);
-	}
+int run_sim(const char * protein1_file, const char * protein2_file,
+		double salt_concentration, const char * outfile, int temp_file_no) {
 	seedRand(-1);
 
-	REAL kappa = sqrt(atof(argv[4])) / 3.04; // Inverse debye length
+	REAL kappa = sqrt(salt_concentration) / 3.04; // Inverse debye length
 	// CBD bd("barnaseh.pdb", "barstarh.pdb",kappa);
-	CBD bd(argv[2], argv[3], kappa);
+	CBD bd(protein1_file, protein2_file, kappa);
 
-	ofstream fout(argv[5]);
-	sprintf(temp_file, "temp%d.out", atoi(argv[6]));
+	ofstream fout(outfile);
+	sprintf(temp_file, "temp%d.out", temp_file_no);
 
 	int cdock = 0;
 	// for (int i = 0; i < 50000; i++)
@@ -877,9 +872,9 @@ int main1(int argc, char **argv) {
 		fout << CBD::STATUS_STRING[status] << " " << (int)status << " "
 				<< scount << endl;
 	}
-	fout << cdock << " " << argv[1] << endl;
+	fout << cdock << " " << "sim" << endl;
 	return 0;
-} // end main1
+} // end run_sim
 
 /******************************************************************/
 /******************************************************************//**
@@ -890,21 +885,9 @@ int main1(int argc, char **argv) {
  *              Values are: 2, 4, 6 or 8
  *   \param dist a floating point distance for molecule placement
  ******************************************************************/
-int main2(int argc, char **argv) {
-	if (argc != 5) {
-		cout << "Correct input format: " << endl;
-		cout << " ./exec slv [PQR file] [2, 4, 6 or 8 molecules]"
-				" [distance between molecules]" << endl;
-		exit(0);
-	}
-
-	cout << "SOLVE" << endl;
+int run_slv(const char * ifname, int num, double dist) {
 	seedRand(-1);
 	cout.precision(5);
-
-	const char *ifname = argv[2];
-	int num = atoi(argv[3]);
-	double dist = atof(argv[4]);
 
 	vector<CMPE *> mpe;
 	vector<CPnt *> cen;
@@ -934,7 +917,7 @@ int main2(int argc, char **argv) {
 	}
 
 	return 0;
-} // end main2
+} // end run_slv
 
 /******************************************************************/
 /******************************************************************//**
@@ -949,23 +932,9 @@ int main2(int argc, char **argv) {
  *             diffusion coefficient of input molecule
  *   \param a string containing the perturbation file name
  ******************************************************************/
-int main3(int argc, char **argv) {
-	if (argc != 9) {
-		cout << "Correct input format: " << endl;
-		cout << " ./exec per [PQR file] [2, 4, 6 or 8 molecules]"
-				" [distance between molecules] [translational diff. coeff]"
-				" [rotational diff coeff] [runname]" << endl;
-		exit(0);
-	}
+int run_per(const char * ifname, int num, int dist, REAL Dtr, REAL Dr,
+		const char * run_name) {
 	cout.precision(5);
-	cout << "PERTURB" << endl;
-
-	const char *ifname = argv[2];
-	int num = atoi(argv[3]);
-	int dist = atoi(argv[4]);
-	REAL Dtr = atof(argv[5]);
-	REAL Dr = atof(argv[6]);
-
 	seedRand(-1);
 
 	vector<CMPE *> mpe;
@@ -976,7 +945,7 @@ int main3(int argc, char **argv) {
 	cout << endl;
 
 	char fn[100];
-	sprintf(fn, "perturb_%s_%d_%d.txt", argv[7], num, dist);
+	sprintf(fn, "perturb_%s_%d_%d.txt", run_name, num, dist);
 	cout << fn << endl;
 	ofstream fout(fn);
 	CMPE::initXForms(mpe);
@@ -996,7 +965,7 @@ int main3(int argc, char **argv) {
 
 	return 0;
 	;
-} // end main3
+} // end run_per
 
 /******************************************************************/
 /******************************************************************//**
@@ -1012,20 +981,8 @@ int main3(int argc, char **argv) {
  *               distance for molecule placement
  *	\param a character string to describe the system
  ******************************************************************/
-int main4(int argc, char **argv) {
-	if (argc != 6) {
-		cout << "Correct input format: " << endl;
-		cout << " ./exec pol [PQR file] [2, 4, 6 or 8 molecules]"
-				" [distance between molecules] [runname]" << endl;
-		exit(0);
-	}
+int run_pol(const char *ifname, int num, int dist, const char *run_name) {
 	cout.precision(5);
-	cout << "POL" << endl;
-
-	const char *ifname = argv[2];
-	int num = atoi(argv[3]);
-	int dist = atoi(argv[4]);
-
 	seedRand(-1);
 
 	vector<CMPE *> mpe;
@@ -1036,8 +993,8 @@ int main4(int argc, char **argv) {
 	cout << endl;
 
 	char fn1[100], fn2[100];
-	sprintf(fn1, "polar_force_%s_%d_%d.txt", argv[5], num, dist);
-	sprintf(fn2, "polar_torque_%s_%d_%d.txt", argv[5], num, dist);
+	sprintf(fn1, "polar_force_%s_%d_%d.txt", run_name, num, dist);
+	sprintf(fn2, "polar_torque_%s_%d_%d.txt", run_name, num, dist);
 	ofstream fout1(fn1);
 	ofstream fout2(fn2);
 
@@ -1085,7 +1042,7 @@ int main4(int argc, char **argv) {
 
 	cout << endl;
 	return 0;
-} // end main4
+} // end run_pol
 
 /******************************************************************/
 /******************************************************************//**
@@ -1095,19 +1052,8 @@ int main4(int argc, char **argv) {
  *   \param num an integer number of molecules to introduce into system
  *   \param dist a floating point number for distance for molecule placement
  ******************************************************************/
-int main5(int argc, char **argv) {
-	if (argc != 5) {
-		cout << "Correct input format: " << endl;
-		cout << " ./exec dif [PQR file] [2, 4, 6 or 8 molecules]"
-				" [distance between molecules]" << endl;
-		exit(0);
-	}
+int run_dif(const char * ifname, int num, REAL dist) {
 	cout.precision(5);
-	cout << "GDIFF" << endl;
-
-	const char *ifname = argv[2];
-	int num = atoi(argv[3]);
-	REAL dist = atof(argv[4]);
 
 	seedRand(num + int(dist) * 100);
 
@@ -1131,7 +1077,7 @@ int main5(int argc, char **argv) {
 	buildGrid(ifname, num, rad, mpe, cen, fact);
 
 	return 0;
-} // end main5
+} // end run_dif
 
 /******************************************************************/
 /******************************************************************//**
@@ -1141,17 +1087,8 @@ int main5(int argc, char **argv) {
  *   \param ifname a character string describing the input file name
  *   \param fact a floating point scaling factor for the MPE radius
  ******************************************************************/
-int main6(int argc, char **argv) {
-	if (argc != 4) {
-		cout << "Correct input format: " << endl;
-		cout << " ./exec rad [PQR file] [scaling factor]" << endl;
-		exit(0);
-	}
+int run_rad(const char *ifname, REAL fact) {
 	cout.precision(5);
-	cout << "RAD" << endl;
-
-	const char *ifname = argv[2];
-	REAL fact = atof(argv[3]);
 
 	seedRand(-1);
 
@@ -1202,7 +1139,7 @@ int main6(int argc, char **argv) {
 	buildGrid(ifname, 1, rad1, mpe, cen, 1.0); // Build a potential grid
 
 	return 0;
-} // end of main6
+} // end of run_rad
 
 /******************************************************************/
 /******************************************************************//**
@@ -1217,18 +1154,8 @@ int main6(int argc, char **argv) {
  *   \param dist a floating point of the distance between two molecules
  *   \param a string for output for runname
  ******************************************************************/
-int main7(int argc, char **argv) {
-	if (argc != 5) {
-		cout << "Correct input format: " << endl;
-		cout << " ./exec cng [PQR file] [distance between molecles] [runname]"
-				<< endl;
-		exit(0);
-	}
+int run_cng(const char * ifname, REAL dist, const char * run_name) {
 	cout.precision(5);
-	cout << "CHANGE" << endl;
-
-	const char *ifname = argv[2];
-	REAL dist = atof(argv[3]);
 
 	seedRand(-1);
 
@@ -1261,7 +1188,7 @@ int main7(int argc, char **argv) {
 	REAL pi, pj;
 
 	char fn[100];
-	sprintf(fn, "%s_%dA.txt", argv[4], (int)floor(1.1 * dist));
+	sprintf(fn, "%s_%dA.txt", run_name, (int)floor(1.1 * dist));
 	ofstream fout(fn);
 	REAL c = 2.0 / sqrt(3.0);
 	int N = 30;
@@ -1319,7 +1246,7 @@ int main7(int argc, char **argv) {
 
 	cout << endl;
 	return 0;
-} // main7
+} // run_cng
 
 /******************************************************************/
 /******************************************************************//**
@@ -1332,18 +1259,8 @@ int main7(int argc, char **argv) {
  *   \param stretch a floating point number describing the scaling of
  *                  the CG spheres
  ******************************************************************/
-int main8(int argc, char **argv) {
-	if (argc != 5) {
-		cout << "Correct input format: " << endl;
-		cout << " ./exec inf [PQR file] [# layers] [stretch factor]" << endl;
-		exit(0);
-	}
+int run_inf(const char *ifname, int layer, REAL stretch) {
 	cout.precision(5);
-	cout << "INFINITE GRID" << endl;
-
-	const char *ifname = argv[2];
-	int layer = atoi(argv[3]);
-	REAL stretch = atof(argv[4]);
 
 	seedRand(-1);
 
@@ -1417,51 +1334,4 @@ int main8(int argc, char **argv) {
 		cout << k *pot[n] << " " << k *force[n] << " " << k *torque[n] << endl;
 
 	return 0;
-} // end main8
-
-/******************************************************************//**
- * Main!
- ******************************************************************/
-int main(int argc, char **argv) {
-	// For running 2 molecule BD simulation
-	if (strncmp(argv[1], "sim", 3) == 0)
-		return main1(argc, argv);
-
-	// For computing energies, torques and forces of many of the same
-	// molecules in solution
-	else if (strncmp(argv[1], "slv", 3) == 0)
-		return main2(argc, argv);
-
-	// For computing the energy of many molecules in solution as their
-	// rotations and locations are perturbed
-	else if (strncmp(argv[1], "per", 3) == 0)
-		return main3(argc, argv);
-
-	// For computing the forces/torques of many molecules  in solution
-	// with and without mutual polarization
-	else if (strncmp(argv[1], "pol", 3) == 0)
-		return main4(argc, argv);
-
-	// For computing a grid of potentials due to many molecules fixed
-	// in solution
-	else if (strncmp(argv[1], "dif", 3) == 0)
-		return main5(argc, argv);
-
-	// For computing a potential grid for a single molecule in solution
-	else if (strncmp(argv[1], "rad", 3) == 0)
-		return main6(argc, argv);
-
-	// For computing the effect of a 3rd molecule of the total free energy
-	// of a system at distance dist (in A)
-	else if (strncmp(argv[1], "cng", 3) == 0)
-		return main7(argc, argv);
-
-	else if (strncmp(argv[1], "inf", 3) == 0)
-		return main8(argc, argv);
-
-	// else, bad option
-	else {
-		cout << "bad option!!! " << argv[1] << endl;
-		return 1;
-	}
-}
+} // end run_inf

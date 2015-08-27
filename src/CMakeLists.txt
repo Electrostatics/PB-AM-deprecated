@@ -3,6 +3,7 @@ add_executable(mpe
 	BD.cpp
 	gradcoeff.h
 	gradcoeff.cpp
+	main.cpp
 	mcoeff.h
 	mcoeff.cpp
 	mpe.h
