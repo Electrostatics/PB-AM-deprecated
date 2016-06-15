@@ -1,3 +1,4 @@
+#This repository has been deprecated.
 This is the directory containing source code and examples for the analytical solution of
 the linearized Poisson Boltzmann solver, as described in Lotan and Head-Gordon 2006.
 
